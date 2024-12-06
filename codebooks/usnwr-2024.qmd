@@ -1,0 +1,61 @@
+---
+title: "usnwr-2024.csv"
+output: 
+  html:
+    css: '../assets/codebooks.css'
+    df_print: paged
+    code_folding: show
+theme: "lumen"
+highlight-style: "atom-one"
+bibliography: '../assets/epsy8252.bib'
+csl: '../assets/apa-single-spaced.csl'
+---
+
+
+```{r}
+#| include: false
+source("../assets/codebook-setup.R")
+```
+
+The data in [usnwr-2024.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv) includes 13 attributes collected from the n=111 graduate schools of education ranked in the U.S. News and World Report’s 2023--2024 Best Education Graduate Schools.
+
+
+<br />
+
+
+## Attributes
+
+- `rank`: Rank in USNWR
+- `school`: Graduate program of Education
+- `peer_rating`: Peer assessment score from deans', program directors', and senior faculty's judgement of the academic quality of the program on a scale of 1 (marginal) to 5 (outstanding).
+- `enroll`: Total enrollment of part-time and full-time graduate students in 2022--23
+- `ft_students`: Total number of full-time graduate students enrolled in 2022--23
+- `ft_faculty`: Total number of full-time faculty employed in 2022--23
+- `nonres_tuition`: Amount of yearly non-resident graduate tuition
+- `sf_ratio`: Adjusted ratio of graduate students to faculty in 2022--2023
+- `pct_doc`: Percentage of students enrolled in a Ph.D./Ed.D. in 2022--23
+- `ug_gpa`: Average undergraduate GPA for Ph.D. students admitted in 2022--23
+- `gre`: Averge total GRE score (based on verbal and quantitative) for Ph.D. students admitted in 2022--23
+- `doc_accept`: Acceptance rate for doctoral students in 2016
+- `tot_pubs`: Total number of publication attributed to faculty in the program from 2019--23 based on SCOPUS
+- `tot_res`: Total amount of funded research (in millions of dollars)
+
+
+<br />
+
+
+## Preview
+
+```{r}
+# Import data
+usnwr = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv")
+
+# View data
+usnwr |>
+  print(width = Inf)
+```
+
+
+
+
+

@@ -1,0 +1,119 @@
+rank,name,location,peer_rating,is_enroll,is_tot_fac,iw_nonres_tuition,fr_sf_ratio,fr_phd_fac_ratio,fo_tot_pubs,fo_avg_pubs,fo_tot_res,fo_avg_res,sr_gre_v,sr_gre_q,sr_doc_accept
+1,Vanderbilt University,"Nashville, TN",4.6,808,90,20544,2.6,0.6,362,4.02,40.6,455.9,162,158,5.5
+2,Johns Hopkins University ,"Baltimore, MD",3.8,1404,51,12000,0.3,0,453,8.88,43.3,849.8,164,152,24.1
+3,Harvard University ,"Cambridge, MA",4.4,945,52,38480,4.7,0.7,1135,21.83,31.1,598.1,163,158,6.2
+4,University of Texas-Austin ,"Austin, TX",4.1,1225,139,16338,4.5,0.9,858,6.17,60.9,438.4,159,152,19.4
+5,Stanford University ,"Stanford, CA",4.7,380,49,41250,3.9,0.5,764,15.59,21,437.2,161,156,6.4
+6,"Teachers College, Columbia University ","New York, NY",4.4,5034,148,15432,5.3,1.6,638,4.31,47.5,322.9,158,153,19.3
+7,University of Pennsylvania ,"Philadelphia, PA",4.1,1222,65,42224,1.9,0.3,678,10.43,30.4,468,162,156,6.3
+8,University of California-Los Angeles ,"Los Angeles, CA",4.2,795,45,15102,9.1,1.8,724,16.09,31.3,696.2,158,152,29
+8,University of Oregon ,"Eugene, OR",3.5,677,37,20898,3.6,0.7,360,9.73,34.8,965.8,159,152,17.1
+10,University of Wisconsin-Madison ,"Madison, WI",4.3,1010,100,25166,4.2,1.1,1102,11.02,35.5,358.4,157,153,29.1
+11,University of Michigan-Ann Arbor ,"Ann Arbor, MI",4.4,473,48,39666,5.1,0.5,1010,21.04,22,467.2,157,154,21.5
+12,University of Washington ,"Seattle, WA",4,971,55,26241,5.2,1.3,798,14.51,39.4,729.5,155,152,38.3
+12,University of California-Berkeley ,"Berkeley, CA",4.3,344,33,26322,8.3,1.2,502,15.21,16.1,502.6,159,152,16.9
+14,Northwestern University ,"Evanston, IL",3.9,378,32,43380,2.1,0.2,404,12.63,12.5,403.1,161,153,8.9
+15,Michigan State University ,"East Lansing, MI",4.3,2051,108,14472,5.2,0.6,972,9,32.3,301.8,156,151,37.1
+16,Ohio State University ,"Columbus, OH",3.9,1161,173,28648,2,0.4,887,5.13,40.5,235.2,156,153,34
+17,University of Southern California,"Los Angeles, CA",3.9,1993,27,17676,7.6,5.6,420,15.56,19,704.1,161,154,16.4
+17,New York University,"New York, NY",4,3451,135,32808,3,0.8,561,4.16,23.9,178.1,161,153,8.2
+19,Indiana University-Bloomington ,"Bloomington, IN",3.9,919,98,13860,3.4,0.8,717,7.32,24,244.9,156,151,31.6
+19,Boston College (Lynch),"Chestnut Hill, MA",3.7,861,56,13992,3.4,1,258,4.61,13.3,238.2,160,156,6
+19,University of Illinois-Urbana-Champaign ,"Champaign, IL",4.1,936,80,24698,3.9,0.9,760,9.5,14,177,156,157,38.1
+22,University of Kansas ,"Lawrence, KS",3.8,962,78,9264,4,0.8,557,7.14,36.8,471.9,152,150,67.9
+22,University of Virginia,"Charlottesville, VA",4.1,949,71,22602,3.1,0.7,619,8.72,14.7,209.7,157,154,22.2
+24,Utah State University ,"Logan, UT",3,1010,133,15030,1,0.3,318,2.39,42.8,321.9,155,156,24.9
+24,Arizona State University ,"Phoenix, AZ",3.6,2462,92,24550,2.8,1.3,1347,14.64,31.7,348,160,149,28.6
+26,University of Minnesota-Twin Cities ,"Minneapolis, MN",3.8,1880,128,22320,5.2,0.9,996,7.78,33,259.6,156,151,41.4
+27,University of Maryland-College Park ,"College Park, MD",3.9,986,100,14256,4.1,1.1,697,6.97,12.6,126.8,157,152,23.1
+28,Virginia Commonwealth University ,"Richmond, VA",3.1,1075,49,19594,1.4,0.5,265,5.41,17.2,358.3,158,150,40.5
+28,University of Colorado-Boulder ,"Boulder, CO",3.7,354,31,26208,2.6,0.4,505,16.29,6.4,211.8,159,151,16.3
+28,University of Connecticut (Neag),"Storrs, CT",3.7,796,63,27990,3.2,0.8,442,7.02,13.4,216.1,156,153,39.3
+28,Pennsylvania State University-University Park ,"University Park, PA",3.8,1138,118,30374,4,0.8,955,8.09,16.1,136.8,157,151,41.5
+32,College of William and Mary ,"Williamsburg, VA",3.4,398,39,20608,2.3,0.6,142,3.64,7,183.6,157,155,48.2
+32,University of Illinois-Chicago ,"Chicago, IL",3.5,691,46,22880,3.1,0.6,675,14.67,13.8,306.6,153,148,56.4
+32,University of Iowa ,"Iowa City, IA",3.6,693,79,25562,4.5,0.9,473,5.99,14.7,186.5,155,150,48.8
+32,Purdue University-West Lafayette ,"West Lafayette, IN",3.5,523,67,28010,2.4,0.6,1291,19.27,12.7,191.7,151,150,42
+32,University of Pittsburgh ,"Pittsburgh, PA",3.6,1047,56,31658,4.5,0.8,708,12.64,22.2,397,149,144,46.9
+37,University of North Carolina-Chapel Hill ,"Chapel Hill, NC",3.9,522,43,24924,4.8,0.6,654,15.21,7.6,179.8,156,149,45.7
+37,University of California-Irvine ,"Irvine, CA",3.3,229,22,26322,3.5,0.7,205,9.32,4.2,198.9,162,156,13
+37,University of Delaware ,"Newark, DE",3.2,363,36,27240,3.3,0.9,271,7.53,16.5,459.2,160,156,41.9
+40,University of Florida ,"Gainesville, FL",3.6,1268,72,14988,6.6,1,638,8.86,17.9,251.5,155,147,41.2
+40,Syracuse University ,"Syracuse, NY",3.4,678,60,14988,2.6,0.4,326,5.43,8.6,143.6,157,153,44.1
+40,University of California-Santa Barbara (Gevirtz),"Santa Barbara, CA",3.4,344,36,28059,6.3,1.3,341,9.47,3.5,97.5,154,151,14.7
+43,University of Georgia ,"Athens, GA",3.9,1857,184,22400,3.4,0.9,933,5.07,13.5,73.7,153,148,34
+44,Florida State University ,"Tallahassee, FL",3.4,1069,75,12420,3.4,0.9,581,7.75,12.8,170.9,153,150,35.5
+44,George Washington University ,"Washington, DC",3.4,1699,49,15720,5.3,1.2,305,6.22,12.7,259.9,156,152,49.1
+46,University of Miami ,"Coral Gables, FL",3.2,310,33,19920,3.4,0.4,249,7.55,6.3,196.5,158,152,15.8
+47,Texas A&M University-College Station,"College Station, TX",3.6,1289,106,9336,3.9,0.9,741,6.99,13.3,126.6,151,148,57.9
+47,Temple University ,"Philadelphia, PA",3.1,1153,43,11532,5.2,0.8,282,6.56,14.8,344.9,155,151,61.8
+47,University at Albany-SUNY ,"Albany, NY",3.4,1001,55,16680,3.5,0.5,236,4.29,6.8,125.8,155,155,26
+47,"Rutgers, the State University of New Jersey-New Brunswick ","New Brunswick, NJ",3.4,1008,48,24600,2.7,0.5,500,10.42,8.8,184.2,156,152,47.1
+51,University of Nebraska-Lincoln ,"Lincoln, NE",3.4,1075,86,9228,3.2,0.6,359,4.17,12.8,150.5,155,149,43.4
+51,University of Missouri ,"Columbia, MO",3.4,1498,93,10428,4.7,0.8,481,5.17,11.4,123.7,154,146,16.2
+51,Lehigh University ,"Bethlehem, PA",2.8,523,27,6600,3.1,1,178,6.59,11.1,412.6,157,147,15.8
+51,University of North Carolina-Greensboro ,"Greensboro, NC",3.2,925,69,17815,2.4,0.6,318,4.61,13.5,197.8,155,149,40.5
+51,University of Arizona ,"Tucson, AZ",3.6,716,49,26547,4.8,0.6,541,11.04,10,204.5,154,150,66.2
+51,University of Tennessee-Knoxville ,"Knoxville, TN",3.3,640,112,28768,1.2,0.4,370,3.3,11.7,104.5,156,154,53.3
+51,Boston University ,"Boston, MA",3.4,576,31,42400,3.2,0.7,242,7.81,2.9,96.1,153,148,37.3
+58,University of Massachusetts-Amherst ,"Amherst, MA",3.4,708,52,9937,3.7,0.6,329,6.33,9.9,193.7,154,145,44.7
+58,Washington University in St. Louis ,"St. Louis, MO",3.1,22,9,42500,1,0.1,196,21.78,0.8,90.7,162,158,15
+60,Georgia State University ,"Atlanta, GA",3,1582,104,21600,2.4,0.7,538,5.17,12.3,118.3,155,151,39.1
+60,University of California-Davis ,"Davis, CA",3.4,429,30,30489,5.6,0.9,307,10.23,6.5,217.1,155,150,34.1
+60,University of Vermont ,"Burlington, VT",3.2,353,39,33672,0.7,0.2,141,3.62,9.8,256.8,154,148,55.2
+63,George Mason University ,"Fairfax, VA",3.2,2317,69,12504,2.2,0.2,495,7.17,11.3,164,155,149,54.4
+63,University of Kentucky ,"Lexington, KY",3.2,818,92,20480,3,0.5,518,5.63,10.1,110,157,150,37.1
+65,San Diego State University ,"San Diego, CA",3.1,1155,92,11202,0.7,0.3,351,3.82,16.4,178.5,153,146,50
+65,Old Dominion University (Darden),"Norfolk, VA",2.8,1611,93,11964,1.8,0.6,237,2.55,33.7,366.2,152,147,39.5
+65,Fordham University ,"New York, NY",3,1165,32,13632,9,1.6,150,4.69,7,219.3,154,153,36.3
+65,Marquette University ,"Milwaukee, WI",2.8,238,17,8820,1.4,0.6,103,6.06,0.1,6.2,159,151,14.3
+65,University of Oklahoma (Rainbolt),"Norman, OK",3,769,68,15667,3.2,0.6,297,4.37,6.6,97.9,153,148,16.3
+65,University of Utah ,"Salt Lake City, UT",3.1,585,52,17684,3.5,0.8,270,5.19,5,97.1,160,151,23.7
+65,University of Wisconsin-Milwaukee ,"Milwaukee, WI",3.3,650,74,23948,1.6,0.4,228,3.08,2.7,36.7,153,150,25.2
+65,University of Cincinnati ,"Cincinnati, OH",3,1258,91,25696,2.4,0.5,360,3.96,13.7,151,153,150,26.9
+65,University of Hawaii-Manoa ,"Honolulu, HI",2.8,990,116,28152,1,0.3,225,1.94,19.7,171.2,155,150,44.1
+74,Oklahoma State University ,"Stillwater, OK",2.9,832,90,8508,2.4,0.8,184,2.04,9.8,109.1,153,163,29.6
+74,Loyola Marymount University ,"Los Angeles, CA",2.7,1402,32,12108,2,0.5,91,2.84,5.6,175.2,155,152,40
+74,University of Louisville ,"Louisville, KY",2.8,1143,69,21378,2,0.8,263,3.81,7.7,113.1,154,148,22
+74,University of California-Riverside ,"Riverside, CA",3.3,212,21,29749,4.8,0.7,158,7.52,2.3,113.7,153,152,43
+78,Auburn University ,"Auburn, AL",3.2,872,82,23598,2.4,0.8,330,4.02,5.1,62.6,152,144,27.1
+79,University at Buffalo-SUNY ,"Buffalo, NY",3.1,1085,51,16680,4.5,0.7,409,8.02,7.7,151.9,151,149,40.5
+79,North Carolina State University-Raleigh ,"Raleigh, NC",3.1,1457,77,20981,3,0.8,531,6.9,12.7,165.4,155,147,40.1
+81,University of South Florida ,"Tampa, FL",2.9,1490,104,10260,3.2,0.6,624,6,11.5,110.6,160,154,31.5
+81,Ball State University ,"Muncie, IN",3,2728,83,11880,1.7,0.6,209,2.52,2.9,35,154,148,23.6
+81,University of Colorado-Denver ,"Denver, CO",3,1329,36,13920,1.2,0.5,230,6.39,5,139,155,144,55.6
+81,Southern Illinois University-Carbondale,"Carbondale, IL",2.8,929,88,22512,2,0.5,233,2.65,20.9,239.7,144,145,61.4
+81,University of California-Santa Cruz ,"Santa Cruz, CA",2.8,93,16,15102,1.9,0.1,171,10.69,2.5,157.8,158,148,39.5
+81,University of Alabama,"Tuscaloosa, AL",3.2,1087,98,22950,3.7,0.7,305,3.11,4.3,44,151,149,54.2
+81,Brigham Young University-Provo (McKay),"Provo, UT",2.8,345,84,11900,1,0.2,446,5.31,1.4,16.7,158,151,22.1
+88,Kansas State University ,"Manhattan, KS",3.1,1058,42,8856,2.4,0.5,229,5.45,6,145.9,153,147,73.1
+88,Washington State University ,"Pullman, WA",3,674,63,25168,2.6,0.5,373,5.92,2.5,39.9,153,146,35.8
+88,American University ,"Washington, DC",2.7,205,13,25182,,,88,6.77,3.1,240.2,154,147,
+91,Illinois State University ,"Normal, IL",2.9,722,115,7668,1,0.3,318,2.77,10.4,90.9,154,148,62.9
+91,University of Central Florida ,"Orlando, FL",3.1,1928,73,14184,3.4,0.7,333,4.56,7.3,100.9,152,146,48.4
+91,Loyola University Chicago ,"Chicago, IL",3.1,675,36,10860,5.3,1.2,152,4.22,2.4,67.3,152,145,27.4
+91,University of San Diego ,"San Diego, CA",3.1,596,29,15360,2.1,0.4,106,3.66,0.7,24.5,157,149,45.8
+91,Clemson University (Moore),"Clemson, SC",2.9,504,58,14909,1.4,0.3,339,5.84,4.1,71.4,152,148,56.4
+91,Miami University ,"Oxford, OH",3,691,79,27483,0.4,0.1,320,4.05,1.8,22.8,158,150,0
+97,Baylor University ,"Waco, TX",2.9,229,50,15288,1,0.2,125,2.5,0.3,6,152,152,33.3
+97,Hofstra University ,"Hempstead, NY",2.8,813,51,12660,1.7,0.4,123,2.41,2,39.7,155,149,50.8
+97,University of South Carolina ,"Columbia, SC",3.1,1103,64,24196,2.2,1,401,6.27,1,15.8,154,153,53.6
+100,CUNY-Graduate Center ,"New York, NY",3,92,10,16830,12.6,2.1,12,1.2,0.8,85.1,159,150,12.4
+100,Virginia Tech ,"Blacksburg, VA",3,833,46,20926,4.4,1.2,554,12.04,8.9,194.6,,,79.5
+100,Louisiana State University-Baton Rouge ,"Baton Rouge, LA",3,512,76,21263,1.7,0.5,480,6.32,6.5,86.3,151,146,54.9
+103,Kent State University ,"Kent, OH",2.8,1982,116,14580,3,0.5,331,2.85,5.5,47.8,151,147,27.7
+103,University of North Carolina-Charlotte ,"Charlotte, NC",3,1681,92,16216,1.4,0.4,412,4.48,4.2,46,151,144,56.8
+103,Ohio University ,"Athens, OH",2.9,934,49,17436,2.8,0.6,179,3.65,2.1,43.3,147,152,55.9
+103,Iowa State University ,"Ames, IA",3.2,613,41,19696,1.6,0.8,474,11.56,2.9,71,152,144,85.2
+103,Claremont Graduate University ,"Claremont, CA",3.2,471,13,37640,12.4,2,118,9.08,1.9,147.7,152,147,65.3
+108,University of Maine ,"Orono, ME",2.7,458,31,15108,1.8,0.3,128,4.13,3.1,103,154,145,63.2
+108,Northern Arizona University ,"Flagstaff, AZ",2.8,2238,67,19440,1.7,0.6,201,3,5.2,78.2,152,150,70.3
+108,University of Idaho ,"Moscow, ID",2.7,490,37,19950,2.1,0.5,108,2.92,9.7,262.2,152,145,40
+111,University of South Alabama ,"Mobile, AL",2.3,409,64,8592,0.4,0.2,75,1.17,5.2,81.6,150,157,50
+111,University of Mississippi ,"University, MS",2.7,623,46,10836,1.5,0.4,86,1.87,5.6,121.9,149,139,38.7
+111,University of Texas-San Antonio,"San Antonio, TX",2.8,1660,105,11532,1.2,0.3,276,2.63,6.8,65.2,149,143,52.9
+111,Mississippi State University ,"Mississippi State, MS",2.5,808,87,9564,1.9,0.3,169,1.94,10.1,116.2,152,145,23.3
+111,University of Houston ,"Houston, TX",2.8,768,54,14922,5.1,1.3,340,6.3,2.7,50.5,153,151,32.4
+111,West Virginia University ,"Morgantown, WV",2.8,1249,71,19508,2,0.6,231,3.25,4.7,66.9,150,146,53.2
+111,Howard University ,"Washington, DC",3,288,33,29090,3.6,0.4,77,2.33,3.7,115.5,146,141,61.8
+111,Mills College ,"Oakland, CA",2.6,222,10,28850,2.7,0.6,163,16.3,2.2,224.5,,,73

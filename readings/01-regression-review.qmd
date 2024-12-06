@@ -1,0 +1,26 @@
+---
+title: "📖 Regression Review"
+format:
+  html:
+   css: "../assets/sticky-notes.css"
+date: "today"
+---
+
+Here are some things to do before class:
+
+- [Update R](https://www.r-project.org/) to the most recent version (v. 4.3.2; *Eye Holes*)
+- [Update RStudio Desktop](https://posit.co/download/rstudio-desktop/) to the most recent version (v. 2023.12.0+369)
+- Update all of your R packages (In the `Packages` tab in RStudio click `Update`)
+- Update the `{educate}` package (to at least v.0.3.0.1). This is a github package, so see the instructions in [Installing Packages from GitHub](https://zief0002.github.io/toolkit-quarto/03-getting-started-with-r.html)
+
+
+Remind yourself of the EPsy 8251 content
+
+- [Statistical Modeling and Computation for Educational Scientists](https://zief0002.github.io/modeling/)
+  
+
+
+<br />
+
+
+

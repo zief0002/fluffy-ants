@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-07-22">
+
+<title>EPsy 8252 - Likelihood: A Framework for Evidence</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable/js/pagedtable.js"></script>
+<script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/sticky-notes.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EPsy 8252</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../assignments.html"> 
+<span class="menu-text">Assignments &amp; Grading</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data.html"> 
+<span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../class-policies.html"> 
+<span class="menu-text">Class Policies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../instructor.html"> 
+<span class="menu-text">Instructor &amp; TA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../mission-statements.html"> 
+<span class="menu-text">Mission Statements</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../umn-policies.html"> 
+<span class="menu-text">University Policies</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
+  <li><a href="#modeling-strategy" id="toc-modeling-strategy" class="nav-link" data-scroll-target="#modeling-strategy">Modeling Strategy</a></li>
+  <li><a href="#classical-framework-of-evidence" id="toc-classical-framework-of-evidence" class="nav-link" data-scroll-target="#classical-framework-of-evidence">Classical Framework of Evidence</a></li>
+  <li><a href="#likelihood-paradigm-to-statistical-evidence" id="toc-likelihood-paradigm-to-statistical-evidence" class="nav-link" data-scroll-target="#likelihood-paradigm-to-statistical-evidence">Likelihood Paradigm to Statistical Evidence</a></li>
+  <li><a href="#joint-probability-density-a-roadstop-to-computing-likelihood" id="toc-joint-probability-density-a-roadstop-to-computing-likelihood" class="nav-link" data-scroll-target="#joint-probability-density-a-roadstop-to-computing-likelihood">Joint Probability Density: A Roadstop to Computing Likelihood</a></li>
+  <li><a href="#computing-likelihood" id="toc-computing-likelihood" class="nav-link" data-scroll-target="#computing-likelihood">Computing Likelihood</a>
+  <ul class="collapse">
+  <li><a href="#an-example-of-computing-and-evaluating-likelihood" id="toc-an-example-of-computing-and-evaluating-likelihood" class="nav-link" data-scroll-target="#an-example-of-computing-and-evaluating-likelihood">An Example of Computing and Evaluating Likelihood</a></li>
+  </ul></li>
+  <li><a href="#some-notes-and-caveats" id="toc-some-notes-and-caveats" class="nav-link" data-scroll-target="#some-notes-and-caveats">Some Notes and Caveats</a></li>
+  <li><a href="#likelihood-in-regression-back-to-our-example" id="toc-likelihood-in-regression-back-to-our-example" class="nav-link" data-scroll-target="#likelihood-in-regression-back-to-our-example">Likelihood in Regression: Back to Our Example</a>
+  <ul class="collapse">
+  <li><a href="#mathematics-of-likelihood" id="toc-mathematics-of-likelihood" class="nav-link" data-scroll-target="#mathematics-of-likelihood">Mathematics of Likelihood</a></li>
+  <li><a href="#log-likelihood" id="toc-log-likelihood" class="nav-link" data-scroll-target="#log-likelihood">Log-Likelihood</a>
+  <ul class="collapse">
+  <li><a href="#mathematics-of-log-likelihood" id="toc-mathematics-of-log-likelihood" class="nav-link" data-scroll-target="#mathematics-of-log-likelihood">Mathematics of Log-Likelihood</a></li>
+  </ul></li>
+  <li><a href="#shortcut-the-loglik-function" id="toc-shortcut-the-loglik-function" class="nav-link" data-scroll-target="#shortcut-the-loglik-function">Shortcut: The <code>logLik()</code> Function</a></li>
+  </ul></li>
+  <li><a href="#likelihood-ratio-test-for-nested-models" id="toc-likelihood-ratio-test-for-nested-models" class="nav-link" data-scroll-target="#likelihood-ratio-test-for-nested-models">Likelihood Ratio Test for Nested Models</a>
+  <ul class="collapse">
+  <li><a href="#hypothesis-test-of-the-lrt" id="toc-hypothesis-test-of-the-lrt" class="nav-link" data-scroll-target="#hypothesis-test-of-the-lrt">Hypothesis Test of the LRT</a></li>
+  </ul></li>
+  <li><a href="#deviance-a-measure-of-the-modeldata-error" id="toc-deviance-a-measure-of-the-modeldata-error" class="nav-link" data-scroll-target="#deviance-a-measure-of-the-modeldata-error">Deviance: A Measure of the Model–Data Error</a>
+  <ul class="collapse">
+  <li><a href="#mathematics-of-deviance" id="toc-mathematics-of-deviance" class="nav-link" data-scroll-target="#mathematics-of-deviance">Mathematics of Deviance</a></li>
+  <li><a href="#modeling-the-variation-in-the-test-statistic" id="toc-modeling-the-variation-in-the-test-statistic" class="nav-link" data-scroll-target="#modeling-the-variation-in-the-test-statistic">Modeling the Variation in the Test Statistic</a></li>
+  </ul></li>
+  <li><a href="#using-the-lrtest-function" id="toc-using-the-lrtest-function" class="nav-link" data-scroll-target="#using-the-lrtest-function">Using the <code>lrtest()</code> Function</a></li>
+  <li><a href="#adding-the-predictors-in-block-2" id="toc-adding-the-predictors-in-block-2" class="nav-link" data-scroll-target="#adding-the-predictors-in-block-2">Adding the Predictors in Block 2</a></li>
+  <li><a href="#adding-the-predictors-in-block-3" id="toc-adding-the-predictors-in-block-3" class="nav-link" data-scroll-target="#adding-the-predictors-in-block-3">Adding the Predictors in Block 3</a></li>
+  <li><a href="#evaluating-assumptions" id="toc-evaluating-assumptions" class="nav-link" data-scroll-target="#evaluating-assumptions">Evaluating Assumptions</a></li>
+  <li><a href="#presenting-the-results" id="toc-presenting-the-results" class="nav-link" data-scroll-target="#presenting-the-results">Presenting the Results</a></li>
+  <li><a href="#testing-individual-predictors-from-a-model" id="toc-testing-individual-predictors-from-a-model" class="nav-link" data-scroll-target="#testing-individual-predictors-from-a-model">Testing Individual Predictors From a Model</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Likelihood: A Framework for Evidence</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 22, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="preparation" class="level1">
+<h1>Preparation</h1>
+<p>In this set of notes, you will learn about the law of likelihood, and the use of likelihood ratios as statistical evidence for model selection. To do so, we will use the <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv">usnwr-2024.csv</a> dataset (see the <a href="http://zief0002.github.io/benevolent-anteater/codebooks/usnwr-2024.html">data codebook</a>) to fit a set of models that explain variation in peer ratings of graduate schools of education.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(educate)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>usnwr <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>usnwr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["rank"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["school"],"name":[2],"type":["chr"],"align":["left"]},{"label":["peer_rating"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["enroll"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["ft_students"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ft_fac"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["nonres_tuition"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["sf_ratio"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pct_doc"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["ug_gpa"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["gre"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["doc_acc"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["tot_pubs"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["tot_res"],"name":[14],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"Teachers College, Columbia University","3":"4.2","4":"4471","5":"3192","6":"131","7":"45912","8":"8.4","9":"23.89","10":"3.5","11":"313","12":"12.1","13":"789","14":"65.18"},{"1":"1","2":"University of Michigan--Ann Arbor","3":"4.4","4":"455","5":"303","6":"45","7":"53178","8":"4.2","9":"30.77","10":"3.3","11":"316","12":"13.7","13":"1802","14":"40.90"},{"1":"3","2":"Northwestern University","3":"4.1","4":"382","5":"228","6":"39","7":"56067","8":"2.2","9":"22.25","10":"3.7","11":"321","12":"7.8","13":"719","14":"29.21"},{"1":"3","2":"University of Pennsylvania","3":"4.4","4":"1654","5":"1091","6":"75","7":"42864","8":"4.8","9":"23.76","10":"3.3","11":"312","12":"14.6","13":"1176","14":"50.41"},{"1":"3","2":"University of Wisconsin--Madison","3":"4.3","4":"1136","5":"729","6":"123","7":"24054","8":"5.4","9":"51.06","10":"3.5","11":"305","12":"15.9","13":"1396","14":"64.50"},{"1":"6","2":"Vanderbilt University (Peabody)","3":"4.5","4":"1007","5":"809","6":"97","7":"53160","8":"2.6","9":"24.93","10":"3.6","11":"321","12":"5.4","13":"1195","14":"49.91"},{"1":"7","2":"Stanford University","3":"4.6","4":"343","5":"343","6":"51","7":"56487","8":"4.3","9":"46.65","10":"3.0","11":"327","12":"3.9","13":"1415","14":"25.22"},{"1":"7","2":"University of California--Los Angeles","3":"4.3","4":"701","5":"701","6":"43","7":"26802","8":"7.1","9":"51.64","10":"3.4","11":"310","12":"28.1","13":"1058","14":"46.52"},{"1":"9","2":"Harvard University","3":"4.4","4":"868","5":"707","6":"42","7":"54032","8":"3.6","9":"14.06","10":"3.9","11":"320","12":"5.7","13":"2148","14":"36.73"},{"1":"9","2":"New York University (Steinhardt)","3":"4.1","4":"2163","5":"1747","6":"79","7":"48480","8":"4.6","9":"14.52","10":"3.7","11":"314","12":"4.7","13":"886","14":"71.43"},{"1":"11","2":"University of California--Irvine","3":"3.9","4":"243","5":"241","6":"31","7":"26802","8":"5.1","9":"41.56","10":"NA","11":"324","12":"18.5","13":"721","14":"31.60"},{"1":"11","2":"University of Washington","3":"4.0","4":"826","5":"640","6":"51","7":"32074","8":"3.5","9":"22.15","10":"3.8","11":"307","12":"16.3","13":"1326","14":"34.87"},{"1":"13","2":"Johns Hopkins University","3":"4.1","4":"1732","5":"407","6":"19","7":"41280","8":"2.5","9":"15.18","10":"3.4","11":"314","12":"35.8","13":"981","14":"28.31"},{"1":"14","2":"University of California, Berkeley","3":"4.4","4":"243","5":"243","6":"27","7":"26802","8":"3.3","9":"57.20","10":"3.6","11":"321","12":"4.9","13":"771","14":"14.60"},{"1":"14","2":"University of Oregon","3":"3.7","4":"472","5":"405","6":"47","7":"27990","8":"1.5","9":"32.63","10":"3.5","11":"308","12":"12.0","13":"490","14":"57.72"},{"1":"16","2":"University of Texas--Austin","3":"4.1","4":"785","5":"610","6":"106","7":"18032","8":"2.9","9":"58.34","10":"3.7","11":"304","12":"25.8","13":"1386","14":"38.04"},{"1":"16","2":"University of Virginia","3":"4.2","4":"1173","5":"445","6":"69","7":"14376","8":"2.3","9":"23.27","10":"3.5","11":"270","12":"13.4","13":"1051","14":"35.54"},{"1":"18","2":"Arizona State University (Fulton)","3":"3.7","4":"5035","5":"797","6":"79","7":"24498","8":"3.1","9":"7.15","10":"3.4","11":"314","12":"28.1","13":"1557","14":"73.06"},{"1":"18","2":"University of Florida","3":"3.9","4":"1302","5":"354","6":"64","7":"27336","8":"2.9","9":"39.78","10":"3.6","11":"305","12":"44.6","13":"1303","14":"52.02"},{"1":"18","2":"University of Kansas","3":"3.7","4":"878","5":"380","6":"68","7":"24624","8":"3.7","9":"40.21","10":"3.4","11":"307","12":"50.8","13":"887","14":"61.46"},{"1":"21","2":"Boston College (Lynch)","3":"4.0","4":"867","5":"492","6":"61","7":"38400","8":"3.8","9":"17.07","10":"3.5","11":"320","12":"7.3","13":"433","14":"25.53"},{"1":"21","2":"Florida State University","3":"3.6","4":"1494","5":"633","6":"78","7":"26664","8":"5.3","9":"32.73","10":"3.8","11":"308","12":"30.5","13":"868","14":"35.42"},{"1":"21","2":"Michigan State University","3":"4.2","4":"980","5":"485","6":"112","7":"40488","8":"2.7","9":"38.67","10":"3.6","11":"309","12":"29.1","13":"1879","14":"19.32"},{"1":"21","2":"University of North Carolina--Chapel Hill","3":"4.1","4":"293","5":"201","6":"40","7":"28884","8":"2.8","9":"46.76","10":"3.5","11":"313","12":"22.6","13":"1199","14":"19.93"},{"1":"25","2":"Ohio State University","3":"4.1","4":"1064","5":"546","6":"127","7":"38693","8":"3.7","9":"43.61","10":"3.3","11":"304","12":"59.6","13":"1588","14":"25.22"},{"1":"25","2":"University of Minnesota--Twin Cities","3":"3.8","4":"1725","5":"1059","6":"132","7":"57168","8":"5.9","9":"34.90","10":"3.6","11":"312","12":"24.6","13":"1358","14":"42.30"},{"1":"27","2":"University of Delaware","3":"3.5","4":"347","5":"205","6":"46","7":"23496","8":"2.7","9":"42.65","10":"3.3","11":"306","12":"41.2","13":"535","14":"15.00"},{"1":"27","2":"University of Maryland--College Park","3":"4.1","4":"750","5":"481","6":"77","7":"42456","8":"2.2","9":"56.80","10":"3.4","11":"320","12":"24.0","13":"973","14":"13.91"},{"1":"27","2":"University of Pittsburgh","3":"3.9","4":"627","5":"288","6":"51","7":"42324","8":"2.7","9":"41.31","10":"3.3","11":"298","12":"46.8","13":"931","14":"19.56"},{"1":"27","2":"Virginia Commonwealth University","3":"3.5","4":"687","5":"243","6":"41","7":"22896","8":"2.8","9":"42.50","10":"3.9","11":"304","12":"74.2","13":"697","14":"37.40"},{"1":"31","2":"North Carolina State University--Raleigh","3":"3.5","4":"1473","5":"400","6":"72","7":"28301","8":"3.8","9":"36.46","10":"3.5","11":"305","12":"49.3","13":"932","14":"29.47"},{"1":"31","2":"Texas A&M University--College Station","3":"3.7","4":"1409","5":"615","6":"112","7":"19584","8":"2.7","9":"38.04","10":"3.5","11":"302","12":"49.1","13":"1050","14":"28.67"},{"1":"31","2":"University of Connecticut (Neag)","3":"3.9","4":"661","5":"378","6":"60","7":"40086","8":"3.2","9":"27.84","10":"3.3","11":"309","12":"44.2","13":"801","14":"23.87"},{"1":"31","2":"University of Georgia","3":"3.9","4":"1829","5":"838","6":"136","7":"25186","8":"3.5","9":"41.33","10":"3.4","11":"304","12":"46.3","13":"1133","14":"12.31"},{"1":"31","2":"University of Missouri","3":"3.5","4":"1553","5":"445","6":"68","7":"28608","8":"3.6","9":"25.76","10":"3.8","11":"300","12":"30.2","13":"693","14":"28.25"},{"1":"36","2":"Indiana University--Bloomington","3":"3.9","4":"1202","5":"352","6":"84","7":"36360","8":"3.8","9":"55.91","10":"3.6","11":"306","12":"39.2","13":"1190","14":"18.49"},{"1":"36","2":"University of Illinois Urbana-Champaign","3":"4.0","4":"1280","5":"411","6":"77","7":"29034","8":"5.2","9":"57.03","10":"3.4","11":"NA","12":"29.6","13":"1155","14":"13.21"},{"1":"36","2":"University of Iowa","3":"3.6","4":"681","5":"352","6":"64","7":"31777","8":"2.1","9":"44.35","10":"3.4","11":"307","12":"44.4","13":"756","14":"13.75"},{"1":"36","2":"Utah State University","3":"3.2","4":"1079","5":"311","6":"134","7":"23936","8":"1.5","9":"24.10","10":"3.7","11":"307","12":"19.6","13":"446","14":"40.86"},{"1":"40","2":"Georgia State University","3":"3.4","4":"1419","5":"721","6":"113","7":"30216","8":"2.7","9":"27.55","10":"3.8","11":"303","12":"27.9","13":"781","14":"20.10"},{"1":"40","2":"University of California--Davis","3":"3.8","4":"326","5":"126","6":"33","7":"29017","8":"3.2","9":"38.96","10":"3.2","11":"NA","12":"26.0","13":"630","14":"10.76"},{"1":"40","2":"University of South Carolina","3":"3.2","4":"1271","5":"338","6":"68","7":"29760","8":"3.1","9":"49.33","10":"3.6","11":"297","12":"62.5","13":"713","14":"17.82"},{"1":"43","2":"Rutgers University--New Brunswick","3":"3.6","4":"978","5":"258","6":"39","7":"31800","8":"2.5","9":"25.77","10":"3.4","11":"303","12":"41.9","13":"907","14":"8.27"},{"1":"43","2":"University of Colorado--Boulder","3":"3.8","4":"210","5":"164","6":"39","7":"33174","8":"1.5","9":"41.90","10":"3.7","11":"NA","12":"13.4","13":"843","14":"6.43"},{"1":"43","2":"University of Massachusetts--Boston","3":"3.2","4":"962","5":"321","6":"49","7":"36879","8":"4.0","9":"24.01","10":"3.1","11":"299","12":"19.9","13":"316","14":"23.48"},{"1":"46","2":"Boston University (Wheelock)","3":"3.6","4":"626","5":"262","6":"32","7":"22920","8":"2.0","9":"17.25","10":"3.5","11":"317","12":"9.3","13":"673","14":"9.20"},{"1":"46","2":"Temple University","3":"3.4","4":"920","5":"340","6":"38","7":"24858","8":"2.7","9":"20.87","10":"3.5","11":"305","12":"20.6","13":"569","14":"13.25"},{"1":"46","2":"University of Central Florida","3":"3.1","4":"1375","5":"489","6":"62","7":"25752","8":"4.1","9":"15.78","10":"3.8","11":"296","12":"50.0","13":"628","14":"20.17"},{"1":"49","2":"Pennsylvania State University--University Park","3":"3.9","4":"1273","5":"423","6":"119","7":"41602","8":"2.2","9":"29.85","10":"3.5","11":"306","12":"60.6","13":"1311","14":"7.91"},{"1":"49","2":"Purdue University--West Lafayette","3":"3.3","4":"823","5":"98","6":"64","7":"18802","8":"2.4","9":"26.85","10":"3.8","11":"304","12":"44.0","13":"1367","14":"17.78"},{"1":"49","2":"San Diego State University","3":"3.4","4":"1387","5":"489","6":"79","7":"18966","8":"2.2","9":"14.78","10":"3.1","11":"NA","12":"69.4","13":"419","14":"21.22"},{"1":"49","2":"SMU (Simmons)","3":"2.8","4":"465","5":"122","6":"16","7":"42120","8":"1.3","9":"26.24","10":"3.8","11":"308","12":"56.4","13":"230","14":"8.12"},{"1":"49","2":"University of Mississippi","3":"3.1","4":"638","5":"186","6":"46","7":"35064","8":"2.1","9":"31.50","10":"3.7","11":"291","12":"42.2","13":"247","14":"16.65"},{"1":"54","2":"University of Illinois--Chicago","3":"3.6","4":"662","5":"203","6":"47","7":"25356","8":"3.0","9":"41.69","10":"3.5","11":"NA","12":"45.5","13":"940","14":"7.36"},{"1":"54","2":"University of South Florida","3":"3.0","4":"994","5":"374","6":"94","7":"21048","8":"2.6","9":"46.88","10":"3.3","11":"295","12":"49.2","13":"847","14":"21.42"},{"1":"56","2":"University of Alabama","3":"3.2","4":"1123","5":"335","6":"91","7":"31460","8":"2.0","9":"41.05","10":"3.1","11":"304","12":"37.6","13":"730","14":"12.28"},{"1":"56","2":"University of Tennessee--Knoxville","3":"3.3","4":"898","5":"372","6":"73","7":"39600","8":"2.2","9":"29.18","10":"NA","11":"303","12":"56.4","13":"563","14":"12.47"},{"1":"58","2":"George Washington University","3":"3.4","4":"1059","5":"274","6":"45","7":"42648","8":"3.2","9":"35.41","10":"3.3","11":"299","12":"41.1","13":"528","14":"5.07"},{"1":"58","2":"University at Buffalo--SUNY","3":"3.2","4":"876","5":"477","6":"61","7":"23100","8":"3.5","9":"26.83","10":"3.4","11":"301","12":"40.3","13":"490","14":"6.38"},{"1":"58","2":"University of Arizona","3":"3.6","4":"776","5":"302","6":"58","7":"32290","8":"2.3","9":"43.43","10":"3.8","11":"310","12":"56.9","13":"848","14":"8.74"},{"1":"58","2":"University of Idaho","3":"2.9","4":"408","5":"151","6":"28","7":"29148","8":"2.0","9":"34.56","10":"3.7","11":"NA","12":"30.9","13":"239","14":"21.45"},{"1":"58","2":"University of Nebraska--Lincoln","3":"3.5","4":"734","5":"233","6":"80","7":"23904","8":"2.1","9":"42.78","10":"3.6","11":"300","12":"52.5","13":"651","14":"13.70"},{"1":"58","2":"University of Vermont","3":"3.1","4":"247","5":"48","6":"45","7":"41280","8":"0.4","9":"17.41","10":"3.7","11":"315","12":"65.0","13":"243","14":"6.26"},{"1":"64","2":"Clemson University","3":"3.3","4":"1324","5":"198","6":"49","7":"12626","8":"3.2","9":"16.47","10":"3.9","11":"NA","12":"66.3","13":"481","14":"10.31"},{"1":"64","2":"Syracuse University","3":"3.5","4":"502","5":"244","6":"45","7":"43248","8":"3.2","9":"30.28","10":"3.4","11":"314","12":"34.9","13":"372","14":"5.31"},{"1":"64","2":"Texas Tech University","3":"3.0","4":"1424","5":"294","6":"70","7":"18139","8":"3.3","9":"49.09","10":"NA","11":"300","12":"56.7","13":"485","14":"12.10"},{"1":"64","2":"University of Arkansas--Fayetteville","3":"3.0","4":"1282","5":"407","6":"83","7":"28560","8":"2.5","9":"23.09","10":"3.8","11":"305","12":"53.2","13":"390","14":"18.29"},{"1":"64","2":"University of Hawaii--Manoa","3":"3.0","4":"888","5":"193","6":"91","7":"22432","8":"1.8","9":"32.32","10":"3.9","11":"296","12":"55.1","13":"459","14":"29.34"},{"1":"64","2":"University of Kentucky","3":"3.3","4":"789","5":"420","6":"76","7":"32896","8":"3.3","9":"44.99","10":"NA","11":"299","12":"42.5","13":"743","14":"8.25"},{"1":"70","2":"Howard University","3":"3.5","4":"205","5":"119","6":"32","7":"44112","8":"3.4","9":"80.98","10":"NA","11":"294","12":"96.7","13":"173","14":"3.14"},{"1":"70","2":"Loyola Marymount University","3":"2.9","4":"854","5":"540","6":"30","7":"43752","8":"4.5","9":"8.55","10":"3.0","11":"289","12":"38.5","13":"102","14":"6.68"},{"1":"70","2":"Oklahoma State University","3":"3.1","4":"1040","5":"530","6":"135","7":"24720","8":"2.3","9":"43.08","10":"3.3","11":"304","12":"40.5","13":"309","14":"12.51"},{"1":"70","2":"University of Houston","3":"3.2","4":"882","5":"305","6":"49","7":"16092","8":"3.9","9":"40.70","10":"3.3","11":"298","12":"32.1","13":"559","14":"6.09"},{"1":"70","2":"University of Louisville","3":"3.1","4":"1268","5":"456","6":"61","7":"28340","8":"2.5","9":"16.09","10":"3.3","11":"303","12":"51.2","13":"406","14":"12.24"},{"1":"70","2":"University of North Carolina--Charlotte","3":"3.1","4":"1692","5":"252","6":"90","7":"18482","8":"2.1","9":"15.96","10":"NA","11":"294","12":"82.1","13":"737","14":"10.39"},{"1":"70","2":"William & Mary","3":"3.4","4":"817","5":"256","6":"37","7":"28305","8":"3.5","9":"24.48","10":"3.3","11":"298","12":"67.6","13":"186","14":"6.87"},{"1":"77","2":"Boise State University","3":"2.8","4":"553","5":"99","6":"44","7":"24573","8":"1.8","9":"23.15","10":"3.6","11":"312","12":"57.7","13":"372","14":"12.19"},{"1":"77","2":"Lehigh University","3":"3.0","4":"414","5":"129","6":"26","7":"14160","8":"3.6","9":"37.44","10":"NA","11":"NA","12":"18.5","13":"225","14":"6.80"},{"1":"77","2":"West Virginia University","3":"2.7","4":"334","5":"129","6":"52","7":"26082","8":"0.8","9":"19.76","10":"3.8","11":"NA","12":"57.1","13":"446","14":"5.34"},{"1":"80","2":"Miami University","3":"3.0","4":"520","5":"178","6":"63","7":"32698","8":"1.4","9":"21.92","10":"3.2","11":"282","12":"60.0","13":"381","14":"6.49"},{"1":"80","2":"University of California--Riverside","3":"3.4","4":"214","5":"198","6":"29","7":"20136","8":"3.2","9":"34.11","10":"3.6","11":"311","12":"11.1","13":"312","14":"2.89"},{"1":"80","2":"University of California--Santa Barbara…","3":"3.4","4":"253","5":"247","6":"41","7":"28974","8":"3.9","9":"61.66","10":"3.3","11":"NA","12":"8.3","13":"355","14":"3.28"},{"1":"83","2":"Binghamton University--SUNY","3":"2.9","4":"250","5":"127","6":"15","7":"23112","8":"3.3","9":"22.40","10":"3.9","11":"NA","12":"27.3","13":"199","14":"1.85"},{"1":"83","2":"East Carolina University","3":"2.7","4":"1019","5":"167","6":"53","7":"17898","8":"3.0","9":"12.17","10":"3.2","11":"289","12":"72.7","13":"431","14":"3.70"},{"1":"83","2":"George Mason University","3":"3.1","4":"1667","5":"333","6":"68","7":"18216","8":"4.5","9":"15.48","10":"3.4","11":"300","12":"73.0","13":"758","14":"10.04"},{"1":"83","2":"Illinois State University","3":"2.9","4":"892","5":"186","6":"119","7":"20664","8":"1.8","9":"33.52","10":"3.8","11":"297","12":"74.1","13":"370","14":"7.97"},{"1":"83","2":"Kansas State University","3":"3.1","4":"1205","5":"236","6":"38","7":"23016","8":"3.3","9":"36.68","10":"3.4","11":"NA","12":"89.1","13":"294","14":"6.59"},{"1":"83","2":"Montclair State University","3":"2.9","4":"1951","5":"607","6":"101","7":"16440","8":"2.6","9":"8.56","10":"3.2","11":"NA","12":"46.4","13":"272","14":"9.77"},{"1":"83","2":"Old Dominion University (Darden)","3":"2.8","4":"1523","5":"487","6":"87","7":"33456","8":"2.5","9":"18.98","10":"3.3","11":"297","12":"59.5","13":"489","14":"9.91"},{"1":"83","2":"Oregon State University","3":"3.1","4":"512","5":"108","6":"17","7":"28242","8":"1.8","9":"30.66","10":"3.3","11":"NA","12":"43.9","13":"481","14":"3.72"},{"1":"83","2":"University at Albany--SUNY","3":"3.1","4":"1025","5":"333","6":"52","7":"23100","8":"4.7","9":"31.90","10":"NA","11":"306","12":"42.5","13":"416","14":"5.02"},{"1":"83","2":"University of Denver (Morgridge)","3":"3.1","4":"969","5":"334","6":"33","7":"51091","8":"6.1","9":"27.66","10":"3.3","11":"300","12":"38.2","13":"295","14":"5.16"},{"1":"83","2":"University of Massachusetts--Amherst","3":"3.5","4":"399","5":"266","6":"52","7":"31488","8":"3.4","9":"62.16","10":"3.6","11":"305","12":"57.3","13":"512","14":"3.97"},{"1":"83","2":"University of Nevada--Reno","3":"3.0","4":"502","5":"138","6":"45","7":"21592","8":"1.7","9":"20.92","10":"3.6","11":"298","12":"66.7","13":"288","14":"10.97"},{"1":"83","2":"University of New Mexico","3":"3.0","4":"596","5":"45","6":"94","7":"33648","8":"0.9","9":"34.06","10":"3.1","11":"308","12":"33.3","13":"507","14":"NA"},{"1":"83","2":"University of North Carolina--Greensboro","3":"3.2","4":"965","5":"302","6":"47","7":"18938","8":"3.2","9":"23.73","10":"3.4","11":"298","12":"74.7","13":"415","14":"5.27"},{"1":"83","2":"University of Utah","3":"3.2","4":"579","5":"334","6":"52","7":"25961","8":"4.2","9":"41.45","10":"3.5","11":"305","12":"41.8","13":"679","14":"7.55"},{"1":"83","2":"Virginia Tech","3":"3.4","4":"426","5":"228","6":"33","7":"29238","8":"4.4","9":"53.29","10":"3.3","11":"307","12":"73.6","13":"722","14":"3.14"},{"1":"99","2":"Auburn University","3":"3.2","4":"925","5":"385","6":"80","7":"41544","8":"3.3","9":"48.11","10":"3.3","11":"299","12":"38.7","13":"485","14":"4.63"},{"1":"99","2":"Kent State University","3":"3.0","4":"695","5":"383","6":"92","7":"22523","8":"1.4","9":"28.63","10":"3.3","11":"NA","12":"45.2","13":"405","14":"4.50"},{"1":"99","2":"New Mexico State University","3":"2.7","4":"547","5":"127","6":"40","7":"18023","8":"2.4","9":"26.69","10":"3.3","11":"310","12":"34.9","13":"182","14":"NA"},{"1":"99","2":"Portland State University","3":"2.9","4":"1008","5":"340","6":"43","7":"16392","8":"2.6","9":"7.04","10":"3.5","11":"NA","12":"24.0","13":"245","14":"6.68"},{"1":"99","2":"Rowan University","3":"2.6","4":"1169","5":"170","6":"57","7":"21000","8":"1.8","9":"18.14","10":"3.3","11":"NA","12":"56.3","13":"267","14":"5.17"},{"1":"99","2":"St. John's University","3":"2.7","4":"727","5":"204","6":"43","7":"33600","8":"3.6","9":"48.28","10":"3.2","11":"293","12":"51.3","13":"209","14":"3.18"},{"1":"99","2":"University of Alabama--Birmingham","3":"2.9","4":"579","5":"147","6":"38","7":"26616","8":"3.1","9":"15.37","10":"3.3","11":"NA","12":"55.0","13":"367","14":"4.70"},{"1":"99","2":"University of California--San Diego","3":"3.4","4":"52","5":"52","6":"20","7":"27690","8":"1.6","9":"100.00","10":"3.5","11":"302","12":"6.7","13":"585","14":"1.13"},{"1":"99","2":"University of Colorado--Denver","3":"3.2","4":"1363","5":"892","6":"35","7":"31992","8":"6.0","9":"25.46","10":"3.3","11":"300","12":"27.4","13":"297","14":"3.52"},{"1":"99","2":"University of Miami","3":"3.3","4":"532","5":"449","6":"29","7":"55440","8":"6.1","9":"50.19","10":"3.3","11":"299","12":"51.6","13":"368","14":"1.59"},{"1":"99","2":"University of New Hampshire","3":"2.8","4":"170","5":"51","6":"10","7":"15590","8":"2.4","9":"27.65","10":"3.5","11":"NA","12":"52.2","13":"297","14":"5.06"},{"1":"99","2":"University of North Texas","3":"3.0","4":"1141","5":"341","6":"67","7":"18264","8":"2.7","9":"24.54","10":"3.4","11":"298","12":"43.0","13":"755","14":"6.03"},{"1":"99","2":"University of Oklahoma (Rainbolt)","3":"3.0","4":"615","5":"442","6":"45","7":"24600","8":"4.3","9":"36.91","10":"3.1","11":"305","12":"92.1","13":"380","14":"12.11"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="modeling-strategy" class="level1">
+<h1>Modeling Strategy</h1>
+<p>We are going to mimic an analysis undertaken by <span class="citation" data-cites="Sweitzer:2009">Sweitzer &amp; Volkwein (<a href="#ref-Sweitzer:2009" role="doc-biblioref">2009</a>)</span>. They used 2009 U.S. News and World Report data and a conceptual model of institutional prestige adapted from <span class="citation" data-cites="Volkwein:2006">Volkwein &amp; Sweitzer (<a href="#ref-Volkwein:2006" role="doc-biblioref">2006</a>)</span> (see <a href="#fig-04-01" class="quarto-xref">Figure&nbsp;1</a>) to explain variation in institutional prestige as measured by peer ratings.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-04-01" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-04-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figs/04-conceptual-model.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Conceptual model of institutional prestige.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>They categorized their predictors based on this conceptual model and then carried out a regression analysis which they described as follows:</p>
+<blockquote class="blockquote">
+<p>Using the conceptual framework…as a guide, the peer assessment score was employed as the dependent variable and a blocked (set-wise) regression model was estimated for each of the five separate graduate/professional school disciplines…In the first block of the regressions, institutional characteristics were entered, such as the size and wealth of the school. In the second block, faculty and student indicators were entered. In the third block, variables reflecting faculty and student outcomes were entered. (p.&nbsp;827)</p>
+</blockquote>
+<p>We will use more current data (that available as of January 2024) to carry out a similar analysis. The categorization of attributes is shown in <a href="#fig-04-02" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-04-02" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-04-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figs/04-blocks-and-attributes.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Categorization of attributes into different parts of the conceptual model and their corresponding blocks.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="fyi">
+<p>Note that we will not be directly replicating the analysis in <span class="citation" data-cites="Sweitzer:2009">Sweitzer &amp; Volkwein (<a href="#ref-Sweitzer:2009" role="doc-biblioref">2009</a>)</span>. For example, they standardized the predictors, where we will be using the unstandardized predictors. They also only used one predictor per each part of the conceptual framework, where we will have multiple predictors in these components. The replication is more of whether the findings are robust to changes in the models, and measurements we use…do different choices in the analysis produce similar results?</p>
+</div>
+<p>Any analysis should begin with looking at plots and computing summary statistics of the sample data. (I will leave this exploration as an exercise for the reader.) One thing that would come up at this stage in the analysis is that there are some institutions with missing data for some attributes. Because we are mimicing the analysis in the <span class="citation" data-cites="Sweitzer:2009">Sweitzer &amp; Volkwein (<a href="#ref-Sweitzer:2009" role="doc-biblioref">2009</a>)</span> paper we will carry out all analyses on “…only those schools or colleges in the analysis with complete data for every variable in that discipline. (p.&nbsp;820)” To obtain a dataset of complete cases, we will use the <code>drop_na()</code> function from the <code>{tidyr}</code> package. This function drops any row from the data that has a missing value. This is called <em>listwise deletion</em>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop cases with missing values</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>usnwr_complete <span class="ot">=</span> usnwr <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># View data (n = 83)</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>usnwr_complete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["rank"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["school"],"name":[2],"type":["chr"],"align":["left"]},{"label":["peer_rating"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["enroll"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["ft_students"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["ft_fac"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["nonres_tuition"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["sf_ratio"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["pct_doc"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["ug_gpa"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["gre"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["doc_acc"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["tot_pubs"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["tot_res"],"name":[14],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"Teachers College, Columbia University","3":"4.2","4":"4471","5":"3192","6":"131","7":"45912","8":"8.4","9":"23.89","10":"3.5","11":"313","12":"12.1","13":"789","14":"65.18"},{"1":"1","2":"University of Michigan--Ann Arbor","3":"4.4","4":"455","5":"303","6":"45","7":"53178","8":"4.2","9":"30.77","10":"3.3","11":"316","12":"13.7","13":"1802","14":"40.90"},{"1":"3","2":"Northwestern University","3":"4.1","4":"382","5":"228","6":"39","7":"56067","8":"2.2","9":"22.25","10":"3.7","11":"321","12":"7.8","13":"719","14":"29.21"},{"1":"3","2":"University of Pennsylvania","3":"4.4","4":"1654","5":"1091","6":"75","7":"42864","8":"4.8","9":"23.76","10":"3.3","11":"312","12":"14.6","13":"1176","14":"50.41"},{"1":"3","2":"University of Wisconsin--Madison","3":"4.3","4":"1136","5":"729","6":"123","7":"24054","8":"5.4","9":"51.06","10":"3.5","11":"305","12":"15.9","13":"1396","14":"64.50"},{"1":"6","2":"Vanderbilt University (Peabody)","3":"4.5","4":"1007","5":"809","6":"97","7":"53160","8":"2.6","9":"24.93","10":"3.6","11":"321","12":"5.4","13":"1195","14":"49.91"},{"1":"7","2":"Stanford University","3":"4.6","4":"343","5":"343","6":"51","7":"56487","8":"4.3","9":"46.65","10":"3.0","11":"327","12":"3.9","13":"1415","14":"25.22"},{"1":"7","2":"University of California--Los Angeles","3":"4.3","4":"701","5":"701","6":"43","7":"26802","8":"7.1","9":"51.64","10":"3.4","11":"310","12":"28.1","13":"1058","14":"46.52"},{"1":"9","2":"Harvard University","3":"4.4","4":"868","5":"707","6":"42","7":"54032","8":"3.6","9":"14.06","10":"3.9","11":"320","12":"5.7","13":"2148","14":"36.73"},{"1":"9","2":"New York University (Steinhardt)","3":"4.1","4":"2163","5":"1747","6":"79","7":"48480","8":"4.6","9":"14.52","10":"3.7","11":"314","12":"4.7","13":"886","14":"71.43"},{"1":"11","2":"University of Washington","3":"4.0","4":"826","5":"640","6":"51","7":"32074","8":"3.5","9":"22.15","10":"3.8","11":"307","12":"16.3","13":"1326","14":"34.87"},{"1":"13","2":"Johns Hopkins University","3":"4.1","4":"1732","5":"407","6":"19","7":"41280","8":"2.5","9":"15.18","10":"3.4","11":"314","12":"35.8","13":"981","14":"28.31"},{"1":"14","2":"University of California, Berkeley","3":"4.4","4":"243","5":"243","6":"27","7":"26802","8":"3.3","9":"57.20","10":"3.6","11":"321","12":"4.9","13":"771","14":"14.60"},{"1":"14","2":"University of Oregon","3":"3.7","4":"472","5":"405","6":"47","7":"27990","8":"1.5","9":"32.63","10":"3.5","11":"308","12":"12.0","13":"490","14":"57.72"},{"1":"16","2":"University of Texas--Austin","3":"4.1","4":"785","5":"610","6":"106","7":"18032","8":"2.9","9":"58.34","10":"3.7","11":"304","12":"25.8","13":"1386","14":"38.04"},{"1":"16","2":"University of Virginia","3":"4.2","4":"1173","5":"445","6":"69","7":"14376","8":"2.3","9":"23.27","10":"3.5","11":"270","12":"13.4","13":"1051","14":"35.54"},{"1":"18","2":"Arizona State University (Fulton)","3":"3.7","4":"5035","5":"797","6":"79","7":"24498","8":"3.1","9":"7.15","10":"3.4","11":"314","12":"28.1","13":"1557","14":"73.06"},{"1":"18","2":"University of Florida","3":"3.9","4":"1302","5":"354","6":"64","7":"27336","8":"2.9","9":"39.78","10":"3.6","11":"305","12":"44.6","13":"1303","14":"52.02"},{"1":"18","2":"University of Kansas","3":"3.7","4":"878","5":"380","6":"68","7":"24624","8":"3.7","9":"40.21","10":"3.4","11":"307","12":"50.8","13":"887","14":"61.46"},{"1":"21","2":"Boston College (Lynch)","3":"4.0","4":"867","5":"492","6":"61","7":"38400","8":"3.8","9":"17.07","10":"3.5","11":"320","12":"7.3","13":"433","14":"25.53"},{"1":"21","2":"Florida State University","3":"3.6","4":"1494","5":"633","6":"78","7":"26664","8":"5.3","9":"32.73","10":"3.8","11":"308","12":"30.5","13":"868","14":"35.42"},{"1":"21","2":"Michigan State University","3":"4.2","4":"980","5":"485","6":"112","7":"40488","8":"2.7","9":"38.67","10":"3.6","11":"309","12":"29.1","13":"1879","14":"19.32"},{"1":"21","2":"University of North Carolina--Chapel Hill","3":"4.1","4":"293","5":"201","6":"40","7":"28884","8":"2.8","9":"46.76","10":"3.5","11":"313","12":"22.6","13":"1199","14":"19.93"},{"1":"25","2":"Ohio State University","3":"4.1","4":"1064","5":"546","6":"127","7":"38693","8":"3.7","9":"43.61","10":"3.3","11":"304","12":"59.6","13":"1588","14":"25.22"},{"1":"25","2":"University of Minnesota--Twin Cities","3":"3.8","4":"1725","5":"1059","6":"132","7":"57168","8":"5.9","9":"34.90","10":"3.6","11":"312","12":"24.6","13":"1358","14":"42.30"},{"1":"27","2":"University of Delaware","3":"3.5","4":"347","5":"205","6":"46","7":"23496","8":"2.7","9":"42.65","10":"3.3","11":"306","12":"41.2","13":"535","14":"15.00"},{"1":"27","2":"University of Maryland--College Park","3":"4.1","4":"750","5":"481","6":"77","7":"42456","8":"2.2","9":"56.80","10":"3.4","11":"320","12":"24.0","13":"973","14":"13.91"},{"1":"27","2":"University of Pittsburgh","3":"3.9","4":"627","5":"288","6":"51","7":"42324","8":"2.7","9":"41.31","10":"3.3","11":"298","12":"46.8","13":"931","14":"19.56"},{"1":"27","2":"Virginia Commonwealth University","3":"3.5","4":"687","5":"243","6":"41","7":"22896","8":"2.8","9":"42.50","10":"3.9","11":"304","12":"74.2","13":"697","14":"37.40"},{"1":"31","2":"North Carolina State University--Raleigh","3":"3.5","4":"1473","5":"400","6":"72","7":"28301","8":"3.8","9":"36.46","10":"3.5","11":"305","12":"49.3","13":"932","14":"29.47"},{"1":"31","2":"Texas A&M University--College Station","3":"3.7","4":"1409","5":"615","6":"112","7":"19584","8":"2.7","9":"38.04","10":"3.5","11":"302","12":"49.1","13":"1050","14":"28.67"},{"1":"31","2":"University of Connecticut (Neag)","3":"3.9","4":"661","5":"378","6":"60","7":"40086","8":"3.2","9":"27.84","10":"3.3","11":"309","12":"44.2","13":"801","14":"23.87"},{"1":"31","2":"University of Georgia","3":"3.9","4":"1829","5":"838","6":"136","7":"25186","8":"3.5","9":"41.33","10":"3.4","11":"304","12":"46.3","13":"1133","14":"12.31"},{"1":"31","2":"University of Missouri","3":"3.5","4":"1553","5":"445","6":"68","7":"28608","8":"3.6","9":"25.76","10":"3.8","11":"300","12":"30.2","13":"693","14":"28.25"},{"1":"36","2":"Indiana University--Bloomington","3":"3.9","4":"1202","5":"352","6":"84","7":"36360","8":"3.8","9":"55.91","10":"3.6","11":"306","12":"39.2","13":"1190","14":"18.49"},{"1":"36","2":"University of Iowa","3":"3.6","4":"681","5":"352","6":"64","7":"31777","8":"2.1","9":"44.35","10":"3.4","11":"307","12":"44.4","13":"756","14":"13.75"},{"1":"36","2":"Utah State University","3":"3.2","4":"1079","5":"311","6":"134","7":"23936","8":"1.5","9":"24.10","10":"3.7","11":"307","12":"19.6","13":"446","14":"40.86"},{"1":"40","2":"Georgia State University","3":"3.4","4":"1419","5":"721","6":"113","7":"30216","8":"2.7","9":"27.55","10":"3.8","11":"303","12":"27.9","13":"781","14":"20.10"},{"1":"40","2":"University of South Carolina","3":"3.2","4":"1271","5":"338","6":"68","7":"29760","8":"3.1","9":"49.33","10":"3.6","11":"297","12":"62.5","13":"713","14":"17.82"},{"1":"43","2":"Rutgers University--New Brunswick","3":"3.6","4":"978","5":"258","6":"39","7":"31800","8":"2.5","9":"25.77","10":"3.4","11":"303","12":"41.9","13":"907","14":"8.27"},{"1":"43","2":"University of Massachusetts--Boston","3":"3.2","4":"962","5":"321","6":"49","7":"36879","8":"4.0","9":"24.01","10":"3.1","11":"299","12":"19.9","13":"316","14":"23.48"},{"1":"46","2":"Boston University (Wheelock)","3":"3.6","4":"626","5":"262","6":"32","7":"22920","8":"2.0","9":"17.25","10":"3.5","11":"317","12":"9.3","13":"673","14":"9.20"},{"1":"46","2":"Temple University","3":"3.4","4":"920","5":"340","6":"38","7":"24858","8":"2.7","9":"20.87","10":"3.5","11":"305","12":"20.6","13":"569","14":"13.25"},{"1":"46","2":"University of Central Florida","3":"3.1","4":"1375","5":"489","6":"62","7":"25752","8":"4.1","9":"15.78","10":"3.8","11":"296","12":"50.0","13":"628","14":"20.17"},{"1":"49","2":"Pennsylvania State University--University Park","3":"3.9","4":"1273","5":"423","6":"119","7":"41602","8":"2.2","9":"29.85","10":"3.5","11":"306","12":"60.6","13":"1311","14":"7.91"},{"1":"49","2":"Purdue University--West Lafayette","3":"3.3","4":"823","5":"98","6":"64","7":"18802","8":"2.4","9":"26.85","10":"3.8","11":"304","12":"44.0","13":"1367","14":"17.78"},{"1":"49","2":"SMU (Simmons)","3":"2.8","4":"465","5":"122","6":"16","7":"42120","8":"1.3","9":"26.24","10":"3.8","11":"308","12":"56.4","13":"230","14":"8.12"},{"1":"49","2":"University of Mississippi","3":"3.1","4":"638","5":"186","6":"46","7":"35064","8":"2.1","9":"31.50","10":"3.7","11":"291","12":"42.2","13":"247","14":"16.65"},{"1":"54","2":"University of South Florida","3":"3.0","4":"994","5":"374","6":"94","7":"21048","8":"2.6","9":"46.88","10":"3.3","11":"295","12":"49.2","13":"847","14":"21.42"},{"1":"56","2":"University of Alabama","3":"3.2","4":"1123","5":"335","6":"91","7":"31460","8":"2.0","9":"41.05","10":"3.1","11":"304","12":"37.6","13":"730","14":"12.28"},{"1":"58","2":"George Washington University","3":"3.4","4":"1059","5":"274","6":"45","7":"42648","8":"3.2","9":"35.41","10":"3.3","11":"299","12":"41.1","13":"528","14":"5.07"},{"1":"58","2":"University at Buffalo--SUNY","3":"3.2","4":"876","5":"477","6":"61","7":"23100","8":"3.5","9":"26.83","10":"3.4","11":"301","12":"40.3","13":"490","14":"6.38"},{"1":"58","2":"University of Arizona","3":"3.6","4":"776","5":"302","6":"58","7":"32290","8":"2.3","9":"43.43","10":"3.8","11":"310","12":"56.9","13":"848","14":"8.74"},{"1":"58","2":"University of Nebraska--Lincoln","3":"3.5","4":"734","5":"233","6":"80","7":"23904","8":"2.1","9":"42.78","10":"3.6","11":"300","12":"52.5","13":"651","14":"13.70"},{"1":"58","2":"University of Vermont","3":"3.1","4":"247","5":"48","6":"45","7":"41280","8":"0.4","9":"17.41","10":"3.7","11":"315","12":"65.0","13":"243","14":"6.26"},{"1":"64","2":"Syracuse University","3":"3.5","4":"502","5":"244","6":"45","7":"43248","8":"3.2","9":"30.28","10":"3.4","11":"314","12":"34.9","13":"372","14":"5.31"},{"1":"64","2":"University of Arkansas--Fayetteville","3":"3.0","4":"1282","5":"407","6":"83","7":"28560","8":"2.5","9":"23.09","10":"3.8","11":"305","12":"53.2","13":"390","14":"18.29"},{"1":"64","2":"University of Hawaii--Manoa","3":"3.0","4":"888","5":"193","6":"91","7":"22432","8":"1.8","9":"32.32","10":"3.9","11":"296","12":"55.1","13":"459","14":"29.34"},{"1":"70","2":"Loyola Marymount University","3":"2.9","4":"854","5":"540","6":"30","7":"43752","8":"4.5","9":"8.55","10":"3.0","11":"289","12":"38.5","13":"102","14":"6.68"},{"1":"70","2":"Oklahoma State University","3":"3.1","4":"1040","5":"530","6":"135","7":"24720","8":"2.3","9":"43.08","10":"3.3","11":"304","12":"40.5","13":"309","14":"12.51"},{"1":"70","2":"University of Houston","3":"3.2","4":"882","5":"305","6":"49","7":"16092","8":"3.9","9":"40.70","10":"3.3","11":"298","12":"32.1","13":"559","14":"6.09"},{"1":"70","2":"University of Louisville","3":"3.1","4":"1268","5":"456","6":"61","7":"28340","8":"2.5","9":"16.09","10":"3.3","11":"303","12":"51.2","13":"406","14":"12.24"},{"1":"70","2":"William & Mary","3":"3.4","4":"817","5":"256","6":"37","7":"28305","8":"3.5","9":"24.48","10":"3.3","11":"298","12":"67.6","13":"186","14":"6.87"},{"1":"77","2":"Boise State University","3":"2.8","4":"553","5":"99","6":"44","7":"24573","8":"1.8","9":"23.15","10":"3.6","11":"312","12":"57.7","13":"372","14":"12.19"},{"1":"80","2":"Miami University","3":"3.0","4":"520","5":"178","6":"63","7":"32698","8":"1.4","9":"21.92","10":"3.2","11":"282","12":"60.0","13":"381","14":"6.49"},{"1":"80","2":"University of California--Riverside","3":"3.4","4":"214","5":"198","6":"29","7":"20136","8":"3.2","9":"34.11","10":"3.6","11":"311","12":"11.1","13":"312","14":"2.89"},{"1":"83","2":"East Carolina University","3":"2.7","4":"1019","5":"167","6":"53","7":"17898","8":"3.0","9":"12.17","10":"3.2","11":"289","12":"72.7","13":"431","14":"3.70"},{"1":"83","2":"George Mason University","3":"3.1","4":"1667","5":"333","6":"68","7":"18216","8":"4.5","9":"15.48","10":"3.4","11":"300","12":"73.0","13":"758","14":"10.04"},{"1":"83","2":"Illinois State University","3":"2.9","4":"892","5":"186","6":"119","7":"20664","8":"1.8","9":"33.52","10":"3.8","11":"297","12":"74.1","13":"370","14":"7.97"},{"1":"83","2":"Old Dominion University (Darden)","3":"2.8","4":"1523","5":"487","6":"87","7":"33456","8":"2.5","9":"18.98","10":"3.3","11":"297","12":"59.5","13":"489","14":"9.91"},{"1":"83","2":"University of Denver (Morgridge)","3":"3.1","4":"969","5":"334","6":"33","7":"51091","8":"6.1","9":"27.66","10":"3.3","11":"300","12":"38.2","13":"295","14":"5.16"},{"1":"83","2":"University of Massachusetts--Amherst","3":"3.5","4":"399","5":"266","6":"52","7":"31488","8":"3.4","9":"62.16","10":"3.6","11":"305","12":"57.3","13":"512","14":"3.97"},{"1":"83","2":"University of Nevada--Reno","3":"3.0","4":"502","5":"138","6":"45","7":"21592","8":"1.7","9":"20.92","10":"3.6","11":"298","12":"66.7","13":"288","14":"10.97"},{"1":"83","2":"University of North Carolina--Greensboro","3":"3.2","4":"965","5":"302","6":"47","7":"18938","8":"3.2","9":"23.73","10":"3.4","11":"298","12":"74.7","13":"415","14":"5.27"},{"1":"83","2":"University of Utah","3":"3.2","4":"579","5":"334","6":"52","7":"25961","8":"4.2","9":"41.45","10":"3.5","11":"305","12":"41.8","13":"679","14":"7.55"},{"1":"83","2":"Virginia Tech","3":"3.4","4":"426","5":"228","6":"33","7":"29238","8":"4.4","9":"53.29","10":"3.3","11":"307","12":"73.6","13":"722","14":"3.14"},{"1":"99","2":"Auburn University","3":"3.2","4":"925","5":"385","6":"80","7":"41544","8":"3.3","9":"48.11","10":"3.3","11":"299","12":"38.7","13":"485","14":"4.63"},{"1":"99","2":"St. John's University","3":"2.7","4":"727","5":"204","6":"43","7":"33600","8":"3.6","9":"48.28","10":"3.2","11":"293","12":"51.3","13":"209","14":"3.18"},{"1":"99","2":"University of California--San Diego","3":"3.4","4":"52","5":"52","6":"20","7":"27690","8":"1.6","9":"100.00","10":"3.5","11":"302","12":"6.7","13":"585","14":"1.13"},{"1":"99","2":"University of Colorado--Denver","3":"3.2","4":"1363","5":"892","6":"35","7":"31992","8":"6.0","9":"25.46","10":"3.3","11":"300","12":"27.4","13":"297","14":"3.52"},{"1":"99","2":"University of Miami","3":"3.3","4":"532","5":"449","6":"29","7":"55440","8":"6.1","9":"50.19","10":"3.3","11":"299","12":"51.6","13":"368","14":"1.59"},{"1":"99","2":"University of North Texas","3":"3.0","4":"1141","5":"341","6":"67","7":"18264","8":"2.7","9":"24.54","10":"3.4","11":"298","12":"43.0","13":"755","14":"6.03"},{"1":"99","2":"University of Oklahoma (Rainbolt)","3":"3.0","4":"615","5":"442","6":"45","7":"24600","8":"4.3","9":"36.91","10":"3.1","11":"305","12":"92.1","13":"380","14":"12.11"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>After the data exploration, we can begin to think about fitting one or more models to the data. It is good science to consider the modeling strategy you will be using before you begin fitting models. There are many modeling strategies that educational scientists use in practice (e.g., forward-selection, backward-elimination) and there is no one “right” method. As you consider a modeling strategy, think about how this strategy helps provide a narrative structure for answering your research question; sometimes this leads to one strategy being more productive than others.</p>
+<p>Because we are mimicing the block approach described in <span class="citation" data-cites="Sweitzer:2009">Sweitzer &amp; Volkwein (<a href="#ref-Sweitzer:2009" role="doc-biblioref">2009</a>)</span>, we will start by fitting a model using the predictors in Block 1 to explain variation in peer ratings. Then we will fit a second model that includes all the predictors in Block 2 in addition to the predictors in Block 1. Finally, Model 3 will include all of the predictors in Blocks 1, 2, and 3.</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbf{Model~0:~} \quad \mathrm{Peer~Rating}_i = &amp;\beta_0 + \epsilon_i \\[2ex]
+\mathbf{Model~1:~} \quad \mathrm{Peer~Rating}_i = &amp;\beta_0 + \beta_1(\mathrm{Enroll}_i) + \beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \epsilon_i \\[2ex]
+\mathbf{Model~2:~} \quad \mathrm{Peer~Rating}_i = &amp;\beta_0 + \beta_1(\mathrm{Enroll}_i) + \beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \\
+&amp;\beta_5(\mathrm{SF~Ratio}_i) + \beta_6(\mathrm{Percent~Doctoral~Students}_i) + \beta_7(\mathrm{UG~GPA}_i) +\\
+&amp;\beta_8(\mathrm{GRE}_i) + \beta_{9}(\mathrm{PhD~Acceptance~Rate}_i) +\epsilon_i \\[2ex]
+\mathbf{Model~3:~} \quad \mathrm{Peer~Rating}_i = &amp;\beta_0 + \beta_1(\mathrm{Enroll}_i) + \beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \\
+&amp;\beta_5(\mathrm{SF~Ratio}_i) + \beta_6(\mathrm{Percent~Doctoral~Students}_i) + \beta_7(\mathrm{UG~GPA}_i) +\\
+&amp;\beta_8(\mathrm{GRE}_i) + \beta_9(\mathrm{PhD~Acceptance~Rate}_i) + \\
+&amp;\beta_{10}(\mathrm{Total~Publications}_i) + \beta_{11}(\mathrm{Total~Research}_i) + \epsilon_i
+\end{split}
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon_i \overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})\)</span> for each of the models.</p>
+<p>For each subsequent model fitted after Model 0, we will examine the change in <span class="math inline">\(R^2\)</span> along with whether that change was statistically different than 0. Then, for the final model, Model 3, we will examine whether the magnitude of each predictor is statistically relevant.</p>
+<p><br></p>
+</section>
+<section id="classical-framework-of-evidence" class="level1">
+<h1>Classical Framework of Evidence</h1>
+<p>When we have looked at statistical evidence to this point, it has been from a hypothesis testing point of view. The primary piece of evidence we use in this paradigm is the <em>p</em>-value. For example, if we fit Model 1 and examine the evidence for the effect of institutional characteristics of size and wealth on peer ratings, we find:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Model 1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">lm</span>(peer_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> enroll <span class="sc">+</span> ft_students <span class="sc">+</span> ft_fac <span class="sc">+</span> nonres_tuition, <span class="at">data =</span> usnwr_complete)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient-level output</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["term"],"name":[1],"type":["chr"],"align":["left"]},{"label":["estimate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["std.error"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"(Intercept)","2":"2.95035940475","3":"0.20043505866","4":"14.7197772","5":"3.212316e-24"},{"1":"enroll","2":"-0.00015395167","3":"0.00009896459","4":"-1.5556237","5":"1.238460e-01"},{"1":"ft_students","2":"0.00052418253","3":"0.00018972573","4":"2.7628437","5":"7.144259e-03"},{"1":"ft_fac","2":"0.00148441660","3":"0.00178779966","4":"0.8303037","5":"4.089013e-01"},{"1":"nonres_tuition","2":"0.00001290727","3":"0.00000483485","4":"2.6696321","5":"9.235823e-03"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>The <em>p</em>-values associated with the effect of full-time students (<span class="math inline">\(p=.007\)</span>), and non-resident tuition (<span class="math inline">\(p=.009\)</span>) suggest that these two effects are more than we would expect because of chance. While the effects of total graduate enrollment (<span class="math inline">\(p=.124\)</span>) and full-time faculty (<span class="math inline">\(p=.409\)</span>) may be completely due to chance.</p>
+<p>Interpreting one of these <em>p</em>-values, say that for the effect of full-time students, we would say that the probability of seeing the empirical evidence we observed, or evidence that is more extreme, if the null hypothesis that there is no effect of full-time students is true, is 0.007. This implies that our observed data are inconsistent with the hypothesized model that there is no effect of full-time students. In an applied setting, we might use such evidence to decide that the number of full-time students (institution size) does indeed predict variation in institutions’ peer ratings (prestige).</p>
+<p>Despite being the predominant evidential paradigm used in the education and social sciences, hypothesis testing has many criticisms <span class="citation" data-cites="Johansson:2011 Weakliem:2016">(e.g., <a href="#ref-Johansson:2011" role="doc-biblioref">Johansson, 2011</a>; <a href="#ref-Weakliem:2016" role="doc-biblioref">Weakliem, 2016</a>)</span>. Among some of the stronger criticisms,</p>
+<ul>
+<li>The <em>p</em>-value only measures evidence against the hypothesized model; not the evidence FOR a particular model.</li>
+<li>The model we specify in the null hypothesis is often substantively untenable (how often is the effect 0? Generally as applied scientists the reason we include predictors is because we believe there is an effect.)</li>
+<li>The <em>p</em>-value is based on data we haven’t observed (it is based on the observed data AND evidence that is more extreme).</li>
+</ul>
+<p>If we write the <em>p</em>-value as a probability statement, it would be:</p>
+<p><span class="math display">\[
+p\mbox{-}\mathrm{value} = P(\mathrm{Data~or~more~extreme~unobserved~data} \mid \mathrm{Model})
+\]</span></p>
+<p>While hypothesis tests have filled a need in the educational and social science to have some standard for evaluating statistical evidence, it is unclear whether this is the approach we should be using. As statistician David Lindley so aptly states, “[significance tests] are widely used, yet are logically indefensible” <span class="citation" data-cites="Johnstone:1986">(comment in <a href="#ref-Johnstone:1986" role="doc-biblioref">Johnstone, 1986, p. 502</a>)</span>. Psychologist Jacob Cohen was more pointed, saying “[hypothesis testing] has not only failed to support the advance of psychology as a science but also has seriously impeded it” <span class="citation" data-cites="Cohen:1994">(<a href="#ref-Cohen:1994" role="doc-biblioref">Cohen, 1994, p. 997</a>)</span>.</p>
+<div class="fyi">
+<p>“The main purpose of a significance test is to inhibit the natural enthusiasm of the investigator” (<span class="citation" data-cites="Mosteller:1954">Mosteller &amp; Bush (<a href="#ref-Mosteller:1954" role="doc-biblioref">1954</a>)</span>, p.&nbsp;331–332).</p>
+</div>
+<p><br></p>
+</section>
+<section id="likelihood-paradigm-to-statistical-evidence" class="level1">
+<h1>Likelihood Paradigm to Statistical Evidence</h1>
+<p>In applied science, we ideally would like to collect some evidence (data) and use that to say something about how likely a particular model (or hypothesis) is based on that evidence. Symbolically we want to know,</p>
+<p><span class="math display">\[
+P(\mathrm{Model} \mid \mathrm{Observed~data})
+\]</span></p>
+<p>This probability is known as the <em>likelihood</em> and is very different than the probability given by the <em>p</em>-value. In the likelihood paradigm, the likelihood is the key piece of statistical evidence used to evaluate models. For example if you were comparing Model A and Model B, you could compute the likelihood for each model and compare them. Whichever model has the higher likelihood has more empirical support. This is, in a nutshell what the <em>Law of Likelihood</em> states. What is even more attractive is that another axiom, the <em>Likelihood Principle</em>, tells us that if the goal is to compare the empirical support of competing models, all of the information in the data that can be used to do so, is contained in the ratio of the model likelihoods. That is, we can’t learn more about which model is more supported unless we collect additional data.</p>
+<p><br></p>
+</section>
+<section id="joint-probability-density-a-roadstop-to-computing-likelihood" class="level1">
+<h1>Joint Probability Density: A Roadstop to Computing Likelihood</h1>
+<p>In the preparation reading, you learned about the probability density of an observation <span class="math inline">\(x_i\)</span>. Now we will extend this idea to the probability density of a set of observations, say <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, AND <span class="math inline">\(x_k\)</span>. The probability density of a set of observations is referred to as the <em>joint probability density</em>, or simply <em>joint density</em>.</p>
+<p>If we can make an assumption about INDEPENDENCE, then the joint probability density would be the product of the individual densities:</p>
+<p><span class="math display">\[
+p(x_1, x_2, x_3, \ldots, x_k) = p(x_1) \times p(x_2) \times p(x_3) \times \ldots \times p(x_k)
+\]</span></p>
+<p>Say we had three independent observations, <span class="math inline">\(x =\{60, 65, 67\}\)</span>, from a <span class="math inline">\(\sim\mathcal{N}(50,10)\)</span> distribution. The joint density would be:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute joint density</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="at">x =</span> <span class="dv">60</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="fu">dnorm</span>(<span class="at">x =</span> <span class="dv">65</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="fu">dnorm</span>(<span class="at">x =</span> <span class="dv">67</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.000002947448</code></pre>
+</div>
+</div>
+<p>We could also shortcut this computation,</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute joint density</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(<span class="fu">dnorm</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">67</span>), <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.000002947448</code></pre>
+</div>
+</div>
+<p>This value is the joint probability density. The joint probability density indicates the probability of observing the data (<span class="math inline">\(x =\{60, 65, 67\}\)</span>) GIVEN (1) they are drawn from a normal distribution and (2) the normal distribution has a mean of 50 and a standard deviation of 10. In other words, the joint probability density is the probability of the data given a model and parameters of the model.</p>
+<p>Symbolically,</p>
+<p><span class="math display">\[
+\mathrm{Joint~Density} = P(\mathrm{Data} \mid \mathrm{Model~and~Parameters})
+\]</span></p>
+<p><br></p>
+</section>
+<section id="computing-likelihood" class="level1">
+<h1>Computing Likelihood</h1>
+<p>Likelihood is the probability of a particular set of parameters GIVEN (1) the data, and (2) the data are generated from a particular model (e.g., normal distribution). Symbolically,</p>
+<p><span class="math display">\[
+\mathrm{Likelihood} = P(\mathrm{Parameters} \mid \mathrm{Model~and~Data})
+\]</span></p>
+<p>Symbolically we denote likelihood with a scripted letter “L” (<span class="math inline">\(\mathcal{L}\)</span>). For example, we might ask the question, given the observed data <span class="math inline">\(x = \{30, 20, 24, 27\}\)</span> come from a normal distribution, what is the likelihood (probability) that the mean is 20 and the standard deviation is 4? We might denote this as,</p>
+<p><span class="math display">\[
+\mathcal{L}(\mu = 20, \sigma = 4 \mid x)
+\]</span></p>
+<div class="fyi">
+<p>Although we need to specify the model this is typically not included in the symbolic notation; instead it is often a part of the assumptions.</p>
+</div>
+<p><br></p>
+<section id="an-example-of-computing-and-evaluating-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="an-example-of-computing-and-evaluating-likelihood">An Example of Computing and Evaluating Likelihood</h2>
+<p>The likelihood allows us to answer probability questions about a set of parameters. For example, what is the likelihood (probability) that the data (<span class="math inline">\(x = \{30, 20, 24, 27\}\)</span>) were generated from a normal distribution with a mean of 20 and standard deviation of 4? To compute the likelihood we compute the joint probability density of the data under that particular set of parameters.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(<span class="fu">dnorm</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">24</span>, <span class="dv">27</span>), <span class="at">mean =</span> <span class="dv">20</span>, <span class="at">sd =</span> <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0000005702554</code></pre>
+</div>
+</div>
+<p>What is the likelihood (probability) that the same set of data (<span class="math inline">\(x = \{30, 20, 24, 27\}\)</span>) were generated from a normal distribution with a mean of 25 and standard deviation of 4?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(<span class="fu">dnorm</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">24</span>, <span class="dv">27</span>), <span class="at">mean =</span> <span class="dv">25</span>, <span class="at">sd =</span> <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.00001774012</code></pre>
+</div>
+</div>
+<p>Given the data and the model, there is more empirical support that the parameters are <span class="math inline">\(\mathcal{N}(25,4^2)\)</span> rather than <span class="math inline">\(\mathcal{N}(20, 4^2)\)</span>, because the likelihood is higher for the former set of parameters. We can compute a ratio of the two likelihoods to quantify the amount of additional support for the <span class="math inline">\(\mathcal{N}(25,4^2)\)</span>.</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{Likelihood~Ratio} &amp;= \frac{0.00001774012}{0.0000005702554} \\[1ex]
+&amp;= 31.11
+\end{split}
+\]</span></p>
+<p>The empirical support for the <span class="math inline">\(\mathcal{N}(25,4^2)\)</span> parameterization is 31 times that of the <span class="math inline">\(\mathcal{N}(20, 4^2)\)</span> parameterization! In a practical setting, this would lead us to adopt a mean of 25 over a mean of 20.</p>
+<p><br></p>
+</section>
+</section>
+<section id="some-notes-and-caveats" class="level1">
+<h1>Some Notes and Caveats</h1>
+<p>It is important to note that although we use the joint probability under a set of parameters to compute the likelihood of those parameters, theoretically joint density and likelihood are very different. Likelihood takes the data and model as given and computes the probability of a set of parameters. Whereas joint density assumes that the model and parameters are given and gives us the probability of the data.</p>
+<div class="fyi">
+<p>Likelihood refers to the probability of the parameters and joint probability density refers to the probability of the data.</p>
+</div>
+<p>Once we collect the data, the probability of observing that set of data is 1; it is no longer unknown. The likelihood method treats our data as known and offers us a way of making probabilistic statements about the unknown parameters. This is more aligned with our scientific process than making some assumption about the parameter (e.g., <span class="math inline">\(\beta_1=0\)</span>) and then trying to deterine the probability of the data under that assumption. Moreover, likelihood does not use unobserved data (e.g., data more extreme than what we observed) in the computation.</p>
+<p>It is also important to acknowledge what likelihood and the likelihood ratio don’t tell us. First, they only tell us the probability of a set of parameters for the data we have. Future collections of data might change the amount of support or which set of parameters is supported. Since changing the data, changes the likelihood, this also means we cannot make cross study comparisons of the likelihood (unless the studies used the exact same data). Secondly, the model assumed is important. If a different model is assumed, the likelihood will be different, and again could change the amount of support or which set of parameters is supported.</p>
+<p>The likelihood ratio (LR), while useful for comparing the relative support between parameterizations, does not tell you that a particular parameterization is correct. For example, the LR of 31.11 tells us that there is more empirical support for the <span class="math inline">\(\mathcal{N}(25,4^2)\)</span> parameterization than <span class="math inline">\(\mathcal{N}(20, 4^2)\)</span>. But, there might be even more support for a parameterization we haven’t considered.</p>
+<p>These shortcomings are not unique to the likelihood paradigm The also exist in the classical hypothesis testing paradigm for statistical evidence. All in all, the added advantages to the likelihood paradigm make it more useful to applied work than hypothesis testing.</p>
+<p><br></p>
+</section>
+<section id="likelihood-in-regression-back-to-our-example" class="level1">
+<h1>Likelihood in Regression: Back to Our Example</h1>
+<p>When fitting a regression model, we make certain assumptions about the relationship between a set of predictors and the outcome. For example, in Model 1 from our earlier example, we assume that the relationship between median SAT score and graduation rate can be described by the following model:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{Peer~Rating}_i = \beta_0 + \beta_1(\mathrm{Enroll}_i) + &amp;\beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \epsilon_i \\[1ex]
+&amp;\mathrm{where~}\epsilon_i \overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})
+\end{split}
+\]</span></p>
+<p>Here we use OLS to estimate the regression coefficients. Then we can use those, along with the observed data to obtain the residuals and the estimate for the residual standard error. The residuals are the GIVEN data and the set up distributional assumptions for the model (e.g., normal, mean of 0, constant variance) allow us to compute the likelihood for the entire set of parameters in this model (<span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\sigma^2_{\epsilon}\)</span>).</p>
+<p>Below is a set of syntax to compute the likelihood, based on fitting <code>lm.1</code>. We use the <code>resid()</code> function to compute the residuals. (It is the same as grabbing the column called <code>.resid</code> from the <code>augment()</code> output.) We also use the estimated value of the residual standard error (<span class="math inline">\(\hat{\sigma}_{\epsilon} = 0.432\)</span>) from the <code>glance()</code> output.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute likelihood for lm.1</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(<span class="fu">dnorm</span>(<span class="at">x =</span> <span class="fu">resid</span>(lm<span class="fl">.1</span>), <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.432</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.680643e-20</code></pre>
+</div>
+</div>
+<p>This value by itself is somewhat meaningless. It is only worthwhile when we compare it to the likelihood from another model. For example, let’s compute the likelihood for Model 0 (the intercept-only model) and compare this to the likelihood for <code>lm.1</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Model 0</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.0</span> <span class="ot">=</span> <span class="fu">lm</span>(peer_rating <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> usnwr_complete)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get RSE for use in likelihood</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(lm<span class="fl">.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["r.squared"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["adj.r.squared"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["sigma"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["df"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["logLik"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["BIC"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["deviance"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["df.residual"],"name":[11],"type":["int"],"align":["right"]},{"label":["nobs"],"name":[12],"type":["int"],"align":["right"]}],"data":[{"1":"0","2":"0","3":"0.4906292","4":"NA","5":"NA","6":"NA","7":"-58.16733","8":"120.3347","9":"125.1723","10":"19.7388","11":"82","12":"83"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute likelihood for lm.2</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(<span class="fu">dnorm</span>(<span class="at">x =</span> <span class="fu">resid</span>(lm<span class="fl">.0</span>), <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">0.491</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.452323e-26</code></pre>
+</div>
+</div>
+<p>The likelihood value for <code>lm.0</code> is higher than the likelihood value for <code>lm.1</code>. Computing the likelihood ratio:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.680643e-20</span> <span class="sc">/</span> <span class="fl">5.452323e-26</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 308243.5</code></pre>
+</div>
+</div>
+<p>This suggests that given the data, Model 1 is 308243.5 times more likely than Model 0. In practice, we would adopt Model 1 over Model 0 because it is more likely given the evidence we have.</p>
+<section id="mathematics-of-likelihood" class="level3 mathnote">
+<h3 class="anchored" data-anchor-id="mathematics-of-likelihood">Mathematics of Likelihood</h3>
+<p>Being able to express the likelihood mathematically is important for quantitative methodologists as it allows us to manipulate and study the likelihood function and its properties. It also gives us insight into how the individual components of the likelihood affect its value.</p>
+<p>Remember, we can express the likelihood of the regression residuals mathematically as:</p>
+<p><span class="math display">\[
+\mathcal{L}(\beta_0, \beta_1 | \mathrm{data}) = p(\epsilon_1) \times p(\epsilon_2) \times \ldots \times p(\epsilon_n)
+\]</span></p>
+<p>where the probability density of each residual (assuming normality) is:</p>
+<p><span class="math display">\[
+p(\epsilon_i) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(\epsilon_i-\mu)^2}{2\sigma^2}\right]
+\]</span></p>
+<p>In addition to normality, which gives us the equation to compute the PDF for each residual, the regression assumptions also specify that each conditional error distribution has a mean of 0 and some variance (that is the same for all conditional error distributions). We can call it <span class="math inline">\(\sigma^2_{\epsilon}\)</span>. Substituting these values into the density function, we get,</p>
+<p><span class="math display">\[
+\begin{split}
+p(\epsilon_i) &amp;= \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}}\exp\left[-\frac{(\epsilon_i-0)^2}{2\sigma^2_{\epsilon}}\right] \\[1em]
+&amp;= \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}}\exp\left[-\frac{(\epsilon_i)^2}{2\sigma^2_{\epsilon}}\right]
+\end{split}
+\]</span></p>
+<p>Now we use this expression for each of the <span class="math inline">\(p(\epsilon_i)\)</span> values in the likelihood computation.</p>
+<p><span class="math display">\[
+\begin{split}
+\mathcal{L}(\beta_0, \beta_1 | \mathrm{data}) &amp;= p(\epsilon_1) \times p(\epsilon_2) \times \ldots \times p(\epsilon_n) \\[1em]
+&amp;= \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}}\exp\left[-\frac{\epsilon_1
+^2}{2\sigma^2_{\epsilon}}\right] \times \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}}\exp\left[-\frac{\epsilon_2^2}{2\sigma^2_{\epsilon}}\right] \times \\
+&amp;~~~~~~\ldots \times \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}}\exp\left[-\frac{\epsilon_n^2}{2\sigma^2_{\epsilon}}\right]
+\end{split}
+\]</span></p>
+<p>We can simplify this:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathcal{L}(\beta_0, \beta_1 | \mathrm{data}) &amp;=\left[ \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}} \right]^n \times \exp\left[-\frac{\epsilon_1^2}{2\sigma^2_{\epsilon}}\right] \times \exp\left[-\frac{\epsilon_2^2}{2\sigma^2_{\epsilon}}\right] \times \ldots \\
+&amp;~~~~~~ \times \exp\left[-\frac{\epsilon_n^2}{2\sigma^2_{\epsilon}}\right]
+\end{split}
+\]</span> We can also simplify this by using the product notation:</p>
+<p><span class="math display">\[
+\mathcal{L}(\beta_0, \beta_1 | \mathrm{data}) =\left[ \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}} \right]^n \times \prod_{i=1}^n \exp\left[-\frac{\epsilon_i^2}{2\sigma^2_{\epsilon}}\right]
+\]</span> We can also write the residuals (<span class="math inline">\(\epsilon_i\)</span>) as a function of the regression parameters we are trying to find the likelihood for.</p>
+<p><span class="math display">\[
+\mathcal{L}(\beta_0, \beta_1 | \mathrm{data}) =\left[ \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}} \right]^n \times \prod_{i=1}^n \exp\left[-\frac{\big[Y_i - \beta_0 - \beta_1(X_i)\big]^2}{2\sigma^2_{\epsilon}}\right]
+\]</span></p>
+<p>where <span class="math inline">\(\sigma^2_{\epsilon} = \frac{\sum \epsilon_i^2}{n}\)</span>. Because the numerator of <span class="math inline">\(\sigma^2_{\epsilon}\)</span> can be written as <span class="math inline">\(\sum_i^n\big(Y_i - \beta_0 - \beta_1(X_i)\big)^2\)</span>, we see that the likelihood is a function of <span class="math inline">\(n\)</span>, and the regression coefficients, <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>. Moreover, <span class="math inline">\(n\)</span> is based on the data (which is given) and is thus is a constant. Mathematically, this implies that the only variables (values that can vary) in the likelihood function are the regression coefficients.</p>
+</section>
+<p><br></p>
+<section id="log-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="log-likelihood">Log-Likelihood</h2>
+<p>The likelihood values are quite small since we are multiplying several probability densities (values between 0 and 1) together. Since it is hard to work with these smaller values, in practice, we often compute and work with the natural logarithm of the likelihood. So in our example, Model 0 (<span class="math inline">\(\mathcal{L}_0 = 5.452323 \times 10^{-26}\)</span>) has a log-likelihood of:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Log-likelihood for Model 0</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fl">5.452323e-26</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -58.17117</code></pre>
+</div>
+</div>
+<p>Similarly, we can compute the log-likelihood for Model 1 as:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Log-likelihood for Model 1</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fl">1.680643e-20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -45.53253</code></pre>
+</div>
+</div>
+<p>We typically denote log-likelihood using a scripted lower-case “l” (<span class="math inline">\(\mathcal{l}\)</span>). Here,</p>
+<p><span class="math display">\[
+\begin{split}
+\mathcal{l}_0 &amp;= -58.17117 \\[1ex]
+\mathcal{l}_1 &amp;= -45.53253 \\[1ex]
+\end{split}
+\]</span></p>
+<p>Note that the logarithm of a decimal will be negative, so the log-likelihood will be a negative value. Less negative log-likelihood values correspond to higher likelihood values, which indicate more empirical support. Here Model 1 has a log-likelihood value (<span class="math inline">\(-58.2\)</span>) that is less negative than Model 0’s log-likelihood value (<span class="math inline">\(-45.5\)</span>), which indicates there is more empirical support for Model 1 than Model 0.</p>
+<p>We can also express the likelihood ratio using log-likelihoods. To do so we take the natural logarithm of the likelihood ratio. We also re-write it using the rules of logarithms from algebra.</p>
+<p><span class="math display">\[
+\begin{split}
+\ln(\mathrm{LR}) &amp;= \ln \bigg(\frac{\mathcal{L}_2}{\mathcal{L}_1}\bigg) \\[2ex]
+&amp;= \ln \big(\mathcal{L}_2\big) - \ln \big(\mathcal{L}_1\big)
+\end{split}
+\]</span></p>
+<p>That is, we can find an equivalent relative support metric to the LR based on the log-likelihoods by computing the difference between them. For our example:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Difference in log-likelihoods</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fl">1.680643e-20</span>) <span class="sc">-</span> <span class="fu">log</span>(<span class="fl">5.452323e-26</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12.63865</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalent to ln(LR)</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fl">1.680643e-20</span> <span class="sc">/</span> <span class="fl">5.452323e-26</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12.63865</code></pre>
+</div>
+</div>
+<p>Unfortunately, this difference doesn’t have the same interpretational value as the LR does, bcause this difference is in log-units. In order to get that interpretation back, we need to exponentiate (the reverse function of the logarithm) the difference:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exponentiate the difference in log-likelihoods</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fl">12.63865</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 308244.9</code></pre>
+</div>
+</div>
+<p>Again, Model 1 has 308244.9 times the empirical support than Model 0.</p>
+<section id="mathematics-of-log-likelihood" class="level3 mathnote">
+<h3 class="anchored" data-anchor-id="mathematics-of-log-likelihood">Mathematics of Log-Likelihood</h3>
+<p>We can express the log-likelihood of the regression residuals mathematically by taking the natural logarithm of the likelihood we computed earlier:</p>
+<p><span class="math display">\[
+\begin{split}
+\ln \Bigl(\mathcal{L}(\beta_0, \beta_1 | \mathrm{data})\Bigr) &amp;= \ln \Biggl( \left[ \frac{1}{\sigma_{\epsilon}\sqrt{2\pi}} \right]^n \times \exp\left[-\frac{\epsilon_1^2}{2\sigma^2_{\epsilon}}\right] \times  \\
+&amp;~~~~~~ \exp\left[-\frac{\epsilon_2^2}{2\sigma^2_{\epsilon}}\right] \times \ldots \times \exp\left[-\frac{\epsilon_n^2}{2\sigma^2_{\epsilon}}\right] \Biggr) \\
+\end{split}
+\]</span></p>
+<p>Using our rules for logarithms and re-arranging gives,</p>
+<p><span class="math display">\[
+\mathcal{l}(\beta_0, \beta_1 | \mathrm{data}) = -\frac{n}{2} \times \ln (2\pi\sigma^2_{\epsilon}) - \frac{1}{2\sigma^2_{\epsilon}} \times \sum \epsilon_i^2
+\]</span></p>
+<p>Examining this equation, we see that the log-likelihood is a function of <span class="math inline">\(n\)</span>, <span class="math inline">\(\sigma^2_{\epsilon}\)</span> and the sum of squared residuals (SSR)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. We can of course, re-express this using the the regression parameters:</p>
+<p><span class="math display">\[
+\mathcal{l}(\beta_0, \beta_1 | \mathrm{data}) = -\frac{n}{2} \times \ln (2\pi\sigma^2_{\epsilon}) - \frac{1}{2\sigma^2_{\epsilon}} \times \sum \big[Y_i - \beta_0 - \beta_1(X_i)\big]^2
+\]</span></p>
+<p>And, again, since <span class="math inline">\(\sigma^2_{\epsilon}\)</span> is a function of the regression coefficients and <span class="math inline">\(n\)</span>, this means that the only variables in the log-likelihood function are the coefficients.</p>
+</section>
+<p><br></p>
+</section>
+<section id="shortcut-the-loglik-function" class="level2">
+<h2 class="anchored" data-anchor-id="shortcut-the-loglik-function">Shortcut: The <code>logLik()</code> Function</h2>
+<p>The <code>logLik()</code> function can be used to obtain the log-likelihood directly from a fitted model object. For example, to find the log-likelihood for Model 1, we can use:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute log-likelihood for Model 1</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">logLik</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'log Lik.' -45.44917 (df=6)</code></pre>
+</div>
+</div>
+<p>The <code>df</code> output tells us how many <strong>total parameters</strong> are being estimated in the model. In our case this is six (<span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_{\mathrm{Enrollment}}\)</span>, <span class="math inline">\(\beta_{\mathrm{FT~Students}}\)</span>, <span class="math inline">\(\beta_{\mathrm{FT~Faculty}}\)</span>, <span class="math inline">\(\beta_{\mathrm{Tuition}}\)</span>, and <span class="math inline">\(\sigma^2_{\epsilon}\)</span>). What is more important to us currently, is the log-likelihood value; <span class="math inline">\(\mathcal{l}_1=-45.44917\)</span>.</p>
+<p>This value is slightly different than the log-likelihood we just computed of <span class="math inline">\(-45.53253\)</span>. This is not because of rounding in this case. It has to do with how the model is being estimated; the <code>logLik()</code> function assumes the parameters are being estimated using maximum likelihood (ML) rather than ordinary least squares (OLS). You can learn more about ML estimation in the optional set of notes, but for now, we will just use <code>logLik()</code> to compute the log-likelihood.</p>
+<p>Here we compute the log-likelihood for Model 0 using the <code>logLik()</code> function. We also use the output to compute the likelihood, and the likelihood ratio between Model 1 and Model 0</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute log-likelihood for Model 0</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">logLik</span>(lm<span class="fl">.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'log Lik.' -58.16733 (df=2)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute likelihood for Model 2</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">logLik</span>(lm<span class="fl">.0</span>)[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.473293e-26</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute difference in log-likelihoods</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">logLik</span>(lm<span class="fl">.1</span>)[<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">logLik</span>(lm<span class="fl">.0</span>)[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12.71816</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute LR</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>( <span class="fu">logLik</span>(lm<span class="fl">.1</span>)[<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">logLik</span>(lm<span class="fl">.0</span>)[<span class="dv">1</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 333754.4</code></pre>
+</div>
+</div>
+<p>Because the output from <code>logLik()</code> includes extraneous information (e.g., <code>df</code>), we use indexing (square brackets) to extract only the part of the output we want. In this case, the <code>[1]</code> extracts the log-likelihood value from the <code>logLik()</code> output (ignoring the <code>df</code> part).</p>
+<p>Also of note is that the <code>df</code> for Model 0 is two, indicating that this model is estimating two parameters (<span class="math inline">\(\beta_0\)</span>, and <span class="math inline">\(\sigma^2_{\epsilon}\)</span>). The value of <code>df</code> in the <code>logLik()</code> output is a quantification of the model’s complexity. Here Model 1 2 (<code>df</code> = 6) is more complex than Model 0 (<code>df</code> = 2).</p>
+<p>As we consider using the likelihood ratio (LR) or the difference in log-likelihoods for model selection, we also need to consider the model complexity. In our example, the likelihood ratio of 333754.4 (computed using <code>logLik()</code>) indicates that Model 1 has approximately 333,754 times the empirical support than Model 0. But, Model 1 is more complex than Model 0, so we would expect that it would be more empirically supported.</p>
+<p>In this case, with a LR of 333,754, it seems like the data certainly support adopting Model 1 over Model 0, despite the added complexity of Model 1. But what if the LR was 10? Would that be enough additional support to warrant adopting Model 1 over Model 0? What about a LR of 5?</p>
+<p><br></p>
+</section>
+</section>
+<section id="likelihood-ratio-test-for-nested-models" class="level1">
+<h1>Likelihood Ratio Test for Nested Models</h1>
+<p>One question that arises is, if the likelihood for a more complex model is higher than the likelihood for a simpler model, how large does the likelihood ratio have to be before we adopt the more complex model? In general, there is no perfect answer for this.</p>
+<p>If the models being compared are nested, then we can carry out a hypothesis test<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> to see if the LR is more than we would expect because of chance. Models are nested when the parameters in the simpler model are a subset of the parameters in the more complex model. For example, in our example, the parameters in Model 0 are a subset of the parameters in Model 1:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbf{Model~1~Parameters:}&amp;\quad\{\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Model~0~Parameters:}&amp;\quad\{\beta_0,~\sigma^2_{\epsilon}\} \\[1ex]
+\end{split}
+\]</span></p>
+<p>The parameters for Model 0 all appear in the list of parameters for Model 1. Because of this we can say that Model 0 is <em>nested</em> in Model 1.</p>
+<p><br></p>
+<section id="hypothesis-test-of-the-lrt" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-test-of-the-lrt">Hypothesis Test of the LRT</h2>
+<p>When we have nested models we can carry out a hypothesis test to decide between the following competing hypotheses:</p>
+<p><span class="math display">\[
+\begin{split}
+H_0:&amp; ~\theta_0 = \{\beta_0,~\sigma^2_{\epsilon}\}\\[1ex]
+H_A:&amp; \theta_1 = \{\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\}
+\end{split}
+\]</span></p>
+<p>where <span class="math inline">\(\theta_0\)</span> refers to the simpler model and <span class="math inline">\(\theta_1\)</span> refers to the more complex model. This translates to adopting either the simpler model (fail to reject <span class="math inline">\(H_0\)</span>) or the more complex model (reject <span class="math inline">\(H_0\)</span>). To carry out this test, we translate our likelihood ratio to a test statistic called <span class="math inline">\(\chi^2\)</span> (pronounced chi-squared):</p>
+<p><span class="math display">\[
+\chi^2 = -2 \ln \bigg(\frac{\mathcal{L}({\theta_0})}{\mathcal{L}({\theta_1})}\bigg)
+\]</span></p>
+<p>That is we compute <span class="math inline">\(-2\)</span> times the log of the likelihood ratio where the likelihood for the simpler model is in the numerator. (Note this is the inverse of how we have been computing the likelihood ratio!) Equivalently, we can compute this as:</p>
+<p><span class="math display">\[
+\chi^2 = -2 \bigg(\ln \bigg[\mathcal{L}({\theta_0})\bigg] - \ln \bigg[\mathcal{L}({\theta_1})\bigg]\bigg)
+\]</span></p>
+<p>For our example, we compute this using the following syntax:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute chi-squared</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> (<span class="fu">logLik</span>(lm<span class="fl">.0</span>)[<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">logLik</span>(lm<span class="fl">.1</span>)[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25.43632</code></pre>
+</div>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="deviance-a-measure-of-the-modeldata-error" class="level1">
+<h1>Deviance: A Measure of the Model–Data Error</h1>
+<p>If we re-write the formula for the <span class="math inline">\(\chi^2\)</span>-statistic by distributing the <span class="math inline">\(-2\)</span>, we get a better glimpse of what this statistic is measuring.</p>
+<p><span class="math display">\[
+\chi^2 = -2 \ln \bigg[\mathcal{L}({\theta_0})\bigg] - \bigg(-2\ln \bigg[\mathcal{L}({\theta_1})\bigg]\bigg)
+\]</span></p>
+<p>The quantity <span class="math inline">\(-2\ln\big[\mathcal{L}(\theta_k)\big]\)</span> is referred to as the <em>residual deviance</em><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> of Model K. It measures the amount of misfit between the model and the data. (As such, when evaluating deviance values, lower is better.) For linear models, with the classic assumptions (<span class="math inline">\(\overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})\)</span>), the deviance is a function of the residual sum of squares (RSS):</p>
+<p><span class="math display">\[
+\mathrm{Deviance} = n \ln\big(2\pi\sigma^2_{\epsilon}\big) + \frac{\mathrm{RSS}}{\sigma^2_{\epsilon}}
+\]</span></p>
+<p>where <span class="math inline">\(\mathrm{RSS}=\sum\epsilon_i^2\)</span> and <span class="math inline">\(\sigma^2_{\epsilon} = \frac{\mathrm{RSS}}{n}\)</span>. This formula illustrates that the residual deviance is a generalization of the residual sum of squares (RSS), and measures the model–data misfit.</p>
+<section id="mathematics-of-deviance" class="level2 mathnote">
+<h2 class="anchored" data-anchor-id="mathematics-of-deviance">Mathematics of Deviance</h2>
+<p>We can express the deviance mathematically by multiplying the log-likelihood by <span class="math inline">\(-2\)</span>.</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{Deviance} &amp;= -2 \times\mathcal{l}(\beta_0, \beta_1 | \mathrm{data}) \\[1ex]
+&amp;= -2 \bigg(-\frac{n}{2} \times \ln (2\pi\sigma^2_{\epsilon}) - \frac{1}{2\sigma^2_{\epsilon}} \times \sum \epsilon_i^2\bigg) \\[1ex]
+&amp;= -n\ln (2\pi\sigma^2_{\epsilon}) + \frac{1}{\sigma^2_{\epsilon}}\sum \epsilon_i^2 \\[1ex]
+&amp;= -n\ln (2\pi\sigma^2_{\epsilon}) + \frac{\mathrm{RSS}}{\sigma^2_{\epsilon}}
+\end{split}
+\]</span></p>
+<p>Rewriting this using the parameters from the likelihood:</p>
+<p><span class="math display">\[
+\mathrm{Deviance} = -n\ln (2\pi\sigma^2_{\epsilon}) + \frac{\sum_{i=1}^n \big[Y_i-\beta_0-\beta_1(X_i)\big]^2}{\sigma^2_{\epsilon}}
+\]</span></p>
+<p>Once again, we find that the only variables in the deviance function are the regression coefficients.</p>
+</section>
+<p>In practice, we will use the <code>logLik()</code> function to compute the deviance.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the deviance for Model 0</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">logLik</span>(lm<span class="fl">.0</span>)[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 116.3347</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the deviance for Model 1</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">logLik</span>(lm<span class="fl">.1</span>)[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 90.89834</code></pre>
+</div>
+</div>
+<p>Here the deviance for Model 1 (90.9) is less than the deviance for Model 0 (116.3). This indicates that the data have better fit to Model 1 than Model 0. How much better is the model–data fit for Model 1?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute difference in deviances</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fl">116.3347</span> <span class="sc">-</span> <span class="fl">90.89834</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25.43636</code></pre>
+</div>
+</div>
+<p>Model 1 improves the fit (reduces the misfit) by 25.44 over Model 0. This is the value of our <span class="math inline">\(\chi^2\)</span>-statistic. That is, the <span class="math inline">\(\chi^2\)</span>-statistic is difference in residual deviance values and measures the amount of improvement in the model–data misfit.</p>
+<p><br></p>
+<section id="modeling-the-variation-in-the-test-statistic" class="level2">
+<h2 class="anchored" data-anchor-id="modeling-the-variation-in-the-test-statistic">Modeling the Variation in the Test Statistic</h2>
+<p>If the null hypothesis is true, the difference in deviances can be modeled using a <span class="math inline">\(\chi^2\)</span>-distribution. The degrees-of-freedom for this <span class="math inline">\(\chi^2\)</span>-distribution is based on the difference in the number of parameters between the complex and simpler model. In our case this difference is four (<span class="math inline">\(6-2=4\)</span>):</p>
+<p><span class="math display">\[
+\chi^2(4) = 25.44
+\]</span></p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create dataset</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>fig_01 <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">30</span>, <span class="at">by =</span> <span class="fl">0.01</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y =</span> <span class="fu">dchisq</span>(<span class="at">x =</span> X, <span class="at">df =</span> <span class="dv">4</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out X&lt;=65</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>shaded <span class="ot">=</span> fig_01 <span class="sc">%&gt;%</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(X <span class="sc">&gt;=</span><span class="fl">25.44</span>)</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fig_01, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Chi-squared"</span>) <span class="sc">+</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Probability density"</span>) <span class="sc">+</span></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span></span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> shaded, <span class="at">ymin =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="fu">aes</span>(<span class="at">ymax =</span> Y), <span class="at">color =</span> <span class="st">"#bbbbbb"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-01" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04-likelihood-evidence_files/figure-html/fig-01-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Plot of the probability density function (PDF) for a <span class="math inline">\(\chi^2(4)\)</span> distribution. The grey shaded area represents the <em>p</em>-value based on <span class="math inline">\(\chi^2=25.44\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>To compute the <em>p</em>-value we use the <code>pchisq()</code> function.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute p-value for X^2 = 25.44</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">25.44</span>, <span class="at">df =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.00004103253</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternative method</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">25.44</span>, <span class="at">df =</span> <span class="dv">4</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.00004103253</code></pre>
+</div>
+</div>
+<p>Based on the <em>p</em>-value, we would reject the null hypothesis for the likelihood ratio test, which suggests that we should adopt the more complex model (Model 1). This means that the model that includes the set of predictors measuring the institutional characteristics of size and wealth is more empirically supported than a model that includes no predictors. Note that we are making a holistic evaluation about the model rather than about individual predictors. Based on the LR test we conducted we cannot say which predictors are statistically relevant, only that the set of predictors included in Model 1 is more supported than no predictors.</p>
+<p>To determine how much more variation Model 1 explains in peer ratingfs than Model 0 does, we look at the <span class="math inline">\(R^2\)</span> values from the <code>glance()</code> output.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model-level output Model 0</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(lm<span class="fl">.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["r.squared"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["adj.r.squared"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["sigma"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["df"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["logLik"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["BIC"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["deviance"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["df.residual"],"name":[11],"type":["int"],"align":["right"]},{"label":["nobs"],"name":[12],"type":["int"],"align":["right"]}],"data":[{"1":"0","2":"0","3":"0.4906292","4":"NA","5":"NA","6":"NA","7":"-58.16733","8":"120.3347","9":"125.1723","10":"19.7388","11":"82","12":"83"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model-level output Model 1</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["r.squared"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["adj.r.squared"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["sigma"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["df"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["logLik"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["BIC"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["deviance"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["df.residual"],"name":[11],"type":["int"],"align":["right"]},{"label":["nobs"],"name":[12],"type":["int"],"align":["right"]}],"data":[{"1":"0.2639533","2":"0.2262073","3":"0.4315844","4":"6.992884","5":"0.0000728055","6":"4","7":"-45.44917","8":"102.8983","9":"117.4114","10":"14.52868","11":"78","12":"83"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Model 1 explains 26.4% of the variation in peer ratings compared to Model 0, which explains 0% of the variation in peer ratings. This difference is statistically significant based on the <em>p</em>-value obtained from the likelihood ratio test (<span class="math inline">\(p=0.000041\)</span>).</p>
+<p><br></p>
+</section>
+</section>
+<section id="using-the-lrtest-function" class="level1">
+<h1>Using the <code>lrtest()</code> Function</h1>
+<p>We can also use the <code>lrtest()</code> function from the <code>{lmtest}</code> package to carry out a likelihood ratio test. We provide this function the name of the model object for the simpler model, followed by the name of the model object for the more complex model.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># LRT to compare Model 0 and Model 1</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lrtest</span>(lm<span class="fl">.0</span>, lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["#Df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["LogLik"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Df"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Chisq"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>Chisq)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"2","2":"-58.16733","3":"NA","4":"NA","5":"NA","_rn_":"1"},{"1":"6","2":"-45.44917","3":"4","4":"25.43632","5":"0.00004110256","_rn_":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="adding-the-predictors-in-block-2" class="level1">
+<h1>Adding the Predictors in Block 2</h1>
+<p>The next analysis compares Model 1 (institution characteristics) to a model (Model 2) that will also include the student- and faculty-resource attributes. Below we fit that model and examine the <span class="math inline">\(R^2\)</span> value.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Model 2</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.2</span> <span class="ot">=</span> <span class="fu">lm</span>(peer_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> enroll <span class="sc">+</span> ft_students <span class="sc">+</span> ft_fac <span class="sc">+</span> nonres_tuition <span class="sc">+</span> </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>            sf_ratio <span class="sc">+</span> pct_doc <span class="sc">+</span> ug_gpa <span class="sc">+</span> gre <span class="sc">+</span> doc_acc, <span class="at">data =</span> usnwr_complete)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient-level output</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(lm<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["r.squared"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["adj.r.squared"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["sigma"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["df"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["logLik"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["BIC"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["deviance"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["df.residual"],"name":[11],"type":["int"],"align":["right"]},{"label":["nobs"],"name":[12],"type":["int"],"align":["right"]}],"data":[{"1":"0.5724919","2":"0.5197855","3":"0.3399938","4":"10.86189","5":"1.603842e-10","6":"9","7":"-22.90137","8":"67.80275","9":"94.40999","10":"8.438494","11":"73","12":"83"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Based on this model, 57.2% of the variation in institutional prestige (peer ratings) is explained by differences in the set of institutional characteristics and student- and faculty-resources. This is an increase of 30.8% of the variation from Model 1. Is this increase in the amount of variation accounted for more than we expect because of chance? To evaluate this, because Model 1 is nested in Model 2, we again turn to the likelihood ratio test.</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbf{Model~2~Parameters:}\quad\{&amp;\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\beta_{\mathrm{SF~Ratio}},~\beta_{\mathrm{Pct.~PhD~Students}},\\
+&amp;~\beta_{\mathrm{UG~GPA}},~\beta_{\mathrm{GRE}},~\beta_{\mathrm{PhD~Acceptance~Rate}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Model~1~Parameters:}\quad\{&amp;\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Model~0~Parameters:}\quad\{&amp;\beta_0,~\sigma^2_{\epsilon}\} \\[1ex]
+\end{split}
+\]</span></p>
+<p>To carry out the LRT we compute the difference in model deviances and evaluate that difference in a <span class="math inline">\(\chi^2\)</span>-distribution with degrees-of-freedom equal to the difference in model complexity (based on the number of parameters being estimated).</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the difference in deviances between Model 1 and Model 2</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">logLik</span>(lm<span class="fl">.1</span>)[<span class="dv">1</span>] <span class="sc">-</span> (<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">logLik</span>(lm<span class="fl">.2</span>)[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 45.0956</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the difference in model complexity</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> <span class="sc">-</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute p-value for X^2(5) = 45.0956</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">45.0956</span>, <span class="at">df =</span> <span class="dv">5</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.00000001387375</code></pre>
+</div>
+</div>
+<p>The <em>p</em>-value is .0000000139, suggesting that the change in the variance accounted for is more than is expected by chance. This implies that the student- and faculty-resources explain additional variation in institutional prestige. Again, we could obtain this same result via using the <code>lrtest()</code> function.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># LRT to compare Model 1 and Model 2</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lrtest</span>(lm<span class="fl">.1</span>, lm<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["#Df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["LogLik"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Df"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Chisq"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>Chisq)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"6","2":"-45.44917","3":"NA","4":"NA","5":"NA","_rn_":"1"},{"1":"11","2":"-22.90137","3":"5","4":"45.0956","5":"0.00000001387377","_rn_":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p><br></p>
+</section>
+<section id="adding-the-predictors-in-block-3" class="level1">
+<h1>Adding the Predictors in Block 3</h1>
+<p>The next analysis compares Model 2 (institution characteristics and student/faculty-resources) to a model (Model 3) that will also includes the student- and faculty-outcome attributes. Below we fit that model and examine the <span class="math inline">\(R^2\)</span> value.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Model 3</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.3</span> <span class="ot">=</span> <span class="fu">lm</span>(peer_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> enroll <span class="sc">+</span> ft_students <span class="sc">+</span> ft_fac <span class="sc">+</span> nonres_tuition <span class="sc">+</span> </span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>            sf_ratio <span class="sc">+</span> pct_doc <span class="sc">+</span> ug_gpa <span class="sc">+</span> gre <span class="sc">+</span> doc_acc <span class="sc">+</span> </span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>            tot_pubs <span class="sc">+</span> tot_res, <span class="at">data =</span> usnwr_complete)</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient-level output</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(lm<span class="fl">.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["r.squared"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["adj.r.squared"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["sigma"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["df"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["logLik"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["BIC"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["deviance"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["df.residual"],"name":[11],"type":["int"],"align":["right"]},{"label":["nobs"],"name":[12],"type":["int"],"align":["right"]}],"data":[{"1":"0.818531","2":"0.7904161","3":"0.2246117","4":"29.11376","5":"5.128748e-22","6":"11","7":"12.65949","8":"0.6810194","9":"32.12595","10":"3.58198","11":"71","12":"83"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Based on this model, 81.9% of the variation in institutional prestige (peer ratings) is explained by differences in the set of institutional characteristics, student- and faculty-resources, and student- and faculty-outcomes . This is an increase of 24.7% of the variation from Model 2. Is this increase in the amount of variation accounted for more than we expect because of chance? To evaluate this, because Model 2 is nested in Model 3, we again turn to the likelihood ratio test.</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbf{Model~3~Parameters:}\quad\{&amp;\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\beta_{\mathrm{SF~Ratio}},~\beta_{\mathrm{Pct.~PhD~Students}},\\
+&amp;~\beta_{\mathrm{UG~GPA}},~\beta_{\mathrm{GRE}},~\beta_{\mathrm{PhD~Acceptance~Rate}},~\beta_{\mathrm{Total~Publications}},~\beta_{\mathrm{Total~Research}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Model~2~Parameters:}\quad\{&amp;\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\beta_{\mathrm{SF~Ratio}},~\beta_{\mathrm{Pct.~PhD~Students}},\\
+&amp;~\beta_{\mathrm{UG~GPA}},~\beta_{\mathrm{GRE}},~\beta_{\mathrm{PhD~Acceptance~Rate}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Model~1~Parameters:}\quad\{&amp;\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Model~0~Parameters:}\quad\{&amp;\beta_0,~\sigma^2_{\epsilon}\} \\[1ex]
+\end{split}
+\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># LRT to compare Model 1 and Model 2</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lrtest</span>(lm<span class="fl">.2</span>, lm<span class="fl">.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["#Df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["LogLik"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Df"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Chisq"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>Chisq)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"11","2":"-22.90137","3":"NA","4":"NA","5":"NA","_rn_":"1"},{"1":"13","2":"12.65949","3":"2","4":"71.12173","5":"3.598433e-16","_rn_":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>The <em>p</em>-value is ..00000000000000036, suggesting that the change in the variance accounted for is more than is expected by chance. This implies that the student- and faculty-outcomes explain additional variation in institutional prestige.</p>
+<p><br></p>
+</section>
+<section id="evaluating-assumptions" class="level1">
+<h1>Evaluating Assumptions</h1>
+<p>We will also evaluate the final model’s (Model 3) assumptions.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create residual plots</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">residual_plots</span>(lm<span class="fl">.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-residuals-linear" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-residuals-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04-likelihood-evidence_files/figure-html/fig-residuals-linear-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-residuals-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Two residual plots for the model regressing institutional prestige on a set of institutional characteristics, student- and faculty-resources, and student- and faculty-outcomes.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Based on the density plot, the assumption of normality looks reasonably met. The scatterplot suggests the assumption that the average residual is 0 is not met—the loess smoother suggests systematic differences in the average residual from 0. The homoscadasticity assumption does seem reasonable with the range of residuals generally being constant across the different fitted values. There is one institution that has an unusually high residual given its fitted value. (Its peer rating is three standard errors higher than what its value based on its predictor values would suggest it should be!) But, this is more of an outlier rather than a violation of the assumption.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify outlying institution</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(lm<span class="fl">.3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">school =</span> usnwr_complete<span class="sc">$</span>school</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(.std.resid <span class="sc">&gt;</span> <span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">width =</span> <span class="cn">Inf</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 19
+  peer_rating enroll ft_students ft_fac nonres_tuition sf_ratio pct_doc ug_gpa
+        &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt;          &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+1         4.2   1173         445     69          14376      2.3    23.3    3.5
+    gre doc_acc tot_pubs tot_res .fitted .resid  .hat .sigma .cooksd .std.resid
+  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+1   270    13.4     1051    35.5    3.55  0.651 0.401  0.203   0.785       3.75
+  school                
+  &lt;chr&gt;                 
+1 University of Virginia</code></pre>
+</div>
+</div>
+<p>It might be interesting to consider why the University of Virginia is being rated more highly than we would expect it to be based on it institutional characteristics, student- and faculty-resources, and student- and faculty-outcomes. Is it because it is our nation’s first public university? Or something else?</p>
+</section>
+<section id="presenting-the-results" class="level1">
+<h1>Presenting the Results</h1>
+<p>Below we present the results of the fitted models in a regression table. As is common, we report the coefficient estimates, standard errors for those coefficients, and error variances (RMSE). We also report the <span class="math inline">\(R^2\)</span> values and pertinent information for the LRTs: <span class="math inline">\(\chi^2\)</span>-values, number of parameters (<em>k</em>), and associated <em>p</em>-values.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the table</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">htmlreg</span>(</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">l =</span> <span class="fu">list</span>(lm<span class="fl">.0</span>, lm<span class="fl">.1</span>, lm<span class="fl">.2</span>, lm<span class="fl">.3</span>),</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">stars =</span> <span class="fu">numeric</span>(<span class="dv">0</span>),    <span class="co">#No p-value stars</span></span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">padding =</span> <span class="dv">20</span>,          <span class="co">#Add space around columns (you may need to adjust this via trial-and-error)</span></span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">include.adjrs =</span> <span class="cn">FALSE</span>, <span class="co">#Omit Adjusted R^2</span></span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">include.nobs =</span> <span class="cn">FALSE</span>,  <span class="co">#Omit sample size</span></span>
+<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">include.rmse =</span> <span class="cn">TRUE</span>,   <span class="co">#Include RMSE</span></span>
+<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">"Model 1"</span>, <span class="st">"Model 2"</span>, <span class="st">"Model 3"</span>, <span class="st">"Model 4"</span>),</span>
+<span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom.coef.names =</span> <span class="fu">c</span>(<span class="st">"Intercept"</span>, <span class="st">"Total Enrollment"</span>, <span class="st">"Full-time Students"</span>,</span>
+<span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Full-time Faculty"</span>, <span class="st">"Nonresident Tuition"</span>,</span>
+<span id="cb68-16"><a href="#cb68-16" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Student/Faculty Ratio"</span>, <span class="st">"Percent Ph.D. Students"</span>, <span class="st">"Undergraduate GPA"</span>, </span>
+<span id="cb68-17"><a href="#cb68-17" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"GRE Score"</span>, <span class="st">"Ph.D. Acceptance Rate"</span>, <span class="st">"Total Publications"</span>, <span class="st">"Total Research"</span>),</span>
+<span id="cb68-18"><a href="#cb68-18" aria-hidden="true" tabindex="-1"></a>  <span class="co">#custom.note = "Note. (L) = Linear effect. (Q) = Quadratic effect.",</span></span>
+<span id="cb68-19"><a href="#cb68-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">reorder.coef =</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">12</span>, <span class="dv">1</span>), <span class="co">#Put intercept at bottom of table</span></span>
+<span id="cb68-20"><a href="#cb68-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">custom.gof.rows =</span> <span class="fu">list</span>(</span>
+<span id="cb68-21"><a href="#cb68-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$k$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">11</span>, <span class="dv">13</span>), <span class="co"># Add parameters</span></span>
+<span id="cb68-22"><a href="#cb68-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$</span><span class="sc">\\</span><span class="at">chi^2$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="fl">25.43</span>, <span class="fl">45.10</span>, <span class="fl">71.12</span>),  <span class="co"># Add X^2 values</span></span>
+<span id="cb68-23"><a href="#cb68-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">$p$</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"&lt;.001"</span>, <span class="st">"&lt;.001"</span>, <span class="st">"&lt;.001"</span>)</span>
+<span id="cb68-24"><a href="#cb68-24" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb68-25"><a href="#cb68-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">reorder.gof =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb68-26"><a href="#cb68-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption.above =</span> <span class="cn">TRUE</span>, <span class="co">#Move caption above table</span></span>
+<span id="cb68-27"><a href="#cb68-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">inner.rules =</span> <span class="dv">1</span>, <span class="co">#Include line rule before model-level output</span></span>
+<span id="cb68-28"><a href="#cb68-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">outer.rules =</span> <span class="dv">1</span>,  <span class="co">#Include line rules around table</span></span>
+<span id="cb68-29"><a href="#cb68-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Table 2: Coefficients (and standard errors) for four models evaluating predictors of institutional prestige. The $</span><span class="sc">\\</span><span class="st">chi^2$-values, number of parameters (*k*), and associated *p*-values are also reported from the likelihood ratio tests."</span></span>
+<span id="cb68-30"><a href="#cb68-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;color: #000000;border-top: 1px solid #000000;">
+<caption>
+Table 2: Coefficients (and standard errors) for four models evaluating predictors of institutional prestige. The <span class="math inline">\(\chi^2\)</span>-values, number of parameters (<em>k</em>), and associated <em>p</em>-values are also reported from the likelihood ratio tests.
+</caption>
+<thead>
+<tr>
+<th style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</th>
+<th style="padding-left: 20px;padding-right: 20px;">
+Model 1
+</th>
+<th style="padding-left: 20px;padding-right: 20px;">
+Model 2
+</th>
+<th style="padding-left: 20px;padding-right: 20px;">
+Model 3
+</th>
+<th style="padding-left: 20px;padding-right: 20px;">
+Model 4
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 20px;padding-right: 20px;">
+Total Enrollment
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-0.000
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-0.000
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-0.000
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Full-time Students
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.001
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.000
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Full-time Faculty
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.001
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.002
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-0.001
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.002)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.002)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.001)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Nonresident Tuition
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.000
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.000
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Student/Faculty Ratio
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.030
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-0.013
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.040)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.027)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Percent Ph.D.&nbsp;Students
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.005
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.003
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.003)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.002)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Undergraduate GPA
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.054
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-0.175
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.192)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.130)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+GRE Score
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.017
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.008
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.005)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.004)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Ph.D.&nbsp;Acceptance Rate
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-0.010
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-0.005
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.002)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.002)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Total Publications
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.001
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.000)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Total Research
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.006
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.002)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+Intercept
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+3.540
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+2.950
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+-1.976
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+1.287
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.054)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(0.200)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(1.581)
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+(1.097)
+</td>
+</tr>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 20px;padding-right: 20px;">
+<span class="math inline">\(p\)</span>
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&lt;.001
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&lt;.001
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&lt;.001
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+R<sup>2</sup>
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.000
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.264
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.572
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.819
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+RMSE
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.491
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.432
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.340
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+0.225
+</td>
+</tr>
+<tr>
+<td style="padding-left: 20px;padding-right: 20px;">
+<span class="math inline">\(k\)</span>
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+2
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+6
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+11
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+13
+</td>
+</tr>
+<tr style="border-bottom: 1px solid #000000;">
+<td style="padding-left: 20px;padding-right: 20px;">
+<span class="math inline">\(\chi^2\)</span>
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+&nbsp;
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+25.430
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+45.100
+</td>
+<td style="padding-left: 20px;padding-right: 20px;">
+71.120
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</section>
+<section id="testing-individual-predictors-from-a-model" class="level1">
+<h1>Testing Individual Predictors From a Model</h1>
+<p>Although it doesn’t make sense with the goals of this particular analysis, we can also use the LRT to evaluate individual predictors. To illustrate this, let’s revisit Model 1, the model that only included the institutional characteristics:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{Peer~Rating}_i = \beta_0 + \beta_1(\mathrm{Enroll}_i) + &amp;\beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \epsilon_i \\[1ex]
+&amp;\mathrm{where~}\epsilon_i \overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})
+\end{split}
+\]</span></p>
+<p>The parameters in this model are:</p>
+<p><span class="math display">\[
+\{\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\}
+\]</span></p>
+<p>To evaluate the effect of total enrollment we would essentially want to test the hypothesis that:</p>
+<p><span class="math display">\[
+H_0: \beta_{\mathrm{Enrollment}} = 0
+\]</span></p>
+<p>To do this with a LRT, we need to compare two models:</p>
+<ul>
+<li>One model that includes all of the predictors;</li>
+<li>One model that includes everything <em>except</em> the effect of total enrollment.</li>
+</ul>
+<p>In terms of the parameters, we are testing these two models:</p>
+<p><span class="math display">\[
+\begin{split}
+\mathbf{Model~1:}\quad\{&amp;\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Model~1a:}\quad\{&amp;\beta_0,~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\}
+\end{split}
+\]</span></p>
+<p>The only difference between these two models is the inclusion of the effect of total enrollment in Model 1 relative to Model 1a. That means any additional variance explained by Model 1 over Model 1a is completely due to the effect of total enrollment. Moreover, if that increase in variation explained is more than we expect because of chance, that means the effect of total enrollment is statistically relevant, even after accounting for the other effects in the model. ANd, because Model 1a is nested in Model 1, we can evaluate this via a LRT.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit Model 1a</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.1</span>a <span class="ot">=</span> <span class="fu">lm</span>(peer_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> ft_students <span class="sc">+</span> ft_fac <span class="sc">+</span> nonres_tuition, <span class="at">data =</span> usnwr_complete)</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Carry out LRT</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lrtest</span>(lm<span class="fl">.1</span>a, lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["#Df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["LogLik"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Df"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Chisq"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>Chisq)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"5","2":"-46.71715","3":"NA","4":"NA","5":"NA","_rn_":"1"},{"1":"6","2":"-45.44917","3":"1","4":"2.535952","5":"0.1112797","_rn_":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Here the output of the LRT, <span class="math inline">\(\chi^2(1)=2.54\)</span>, <span class="math inline">\(p=.111\)</span>, suggest that after accounting for the other predictors in the model, the effect of total enrollment might be completely due to chance (it is not statistically relevant).</p>
+<p>We could test each of the other effects in a similar manner.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate effect of number of full-time students</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.1</span>b <span class="ot">=</span> <span class="fu">lm</span>(peer_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> enroll <span class="sc">+</span> ft_fac <span class="sc">+</span> nonres_tuition, <span class="at">data =</span> usnwr_complete)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lrtest</span>(lm<span class="fl">.1</span>b, lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["#Df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["LogLik"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Df"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Chisq"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>Chisq)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"5","2":"-49.32384","3":"NA","4":"NA","5":"NA","_rn_":"1"},{"1":"6","2":"-45.44917","3":"1","4":"7.749333","5":"0.005373238","_rn_":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate effect of number of full-time faculty</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.1</span>c <span class="ot">=</span> <span class="fu">lm</span>(peer_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> enroll <span class="sc">+</span> ft_students <span class="sc">+</span> nonres_tuition, <span class="at">data =</span> usnwr_complete)</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lrtest</span>(lm<span class="fl">.1</span>c, lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["#Df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["LogLik"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Df"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Chisq"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>Chisq)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"5","2":"-45.81436","3":"NA","4":"NA","5":"NA","_rn_":"1"},{"1":"6","2":"-45.44917","3":"1","4":"0.7303738","5":"0.3927621","_rn_":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate effect of tuition</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.1</span>d <span class="ot">=</span> <span class="fu">lm</span>(peer_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> enroll <span class="sc">+</span> ft_students <span class="sc">+</span> ft_fac , <span class="at">data =</span> usnwr_complete)</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lrtest</span>(lm<span class="fl">.1</span>d, lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["#Df"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["LogLik"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Df"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Chisq"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>Chisq)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"5","2":"-49.07771","3":"NA","4":"NA","5":"NA","_rn_":"1"},{"1":"6","2":"-45.44917","3":"1","4":"7.257078","5":"0.00706221","_rn_":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Based on these tests, the effects of number of full-time students (<span class="math inline">\(\chi^2(1)=7.75\)</span>, <span class="math inline">\(p=.005\)</span>), and wealth (nonresident tuition; <span class="math inline">\(\chi^2(1)=7.26\)</span>, <span class="math inline">\(p=.007\)</span>) are the only predictors in the model that are statistically relevant after accounting for the other predictors in the model.</p>
+</section>
+<section id="references" class="level1">
+
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Cohen:1994" class="csl-entry" role="listitem">
+Cohen, J. (1994). The earth is round (<span class="math inline">\(p &lt; .05\)</span>). <em>American Psychologist</em>, <em>49</em>(12), 997–1003.
+</div>
+<div id="ref-Johansson:2011" class="csl-entry" role="listitem">
+Johansson, T. (2011). Hail the impossible: P-values, evidence, and likelihood. <em>Scandinavian Journal of Psychology</em>, <em>52</em>, 113–125. doi:<a href="https://doi.org/10.1111/j.1467-9450.2010.00852.x">10.1111/j.1467-9450.2010.00852.x</a>
+</div>
+<div id="ref-Johnstone:1986" class="csl-entry" role="listitem">
+Johnstone, D. J. (1986). Tests of significance in theory and practice. <em>The Statistician</em>, <em>35</em>, 491–504.
+</div>
+<div id="ref-Mosteller:1954" class="csl-entry" role="listitem">
+Mosteller, F., &amp; Bush, R. B. (1954). Selected quantitative techniques. In G. Lindzey (Ed.), <em>Handbook of social psychology</em> (pp. 289–334). Cambridge, MA: Addison-Wesley.
+</div>
+<div id="ref-Sweitzer:2009" class="csl-entry" role="listitem">
+Sweitzer, K., &amp; Volkwein, J. F. (2009). Prestige among graduate and professional schools: Comparing the <span>U.S. News</span>’ graduate school reputation ratings between disciplines. <em>Research in Higher Education</em>, <em>50</em>(8), 812–836. doi:<a href="https://doi.org/10.1007/s11162-009-9140-0">10.1007/s11162-009-9140-0</a>
+</div>
+<div id="ref-Volkwein:2006" class="csl-entry" role="listitem">
+Volkwein, J. F., &amp; Sweitzer, K. V. (2006). Institutional prestige and reputation among research universities and liberal arts colleges. <em>Research in Higher Education</em>, <em>47</em>(2), 129–148.
+</div>
+<div id="ref-Weakliem:2016" class="csl-entry" role="listitem">
+Weakliem, D. L. (2016). <em>Hypothesis testing and model selection in the social sciences</em>. The Guilford Press.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Sometimes this is also referred to a the sum of squared errors (SSE).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This is in some sense mixing the paradigms of likelihood-based evidence and classical hypothesis test-based evidence. In a future set of notes we will learn about information criteria which eliminate the need to mix these two paradigms.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The use of the term “residual deviance” is not universal. Some textbooks omit the “residual” part and just refer to it as the “deviance”. Others use the term “model deviance”.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

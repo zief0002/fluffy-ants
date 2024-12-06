@@ -1,0 +1,253 @@
+---
+title: "Assignments and Grading"
+---
+
+
+Students will complete six homework assignments. The homework assignments and due dates are posted below. These assignments include problems that will help you learn the course material through reflection and practice. Submit each assignment as a PDF file via email to the TA.
+
+To foster cooperation and collaboration, you are permitted to form groups of no larger than three to work on the homework. Submit only one assignment per group, and list the names of each group member on the assignment. Each assignment will be scored and this score will be given to all individuals in the group. From past experience, student collaborations work most fluidly when everyone in the group has chosen the same grading option for the course (e.g., A/F, S/N, etc.).
+
+If you work alone on the assignments, you need to truly work alone. To protect against running afoul of the scholastic dishonesty policy, students working alone are not permitted to interact with any other student in regards to the assignment, including discussion, obtaining help, etc.
+
+<br />
+
+
+## Assignment Due Dates
+
+Below are the due dates for the assignments, as well as links to each assignment. *All assignments are due by 5:00 PM on the due date.* The due dates may change at the instructor's discretion. Any revised due dates will be announced in class and posted to the website. 
+
+<br />
+
+<table class="table">
+
+<thead>
+<tr>
+<th style="width:60%;">Assignment</th>
+<th style="width:20%;">Due Date</th>
+<th style="width:10%;text-align:center">QMD</th>
+<th style="width:10%;text-align:center">HTML</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Assignment \#1: *Introduction to Quarto*</td>
+<!-- <span style="margin-left:5px; color:#5a067d;font-size:12px;">*[The due date for this assignment is flexible]*</span> -->
+<td>Feb. 08 [Closed]</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fab fa-markdown" style="color: #f1f1f1; font-size: 17px;"></span>
+<!-- [<span class="fab fa-markdown" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/assignments/assignment-01-introduction-to-quarto.qmd) -->
+</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fas fa-link" style="color: #f1f1f1; font-size: 17px;"></span>
+<!-- [<span class="fas fa-link" style="font-size: 20px;"></span>](assignments/assignment-01-introduction-to-quarto.html) -->
+</td>
+</tr>
+
+
+<tr>
+<td>Assignment \#2: *Polynomial Effects*</td>
+<!-- <span style="margin-left:5px; color:#5a067d;font-size:12px;">*[The due date for Question 11 is flexible]*</span> -->
+<td>Feb. 22 [Closed]</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fab fa-markdown" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fas fa-link" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fab fa-markdown" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/assignments/assignment-02-polynomial-effects.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fas fa-link" style="font-size: 20px;"></span>](assignments/assignment-02-polynomial-effects.html) -->
+<!-- </td> -->
+</tr>
+
+
+<tr>
+<td>Assignment \#3: *Evidence and Model Selection*</td>
+<!-- <br /><span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Updated: 02-08-2022]*</span> -->
+<td>Mar. 12 [Closed]</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fab fa-markdown" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fas fa-link" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fab fa-markdown" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/assignments/assignment-03-evidence-and-model-selection.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fas fa-link" style="font-size: 20px;"></span>](assignments/assignment-03-evidence-and-model-selection.html) -->
+<!-- </td> -->
+</tr>
+
+
+<tr>
+<td>Assignment \#4: *Logarithmic Transformations*</td>
+<td>Mar. 26 [Closed]</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fab fa-markdown" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fas fa-link" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fab fa-markdown" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/assignments/assignment-04-logarithmic-transformations.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fas fa-link" style="font-size: 20px;"></span>](assignments/assignment-04-logarithmic-transformations.html) -->
+<!-- </td> -->
+</tr>
+
+
+<tr>
+<td>Assignment \#5: *Logistic Regression*</td>
+<!-- <br /><span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Updated: 03-24-2022]*</span> -->
+<td>Apr. 11 [Closed]</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fab fa-markdown" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fas fa-link" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fab fa-markdown" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/assignments/assignment-05-logistic-regression.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fas fa-link" style="font-size: 20px;"></span>](assignments/assignment-05-logistic-regression.html) -->
+<!-- </td> -->
+</tr>
+
+
+<tr>
+<td>Assignment \#6: *Linear Mixed-Effects Regression*</td>
+<td>Apr. 30 (due by 10:00am) [Closed]</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fab fa-markdown" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<td align="center" style="vertical-align:middle;">
+<span class="fas fa-link" style="color: #f1f1f1; font-size: 17px;"></span>
+</td>
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fab fa-markdown" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/assignments/assignment-06-lmer-analysis.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fas fa-link" style="font-size: 20px;"></span>](assignments/assignment-06-lmer-analysis.html) -->
+<!-- </td> -->
+</tr>
+
+
+<!-- <tr> -->
+<!-- <td>Assignment \#7: OPTIONAL --- *LMER: More Longitudinal Models*</td> -->
+<!-- <td>May 06</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fab fa-markdown" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/assignments/assignment-07-lmer-more-longitudinal-models.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!-- [<span class="fas fa-link" style="font-size: 20px;"></span>](assignments/assignment-07-longitudinal-analysis-ii.html) -->
+<!-- </td> -->
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+
+<br />
+
+
+:::stress
+### Stress Management
+
+Stress management is an important piece of the skill set needed for success in graduate school. Pet Away Worry & Stress (PAWS) is one of the many resources available to students. Find out more at [https://boynton.umn.edu/paws](https://boynton.umn.edu/paws). 
+
+<p style="font-size:70%;">You can follow Tilly the Therapy Chicken on Twitter (@TherapyChicken).</p>
+:::
+
+<br />
+
+
+## Evaluation of Student Performance
+
+Course grades will be based entirely on performance on the homework assignments. The points from the six homework assignment will be pooled to compute a percentage in the class, which will be converted to a final course grade using:
+
+Cutoff    | Grade | Definition for Graduate Credit |
+--------- | ----- | ------------------------------ |
+93%--100% | A     | For exceptional work, well above the minimum criteria | 
+90%--92%  | A--   | For outstanding work, well above the minimum criteria | 
+87%--89%  | B+    | For excellent work, significant above the minimum criteria | 
+83%--86%  | B     | For work above the minimum criteria |
+80%--82%  | B--   | |
+77%--79%  | C+    | |
+73%--76%  | C     | For work which meets the course requirements in every respect |
+70%--72%  | C--   | |
+63%--69%  | D     | Worthy of credit even though it fails to meet the course requirements |
+0%--62%   | F     | Failed to meet minimum course requirements |
+
+If you are taking the course S/N, the minimum criterion to receive an S is 80% (the equivalent of a B-- letter grade). The S grade does not carry grade points and is not part of the GPA calculation, but the credits will count toward the student's degree program if allowed by the college, campus, or program.
+
+*Any student who does not complete all homework assignments without making prior arrangements with the instructor will receive a grade of F/N.*
+
+<br />
+
+
+### Incomplete
+
+Instructors may assign the registration symbol "I" for Incomplete if, at the time the incomplete is requested: (1) the student has successfully completed a substantial portion of the work of the course; and (2) due to extraordinary circumstances (*as determined by the instructor*), the student was prevented from completing the work of the course on time. The assignment of an "I" requires a written agreement with the student specifying the time and manner in which the student will complete the course requirements. For more information see [Grading and Transcripts](https://policy.umn.edu/education/gradingtranscripts).
+
+<br />
+
+
+### Accessing Course Grades
+
+Shortly after the course, you may access your grades online at [myU](http://myu.umn.edu). Assignments will be handed back in class or during office hours. Uncollected assignments will be retained for six weeks after the course and then discarded.
+
+<br />
+
+
+
+
+## Assignment FAQs
+
+**How do I submit the assignment?**
+
+Create a PDF of your responses and submit the PDF via email to both the instructor and TA. Also cc any group members. Before you submit the assignment check that:
+
+- [ ] All group members' names are on the assignment.
+- [ ] All tables are numbered and have a caption.
+- [ ] All figures are numbered and have a caption.
+- [ ] All figures are re-sized to not take up more page space than is necessary to read them.
+- [ ] No R syntax is included unless the question specifically asked for the syntax to be included. If there is R syntax included, be sure that it is typeset in a monospaced font (e.g., Courier, Inconsolata).
+- [ ] Do not submit the script file you used unless the directions specifically ask you to submit it.
+
+
+
+**Do I need to turn in the script file?**
+
+No...unless the directions specifically ask you to submit the script file. The script file is for your reference. Future assignments will sometimes have questions that reference older assignments, so an organized and well-commented script file is a good idea. Moreover, the TA or myself may ask you to submit your syntax after you submit the assignment to help us interpret mistakes you made on the assignment so that we can provide more thorough feedback.
+
+
+**Will you provide answer keys to the assignments?**
+
+No. You will get back several comments on your assignments that address what you did wrong. The educational research is pretty clear that feedback is more helpful to student learning than providing correct answers. If you have further questions or need additional clarification, you are welcome to come to office hours or make an appointment with the instructor or TA.
+
+
+**Will you go over the answers in class?**
+
+No. I will address broad concepts if several students/groups made the same mistake, but otherwise, since each student/group makes unique mistakes going over the assignments more broadly is not a good use of our limited class time. The feedback should be helpful in understanding any mistakes you made, but if it isn't, you are welcome to come to office hours or make an appointment with the instructor or TA.
+
+
+**Will you look at our assignment prior to us submitting it?**
+
+The instructor or TA will not "pre-grade" your assignment. If there is a "Preparation" part of the assignment we can ensure that you did that part correctly, and we can also give you feedback about syntax, but we will not tell you if an answer is correct or not. We can also answer clarifying questions (e.g., 'I know Question 8 is asking about […], but I’m not sure what this question is looking for. Is there another way to restate this question?'). If you completed the assignment without any trouble, then be confident in your work and simply submit the assignment! 😄 If you are unsure about something specific, then ask about that specific thing rather than a general 'did I do this right'! 
+
+
+**Will we be able to re-do the assignment?**
+
+Generally no. Since you have the opportunity to work in groups on the assignments, you should be able offset any of the issues that come up that would necessitate a re-submission. The exception to this is that we may allow you to re-do Assignment 1. If we do this, we will send you an email requesting that you resubmit part, or all of Assignment 1. You will not receive much feedback on your assignment prior to your re-submission. This is because during the first assignment you are learning not only content, but also expectations around how to respond to the questions we ask.
+
+

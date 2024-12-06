@@ -1,0 +1,48 @@
+---
+title: "pew.csv"
+output: 
+  html:
+    css: '../assets/codebooks.css'
+    df_print: paged
+    code_folding: show
+theme: "lumen"
+highlight-style: "atom-one"
+bibliography: '../assets/epsy8252.bib'
+csl: '../assets/apa-single-spaced.csl'
+---
+
+
+```{r}
+#| include: false
+source("../assets/codebook-setup.R")
+```
+
+
+The data in [pew.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/pew.csv) come from a telephone survey conducted by [The Pew Research Center for The People &amp; The Press](https://www.pewresearch.org/politics/2007/04/15/public-knowledge-of-current-affairs-little-changed-by-news-and-information-revolutions/) in February 2007. The data represent a probability sample of 1,502 adults in the U.S. The attributes in the dataset include:
+
+- `id`: The respondent ID number
+- `knowledge`: Score on the *Political News Knowledge Test*; on a scale from 0--100, with higher values indicating more political knowledge.
+- `news`: Respondent's level of news exposure; on a scale from 0--100, with higher values indicating more news exposure
+- `age`: Respondent's age
+- `educ`: Respondent's education level; indicates highest grade completed from 8 to 18 (a post masters degree)
+- `male`: Dummy coded sex variable (0 = Not male, 1 = Male)
+- `ideology`: Respondent's political ideology; on a scale from 0--100, where 0 is as liberal as possible and 100 is as conservative as possible
+- `party`: Respondent's party affiliation
+- `state_blue`: Does the respondent live in a "blue state" (voted Democrat) or a "red state" (voted Republican) as classified by voting in the 2004 presidential election
+- `engagement`: Index of individual political engagement; on a scale from 0--100, with higher values indicating more political engagement
+
+
+### Preview
+
+```{r}
+# Import data
+pew = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/pew.csv")
+
+# View data
+pew
+```
+
+
+### References
+
+
