@@ -1,2 +1,2 @@
 # fluffy-ants
-EPSY 8252 Spring 2025
+S25 EPSY 8252
