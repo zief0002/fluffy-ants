@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-22">
+<meta name="dcterms.date" content="2024-12-06">
 
-<title>EPsy 8252 - Log-Transforming the Outcome</title>
+<title>Log-Transforming the Outcome – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -124,8 +124,11 @@ div.csl-indent {
 <link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable/js/pagedtable.js"></script>
 <script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -170,7 +173,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -209,7 +212,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -220,7 +223,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">On This Page</h2>
    
   <ul>
   <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
@@ -274,7 +277,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 22, 2024</p>
+      <p class="date">December 6, 2024</p>
     </div>
   </div>
   
@@ -356,7 +359,7 @@ window.Quarto = {
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Place figures side-by-side</span></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>(p1 <span class="sc">/</span> p2) <span class="sc">|</span>  p3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-exploration" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-exploration" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-exploration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-exploration-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
@@ -378,7 +381,7 @@ Figure&nbsp;1: Density plot of the distribution of carbon dioxide emissions (LEF
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain residual plots</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">residual_plots</span>(lm<span class="fl">.1</span>) <span class="sc">/</span> <span class="fu">residual_plots</span>(lm<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-resid-model-linear" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-resid-model-linear" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-resid-model-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-resid-model-linear-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -428,7 +431,7 @@ Figure&nbsp;2: Density plot of the standardized residuals (LEFT) and scatterplot
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">|</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-quadratic-log" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-quadratic-log" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quadratic-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-quadratic-log-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -540,7 +543,7 @@ x &amp;= 5
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">|</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-log-dist" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-log-dist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-log-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-log-dist-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -576,7 +579,7 @@ Figure&nbsp;4: Density plot of the raw CO2 values (LEFT) and the base-2 log-tran
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">6.4</span>, <span class="at">y =</span> <span class="fl">5.25</span>, <span class="at">label =</span> <span class="st">"Quatar"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">4.6</span>, <span class="at">y =</span> <span class="fl">4.97</span>, <span class="at">label =</span> <span class="st">"Trinidad and Tobago"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-scatterplot-log" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-scatterplot-log" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatterplot-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-scatterplot-log-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -597,7 +600,7 @@ Figure&nbsp;5: Scatterplot between wealth and log base-2 transformed CO2 emissio
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain residual plots</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">residual_plots</span>(lm.log2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-resid-log" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-resid-log" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-resid-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-resid-log-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -773,7 +776,7 @@ Y_i = 2^{\hat\beta_0} \times 2^{\hat\beta_1(X_{i})}
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth"</span>) <span class="sc">+</span></span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Predicted CO2 emissions (in metric tones per person)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-model-02-fitted" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-model-02-fitted" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-model-02-fitted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-model-02-fitted-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -872,7 +875,7 @@ Figure&nbsp;7: Plot of predicted CO2 emisssions as a function of wealth.
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth"</span>) <span class="sc">+</span></span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Predicted CO2 emissions (in metric tones per person)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-model-10-fitted" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-model-10-fitted" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-model-10-fitted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-model-10-fitted-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -995,7 +998,7 @@ Figure&nbsp;8: Plot of predicted CO2 emisssions as a function of wealth.
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth"</span>) <span class="sc">+</span></span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Predicted CO2 emissions (in metric tones per person)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-model-e-fitted" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-model-e-fitted" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-model-e-fitted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-model-e-fitted-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -1032,7 +1035,7 @@ Figure&nbsp;9: Plot of predicted CO2 emisssions as a function of wealth.
 <span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">6.4</span>, <span class="at">y =</span> <span class="fl">3.64</span>, <span class="at">label =</span> <span class="st">"Quatar"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">4.6</span>, <span class="at">y =</span> <span class="fl">3.44</span>, <span class="at">label =</span> <span class="st">"Trinidad and Tobago"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-scatterplot-log-take2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-scatterplot-log-take2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatterplot-log-take2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-scatterplot-log-take2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -1053,7 +1056,7 @@ Figure&nbsp;10: Scatterplot between wealth and log-transformed CO2 emissions. Th
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual plots</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">residual_plots</span>(lm.poly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-residuals-log-quad" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-residuals-log-quad" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-residuals-log-quad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-residuals-log-quad-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -1133,7 +1136,7 @@ Figure&nbsp;11: Density plots of the standardized residuals and scatterplot of t
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth"</span>) <span class="sc">+</span></span>
 <span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Predicted CO2 (in metric tons per person)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-poly-fitted" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-poly-fitted" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-poly-fitted-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-poly-fitted-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -1254,7 +1257,7 @@ Figure&nbsp;12: Plot of predicted carbon emisssions as a function of wealth for 
 <span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Wealth"</span>) <span class="sc">+</span></span>
 <span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Predicted CO2 (in metric tons per person)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-rq2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-rq2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rq2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-rq2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -1420,7 +1423,7 @@ e^{-.16} - 1 = -.147
 <span id="cb59-19"><a href="#cb59-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_textbox_simple</span>()</span>
 <span id="cb59-20"><a href="#cb59-20" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-rq3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-rq3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rq3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-logarithmic-transformations-outcome_files/figure-html/fig-rq3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -1490,18 +1493,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1533,7 +1525,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1568,7 +1600,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-22">
+<meta name="dcterms.date" content="2024-12-06">
 
-<title>EPsy 8252 - Likelihood: A Framework for Estimation</title>
+<title>Likelihood: A Framework for Estimation – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -104,8 +104,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable/js/pagedtable.js"></script>
 <script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -150,7 +153,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -189,7 +192,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -200,7 +203,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">On This Page</h2>
    
   <ul>
   <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
@@ -241,7 +244,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 22, 2024</p>
+      <p class="date">December 6, 2024</p>
     </div>
   </div>
   
@@ -354,7 +357,7 @@ window.Quarto = {
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-lik_prof_01" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-lik_prof_01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lik_prof_01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-optional-likelihood-estimation_files/figure-html/fig-lik_prof_01-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -399,7 +402,7 @@ Figure&nbsp;1: Plot of the likelihood values for five candidate parameter values
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Likelihood"</span>) <span class="sc">+</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-plot_example_01" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-plot_example_01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot_example_01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-optional-likelihood-estimation_files/figure-html/fig-plot_example_01-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -462,7 +465,7 @@ Figure&nbsp;2: Likelihood profile for several parameter values assuming a normal
 <p>In computer science, this method for finding the MLE is referred to as a <em>grid search</em>. This is because the combinations of parameter values in the search space constitute a grid. In the figure below, the search space for each parameter is listed in the first row/column of the table. Every other cell of the table (the “grid”) constitutes a particular combination of the parameters. We are then computing the likelihood for each combination of parameters and searching for the cell with the highest likelihood.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-grid-search-example-02" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-grid-search-example-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-grid-search-example-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figs/grid-search.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -497,7 +500,7 @@ Figure&nbsp;3: Grid showing the combinations of parameter values used in the sea
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-three-dim" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-three-dim" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-three-dim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-optional-likelihood-estimation_files/figure-html/fig-three-dim-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -549,7 +552,7 @@ Figure&nbsp;4: Likelihood profile for the search space of both <span class="math
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Log-likelihood"</span>) <span class="sc">+</span></span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-example-03" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-example-03" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-example-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-optional-likelihood-estimation_files/figure-html/fig-example-03-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -592,31 +595,30 @@ Figure&nbsp;5: Log-likelihood profile for several parameter values assuming a no
 <span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>   <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">30</span>) </span>
 <span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-example-03" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-example-03" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-example-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
 </figcaption>
 <div aria-describedby="tbl-example-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="alxddpzirc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#alxddpzirc table {
+<div id="tokvgpxvro" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tokvgpxvro table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#alxddpzirc thead, #alxddpzirc tbody, #alxddpzirc tfoot, #alxddpzirc tr, #alxddpzirc td, #alxddpzirc th {
+#tokvgpxvro thead, #tokvgpxvro tbody, #tokvgpxvro tfoot, #tokvgpxvro tr, #tokvgpxvro td, #tokvgpxvro th {
   border-style: none;
 }
 
-#alxddpzirc p {
+#tokvgpxvro p {
   margin: 0;
   padding: 0;
 }
 
-#alxddpzirc .gt_table {
+#tokvgpxvro .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -642,12 +644,12 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-left-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_caption {
+#tokvgpxvro .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#alxddpzirc .gt_title {
+#tokvgpxvro .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -659,7 +661,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-bottom-width: 0;
 }
 
-#alxddpzirc .gt_subtitle {
+#tokvgpxvro .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -671,7 +673,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-top-width: 0;
 }
 
-#alxddpzirc .gt_heading {
+#tokvgpxvro .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -683,13 +685,13 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-right-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_bottom_border {
+#tokvgpxvro .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_col_headings {
+#tokvgpxvro .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -704,7 +706,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-right-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_col_heading {
+#tokvgpxvro .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -724,7 +726,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   overflow-x: hidden;
 }
 
-#alxddpzirc .gt_column_spanner_outer {
+#tokvgpxvro .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -736,15 +738,15 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   padding-right: 4px;
 }
 
-#alxddpzirc .gt_column_spanner_outer:first-child {
+#tokvgpxvro .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#alxddpzirc .gt_column_spanner_outer:last-child {
+#tokvgpxvro .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#alxddpzirc .gt_column_spanner {
+#tokvgpxvro .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -756,11 +758,11 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   width: 100%;
 }
 
-#alxddpzirc .gt_spanner_row {
+#tokvgpxvro .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#alxddpzirc .gt_group_heading {
+#tokvgpxvro .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -786,7 +788,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   text-align: left;
 }
 
-#alxddpzirc .gt_empty_group_heading {
+#tokvgpxvro .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -801,15 +803,15 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   vertical-align: middle;
 }
 
-#alxddpzirc .gt_from_md > :first-child {
+#tokvgpxvro .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#alxddpzirc .gt_from_md > :last-child {
+#tokvgpxvro .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#alxddpzirc .gt_row {
+#tokvgpxvro .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -828,7 +830,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   overflow-x: hidden;
 }
 
-#alxddpzirc .gt_stub {
+#tokvgpxvro .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -841,7 +843,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   padding-right: 5px;
 }
 
-#alxddpzirc .gt_stub_row_group {
+#tokvgpxvro .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -855,15 +857,15 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   vertical-align: top;
 }
 
-#alxddpzirc .gt_row_group_first td {
+#tokvgpxvro .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#alxddpzirc .gt_row_group_first th {
+#tokvgpxvro .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#alxddpzirc .gt_summary_row {
+#tokvgpxvro .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -873,16 +875,16 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   padding-right: 5px;
 }
 
-#alxddpzirc .gt_first_summary_row {
+#tokvgpxvro .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_first_summary_row.thick {
+#tokvgpxvro .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#alxddpzirc .gt_last_summary_row {
+#tokvgpxvro .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -892,7 +894,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-bottom-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_grand_summary_row {
+#tokvgpxvro .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -902,7 +904,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   padding-right: 5px;
 }
 
-#alxddpzirc .gt_first_grand_summary_row {
+#tokvgpxvro .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -912,7 +914,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-top-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_last_grand_summary_row_top {
+#tokvgpxvro .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -922,11 +924,11 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-bottom-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_striped {
+#tokvgpxvro .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#alxddpzirc .gt_table_body {
+#tokvgpxvro .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -935,7 +937,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-bottom-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_footnotes {
+#tokvgpxvro .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -949,7 +951,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-right-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_footnote {
+#tokvgpxvro .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -958,7 +960,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   padding-right: 5px;
 }
 
-#alxddpzirc .gt_sourcenotes {
+#tokvgpxvro .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -972,7 +974,7 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   border-right-color: #D3D3D3;
 }
 
-#alxddpzirc .gt_sourcenote {
+#tokvgpxvro .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -980,72 +982,81 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
   padding-right: 5px;
 }
 
-#alxddpzirc .gt_left {
+#tokvgpxvro .gt_left {
   text-align: left;
 }
 
-#alxddpzirc .gt_center {
+#tokvgpxvro .gt_center {
   text-align: center;
 }
 
-#alxddpzirc .gt_right {
+#tokvgpxvro .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#alxddpzirc .gt_font_normal {
+#tokvgpxvro .gt_font_normal {
   font-weight: normal;
 }
 
-#alxddpzirc .gt_font_bold {
+#tokvgpxvro .gt_font_bold {
   font-weight: bold;
 }
 
-#alxddpzirc .gt_font_italic {
+#tokvgpxvro .gt_font_italic {
   font-style: italic;
 }
 
-#alxddpzirc .gt_super {
+#tokvgpxvro .gt_super {
   font-size: 65%;
 }
 
-#alxddpzirc .gt_footnote_marks {
+#tokvgpxvro .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#alxddpzirc .gt_asterisk {
+#tokvgpxvro .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#alxddpzirc .gt_indent_1 {
+#tokvgpxvro .gt_indent_1 {
   text-indent: 5px;
 }
 
-#alxddpzirc .gt_indent_2 {
+#tokvgpxvro .gt_indent_2 {
   text-indent: 10px;
 }
 
-#alxddpzirc .gt_indent_3 {
+#tokvgpxvro .gt_indent_3 {
   text-indent: 15px;
 }
 
-#alxddpzirc .gt_indent_4 {
+#tokvgpxvro .gt_indent_4 {
   text-indent: 20px;
 }
 
-#alxddpzirc .gt_indent_5 {
+#tokvgpxvro .gt_indent_5 {
   text-indent: 25px;
+}
+
+#tokvgpxvro .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#tokvgpxvro div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>x</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>x</em></th>
-<th id="<em>y</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>y</em></th>
+<th id="x" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>x</em></th>
+<th id="y" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>y</em></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -1092,7 +1103,6 @@ Table&nbsp;1: Toy data set that includes predictor (x) and outcome (y) values.
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1295,31 +1305,30 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>   <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">40</span>) </span>
 <span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-compare-ests" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-compare-ests" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-compare-ests-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary least squares (OLS) estimation.
 </figcaption>
 <div aria-describedby="tbl-compare-ests-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="qetlaschic" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qetlaschic table {
+<div id="zjuodbbjwe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zjuodbbjwe table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qetlaschic thead, #qetlaschic tbody, #qetlaschic tfoot, #qetlaschic tr, #qetlaschic td, #qetlaschic th {
+#zjuodbbjwe thead, #zjuodbbjwe tbody, #zjuodbbjwe tfoot, #zjuodbbjwe tr, #zjuodbbjwe td, #zjuodbbjwe th {
   border-style: none;
 }
 
-#qetlaschic p {
+#zjuodbbjwe p {
   margin: 0;
   padding: 0;
 }
 
-#qetlaschic .gt_table {
+#zjuodbbjwe .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1345,12 +1354,12 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-left-color: #D3D3D3;
 }
 
-#qetlaschic .gt_caption {
+#zjuodbbjwe .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qetlaschic .gt_title {
+#zjuodbbjwe .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1362,7 +1371,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-bottom-width: 0;
 }
 
-#qetlaschic .gt_subtitle {
+#zjuodbbjwe .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1374,7 +1383,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-top-width: 0;
 }
 
-#qetlaschic .gt_heading {
+#zjuodbbjwe .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1386,13 +1395,13 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-right-color: #D3D3D3;
 }
 
-#qetlaschic .gt_bottom_border {
+#zjuodbbjwe .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qetlaschic .gt_col_headings {
+#zjuodbbjwe .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1407,7 +1416,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-right-color: #D3D3D3;
 }
 
-#qetlaschic .gt_col_heading {
+#zjuodbbjwe .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1427,7 +1436,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   overflow-x: hidden;
 }
 
-#qetlaschic .gt_column_spanner_outer {
+#zjuodbbjwe .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1439,15 +1448,15 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   padding-right: 4px;
 }
 
-#qetlaschic .gt_column_spanner_outer:first-child {
+#zjuodbbjwe .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qetlaschic .gt_column_spanner_outer:last-child {
+#zjuodbbjwe .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qetlaschic .gt_column_spanner {
+#zjuodbbjwe .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1459,11 +1468,11 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   width: 100%;
 }
 
-#qetlaschic .gt_spanner_row {
+#zjuodbbjwe .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qetlaschic .gt_group_heading {
+#zjuodbbjwe .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1489,7 +1498,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   text-align: left;
 }
 
-#qetlaschic .gt_empty_group_heading {
+#zjuodbbjwe .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1504,15 +1513,15 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   vertical-align: middle;
 }
 
-#qetlaschic .gt_from_md > :first-child {
+#zjuodbbjwe .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qetlaschic .gt_from_md > :last-child {
+#zjuodbbjwe .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qetlaschic .gt_row {
+#zjuodbbjwe .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1531,7 +1540,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   overflow-x: hidden;
 }
 
-#qetlaschic .gt_stub {
+#zjuodbbjwe .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1544,7 +1553,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   padding-right: 5px;
 }
 
-#qetlaschic .gt_stub_row_group {
+#zjuodbbjwe .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1558,15 +1567,15 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   vertical-align: top;
 }
 
-#qetlaschic .gt_row_group_first td {
+#zjuodbbjwe .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qetlaschic .gt_row_group_first th {
+#zjuodbbjwe .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qetlaschic .gt_summary_row {
+#zjuodbbjwe .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1576,16 +1585,16 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   padding-right: 5px;
 }
 
-#qetlaschic .gt_first_summary_row {
+#zjuodbbjwe .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qetlaschic .gt_first_summary_row.thick {
+#zjuodbbjwe .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qetlaschic .gt_last_summary_row {
+#zjuodbbjwe .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1595,7 +1604,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-bottom-color: #D3D3D3;
 }
 
-#qetlaschic .gt_grand_summary_row {
+#zjuodbbjwe .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1605,7 +1614,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   padding-right: 5px;
 }
 
-#qetlaschic .gt_first_grand_summary_row {
+#zjuodbbjwe .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1615,7 +1624,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-top-color: #D3D3D3;
 }
 
-#qetlaschic .gt_last_grand_summary_row_top {
+#zjuodbbjwe .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1625,11 +1634,11 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-bottom-color: #D3D3D3;
 }
 
-#qetlaschic .gt_striped {
+#zjuodbbjwe .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qetlaschic .gt_table_body {
+#zjuodbbjwe .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1638,7 +1647,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-bottom-color: #D3D3D3;
 }
 
-#qetlaschic .gt_footnotes {
+#zjuodbbjwe .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1652,7 +1661,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-right-color: #D3D3D3;
 }
 
-#qetlaschic .gt_footnote {
+#zjuodbbjwe .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1661,7 +1670,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   padding-right: 5px;
 }
 
-#qetlaschic .gt_sourcenotes {
+#zjuodbbjwe .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1675,7 +1684,7 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   border-right-color: #D3D3D3;
 }
 
-#qetlaschic .gt_sourcenote {
+#zjuodbbjwe .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1683,68 +1692,77 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
   padding-right: 5px;
 }
 
-#qetlaschic .gt_left {
+#zjuodbbjwe .gt_left {
   text-align: left;
 }
 
-#qetlaschic .gt_center {
+#zjuodbbjwe .gt_center {
   text-align: center;
 }
 
-#qetlaschic .gt_right {
+#zjuodbbjwe .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qetlaschic .gt_font_normal {
+#zjuodbbjwe .gt_font_normal {
   font-weight: normal;
 }
 
-#qetlaschic .gt_font_bold {
+#zjuodbbjwe .gt_font_bold {
   font-weight: bold;
 }
 
-#qetlaschic .gt_font_italic {
+#zjuodbbjwe .gt_font_italic {
   font-style: italic;
 }
 
-#qetlaschic .gt_super {
+#zjuodbbjwe .gt_super {
   font-size: 65%;
 }
 
-#qetlaschic .gt_footnote_marks {
+#zjuodbbjwe .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qetlaschic .gt_asterisk {
+#zjuodbbjwe .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qetlaschic .gt_indent_1 {
+#zjuodbbjwe .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qetlaschic .gt_indent_2 {
+#zjuodbbjwe .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qetlaschic .gt_indent_3 {
+#zjuodbbjwe .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qetlaschic .gt_indent_4 {
+#zjuodbbjwe .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qetlaschic .gt_indent_5 {
+#zjuodbbjwe .gt_indent_5 {
   text-indent: 25px;
+}
+
+#zjuodbbjwe .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zjuodbbjwe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
 <th id="Estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Estimate</th>
@@ -1771,7 +1789,6 @@ Table&nbsp;2: Parameter estimates using maximum likelihood (ML) and ordinary lea
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1935,18 +1952,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1978,7 +1984,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -2013,7 +2059,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

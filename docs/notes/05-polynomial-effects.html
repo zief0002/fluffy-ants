@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-22">
+<meta name="dcterms.date" content="2024-12-06">
 
-<title>EPsy 8252 - Polynomial Effects</title>
+<title>Polynomial Effects – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -104,8 +104,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable/js/pagedtable.js"></script>
 <script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -150,7 +153,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -189,7 +192,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -200,7 +203,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">On This Page</h2>
    
   <ul>
   <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
@@ -243,7 +246,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 22, 2024</p>
+      <p class="date">December 6, 2024</p>
     </div>
   </div>
   
@@ -292,7 +295,7 @@ window.Quarto = {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Estimated median SAT score (in hundreds)"</span>) <span class="sc">+</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Six-year graduation rate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-scatterplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="05-polynomial-effects_files/figure-html/fig-scatterplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -316,7 +319,7 @@ Figure&nbsp;1: Six-year graduation rate plotted as a function of median SAT scor
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual plot: Scatterplot</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">residual_plots</span>(lm<span class="fl">.1</span>, <span class="at">type =</span> <span class="st">"s"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-residuals-linear" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-residuals-linear" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-residuals-linear-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="05-polynomial-effects_files/figure-html/fig-residuals-linear-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -393,7 +396,7 @@ x^2 = x \times x.
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual plots</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">residual_plots</span>(lm<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-residual-plots-quadratic" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-residual-plots-quadratic" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-residual-plots-quadratic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="05-polynomial-effects_files/figure-html/fig-residual-plots-quadratic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -449,7 +452,7 @@ Figure&nbsp;3: Residual plots for the quadratic model regressing six-year gradua
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Estimated median SAT score (in hundreds)"</span>) <span class="sc">+</span></span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Six-year graduation rate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-fitted-quadratic" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-fitted-quadratic" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fitted-quadratic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="05-polynomial-effects_files/figure-html/fig-fitted-quadratic-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -592,7 +595,7 @@ y_\mathrm{Vertex} = -366.34 + 62.72(14.58) - 2.15(14.58^2) = 91.08
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Estimated median SAT score (in hundreds)"</span>) <span class="sc">+</span></span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Six-year graduation rate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-fitted-quadratic-sector" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-fitted-quadratic-sector" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fitted-quadratic-sector-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="05-polynomial-effects_files/figure-html/fig-fitted-quadratic-sector-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -706,7 +709,7 @@ Figure&nbsp;5: Six-year graduation rate as a function of median SAT score for pr
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Estimated median SAT score (in hundreds)"</span>) <span class="sc">+</span></span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Six-year graduation rate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-model-4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-model-4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-model-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="05-polynomial-effects_files/figure-html/fig-model-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -785,31 +788,30 @@ Figure&nbsp;6: Six-year graduation rate as a function of median SAT score for pr
 <span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">missing_text =</span> <span class="st">""</span></span>
 <span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-model-likelihood" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-model-likelihood" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-model-likelihood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a set of nested candidate models. Models are compared to the model in the previous row.
 </figcaption>
 <div aria-describedby="tbl-model-likelihood-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="ismlnklead" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ismlnklead table {
+<div id="bgpeoeaxfb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bgpeoeaxfb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ismlnklead thead, #ismlnklead tbody, #ismlnklead tfoot, #ismlnklead tr, #ismlnklead td, #ismlnklead th {
+#bgpeoeaxfb thead, #bgpeoeaxfb tbody, #bgpeoeaxfb tfoot, #bgpeoeaxfb tr, #bgpeoeaxfb td, #bgpeoeaxfb th {
   border-style: none;
 }
 
-#ismlnklead p {
+#bgpeoeaxfb p {
   margin: 0;
   padding: 0;
 }
 
-#ismlnklead .gt_table {
+#bgpeoeaxfb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -835,12 +837,12 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-left-color: #D3D3D3;
 }
 
-#ismlnklead .gt_caption {
+#bgpeoeaxfb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ismlnklead .gt_title {
+#bgpeoeaxfb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -852,7 +854,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-bottom-width: 0;
 }
 
-#ismlnklead .gt_subtitle {
+#bgpeoeaxfb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -864,7 +866,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-top-width: 0;
 }
 
-#ismlnklead .gt_heading {
+#bgpeoeaxfb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -876,13 +878,13 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-right-color: #D3D3D3;
 }
 
-#ismlnklead .gt_bottom_border {
+#bgpeoeaxfb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ismlnklead .gt_col_headings {
+#bgpeoeaxfb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -897,7 +899,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-right-color: #D3D3D3;
 }
 
-#ismlnklead .gt_col_heading {
+#bgpeoeaxfb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -917,7 +919,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   overflow-x: hidden;
 }
 
-#ismlnklead .gt_column_spanner_outer {
+#bgpeoeaxfb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -929,15 +931,15 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   padding-right: 4px;
 }
 
-#ismlnklead .gt_column_spanner_outer:first-child {
+#bgpeoeaxfb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ismlnklead .gt_column_spanner_outer:last-child {
+#bgpeoeaxfb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ismlnklead .gt_column_spanner {
+#bgpeoeaxfb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -949,11 +951,11 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   width: 100%;
 }
 
-#ismlnklead .gt_spanner_row {
+#bgpeoeaxfb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ismlnklead .gt_group_heading {
+#bgpeoeaxfb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -979,7 +981,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   text-align: left;
 }
 
-#ismlnklead .gt_empty_group_heading {
+#bgpeoeaxfb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -994,15 +996,15 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   vertical-align: middle;
 }
 
-#ismlnklead .gt_from_md > :first-child {
+#bgpeoeaxfb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ismlnklead .gt_from_md > :last-child {
+#bgpeoeaxfb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ismlnklead .gt_row {
+#bgpeoeaxfb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1021,7 +1023,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   overflow-x: hidden;
 }
 
-#ismlnklead .gt_stub {
+#bgpeoeaxfb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1034,7 +1036,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   padding-right: 5px;
 }
 
-#ismlnklead .gt_stub_row_group {
+#bgpeoeaxfb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1048,15 +1050,15 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   vertical-align: top;
 }
 
-#ismlnklead .gt_row_group_first td {
+#bgpeoeaxfb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ismlnklead .gt_row_group_first th {
+#bgpeoeaxfb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ismlnklead .gt_summary_row {
+#bgpeoeaxfb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1066,16 +1068,16 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   padding-right: 5px;
 }
 
-#ismlnklead .gt_first_summary_row {
+#bgpeoeaxfb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ismlnklead .gt_first_summary_row.thick {
+#bgpeoeaxfb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ismlnklead .gt_last_summary_row {
+#bgpeoeaxfb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1085,7 +1087,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-bottom-color: #D3D3D3;
 }
 
-#ismlnklead .gt_grand_summary_row {
+#bgpeoeaxfb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1095,7 +1097,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   padding-right: 5px;
 }
 
-#ismlnklead .gt_first_grand_summary_row {
+#bgpeoeaxfb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1105,7 +1107,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-top-color: #D3D3D3;
 }
 
-#ismlnklead .gt_last_grand_summary_row_top {
+#bgpeoeaxfb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1115,11 +1117,11 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-bottom-color: #D3D3D3;
 }
 
-#ismlnklead .gt_striped {
+#bgpeoeaxfb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ismlnklead .gt_table_body {
+#bgpeoeaxfb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1128,7 +1130,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-bottom-color: #D3D3D3;
 }
 
-#ismlnklead .gt_footnotes {
+#bgpeoeaxfb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1142,7 +1144,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-right-color: #D3D3D3;
 }
 
-#ismlnklead .gt_footnote {
+#bgpeoeaxfb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1151,7 +1153,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   padding-right: 5px;
 }
 
-#ismlnklead .gt_sourcenotes {
+#bgpeoeaxfb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1165,7 +1167,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   border-right-color: #D3D3D3;
 }
 
-#ismlnklead .gt_sourcenote {
+#bgpeoeaxfb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1173,68 +1175,77 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
   padding-right: 5px;
 }
 
-#ismlnklead .gt_left {
+#bgpeoeaxfb .gt_left {
   text-align: left;
 }
 
-#ismlnklead .gt_center {
+#bgpeoeaxfb .gt_center {
   text-align: center;
 }
 
-#ismlnklead .gt_right {
+#bgpeoeaxfb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ismlnklead .gt_font_normal {
+#bgpeoeaxfb .gt_font_normal {
   font-weight: normal;
 }
 
-#ismlnklead .gt_font_bold {
+#bgpeoeaxfb .gt_font_bold {
   font-weight: bold;
 }
 
-#ismlnklead .gt_font_italic {
+#bgpeoeaxfb .gt_font_italic {
   font-style: italic;
 }
 
-#ismlnklead .gt_super {
+#bgpeoeaxfb .gt_super {
   font-size: 65%;
 }
 
-#ismlnklead .gt_footnote_marks {
+#bgpeoeaxfb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ismlnklead .gt_asterisk {
+#bgpeoeaxfb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ismlnklead .gt_indent_1 {
+#bgpeoeaxfb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ismlnklead .gt_indent_2 {
+#bgpeoeaxfb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ismlnklead .gt_indent_3 {
+#bgpeoeaxfb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ismlnklead .gt_indent_4 {
+#bgpeoeaxfb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ismlnklead .gt_indent_5 {
+#bgpeoeaxfb .gt_indent_5 {
   text-indent: 25px;
+}
+
+#bgpeoeaxfb .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#bgpeoeaxfb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
@@ -1244,11 +1255,11 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>Model</em>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
-<th id="<em>df</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>df</em></th>
-<th id="<em>Log-likelihood</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>Log-likelihood</em></th>
-<th id="<em>LR</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>LR</em></th>
-<th id="<em>LRT</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>LRT</em></th>
+<th id="model" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
+<th id="df" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>df</em></th>
+<th id="log_lik" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>Log-likelihood</em></th>
+<th id="lr" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>LR</em></th>
+<th id="lr_test" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>LRT</em></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -1295,7 +1306,6 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
 </div>
 </div>
 </div>
-</div>
 </figure>
 </div>
 </div>
@@ -1326,7 +1336,7 @@ Table&nbsp;1: Results from a set of likelihood ratio tests (LRT) to compare a se
 <span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="cn">NULL</span> <span class="co">#"Table 2: Coefficients (and standard errors) for five candidate models (M1--M5) predicting variation in six-year graduation rates."</span></span>
 <span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-reg-results" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-reg-results" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reg-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Coefficients (and standard errors) for five candidate models (M1–M5) predicting variation in six-year graduation rates.
@@ -1691,18 +1701,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1734,7 +1733,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1769,7 +1808,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

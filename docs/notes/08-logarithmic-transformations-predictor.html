@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-22">
+<meta name="dcterms.date" content="2024-12-06">
 
-<title>EPsy 8252 - Log-Transforming the Predictor</title>
+<title>Log-Transforming the Predictor – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -104,8 +104,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable/js/pagedtable.js"></script>
 <script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -150,7 +153,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -189,7 +192,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -200,7 +203,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">On This Page</h2>
    
   <ul>
   <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
@@ -250,7 +253,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 22, 2024</p>
+      <p class="date">December 6, 2024</p>
     </div>
   </div>
   
@@ -318,7 +321,7 @@ window.Quarto = {
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">|</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-scatterplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="08-logarithmic-transformations-predictor_files/figure-html/fig-scatterplot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -367,7 +370,7 @@ Figure&nbsp;1: LEFT: Six-year graduation rate as a function of median SAT score.
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">|</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-quadratic-log" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-quadratic-log" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quadratic-log-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="08-logarithmic-transformations-predictor_files/figure-html/fig-quadratic-log-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -553,7 +556,7 @@ Y = \log(X)
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Layout</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">/</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-resid-compare" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-resid-compare" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-resid-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="08-logarithmic-transformations-predictor_files/figure-html/fig-resid-compare-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
@@ -628,7 +631,7 @@ Figure&nbsp;3: Scatterplot of the standardized residuals versus the fitted value
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain residuals for base-2 log-transformed SAT</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">residual_plots</span>(lm.ln)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-residuals-ln" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-residuals-ln" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-residuals-ln-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="08-logarithmic-transformations-predictor_files/figure-html/fig-residuals-ln-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%">
@@ -674,31 +677,30 @@ Figure&nbsp;4: Plot of the standardized residuals versus the fitted values for a
 <span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">40</span>)</span>
 <span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-pred-grad" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-pred-grad" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pred-grad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Schools that have Median SAT Values that Differ by One Percent.
 </figcaption>
 <div aria-describedby="tbl-pred-grad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="iaxknnlcuk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iaxknnlcuk table {
+<div id="wewgrnsybz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wewgrnsybz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iaxknnlcuk thead, #iaxknnlcuk tbody, #iaxknnlcuk tfoot, #iaxknnlcuk tr, #iaxknnlcuk td, #iaxknnlcuk th {
+#wewgrnsybz thead, #wewgrnsybz tbody, #wewgrnsybz tfoot, #wewgrnsybz tr, #wewgrnsybz td, #wewgrnsybz th {
   border-style: none;
 }
 
-#iaxknnlcuk p {
+#wewgrnsybz p {
   margin: 0;
   padding: 0;
 }
 
-#iaxknnlcuk .gt_table {
+#wewgrnsybz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -724,12 +726,12 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-left-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_caption {
+#wewgrnsybz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iaxknnlcuk .gt_title {
+#wewgrnsybz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -741,7 +743,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-bottom-width: 0;
 }
 
-#iaxknnlcuk .gt_subtitle {
+#wewgrnsybz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -753,7 +755,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-top-width: 0;
 }
 
-#iaxknnlcuk .gt_heading {
+#wewgrnsybz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -765,13 +767,13 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-right-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_bottom_border {
+#wewgrnsybz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_col_headings {
+#wewgrnsybz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -786,7 +788,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-right-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_col_heading {
+#wewgrnsybz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -806,7 +808,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   overflow-x: hidden;
 }
 
-#iaxknnlcuk .gt_column_spanner_outer {
+#wewgrnsybz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -818,15 +820,15 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   padding-right: 4px;
 }
 
-#iaxknnlcuk .gt_column_spanner_outer:first-child {
+#wewgrnsybz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iaxknnlcuk .gt_column_spanner_outer:last-child {
+#wewgrnsybz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iaxknnlcuk .gt_column_spanner {
+#wewgrnsybz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -838,11 +840,11 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   width: 100%;
 }
 
-#iaxknnlcuk .gt_spanner_row {
+#wewgrnsybz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iaxknnlcuk .gt_group_heading {
+#wewgrnsybz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -868,7 +870,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   text-align: left;
 }
 
-#iaxknnlcuk .gt_empty_group_heading {
+#wewgrnsybz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -883,15 +885,15 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   vertical-align: middle;
 }
 
-#iaxknnlcuk .gt_from_md > :first-child {
+#wewgrnsybz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iaxknnlcuk .gt_from_md > :last-child {
+#wewgrnsybz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iaxknnlcuk .gt_row {
+#wewgrnsybz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -910,7 +912,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   overflow-x: hidden;
 }
 
-#iaxknnlcuk .gt_stub {
+#wewgrnsybz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -923,7 +925,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   padding-right: 5px;
 }
 
-#iaxknnlcuk .gt_stub_row_group {
+#wewgrnsybz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -937,15 +939,15 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   vertical-align: top;
 }
 
-#iaxknnlcuk .gt_row_group_first td {
+#wewgrnsybz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iaxknnlcuk .gt_row_group_first th {
+#wewgrnsybz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iaxknnlcuk .gt_summary_row {
+#wewgrnsybz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -955,16 +957,16 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   padding-right: 5px;
 }
 
-#iaxknnlcuk .gt_first_summary_row {
+#wewgrnsybz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_first_summary_row.thick {
+#wewgrnsybz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iaxknnlcuk .gt_last_summary_row {
+#wewgrnsybz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -974,7 +976,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-bottom-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_grand_summary_row {
+#wewgrnsybz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -984,7 +986,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   padding-right: 5px;
 }
 
-#iaxknnlcuk .gt_first_grand_summary_row {
+#wewgrnsybz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -994,7 +996,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-top-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_last_grand_summary_row_top {
+#wewgrnsybz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1004,11 +1006,11 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-bottom-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_striped {
+#wewgrnsybz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iaxknnlcuk .gt_table_body {
+#wewgrnsybz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1017,7 +1019,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-bottom-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_footnotes {
+#wewgrnsybz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1031,7 +1033,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-right-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_footnote {
+#wewgrnsybz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1040,7 +1042,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   padding-right: 5px;
 }
 
-#iaxknnlcuk .gt_sourcenotes {
+#wewgrnsybz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1054,7 +1056,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   border-right-color: #D3D3D3;
 }
 
-#iaxknnlcuk .gt_sourcenote {
+#wewgrnsybz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1062,72 +1064,81 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
   padding-right: 5px;
 }
 
-#iaxknnlcuk .gt_left {
+#wewgrnsybz .gt_left {
   text-align: left;
 }
 
-#iaxknnlcuk .gt_center {
+#wewgrnsybz .gt_center {
   text-align: center;
 }
 
-#iaxknnlcuk .gt_right {
+#wewgrnsybz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iaxknnlcuk .gt_font_normal {
+#wewgrnsybz .gt_font_normal {
   font-weight: normal;
 }
 
-#iaxknnlcuk .gt_font_bold {
+#wewgrnsybz .gt_font_bold {
   font-weight: bold;
 }
 
-#iaxknnlcuk .gt_font_italic {
+#wewgrnsybz .gt_font_italic {
   font-style: italic;
 }
 
-#iaxknnlcuk .gt_super {
+#wewgrnsybz .gt_super {
   font-size: 65%;
 }
 
-#iaxknnlcuk .gt_footnote_marks {
+#wewgrnsybz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iaxknnlcuk .gt_asterisk {
+#wewgrnsybz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iaxknnlcuk .gt_indent_1 {
+#wewgrnsybz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iaxknnlcuk .gt_indent_2 {
+#wewgrnsybz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iaxknnlcuk .gt_indent_3 {
+#wewgrnsybz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iaxknnlcuk .gt_indent_4 {
+#wewgrnsybz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iaxknnlcuk .gt_indent_5 {
+#wewgrnsybz .gt_indent_5 {
   text-indent: 25px;
+}
+
+#wewgrnsybz .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wewgrnsybz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>SAT</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>SAT</em></th>
-<th id="Predicted Graduation Rate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Predicted Graduation Rate</th>
+<th id="sat" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>SAT</em></th>
+<th id="grad" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Predicted Graduation Rate</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -1146,7 +1157,6 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1245,7 +1255,7 @@ Table&nbsp;1: Median SAT Values and Graduation Rates for Three Hypothetical Scho
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="08-logarithmic-transformations-predictor_files/figure-html/plot-model-01-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+<p><img src="08-logarithmic-transformations-predictor_files/figure-html/plot-model-01-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption>Plot of the predicted graduation rate as a function of median SAT score. The non-linearity in the plot indicates that there is a diminishing positive effect of SAT on graduation rates.</figcaption>
 </figure>
 </div>
@@ -1300,7 +1310,7 @@ Y_i=\ln\bigg(e^{\hat\beta_0} \times X_i^{\hat\beta_1}\bigg) ~~\equiv~~ Y_i =\bet
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(quad <span class="sc">~</span> x, <span class="at">data =</span> new, <span class="at">col =</span> <span class="st">"#6d92ee"</span>, <span class="at">lty =</span> <span class="st">"dashed"</span>, <span class="at">lwd =</span> <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-quad-02" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-quad-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quad-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="08-logarithmic-transformations-predictor_files/figure-html/fig-quad-02-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -1354,7 +1364,7 @@ Figure&nbsp;5: Comparison of the quadratic polynomial (blue, dashed line) and lo
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">/</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-resid-compare-02" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-resid-compare-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-resid-compare-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="08-logarithmic-transformations-predictor_files/figure-html/fig-resid-compare-02-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
@@ -1445,7 +1455,7 @@ Figure&nbsp;6: Residual plots for the log model (TOP) and quadratic model (BOTTO
 <span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Estimated median SAT score (in hundreds)"</span>) <span class="sc">+</span></span>
 <span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Six-year graduation rate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-model-02" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-model-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-model-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="08-logarithmic-transformations-predictor_files/figure-html/fig-model-02-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
@@ -1546,18 +1556,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1589,7 +1588,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1624,7 +1663,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

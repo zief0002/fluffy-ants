@@ -16,7 +16,7 @@ library(skimr)        #To plot/describe many variables simultaneously
 ### Import data
 ##################################################
 
-pew = read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/pew.csv")
+pew = read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv")
 
 
 # View data

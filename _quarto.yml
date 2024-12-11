@@ -64,7 +64,7 @@ format:
       <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     sidebar: false
     mainfont: 'Atkinson Hyperlegible'
-    fontsize: '13pt'
+    fontsize: '1.05em'
     linestretch: '1.5em'
     linkcolor: '#c10088'
     toc: true

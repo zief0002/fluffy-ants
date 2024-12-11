@@ -12,13 +12,14 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 #| fig-align: "center"
 #| out-width: "60%"
 #| echo: false
+#| fig-alt: "Decorative image"
 knitr::include_graphics("img/epsy-8252-logo.png")
 ```
 
 
-## Welcome to EPsy 8252: Statistical Methods in Education II
+## Welcome to EPsy 8252
 
-EPsy 8252: Statistical Methods in Education II is the second course in an entry-level, doctoral sequence for students in education. The course content for EPsy 8252 builds on the content of EPsy 8251 and includes: (1) non-linear transformations, (2) likelihood estimation and inference, (2) information criteria for model selection, (3) logistic models for analyzing dichotomous outcomes, and (4) mixed-effects models for analysis of longitudinal data.
+EPsy 8252 (Statistical Methods in Education II) is the second course in an entry-level, doctoral sequence for students in education. The course content for EPsy 8252 builds on the content of EPsy 8251 and includes: (1) non-linear transformations, (2) likelihood estimation and inference, (2) information criteria for model selection, (3) logistic models for analyzing dichotomous outcomes, and (4) mixed-effects models for analysis of longitudinal data.
 
 <!-- ```{r} -->
 <!-- #| echo: false -->
@@ -27,7 +28,7 @@ EPsy 8252: Statistical Methods in Education II is the second course in an entry-
 <!-- knitr::include_graphics("img/units.png") -->
 <!-- ``` -->
 
-EPsy 8252 is a 3 credit course. It is expected that the academic work required of Graduate School and professional school students will exceed three hours per credit per week (see [Expected Time per Course Credit Policy](https://policy.umn.edu/education/timepercredit)). In my experience, it is typical for students to spend 10--15 hours a week on this course. As with every class, some students will spend more time than that on this course, while others will spend less time than that---it all depends on your prior experiences with statistics and computing. If you find yourself consistently spending more than 20 hours a week on the course, please make an appointment to see the instructor so that we can strategize about how to best optimize how you are devoting time to the course.
+EPsy 8252 is a 3-credit course. It is expected that the academic work required of Graduate School and professional school students will exceed three hours per credit per week (see [Expected Time per Course Credit Policy](https://policy.umn.edu/education/timepercredit)). In my experience, it is typical for students to spend 10--15 hours a week on this course. As with every class, some students will spend more time than that on this course, while others will spend less time than that---it all depends on your prior experiences with statistics and computing. If you find yourself consistently spending more than 20 hours a week on the course, please make an appointment to see the instructor so that we can strategize about how to best optimize how you are devoting time to the course.
 
 <br />
 
@@ -35,7 +36,7 @@ EPsy 8252 is a 3 credit course. It is expected that the academic work required o
 ## Classroom
 
 <!-- - Monday/Wednesday (2:30pm&ndash;3:45pm): [Appleby Hall 11](https://campusmaps.umn.edu/appleby-hall) -->
-- Tuesday/Thursday (11:15am&ndash;12:30pm): [Peik Hall 28](https://campusmaps.umn.edu/peik-hall)
+- Monday/Wednesday (2:30pm&ndash;3:45pm): [Bruininks Hall 512B](https://campusmaps.umn.edu/robert-h-bruininks-hall)
 
 <br />
 
@@ -57,25 +58,35 @@ Additionally, the textbook from EPsy 8251 may be a useful reference for refreshi
 
 ## Statistical Computing
 
-Statistical computing is an integral part of statistical work, and subsequently, EPsy 8251. To support your learning in this area, this course will emphasize the use of R. R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS [https://www.r-project.org](https://www.r-project.org). It should be noted that while some R syntax and programming is taught during class time, there is also a fair amount that you may need to learn on your own outside of class. There are several tutorials and resources linked from the course website to help you learn R.
+Statistical computing is an integral part of statistical work, and subsequently, EPsy 8252. To support your learning in this area, this course will emphasize the use of R. R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS. It should be noted that while some R syntax and programming is taught during class time, there is also a fair amount that you may need to learn on your own outside of class.
 
-You can install R and RStudio onto your local machine. (There are instructions for how to do this on the course website.) You are responsible for getting things to work on your computer. While it should be straightforward, each OS and computer has their quirks. I can try to help you with this if you are having trouble.
+- [Download and install R](https://www.r-project.org)
+- [Download and install RStudio](https://posit.co/download/rstudio-desktop/)
+
+
+You can install R and RStudio onto your local machine. (There are instructions for how to do this [here](https://zief0002.github.io/modeling/01-01-r-and-rstudio-installation.html).) You are responsible for getting things to work on your computer. While it should be straightforward, each OS and computer has their quirks. I can try to help you with this if you are having trouble.
 
 <br />
 
 
-:::inclusion
+<div class=inclusion role="none">
 ### A Note on Inclusion and Respect
 
 In this class, we will work together to develop a learning community that is inclusive and respectful, and where every student is supported in the learning process. As a class full of diverse individuals (reflected by differences in race, culture, age, religion, gender identity, sexual orientation, socioeconomic background, abilities, professional goals, and other social identities and life experiences) I expect that different students may need different things to support and promote their learning. The TAs and I will do everything we can to help with this, but as we only know what we know, we need you to communicate with us if things are not working for you or you need something we are not providing. I hope you all feel comfortable in helping to promote an inclusive classroom through respecting one another's individual differences, speaking up, and challenging oppressive/problematic ideas. Finally, I look forward to learning from each of you and the experiences you bring to the class. 
-:::
+</div>
+
+
+
 
 <br />
 
 
 ## Image Attribution
 
-- Taylor Swift icons from [Kelsey Darbro](https://wkutalisman.com/which-taylor-swift-era-are-you/) and [TheLastMayDay](https://www.redbubble.com/i/poster/evermore-folklore-Taylor-Swift-era-by-TheLastMayDay/64916276.LVTDI).
+- Taylor Swift icons from [Kelsey Darbro](https://wkutalisman.com/which-taylor-swift-era-are-you/).
 - The icon of Tilly the Therapy Chicken in the Stress Management note is used with permissin of the PAWS program.
+- Olivia Rodrigo sketch by [livie](https://www.pinterest.com/pin/1055599907167393/).
+- Elliott Smith icon from [SunOfTom's SoundCloud](https://soundcloud.com/sunoftom/sets/elliott-smith-covers).
+- Slash icon from [Slash Paradise](https://www.slashparadise.com/)
 
 

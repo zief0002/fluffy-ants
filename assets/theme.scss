@@ -3,18 +3,14 @@
 // Fonts
 $font-weight-base: 400 !default;
 
+//Links
+$toc-color: #c10088;  /*-- Set active link color for TOC sidebar (RIGHT) --*/
 
-// Links
-$link-color:                              #659BBB;
-$link-decoration:                         underline !default;
-$link-shade-percentage:                   20% !default;
-$link-hover-color:                        shift-color(#487398, 100%) !default;
-$link-hover-decoration:                   underline !default;
 
 // Top Navigation
-$nav-link-color: #373a3c;
-$nav-link-hover-color: #EBBED3;
-$navbar-bg: #AFC5D4;
+$nav-link-color: #000;
+$nav-link-hover-color: #c10088;
+$navbar-bg: #49C6E5;
 
 /*-- scss:rules --*/
 
@@ -31,3 +27,39 @@ h1, h2, h3, h4, h5, h6 {
 .texreg th {
   font-weight: normal;
 } */
+
+
+p {
+  font-family: 'Atkinson Hyperlegible', serif;
+  line-height: 1.3em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+// List elements
+li {
+  font-family: 'Atkinson Hyperlegible', serif;
+  line-height: 1.5em;
+}
+
+li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Mouse over link
+a:hover {
+  color: #c10088;
+}
+
+
+// Figure caption
+.figure-caption {
+  font-size: 12pt;
+  font-style: italic;
+  color: #000;
+  line-height: 1.3em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+

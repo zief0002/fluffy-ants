@@ -43,6 +43,8 @@ The screenshot below shows a project with these directories.
 
 ```{r}
 #| echo: false
+#| out-width: "40%"
+#| fig-alt: "Screenshot of a project with four directories."
 knitr::include_graphics("figs/02-project-organization.png")
 ```
 
@@ -55,7 +57,7 @@ It is typical to show directory and file organization via a "directory tree". Th
 └── scripts
 ```
 
-:::exercises
+:::todo
 **Your Turn**
 
 Set up a directory called `assignment-01`. Within this directory, create the four directories: `assets`, `data`, `figs`, and `scripts`. The directory tree will look like this:
@@ -90,6 +92,8 @@ The naming conventions for the directories and files in our project are as follo
 Again, while there is no one best naming convention, it is important that you have one, and that you are consistent throughout the project. That being said, as you develop naming conventions for your projects, all the conventions should be documented! This documentation helps onboard collaborators to your project.
 
 :::fyi
+**FYI**
+
 There are several guides available to help you establish naming conventions including [here](https://datamanagement.hms.harvard.edu/collect/file-naming-conventions) and [here](https://libguides.princeton.edu/c.php?g=102546&p=930626). 
 :::
 
@@ -127,7 +131,7 @@ The R Project will then be created and you should now see this project (called `
 
 Once an R project has been created, it can be opened in RStudio by double-clicking on the `.Rproj` file. 
 
-:::exercises
+:::todo
 **Your Turn**
 
 If you haven't already, create an R project associated with the `assignment-01` root directory.
@@ -148,10 +152,10 @@ knitr::include_graphics("figs/02-new-project.png")
 
 We can add files and directories by creating them using an application on our computer or downloading them and saving them to the appropriate project directory.
 
-:::exercises
+:::todo
 **Your Turn**
 
-Download the [woods.csv](https://raw.githubusercontent.com/zief0002/bespectacled-antelope/main/data/woods.csv) file to your computer. Make sure that the file suffix is `.csv`. (Sometimes Safari users will find that the suffix `.txt` gets appended to the end of the filename---`woods.csv.txt`. If that is the case delete the `.txt` part that was appended.) Place `woods.csv` into the `data` directory of your project. The new tree is:
+Download the [woods.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/woods.csv) file to your computer. Make sure that the file suffix is `.csv`. (Sometimes Safari users will find that the suffix `.txt` gets appended to the end of the filename---`woods.csv.txt`. If that is the case delete the `.txt` part that was appended.) Place `woods.csv` into the `data` directory of your project. The new tree is:
 
 ```
 assignment-01
@@ -175,10 +179,10 @@ In RStudio, in the `Files` pane, if you click on the `data` directory, you shoul
 
 We can also create files from inside RStudio . We are going to create a README file. A README is a plain text file that introduces and explains a project. It contains information that is commonly required to understand what the project is about. Every project should have a README file.
 
-:::exercises
+:::todo
 **Your Turn**
 
-From the RStudio menu, \selecting `File > New File... > Text File`. This should open a blank text file in the RStudio editor. Copy the following text into your blank file:
+From the RStudio menu, select: `File > New File... > Text File`. This should open a blank text file in the RStudio editor. Copy the following text into your blank file:
 
 ```
 # assignment-01
@@ -206,6 +210,7 @@ assignment-01
 Notice that despite the `README` file starting with the letter "r", it is placed first in the root directory prior to our other directories and files. This is by design. In Unix, any file in all uppercase letters is shown first in the directory tree. (It does not show first in the RStudio `Files` pane, nor in the file view when you open the root directory on your computer.)
 
 :::protip
+**Protip**
 The `{usethis}` package includes functionality to create many useful files for projects, including README files.
 :::
 
@@ -217,6 +222,8 @@ The `{usethis}` package includes functionality to create many useful files for p
 Since README files are plain text files, they cannot include formatting like bold or italic. However, they do typically include [Markdown syntax](https://www.markdownguide.org/basic-syntax/) (which is itself plain text). The plain text nature of these files keeps them small in size and accessible to anyone with any type of computer.
 
 :::fyi
+**FYI**
+
 There are several online guides for what to include in a README file, including [here](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide) and [here](https://www.makeareadme.com/). There is also a pretty good template for a README for data science oriented projects [here](https://raw.githubusercontent.com/sfbrigade/data-science-wg/master/dswg_project_resources/Project-README-template.md).
 :::
 

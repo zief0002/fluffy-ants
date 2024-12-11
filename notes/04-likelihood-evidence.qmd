@@ -118,7 +118,7 @@ When we have looked at statistical evidence to this point, it has been from a hy
 ```{r}
 # Fit Model 1
 lm.1 = lm(peer_rating ~ 1 + enroll + ft_students + ft_fac + nonres_tuition, data = usnwr_complete)
-
+lm.1 = lm(peer_rating ~ 1 + ft_students + pct_doc + gre + doc_acc + tot_pubs, data = usnwr_complete)
 # Coefficient-level output
 tidy(lm.1)
 ```

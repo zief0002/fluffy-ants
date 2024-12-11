@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-07-22">
+<meta name="dcterms.date" content="2024-12-06">
 
-<title>EPsy 8252 - Information Criteria and Model Selection</title>
+<title>Information Criteria and Model Selection – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -124,8 +124,11 @@ div.csl-indent {
 <link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
 <script src="../site_libs/pagedtable/js/pagedtable.js"></script>
 <script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -170,7 +173,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -209,7 +212,7 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -220,7 +223,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">On This Page</h2>
    
   <ul>
   <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation">Preparation</a></li>
@@ -259,7 +262,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 22, 2024</p>
+      <p class="date">December 6, 2024</p>
     </div>
   </div>
   
@@ -446,31 +449,30 @@ AIC &amp;= \mathrm{Deviance} + 2k \\[1ex]
 <span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">40</span>)</span>
 <span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-aics" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-aics" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-aics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured by the AIC.
 </figcaption>
 <div aria-describedby="tbl-aics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="tprqqekcmr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tprqqekcmr table {
+<div id="ijmauxlwcn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ijmauxlwcn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tprqqekcmr thead, #tprqqekcmr tbody, #tprqqekcmr tfoot, #tprqqekcmr tr, #tprqqekcmr td, #tprqqekcmr th {
+#ijmauxlwcn thead, #ijmauxlwcn tbody, #ijmauxlwcn tfoot, #ijmauxlwcn tr, #ijmauxlwcn td, #ijmauxlwcn th {
   border-style: none;
 }
 
-#tprqqekcmr p {
+#ijmauxlwcn p {
   margin: 0;
   padding: 0;
 }
 
-#tprqqekcmr .gt_table {
+#ijmauxlwcn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -496,12 +498,12 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-left-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_caption {
+#ijmauxlwcn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tprqqekcmr .gt_title {
+#ijmauxlwcn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -513,7 +515,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-bottom-width: 0;
 }
 
-#tprqqekcmr .gt_subtitle {
+#ijmauxlwcn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -525,7 +527,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-top-width: 0;
 }
 
-#tprqqekcmr .gt_heading {
+#ijmauxlwcn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -537,13 +539,13 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_bottom_border {
+#ijmauxlwcn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_col_headings {
+#ijmauxlwcn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -558,7 +560,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_col_heading {
+#ijmauxlwcn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -578,7 +580,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#tprqqekcmr .gt_column_spanner_outer {
+#ijmauxlwcn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -590,15 +592,15 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   padding-right: 4px;
 }
 
-#tprqqekcmr .gt_column_spanner_outer:first-child {
+#ijmauxlwcn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tprqqekcmr .gt_column_spanner_outer:last-child {
+#ijmauxlwcn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tprqqekcmr .gt_column_spanner {
+#ijmauxlwcn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -610,11 +612,11 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   width: 100%;
 }
 
-#tprqqekcmr .gt_spanner_row {
+#ijmauxlwcn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tprqqekcmr .gt_group_heading {
+#ijmauxlwcn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -640,7 +642,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   text-align: left;
 }
 
-#tprqqekcmr .gt_empty_group_heading {
+#ijmauxlwcn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -655,15 +657,15 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   vertical-align: middle;
 }
 
-#tprqqekcmr .gt_from_md > :first-child {
+#ijmauxlwcn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tprqqekcmr .gt_from_md > :last-child {
+#ijmauxlwcn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tprqqekcmr .gt_row {
+#ijmauxlwcn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -682,7 +684,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#tprqqekcmr .gt_stub {
+#ijmauxlwcn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -695,7 +697,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#tprqqekcmr .gt_stub_row_group {
+#ijmauxlwcn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -709,15 +711,15 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   vertical-align: top;
 }
 
-#tprqqekcmr .gt_row_group_first td {
+#ijmauxlwcn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tprqqekcmr .gt_row_group_first th {
+#ijmauxlwcn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tprqqekcmr .gt_summary_row {
+#ijmauxlwcn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -727,16 +729,16 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#tprqqekcmr .gt_first_summary_row {
+#ijmauxlwcn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_first_summary_row.thick {
+#ijmauxlwcn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tprqqekcmr .gt_last_summary_row {
+#ijmauxlwcn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -746,7 +748,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_grand_summary_row {
+#ijmauxlwcn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -756,7 +758,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#tprqqekcmr .gt_first_grand_summary_row {
+#ijmauxlwcn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -766,7 +768,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-top-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_last_grand_summary_row_top {
+#ijmauxlwcn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -776,11 +778,11 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_striped {
+#ijmauxlwcn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tprqqekcmr .gt_table_body {
+#ijmauxlwcn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -789,7 +791,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_footnotes {
+#ijmauxlwcn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -803,7 +805,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_footnote {
+#ijmauxlwcn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -812,7 +814,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#tprqqekcmr .gt_sourcenotes {
+#ijmauxlwcn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -826,7 +828,7 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#tprqqekcmr .gt_sourcenote {
+#ijmauxlwcn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -834,73 +836,82 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#tprqqekcmr .gt_left {
+#ijmauxlwcn .gt_left {
   text-align: left;
 }
 
-#tprqqekcmr .gt_center {
+#ijmauxlwcn .gt_center {
   text-align: center;
 }
 
-#tprqqekcmr .gt_right {
+#ijmauxlwcn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tprqqekcmr .gt_font_normal {
+#ijmauxlwcn .gt_font_normal {
   font-weight: normal;
 }
 
-#tprqqekcmr .gt_font_bold {
+#ijmauxlwcn .gt_font_bold {
   font-weight: bold;
 }
 
-#tprqqekcmr .gt_font_italic {
+#ijmauxlwcn .gt_font_italic {
   font-style: italic;
 }
 
-#tprqqekcmr .gt_super {
+#ijmauxlwcn .gt_super {
   font-size: 65%;
 }
 
-#tprqqekcmr .gt_footnote_marks {
+#ijmauxlwcn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tprqqekcmr .gt_asterisk {
+#ijmauxlwcn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tprqqekcmr .gt_indent_1 {
+#ijmauxlwcn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tprqqekcmr .gt_indent_2 {
+#ijmauxlwcn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tprqqekcmr .gt_indent_3 {
+#ijmauxlwcn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tprqqekcmr .gt_indent_4 {
+#ijmauxlwcn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tprqqekcmr .gt_indent_5 {
+#ijmauxlwcn .gt_indent_5 {
   text-indent: 25px;
+}
+
+#ijmauxlwcn .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ijmauxlwcn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>Model</em>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
-<th id="<em>k</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
-<th id="<em>AIC</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AIC</em></th>
+<th id="Model" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
+<th id="k" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
+<th id="AIC" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AIC</em></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -927,7 +938,6 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1017,31 +1027,30 @@ Table&nbsp;1: Models rank-ordered by the amount of empirical support as measured
 <span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">40</span>)</span>
 <span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-aicc" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-aicc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-aicc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured by the AICc.
 </figcaption>
 <div aria-describedby="tbl-aicc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="esuzdzgwcn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#esuzdzgwcn table {
+<div id="hxilqtcekd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hxilqtcekd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#esuzdzgwcn thead, #esuzdzgwcn tbody, #esuzdzgwcn tfoot, #esuzdzgwcn tr, #esuzdzgwcn td, #esuzdzgwcn th {
+#hxilqtcekd thead, #hxilqtcekd tbody, #hxilqtcekd tfoot, #hxilqtcekd tr, #hxilqtcekd td, #hxilqtcekd th {
   border-style: none;
 }
 
-#esuzdzgwcn p {
+#hxilqtcekd p {
   margin: 0;
   padding: 0;
 }
 
-#esuzdzgwcn .gt_table {
+#hxilqtcekd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1067,12 +1076,12 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-left-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_caption {
+#hxilqtcekd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#esuzdzgwcn .gt_title {
+#hxilqtcekd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1084,7 +1093,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-bottom-width: 0;
 }
 
-#esuzdzgwcn .gt_subtitle {
+#hxilqtcekd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1096,7 +1105,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-top-width: 0;
 }
 
-#esuzdzgwcn .gt_heading {
+#hxilqtcekd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1108,13 +1117,13 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_bottom_border {
+#hxilqtcekd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_col_headings {
+#hxilqtcekd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1129,7 +1138,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_col_heading {
+#hxilqtcekd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1149,7 +1158,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#esuzdzgwcn .gt_column_spanner_outer {
+#hxilqtcekd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1161,15 +1170,15 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   padding-right: 4px;
 }
 
-#esuzdzgwcn .gt_column_spanner_outer:first-child {
+#hxilqtcekd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#esuzdzgwcn .gt_column_spanner_outer:last-child {
+#hxilqtcekd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#esuzdzgwcn .gt_column_spanner {
+#hxilqtcekd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1181,11 +1190,11 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   width: 100%;
 }
 
-#esuzdzgwcn .gt_spanner_row {
+#hxilqtcekd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#esuzdzgwcn .gt_group_heading {
+#hxilqtcekd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1211,7 +1220,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   text-align: left;
 }
 
-#esuzdzgwcn .gt_empty_group_heading {
+#hxilqtcekd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1226,15 +1235,15 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   vertical-align: middle;
 }
 
-#esuzdzgwcn .gt_from_md > :first-child {
+#hxilqtcekd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#esuzdzgwcn .gt_from_md > :last-child {
+#hxilqtcekd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#esuzdzgwcn .gt_row {
+#hxilqtcekd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1253,7 +1262,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#esuzdzgwcn .gt_stub {
+#hxilqtcekd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1266,7 +1275,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#esuzdzgwcn .gt_stub_row_group {
+#hxilqtcekd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1280,15 +1289,15 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   vertical-align: top;
 }
 
-#esuzdzgwcn .gt_row_group_first td {
+#hxilqtcekd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#esuzdzgwcn .gt_row_group_first th {
+#hxilqtcekd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#esuzdzgwcn .gt_summary_row {
+#hxilqtcekd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1298,16 +1307,16 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#esuzdzgwcn .gt_first_summary_row {
+#hxilqtcekd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_first_summary_row.thick {
+#hxilqtcekd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#esuzdzgwcn .gt_last_summary_row {
+#hxilqtcekd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1317,7 +1326,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_grand_summary_row {
+#hxilqtcekd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1327,7 +1336,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#esuzdzgwcn .gt_first_grand_summary_row {
+#hxilqtcekd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1337,7 +1346,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-top-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_last_grand_summary_row_top {
+#hxilqtcekd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1347,11 +1356,11 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_striped {
+#hxilqtcekd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#esuzdzgwcn .gt_table_body {
+#hxilqtcekd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1360,7 +1369,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_footnotes {
+#hxilqtcekd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1374,7 +1383,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_footnote {
+#hxilqtcekd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1383,7 +1392,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#esuzdzgwcn .gt_sourcenotes {
+#hxilqtcekd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1397,7 +1406,7 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#esuzdzgwcn .gt_sourcenote {
+#hxilqtcekd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1405,74 +1414,83 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#esuzdzgwcn .gt_left {
+#hxilqtcekd .gt_left {
   text-align: left;
 }
 
-#esuzdzgwcn .gt_center {
+#hxilqtcekd .gt_center {
   text-align: center;
 }
 
-#esuzdzgwcn .gt_right {
+#hxilqtcekd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#esuzdzgwcn .gt_font_normal {
+#hxilqtcekd .gt_font_normal {
   font-weight: normal;
 }
 
-#esuzdzgwcn .gt_font_bold {
+#hxilqtcekd .gt_font_bold {
   font-weight: bold;
 }
 
-#esuzdzgwcn .gt_font_italic {
+#hxilqtcekd .gt_font_italic {
   font-style: italic;
 }
 
-#esuzdzgwcn .gt_super {
+#hxilqtcekd .gt_super {
   font-size: 65%;
 }
 
-#esuzdzgwcn .gt_footnote_marks {
+#hxilqtcekd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#esuzdzgwcn .gt_asterisk {
+#hxilqtcekd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#esuzdzgwcn .gt_indent_1 {
+#hxilqtcekd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#esuzdzgwcn .gt_indent_2 {
+#hxilqtcekd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#esuzdzgwcn .gt_indent_3 {
+#hxilqtcekd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#esuzdzgwcn .gt_indent_4 {
+#hxilqtcekd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#esuzdzgwcn .gt_indent_5 {
+#hxilqtcekd .gt_indent_5 {
   text-indent: 25px;
+}
+
+#hxilqtcekd .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hxilqtcekd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>Model</em>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
-<th id="<em>k</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
+<th id="Model" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
+<th id="k" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
 <th id="AIC" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">AIC</th>
-<th id="<em>AICc</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
+<th id="AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -1503,7 +1521,6 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -1568,31 +1585,30 @@ Table&nbsp;2: Models rank-ordered by the amount of empirical support as measured
 <span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> <span class="fu">pct</span>(<span class="dv">50</span>)</span>
 <span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-delta-aicc" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-delta-aicc" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-delta-aicc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured by the AICc. Other evidence includes the ΔAICc for each model.
 </figcaption>
 <div aria-describedby="tbl-delta-aicc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="gjtsfvvzwa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gjtsfvvzwa table {
+<div id="ktaamswuhv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ktaamswuhv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gjtsfvvzwa thead, #gjtsfvvzwa tbody, #gjtsfvvzwa tfoot, #gjtsfvvzwa tr, #gjtsfvvzwa td, #gjtsfvvzwa th {
+#ktaamswuhv thead, #ktaamswuhv tbody, #ktaamswuhv tfoot, #ktaamswuhv tr, #ktaamswuhv td, #ktaamswuhv th {
   border-style: none;
 }
 
-#gjtsfvvzwa p {
+#ktaamswuhv p {
   margin: 0;
   padding: 0;
 }
 
-#gjtsfvvzwa .gt_table {
+#ktaamswuhv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1618,12 +1634,12 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-left-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_caption {
+#ktaamswuhv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gjtsfvvzwa .gt_title {
+#ktaamswuhv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1635,7 +1651,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-bottom-width: 0;
 }
 
-#gjtsfvvzwa .gt_subtitle {
+#ktaamswuhv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1647,7 +1663,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-top-width: 0;
 }
 
-#gjtsfvvzwa .gt_heading {
+#ktaamswuhv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1659,13 +1675,13 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_bottom_border {
+#ktaamswuhv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_col_headings {
+#ktaamswuhv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1680,7 +1696,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_col_heading {
+#ktaamswuhv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1700,7 +1716,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#gjtsfvvzwa .gt_column_spanner_outer {
+#ktaamswuhv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1712,15 +1728,15 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   padding-right: 4px;
 }
 
-#gjtsfvvzwa .gt_column_spanner_outer:first-child {
+#ktaamswuhv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gjtsfvvzwa .gt_column_spanner_outer:last-child {
+#ktaamswuhv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gjtsfvvzwa .gt_column_spanner {
+#ktaamswuhv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1732,11 +1748,11 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   width: 100%;
 }
 
-#gjtsfvvzwa .gt_spanner_row {
+#ktaamswuhv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gjtsfvvzwa .gt_group_heading {
+#ktaamswuhv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1762,7 +1778,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   text-align: left;
 }
 
-#gjtsfvvzwa .gt_empty_group_heading {
+#ktaamswuhv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1777,15 +1793,15 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   vertical-align: middle;
 }
 
-#gjtsfvvzwa .gt_from_md > :first-child {
+#ktaamswuhv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gjtsfvvzwa .gt_from_md > :last-child {
+#ktaamswuhv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gjtsfvvzwa .gt_row {
+#ktaamswuhv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1804,7 +1820,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#gjtsfvvzwa .gt_stub {
+#ktaamswuhv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1817,7 +1833,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#gjtsfvvzwa .gt_stub_row_group {
+#ktaamswuhv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1831,15 +1847,15 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   vertical-align: top;
 }
 
-#gjtsfvvzwa .gt_row_group_first td {
+#ktaamswuhv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gjtsfvvzwa .gt_row_group_first th {
+#ktaamswuhv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gjtsfvvzwa .gt_summary_row {
+#ktaamswuhv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1849,16 +1865,16 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#gjtsfvvzwa .gt_first_summary_row {
+#ktaamswuhv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_first_summary_row.thick {
+#ktaamswuhv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gjtsfvvzwa .gt_last_summary_row {
+#ktaamswuhv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1868,7 +1884,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_grand_summary_row {
+#ktaamswuhv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1878,7 +1894,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#gjtsfvvzwa .gt_first_grand_summary_row {
+#ktaamswuhv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1888,7 +1904,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-top-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_last_grand_summary_row_top {
+#ktaamswuhv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1898,11 +1914,11 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_striped {
+#ktaamswuhv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gjtsfvvzwa .gt_table_body {
+#ktaamswuhv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1911,7 +1927,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_footnotes {
+#ktaamswuhv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1925,7 +1941,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_footnote {
+#ktaamswuhv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1934,7 +1950,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#gjtsfvvzwa .gt_sourcenotes {
+#ktaamswuhv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1948,7 +1964,7 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#gjtsfvvzwa .gt_sourcenote {
+#ktaamswuhv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1956,75 +1972,84 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#gjtsfvvzwa .gt_left {
+#ktaamswuhv .gt_left {
   text-align: left;
 }
 
-#gjtsfvvzwa .gt_center {
+#ktaamswuhv .gt_center {
   text-align: center;
 }
 
-#gjtsfvvzwa .gt_right {
+#ktaamswuhv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gjtsfvvzwa .gt_font_normal {
+#ktaamswuhv .gt_font_normal {
   font-weight: normal;
 }
 
-#gjtsfvvzwa .gt_font_bold {
+#ktaamswuhv .gt_font_bold {
   font-weight: bold;
 }
 
-#gjtsfvvzwa .gt_font_italic {
+#ktaamswuhv .gt_font_italic {
   font-style: italic;
 }
 
-#gjtsfvvzwa .gt_super {
+#ktaamswuhv .gt_super {
   font-size: 65%;
 }
 
-#gjtsfvvzwa .gt_footnote_marks {
+#ktaamswuhv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gjtsfvvzwa .gt_asterisk {
+#ktaamswuhv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gjtsfvvzwa .gt_indent_1 {
+#ktaamswuhv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gjtsfvvzwa .gt_indent_2 {
+#ktaamswuhv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gjtsfvvzwa .gt_indent_3 {
+#ktaamswuhv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gjtsfvvzwa .gt_indent_4 {
+#ktaamswuhv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gjtsfvvzwa .gt_indent_5 {
+#ktaamswuhv .gt_indent_5 {
   text-indent: 25px;
+}
+
+#ktaamswuhv .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ktaamswuhv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>Model</em>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
-<th id="<em>k</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
+<th id="Model" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
+<th id="k" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
 <th id="AIC" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">AIC</th>
-<th id="<em>AICc</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
-<th id="&amp;#916;AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
+<th id="AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
+<th id="delta_a" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -2059,7 +2084,6 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -2135,31 +2159,30 @@ Table&nbsp;3: Models rank-ordered by the amount of empirical support as measured
 <span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> rel_lik)</span>
 <span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-rel-lik" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-rel-lik" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rel-lik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured by the AICc. Other evidence includes the ΔAICc, and relative likelihood for each model.
 </figcaption>
 <div aria-describedby="tbl-rel-lik-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="oawfohivir" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#oawfohivir table {
+<div id="kqvkrhxlzb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kqvkrhxlzb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#oawfohivir thead, #oawfohivir tbody, #oawfohivir tfoot, #oawfohivir tr, #oawfohivir td, #oawfohivir th {
+#kqvkrhxlzb thead, #kqvkrhxlzb tbody, #kqvkrhxlzb tfoot, #kqvkrhxlzb tr, #kqvkrhxlzb td, #kqvkrhxlzb th {
   border-style: none;
 }
 
-#oawfohivir p {
+#kqvkrhxlzb p {
   margin: 0;
   padding: 0;
 }
 
-#oawfohivir .gt_table {
+#kqvkrhxlzb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2185,12 +2208,12 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-left-color: #D3D3D3;
 }
 
-#oawfohivir .gt_caption {
+#kqvkrhxlzb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#oawfohivir .gt_title {
+#kqvkrhxlzb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2202,7 +2225,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-bottom-width: 0;
 }
 
-#oawfohivir .gt_subtitle {
+#kqvkrhxlzb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2214,7 +2237,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-top-width: 0;
 }
 
-#oawfohivir .gt_heading {
+#kqvkrhxlzb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2226,13 +2249,13 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#oawfohivir .gt_bottom_border {
+#kqvkrhxlzb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#oawfohivir .gt_col_headings {
+#kqvkrhxlzb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2247,7 +2270,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#oawfohivir .gt_col_heading {
+#kqvkrhxlzb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2267,7 +2290,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#oawfohivir .gt_column_spanner_outer {
+#kqvkrhxlzb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2279,15 +2302,15 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   padding-right: 4px;
 }
 
-#oawfohivir .gt_column_spanner_outer:first-child {
+#kqvkrhxlzb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#oawfohivir .gt_column_spanner_outer:last-child {
+#kqvkrhxlzb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#oawfohivir .gt_column_spanner {
+#kqvkrhxlzb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2299,11 +2322,11 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   width: 100%;
 }
 
-#oawfohivir .gt_spanner_row {
+#kqvkrhxlzb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#oawfohivir .gt_group_heading {
+#kqvkrhxlzb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2329,7 +2352,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   text-align: left;
 }
 
-#oawfohivir .gt_empty_group_heading {
+#kqvkrhxlzb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2344,15 +2367,15 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   vertical-align: middle;
 }
 
-#oawfohivir .gt_from_md > :first-child {
+#kqvkrhxlzb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#oawfohivir .gt_from_md > :last-child {
+#kqvkrhxlzb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#oawfohivir .gt_row {
+#kqvkrhxlzb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2371,7 +2394,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#oawfohivir .gt_stub {
+#kqvkrhxlzb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2384,7 +2407,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#oawfohivir .gt_stub_row_group {
+#kqvkrhxlzb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2398,15 +2421,15 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   vertical-align: top;
 }
 
-#oawfohivir .gt_row_group_first td {
+#kqvkrhxlzb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#oawfohivir .gt_row_group_first th {
+#kqvkrhxlzb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#oawfohivir .gt_summary_row {
+#kqvkrhxlzb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2416,16 +2439,16 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#oawfohivir .gt_first_summary_row {
+#kqvkrhxlzb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#oawfohivir .gt_first_summary_row.thick {
+#kqvkrhxlzb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#oawfohivir .gt_last_summary_row {
+#kqvkrhxlzb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2435,7 +2458,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#oawfohivir .gt_grand_summary_row {
+#kqvkrhxlzb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2445,7 +2468,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#oawfohivir .gt_first_grand_summary_row {
+#kqvkrhxlzb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2455,7 +2478,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-top-color: #D3D3D3;
 }
 
-#oawfohivir .gt_last_grand_summary_row_top {
+#kqvkrhxlzb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2465,11 +2488,11 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#oawfohivir .gt_striped {
+#kqvkrhxlzb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#oawfohivir .gt_table_body {
+#kqvkrhxlzb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2478,7 +2501,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#oawfohivir .gt_footnotes {
+#kqvkrhxlzb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2492,7 +2515,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#oawfohivir .gt_footnote {
+#kqvkrhxlzb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2501,7 +2524,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#oawfohivir .gt_sourcenotes {
+#kqvkrhxlzb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2515,7 +2538,7 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#oawfohivir .gt_sourcenote {
+#kqvkrhxlzb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2523,76 +2546,85 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#oawfohivir .gt_left {
+#kqvkrhxlzb .gt_left {
   text-align: left;
 }
 
-#oawfohivir .gt_center {
+#kqvkrhxlzb .gt_center {
   text-align: center;
 }
 
-#oawfohivir .gt_right {
+#kqvkrhxlzb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#oawfohivir .gt_font_normal {
+#kqvkrhxlzb .gt_font_normal {
   font-weight: normal;
 }
 
-#oawfohivir .gt_font_bold {
+#kqvkrhxlzb .gt_font_bold {
   font-weight: bold;
 }
 
-#oawfohivir .gt_font_italic {
+#kqvkrhxlzb .gt_font_italic {
   font-style: italic;
 }
 
-#oawfohivir .gt_super {
+#kqvkrhxlzb .gt_super {
   font-size: 65%;
 }
 
-#oawfohivir .gt_footnote_marks {
+#kqvkrhxlzb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#oawfohivir .gt_asterisk {
+#kqvkrhxlzb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#oawfohivir .gt_indent_1 {
+#kqvkrhxlzb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#oawfohivir .gt_indent_2 {
+#kqvkrhxlzb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#oawfohivir .gt_indent_3 {
+#kqvkrhxlzb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#oawfohivir .gt_indent_4 {
+#kqvkrhxlzb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#oawfohivir .gt_indent_5 {
+#kqvkrhxlzb .gt_indent_5 {
   text-indent: 25px;
+}
+
+#kqvkrhxlzb .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#kqvkrhxlzb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>Model</em>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
-<th id="<em>k</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
+<th id="Model" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
+<th id="k" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
 <th id="AIC" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">AIC</th>
-<th id="<em>AICc</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
-<th id="&amp;#916;AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
-<th id="Rel(&amp;#8466;)<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Rel(ℒ)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
+<th id="delta_a" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
+<th id="rel_lik" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Rel(ℒ)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -2630,13 +2662,12 @@ Table&nbsp;4: Models rank-ordered by the amount of empirical support as measured
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Rel(ℒ) = Relative likelihood</td>
+<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Rel(ℒ) = Relative likelihood</td>
 </tr>
 </tfoot>
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -2735,31 +2766,30 @@ w_i = \frac{\mathrm{Relative~Likelihood~for~Model~J}}{\sum_j \mathrm{All~Relativ
 <span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> rel_lik)</span>
 <span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-model-prob" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-model-prob" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-model-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured by the AICc. Other evidence includes the ΔAICc, relative likelihood, and model probability (AICc weight) for each model.
 </figcaption>
 <div aria-describedby="tbl-model-prob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="ugsxswxktb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ugsxswxktb table {
+<div id="jsffrocnnp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jsffrocnnp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ugsxswxktb thead, #ugsxswxktb tbody, #ugsxswxktb tfoot, #ugsxswxktb tr, #ugsxswxktb td, #ugsxswxktb th {
+#jsffrocnnp thead, #jsffrocnnp tbody, #jsffrocnnp tfoot, #jsffrocnnp tr, #jsffrocnnp td, #jsffrocnnp th {
   border-style: none;
 }
 
-#ugsxswxktb p {
+#jsffrocnnp p {
   margin: 0;
   padding: 0;
 }
 
-#ugsxswxktb .gt_table {
+#jsffrocnnp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2785,12 +2815,12 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-left-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_caption {
+#jsffrocnnp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ugsxswxktb .gt_title {
+#jsffrocnnp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2802,7 +2832,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-bottom-width: 0;
 }
 
-#ugsxswxktb .gt_subtitle {
+#jsffrocnnp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2814,7 +2844,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-top-width: 0;
 }
 
-#ugsxswxktb .gt_heading {
+#jsffrocnnp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2826,13 +2856,13 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_bottom_border {
+#jsffrocnnp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_col_headings {
+#jsffrocnnp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2847,7 +2877,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_col_heading {
+#jsffrocnnp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2867,7 +2897,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#ugsxswxktb .gt_column_spanner_outer {
+#jsffrocnnp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2879,15 +2909,15 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   padding-right: 4px;
 }
 
-#ugsxswxktb .gt_column_spanner_outer:first-child {
+#jsffrocnnp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ugsxswxktb .gt_column_spanner_outer:last-child {
+#jsffrocnnp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ugsxswxktb .gt_column_spanner {
+#jsffrocnnp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2899,11 +2929,11 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   width: 100%;
 }
 
-#ugsxswxktb .gt_spanner_row {
+#jsffrocnnp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ugsxswxktb .gt_group_heading {
+#jsffrocnnp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2929,7 +2959,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   text-align: left;
 }
 
-#ugsxswxktb .gt_empty_group_heading {
+#jsffrocnnp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2944,15 +2974,15 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   vertical-align: middle;
 }
 
-#ugsxswxktb .gt_from_md > :first-child {
+#jsffrocnnp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ugsxswxktb .gt_from_md > :last-child {
+#jsffrocnnp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ugsxswxktb .gt_row {
+#jsffrocnnp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2971,7 +3001,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#ugsxswxktb .gt_stub {
+#jsffrocnnp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2984,7 +3014,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#ugsxswxktb .gt_stub_row_group {
+#jsffrocnnp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2998,15 +3028,15 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   vertical-align: top;
 }
 
-#ugsxswxktb .gt_row_group_first td {
+#jsffrocnnp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ugsxswxktb .gt_row_group_first th {
+#jsffrocnnp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ugsxswxktb .gt_summary_row {
+#jsffrocnnp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3016,16 +3046,16 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#ugsxswxktb .gt_first_summary_row {
+#jsffrocnnp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_first_summary_row.thick {
+#jsffrocnnp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ugsxswxktb .gt_last_summary_row {
+#jsffrocnnp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3035,7 +3065,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_grand_summary_row {
+#jsffrocnnp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3045,7 +3075,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#ugsxswxktb .gt_first_grand_summary_row {
+#jsffrocnnp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3055,7 +3085,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-top-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_last_grand_summary_row_top {
+#jsffrocnnp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3065,11 +3095,11 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_striped {
+#jsffrocnnp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ugsxswxktb .gt_table_body {
+#jsffrocnnp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3078,7 +3108,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_footnotes {
+#jsffrocnnp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3092,7 +3122,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_footnote {
+#jsffrocnnp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3101,7 +3131,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#ugsxswxktb .gt_sourcenotes {
+#jsffrocnnp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3115,7 +3145,7 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#ugsxswxktb .gt_sourcenote {
+#jsffrocnnp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3123,77 +3153,86 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#ugsxswxktb .gt_left {
+#jsffrocnnp .gt_left {
   text-align: left;
 }
 
-#ugsxswxktb .gt_center {
+#jsffrocnnp .gt_center {
   text-align: center;
 }
 
-#ugsxswxktb .gt_right {
+#jsffrocnnp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ugsxswxktb .gt_font_normal {
+#jsffrocnnp .gt_font_normal {
   font-weight: normal;
 }
 
-#ugsxswxktb .gt_font_bold {
+#jsffrocnnp .gt_font_bold {
   font-weight: bold;
 }
 
-#ugsxswxktb .gt_font_italic {
+#jsffrocnnp .gt_font_italic {
   font-style: italic;
 }
 
-#ugsxswxktb .gt_super {
+#jsffrocnnp .gt_super {
   font-size: 65%;
 }
 
-#ugsxswxktb .gt_footnote_marks {
+#jsffrocnnp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ugsxswxktb .gt_asterisk {
+#jsffrocnnp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ugsxswxktb .gt_indent_1 {
+#jsffrocnnp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ugsxswxktb .gt_indent_2 {
+#jsffrocnnp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ugsxswxktb .gt_indent_3 {
+#jsffrocnnp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ugsxswxktb .gt_indent_4 {
+#jsffrocnnp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ugsxswxktb .gt_indent_5 {
+#jsffrocnnp .gt_indent_5 {
   text-indent: 25px;
+}
+
+#jsffrocnnp .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jsffrocnnp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>Model</em>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
-<th id="<em>k</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
+<th id="Model" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
+<th id="k" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
 <th id="AIC" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">AIC</th>
-<th id="<em>AICc</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
-<th id="&amp;#916;AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
-<th id="Rel(&amp;#8466;)<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Rel(ℒ)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<em>AICc Wt.</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc Wt.</em></th>
+<th id="AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
+<th id="delta_a" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
+<th id="rel_lik" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Rel(ℒ)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="model_prob" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc Wt.</em></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -3235,13 +3274,12 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="7" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Rel(ℒ) = Relative likelihood</td>
+<td colspan="7" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Rel(ℒ) = Relative likelihood</td>
 </tr>
 </tfoot>
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -3314,31 +3352,30 @@ Table&nbsp;5: Models rank-ordered by the amount of empirical support as measured
 <span id="cb57-36"><a href="#cb57-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> rel_lik)</span>
 <span id="cb57-37"><a href="#cb57-37" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-model-prob-2" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-model-prob-2" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-model-prob-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured by the AICc after removing Model 0 and Model 3 from the candidate set. Other evidence includes the ΔAICc, relative likelihood, and model probability (AICc weight) for each model.
 </figcaption>
 <div aria-describedby="tbl-model-prob-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="dxgdeeuftt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dxgdeeuftt table {
+<div id="sklqocmflv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sklqocmflv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dxgdeeuftt thead, #dxgdeeuftt tbody, #dxgdeeuftt tfoot, #dxgdeeuftt tr, #dxgdeeuftt td, #dxgdeeuftt th {
+#sklqocmflv thead, #sklqocmflv tbody, #sklqocmflv tfoot, #sklqocmflv tr, #sklqocmflv td, #sklqocmflv th {
   border-style: none;
 }
 
-#dxgdeeuftt p {
+#sklqocmflv p {
   margin: 0;
   padding: 0;
 }
 
-#dxgdeeuftt .gt_table {
+#sklqocmflv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3364,12 +3401,12 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-left-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_caption {
+#sklqocmflv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dxgdeeuftt .gt_title {
+#sklqocmflv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3381,7 +3418,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-bottom-width: 0;
 }
 
-#dxgdeeuftt .gt_subtitle {
+#sklqocmflv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3393,7 +3430,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-top-width: 0;
 }
 
-#dxgdeeuftt .gt_heading {
+#sklqocmflv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3405,13 +3442,13 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_bottom_border {
+#sklqocmflv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_col_headings {
+#sklqocmflv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3426,7 +3463,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_col_heading {
+#sklqocmflv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3446,7 +3483,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#dxgdeeuftt .gt_column_spanner_outer {
+#sklqocmflv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3458,15 +3495,15 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   padding-right: 4px;
 }
 
-#dxgdeeuftt .gt_column_spanner_outer:first-child {
+#sklqocmflv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dxgdeeuftt .gt_column_spanner_outer:last-child {
+#sklqocmflv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dxgdeeuftt .gt_column_spanner {
+#sklqocmflv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3478,11 +3515,11 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   width: 100%;
 }
 
-#dxgdeeuftt .gt_spanner_row {
+#sklqocmflv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dxgdeeuftt .gt_group_heading {
+#sklqocmflv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3508,7 +3545,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   text-align: left;
 }
 
-#dxgdeeuftt .gt_empty_group_heading {
+#sklqocmflv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3523,15 +3560,15 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   vertical-align: middle;
 }
 
-#dxgdeeuftt .gt_from_md > :first-child {
+#sklqocmflv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dxgdeeuftt .gt_from_md > :last-child {
+#sklqocmflv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dxgdeeuftt .gt_row {
+#sklqocmflv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3550,7 +3587,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#dxgdeeuftt .gt_stub {
+#sklqocmflv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3563,7 +3600,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#dxgdeeuftt .gt_stub_row_group {
+#sklqocmflv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3577,15 +3614,15 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   vertical-align: top;
 }
 
-#dxgdeeuftt .gt_row_group_first td {
+#sklqocmflv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dxgdeeuftt .gt_row_group_first th {
+#sklqocmflv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dxgdeeuftt .gt_summary_row {
+#sklqocmflv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3595,16 +3632,16 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#dxgdeeuftt .gt_first_summary_row {
+#sklqocmflv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_first_summary_row.thick {
+#sklqocmflv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dxgdeeuftt .gt_last_summary_row {
+#sklqocmflv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3614,7 +3651,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_grand_summary_row {
+#sklqocmflv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3624,7 +3661,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#dxgdeeuftt .gt_first_grand_summary_row {
+#sklqocmflv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3634,7 +3671,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-top-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_last_grand_summary_row_top {
+#sklqocmflv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3644,11 +3681,11 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_striped {
+#sklqocmflv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dxgdeeuftt .gt_table_body {
+#sklqocmflv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3657,7 +3694,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_footnotes {
+#sklqocmflv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3671,7 +3708,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_footnote {
+#sklqocmflv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3680,7 +3717,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#dxgdeeuftt .gt_sourcenotes {
+#sklqocmflv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3694,7 +3731,7 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#dxgdeeuftt .gt_sourcenote {
+#sklqocmflv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3702,76 +3739,85 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#dxgdeeuftt .gt_left {
+#sklqocmflv .gt_left {
   text-align: left;
 }
 
-#dxgdeeuftt .gt_center {
+#sklqocmflv .gt_center {
   text-align: center;
 }
 
-#dxgdeeuftt .gt_right {
+#sklqocmflv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dxgdeeuftt .gt_font_normal {
+#sklqocmflv .gt_font_normal {
   font-weight: normal;
 }
 
-#dxgdeeuftt .gt_font_bold {
+#sklqocmflv .gt_font_bold {
   font-weight: bold;
 }
 
-#dxgdeeuftt .gt_font_italic {
+#sklqocmflv .gt_font_italic {
   font-style: italic;
 }
 
-#dxgdeeuftt .gt_super {
+#sklqocmflv .gt_super {
   font-size: 65%;
 }
 
-#dxgdeeuftt .gt_footnote_marks {
+#sklqocmflv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dxgdeeuftt .gt_asterisk {
+#sklqocmflv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dxgdeeuftt .gt_indent_1 {
+#sklqocmflv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dxgdeeuftt .gt_indent_2 {
+#sklqocmflv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dxgdeeuftt .gt_indent_3 {
+#sklqocmflv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dxgdeeuftt .gt_indent_4 {
+#sklqocmflv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dxgdeeuftt .gt_indent_5 {
+#sklqocmflv .gt_indent_5 {
   text-indent: 25px;
+}
+
+#sklqocmflv .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#sklqocmflv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>Model</em>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
-<th id="<em>k</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
-<th id="<em>AICc</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
-<th id="&amp;#916;AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
-<th id="Rel(&amp;#8466;)<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Rel(ℒ)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<em>AICc Wt.</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc Wt.</em></th>
+<th id="Model" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
+<th id="k" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
+<th id="AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
+<th id="delta_a" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
+<th id="rel_lik" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Rel(ℒ)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="model_prob" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc Wt.</em></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -3793,13 +3839,12 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Rel(ℒ) = Relative likelihood</td>
+<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Rel(ℒ) = Relative likelihood</td>
 </tr>
 </tfoot>
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -3901,31 +3946,30 @@ Table&nbsp;6: Models rank-ordered by the amount of empirical support as measured
 <span id="cb61-24"><a href="#cb61-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote =</span> <span class="fu">html</span>(<span class="st">"Rel(&amp;#8466;) = Relative likelihood"</span>),</span>
 <span id="cb61-25"><a href="#cb61-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> ModelLik)</span>
 <span id="cb61-26"><a href="#cb61-26" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-pretty-print" class="cell quarto-float anchored" data-layout-align="center">
+<div id="tbl-pretty-print" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pretty-print-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured by the AICc after removing Model 1 from the candidate set. Other evidence includes the ΔAICc, relative likelihood, and model probability (AICc weight) for each model.
 </figcaption>
 <div aria-describedby="tbl-pretty-print-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div>
-<div id="livmqvkjfq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#livmqvkjfq table {
+<div id="fftharqkbi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fftharqkbi table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#livmqvkjfq thead, #livmqvkjfq tbody, #livmqvkjfq tfoot, #livmqvkjfq tr, #livmqvkjfq td, #livmqvkjfq th {
+#fftharqkbi thead, #fftharqkbi tbody, #fftharqkbi tfoot, #fftharqkbi tr, #fftharqkbi td, #fftharqkbi th {
   border-style: none;
 }
 
-#livmqvkjfq p {
+#fftharqkbi p {
   margin: 0;
   padding: 0;
 }
 
-#livmqvkjfq .gt_table {
+#fftharqkbi .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3951,12 +3995,12 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-left-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_caption {
+#fftharqkbi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#livmqvkjfq .gt_title {
+#fftharqkbi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3968,7 +4012,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-bottom-width: 0;
 }
 
-#livmqvkjfq .gt_subtitle {
+#fftharqkbi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3980,7 +4024,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-top-width: 0;
 }
 
-#livmqvkjfq .gt_heading {
+#fftharqkbi .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3992,13 +4036,13 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_bottom_border {
+#fftharqkbi .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_col_headings {
+#fftharqkbi .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4013,7 +4057,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_col_heading {
+#fftharqkbi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4033,7 +4077,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#livmqvkjfq .gt_column_spanner_outer {
+#fftharqkbi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4045,15 +4089,15 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   padding-right: 4px;
 }
 
-#livmqvkjfq .gt_column_spanner_outer:first-child {
+#fftharqkbi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#livmqvkjfq .gt_column_spanner_outer:last-child {
+#fftharqkbi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#livmqvkjfq .gt_column_spanner {
+#fftharqkbi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4065,11 +4109,11 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   width: 100%;
 }
 
-#livmqvkjfq .gt_spanner_row {
+#fftharqkbi .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#livmqvkjfq .gt_group_heading {
+#fftharqkbi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4095,7 +4139,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   text-align: left;
 }
 
-#livmqvkjfq .gt_empty_group_heading {
+#fftharqkbi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4110,15 +4154,15 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   vertical-align: middle;
 }
 
-#livmqvkjfq .gt_from_md > :first-child {
+#fftharqkbi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#livmqvkjfq .gt_from_md > :last-child {
+#fftharqkbi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#livmqvkjfq .gt_row {
+#fftharqkbi .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4137,7 +4181,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   overflow-x: hidden;
 }
 
-#livmqvkjfq .gt_stub {
+#fftharqkbi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4150,7 +4194,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#livmqvkjfq .gt_stub_row_group {
+#fftharqkbi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4164,15 +4208,15 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   vertical-align: top;
 }
 
-#livmqvkjfq .gt_row_group_first td {
+#fftharqkbi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#livmqvkjfq .gt_row_group_first th {
+#fftharqkbi .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#livmqvkjfq .gt_summary_row {
+#fftharqkbi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4182,16 +4226,16 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#livmqvkjfq .gt_first_summary_row {
+#fftharqkbi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_first_summary_row.thick {
+#fftharqkbi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#livmqvkjfq .gt_last_summary_row {
+#fftharqkbi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4201,7 +4245,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_grand_summary_row {
+#fftharqkbi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4211,7 +4255,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#livmqvkjfq .gt_first_grand_summary_row {
+#fftharqkbi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4221,7 +4265,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-top-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_last_grand_summary_row_top {
+#fftharqkbi .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4231,11 +4275,11 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_striped {
+#fftharqkbi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#livmqvkjfq .gt_table_body {
+#fftharqkbi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4244,7 +4288,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-bottom-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_footnotes {
+#fftharqkbi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4258,7 +4302,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_footnote {
+#fftharqkbi .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4267,7 +4311,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#livmqvkjfq .gt_sourcenotes {
+#fftharqkbi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4281,7 +4325,7 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   border-right-color: #D3D3D3;
 }
 
-#livmqvkjfq .gt_sourcenote {
+#fftharqkbi .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4289,76 +4333,85 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
   padding-right: 5px;
 }
 
-#livmqvkjfq .gt_left {
+#fftharqkbi .gt_left {
   text-align: left;
 }
 
-#livmqvkjfq .gt_center {
+#fftharqkbi .gt_center {
   text-align: center;
 }
 
-#livmqvkjfq .gt_right {
+#fftharqkbi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#livmqvkjfq .gt_font_normal {
+#fftharqkbi .gt_font_normal {
   font-weight: normal;
 }
 
-#livmqvkjfq .gt_font_bold {
+#fftharqkbi .gt_font_bold {
   font-weight: bold;
 }
 
-#livmqvkjfq .gt_font_italic {
+#fftharqkbi .gt_font_italic {
   font-style: italic;
 }
 
-#livmqvkjfq .gt_super {
+#fftharqkbi .gt_super {
   font-size: 65%;
 }
 
-#livmqvkjfq .gt_footnote_marks {
+#fftharqkbi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#livmqvkjfq .gt_asterisk {
+#fftharqkbi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#livmqvkjfq .gt_indent_1 {
+#fftharqkbi .gt_indent_1 {
   text-indent: 5px;
 }
 
-#livmqvkjfq .gt_indent_2 {
+#fftharqkbi .gt_indent_2 {
   text-indent: 10px;
 }
 
-#livmqvkjfq .gt_indent_3 {
+#fftharqkbi .gt_indent_3 {
   text-indent: 15px;
 }
 
-#livmqvkjfq .gt_indent_4 {
+#fftharqkbi .gt_indent_4 {
   text-indent: 20px;
 }
 
-#livmqvkjfq .gt_indent_5 {
+#fftharqkbi .gt_indent_5 {
   text-indent: 25px;
+}
+
+#fftharqkbi .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#fftharqkbi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_col_headings">
-<th id="<em>Model</em>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
-<th id="<em>k</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
-<th id="<em>AICc</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
-<th id="&amp;#916;AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
-<th id="Rel(&amp;#8466;)<span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Rel(ℒ)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="<em>AICc Wt.</em>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc Wt.</em></th>
+<th id="Modnames" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><em>Model</em></th>
+<th id="K" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>k</em></th>
+<th id="AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc</em></th>
+<th id="Delta_AICc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ΔAICc</th>
+<th id="ModelLik" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Rel(ℒ)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="AICcWt" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>AICc Wt.</em></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -4396,13 +4449,12 @@ Table&nbsp;7: Models rank-ordered by the amount of empirical support as measured
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Rel(ℒ) = Relative likelihood</td>
+<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Rel(ℒ) = Relative likelihood</td>
 </tr>
 </tfoot>
 
 </table>
 
-</div>
 </div>
 </div>
 </div>
@@ -4471,18 +4523,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -4514,7 +4555,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -4549,7 +4630,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

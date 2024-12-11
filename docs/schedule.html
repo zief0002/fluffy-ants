@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EPsy 8252 - Calendar</title>
+<title>Calendar – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d5b413f6cf0c3c226012504e38db4067.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,6 +67,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="assets/sticky-notes.css">
@@ -84,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -123,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -133,7 +136,39 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On This Page</h2>
+   
+  <ul>
+  <li><a href="#unit-0-welcome-and-review" id="toc-unit-0-welcome-and-review" class="nav-link active" data-scroll-target="#unit-0-welcome-and-review">UNIT 0: WELCOME AND REVIEW</a>
+  <ul class="collapse">
+  <li><a href="#jan.-22-welcome-to-epsy-8252" id="toc-jan.-22-welcome-to-epsy-8252" class="nav-link" data-scroll-target="#jan.-22-welcome-to-epsy-8252">Jan.&nbsp;22: Welcome to EPsy 8252</a></li>
+  <li><a href="#jan.-2729-regression-review" id="toc-jan.-2729-regression-review" class="nav-link" data-scroll-target="#jan.-2729-regression-review">Jan.&nbsp;27/29: Regression Review</a></li>
+  </ul></li>
+  <li><a href="#unit-1-introduction-to-quarto" id="toc-unit-1-introduction-to-quarto" class="nav-link" data-scroll-target="#unit-1-introduction-to-quarto">UNIT 1: INTRODUCTION TO QUARTO</a>
+  <ul class="collapse">
+  <li><a href="#feb.-03-project-organization" id="toc-feb.-03-project-organization" class="nav-link" data-scroll-target="#feb.-03-project-organization">Feb.&nbsp;03: Project Organization</a></li>
+  <li><a href="#feb.-05-introduction-to-quarto" id="toc-feb.-05-introduction-to-quarto" class="nav-link" data-scroll-target="#feb.-05-introduction-to-quarto">Feb.&nbsp;05: Introduction to Quarto</a></li>
+  <li><a href="#feb.-10-more-quartocitations-equations-creating-tables-with-gt" id="toc-feb.-10-more-quartocitations-equations-creating-tables-with-gt" class="nav-link" data-scroll-target="#feb.-10-more-quartocitations-equations-creating-tables-with-gt">Feb.&nbsp;10: More Quarto—Citations, Equations, Creating Tables with <code>gt</code></a></li>
+  </ul></li>
+  <li><a href="#unit-02-model-selction-and-evidence" id="toc-unit-02-model-selction-and-evidence" class="nav-link" data-scroll-target="#unit-02-model-selction-and-evidence">UNIT 02: MODEL SELCTION AND EVIDENCE</a>
+  <ul class="collapse">
+  <li><a href="#feb.-1217-likelihood-a-framework-for-evidence" id="toc-feb.-1217-likelihood-a-framework-for-evidence" class="nav-link" data-scroll-target="#feb.-1217-likelihood-a-framework-for-evidence">Feb.&nbsp;12/17: Likelihood: A Framework for Evidence</a></li>
+  <li><a href="#feb.-192426-polynomial-effects" id="toc-feb.-192426-polynomial-effects" class="nav-link" data-scroll-target="#feb.-192426-polynomial-effects">Feb.&nbsp;19/24/26: Polynomial Effects</a></li>
+  <li><a href="#mar.-03" id="toc-mar.-03" class="nav-link" data-scroll-target="#mar.-03">Mar.&nbsp;03</a></li>
+  <li><a href="#mar.-05-log-transforming-the-outcome" id="toc-mar.-05-log-transforming-the-outcome" class="nav-link" data-scroll-target="#mar.-05-log-transforming-the-outcome">Mar.&nbsp;05: Log-Transforming the Outcome</a></li>
+  <li><a href="#mar.-1012-spring-break" id="toc-mar.-1012-spring-break" class="nav-link" data-scroll-target="#mar.-1012-spring-break">Mar.&nbsp;10/12 (Spring Break)</a></li>
+  <li><a href="#mar.-1719-log-transforming-the-outcome" id="toc-mar.-1719-log-transforming-the-outcome" class="nav-link" data-scroll-target="#mar.-1719-log-transforming-the-outcome">Mar.&nbsp;17/19: Log-Transforming the Outcome</a></li>
+  <li><a href="#mar.-2426-log-transforming-the-predictor" id="toc-mar.-2426-log-transforming-the-predictor" class="nav-link" data-scroll-target="#mar.-2426-log-transforming-the-predictor">Mar.&nbsp;24/26: Log-Transforming the Predictor</a></li>
+  <li><a href="#mar.-31-rule-of-the-bulgean-exampleapr.-02" id="toc-mar.-31-rule-of-the-bulgean-exampleapr.-02" class="nav-link" data-scroll-target="#mar.-31-rule-of-the-bulgean-exampleapr.-02">Mar.&nbsp;31: Rule of the Bulge—An Example/Apr.&nbsp;02</a></li>
+  <li><a href="#apr.-020709-logistic-regression-model" id="toc-apr.-020709-logistic-regression-model" class="nav-link" data-scroll-target="#apr.-020709-logistic-regression-model">Apr.&nbsp;02/07/09: Logistic Regression Model</a></li>
+  <li><a href="#apr.-1416-introduction-to-mixed-effects-regression-models" id="toc-apr.-1416-introduction-to-mixed-effects-regression-models" class="nav-link" data-scroll-target="#apr.-1416-introduction-to-mixed-effects-regression-models">Apr.&nbsp;14/16: Introduction to Mixed-Effects Regression Models</a></li>
+  <li><a href="#apr.-2123-lmer-average-change-over-time" id="toc-apr.-2123-lmer-average-change-over-time" class="nav-link" data-scroll-target="#apr.-2123-lmer-average-change-over-time">Apr.&nbsp;21/23: LMER: Average Change Over Time</a></li>
+  <li><a href="#apr.-2830-lmer-other-random-effects-and-covariates" id="toc-apr.-2830-lmer-other-random-effects-and-covariates" class="nav-link" data-scroll-target="#apr.-2830-lmer-other-random-effects-and-covariates">Apr.&nbsp;28/30: LMER: Other Random-Effects and Covariates</a></li>
+  <li><a href="#may-05-qa-and-future-coursework" id="toc-may-05-qa-and-future-coursework" class="nav-link" data-scroll-target="#may-05-qa-and-future-coursework">May 05: Q&amp;A and Future Coursework</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -158,688 +193,526 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>The calendar below lists the tentative course topics. The dates listed are subject to change at the instructor’s discretion.</p>
-<p>As part of the course, there are several articles, papers and technical reports that you will need to read during the semester. Most of the articles themselves are accessible through the <a href="http://www.lib.umn.edu">University of Minnesota library website</a>. In order to access the full text of some of the articles, you will need to log in using your University x500 username and password. More detailed information, including references or links to specific readings, are linked under the day’s “Reading”.</p>
+<p>As part of the course, there are several articles, papers and technical reports that you will need to read during the semester. Most of the articles themselves are accessible through the <a href="http://www.lib.umn.edu">University of Minnesota library website</a>. In order to access the full text of some of the articles, you will need to log in using your University x500 username and password.</p>
 <p><br><br></p>
-<p><br></p>
-<table class="table">
-<thead>
-<tr>
-<th style="width:10%;">
-</th>
-<th style="width:10%;">
-Date
-</th>
-<th style="width:10%;text-align:center">
-Prep
-</th>
-<th style="width:40%;">
-Topic
-</th>
-<th style="width:10%;text-align:center">
-Notes
-</th>
-<th style="width:10%;text-align:center">
-QMD
-</th>
-<th style="width:10%;text-align:center">
-Script
-</th>
-</tr>
-</thead>
-<tbody>
-<!-- <br /><span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Updated 02-13-2023]*</span> -->
 <!-- ---------------------------------- -->
 <!-- Unit 00: Welcome                   -->
 <!-- ---------------------------------- -->
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Jan.&nbsp;16
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td>
-Welcome to Epsy 8252
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fas fa-link" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fab fa-markdown" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-code" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Jan.&nbsp;18
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="readings/01-regression-review.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-Regression Review
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="files/01-regression-review.pdf"><span class="fa fa-file-pdf" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<span class="fab fa-markdown" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="scripts/01-regression-review.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Jan.&nbsp;23
-</td>
-</tr>
-<!-- ---------------------------------- -->
-<!-- Unit 01: Introduction to Quarto    -->
-<!-- ---------------------------------- -->
-<tr>
-<td colspan="7">
-<b>Unit 01: Introduction to Quarto</b>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Jan.&nbsp;25
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="readings/02-project-organization.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;">
-Project Organization
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/02-project-organization.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/02-project-organization.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-code" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Jan.&nbsp;30
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="readings/03-introduction-to-quarto.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-Introduction to Quarto
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="notes/03-introduction-to-quarto.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/03-introduction-to-quarto.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<span class="fa fa-code" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-</tr>
-<tr>
-<td align="center" rowspan="3">
-&nbsp;
-</td>
-<td style="vertical-align:middle;" rowspan="3">
-Feb.&nbsp;01
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td style="vertical-align:middle;">
-More Quarto (Citations, Etc.)
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/03-more-quarto.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/03-more-quarto.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-code" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td style="vertical-align:middle;">
-Creating Tables with <code>{gt}</code>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/03-creating-tables.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/03-creating-tables.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-code" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-</tr>
-<!-- ------------------------------------- -->
-<!-- Unit 02: Model Selection and Evidence -->
-<!-- ------------------------------------- -->
-<tr>
-<td colspan="7">
-<b>Unit 02: Model Selection and Evidence</b>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Feb.&nbsp;06
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="readings/04-probability-distributions.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-Likelihood: A Framework for Evidence
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="notes/04-likelihood-evidence.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/04-likelihood-evidence.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="scripts/04-likelihood-evidence.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Feb.&nbsp;08
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-<em>Optional</em>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-book" style="font-size: 17px; color: #f1f1f1"></span>
-</td>
-<td style="vertical-align:middle;">
-Likelihood: A Framework for Estimation
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/04-optional-likelihood-estimation.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/04-optional-likelihood-estimation.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-code" style="font-size: 17px; color: #f1f1f1"></span>
-</td>
-</tr>
-<tr>
-<td colspan="7">
-<b>Unit 03: Dealing with Nonlinearity</b>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Feb.&nbsp;13
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="3">
-<a href="readings/05-polynomial-effects.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;" rowspan="3">
-Polynomial Effects
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="3">
-<a href="notes/05-polynomial-effects.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="3">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/05-polynomial-effects.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="3">
-<a href="scripts/05-polynomial-effects.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Feb.&nbsp;15
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Feb.&nbsp;20
-</td>
-</tr>
-<tr>
-<td colspan="7">
-<b>Unit 02 (Revisited): Model Selection and Evidence</b>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Feb.&nbsp;22
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="readings/06-information-criteria-and-model-selection.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;">
-Information Criteria and Model Selection
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/06-information-criteria-and-model-selection.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/06-information-criteria-and-model-selection.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="scripts/06-information-criteria-and-model-selection.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<!-- ---------------------------------- -->
-<!-- Unit 03: Dealing with Nonlinearity -->
-<!-- ---------------------------------- -->
-<tr>
-<td colspan="7">
-<b>Unit 03 (Revisited): Dealing with Nonlinearity</b>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Feb.&nbsp;27
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="readings/07-logarithmic-transformations-outcome.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-Log-Transforming the Outcome
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="notes/07-logarithmic-transformations-outcome.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/07-logarithmic-transformations-outcome.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="scripts/07-logarithmic-transformations-outcome.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Feb.&nbsp;29
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Mar.&nbsp;06–10
-</td>
-<td align="center" style="vertical-align:middle;">
-</td>
-<td style="vertical-align:middle;" colspan="4">
-🎉🍹 SPRING BREAK — NO CLASS &nbsp; 🛌
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Mar.&nbsp;12
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="readings/07-logarithmic-transformations-outcome.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;">
-Log-Transforming the Outcome
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/07-logarithmic-transformations-outcome.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/07-logarithmic-transformations-outcome.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="scripts/07-logarithmic-transformations-outcome.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Mar.&nbsp;14
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="readings/08-logarithmic-transformations-predictor.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-Log-Transforming the Predictor
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="notes/08-logarithmic-transformations-predictor.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/08-logarithmic-transformations-predictor.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="scripts/08-logarithmic-transformations-predictor.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Mar.&nbsp;19
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Mar.&nbsp;21
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td style="vertical-align:middle;">
-Rule of the Bulge—An Example
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/09-rule-of-the-bulge.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/09-rule-of-the-bulge.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="scripts/09-rule-of-the-bulge.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<!-- -------------------------------------- -->
-<!-- Unit 04: Modeling Dichotomous Outcomes -->
-<!-- -------------------------------------- -->
-<tr>
-<td colspan="7">
-<b>Unit 04: Modeling Dichotomous Outcomes</b>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-<em>Optional</em>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td style="vertical-align:middle;">
-Linear Probability Model
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/10-optional-linear-probability-model.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/10-optional-linear-probability-model.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-code" style="font-size: 17px; color: #f1f1f1"></span>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Mar.&nbsp;26
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="readings/10-logistic-regression.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;">
-Logistic Regression Model
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/10-logistic-regression.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/10-logistic-regression.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="scripts/10-logistic-regression.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Mar.&nbsp;28
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-More Logistic Regression
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="notes/11-more-logistic-regression.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/11-more-logistic-regression.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="scripts/11-more-logistic-regression.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Apr.&nbsp;02
-</td>
-</tr>
-<!-- ----------------------------------------------- -->
-<!-- Unit 05: Linear Mixed-Effects Regression Models -->
-<!-- ----------------------------------------------- -->
-<tr>
-<td colspan="7">
-<b>Unit 05: Linear Mixed-Effects Regression Models</b>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Apr.&nbsp;04
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-Introduction to Mixed-Effects Regression Models
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://zief0002.github.io/benevolent-anteater/notes/12-introduction-to-mixed-effects-models.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/12-introduction-to-mixed-effects-models.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://github.com/zief0002/benevolent-anteater/raw/main/scripts/12-introduction-to-mixed-effects-models.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Apr.&nbsp;09
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Apr.&nbsp;11
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="readings/13-lmer-average-change-over-time.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-LMER: Average Change Over Time
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://zief0002.github.io/benevolent-anteater/notes/13-lmer-average-change-over-time.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/13-lmer-average-change-over-time.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://github.com/zief0002/benevolent-anteater/raw/main/scripts/13-lmer-average-change-over-time.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Apr.&nbsp;16
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Apr.&nbsp;18
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="readings/14-lmer-other-random-effects-and-covariates.html"><span class="fa fa-book" style="font-size: 17px;"></span></a>
-</td>
-<td style="vertical-align:middle;" rowspan="2">
-LMER: Other Random-Effects and Covariates
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://zief0002.github.io/benevolent-anteater/notes/14-lmer-other-random-effects-and-covariates.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/14-lmer-other-random-effects-and-covariates.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;" rowspan="2">
-<a href="https://github.com/zief0002/benevolent-anteater/raw/main/scripts/14-lmer-other-random-effects-and-covariates.R"><span class="fa fa-code" style="font-size: 17px;"></span></a>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Apr.&nbsp;23
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-<em>Optional</em>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td style="vertical-align:middle;">
-LMER: Alternative Representations &amp; Assumptions
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="notes/15-optional-lmer-alt-representations-and-assumptions.html"><span class="fas fa-link" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/notes/15-optional-lmer-alt-representations-and-assumptions.qmd"><span class="fab fa-markdown" style="font-size: 17px;"></span></a>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-code" style="font-size: 17px; color: #f1f1f1"></span>
-</td>
-</tr>
-<tr>
-<td align="center" style="vertical-align:middle;">
-&nbsp;
-</td>
-<td>
-Apr.&nbsp;25
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span>
-</td>
-<td style="vertical-align:middle;">
-Q&amp;A and Future Coursework
-</td>
-<td align="center" style="vertical-align:middle;">
-<!-- [<span class="fas fa-link" style="font-size: 17px;"></span>](files/qme-course-map-2023-04-10.pdf) -->
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fab fa-markdown" style="font-size: 17px; color: #f1f1f1;"></span>
-</td>
-<td align="center" style="vertical-align:middle;">
-<span class="fa fa-code" style="font-size: 17px; color: #f1f1f1;"></span>
-</td>
-</tr>
-</tbody>
-</table>
+<hr>
+<section id="unit-0-welcome-and-review" class="level2">
+<h2 class="anchored" data-anchor-id="unit-0-welcome-and-review">UNIT 0: WELCOME AND REVIEW</h2>
+<section id="jan.-22-welcome-to-epsy-8252" class="level3">
+<h3 class="anchored" data-anchor-id="jan.-22-welcome-to-epsy-8252">Jan.&nbsp;22: Welcome to EPsy 8252</h3>
+<div class="todo">
+<p><strong>To-Do</strong></p>
+<p>Before next class, update R, RStudio, and all of your packages!</p>
+<ul>
+<li>Update R to the most recent version (v. 4.4.2; Pile of Leaves). You can check your current version by typing <code>R.version</code> into the console.</li>
+<li>Update RStudio Desktop to the most recent version (v. 2024.09.1+394). You can check your current version by selecting <code>RStudio &gt; About RStudio</code>.</li>
+<li>Once you have updated R and RStudio, update all of your R packages (In the <code>Packages</code> tab in RStudio click <code>Update</code>).</li>
+</ul>
+</div>
+<p><br></p>
+<hr>
+</section>
+<section id="jan.-2729-regression-review" class="level3">
+<h3 class="anchored" data-anchor-id="jan.-2729-regression-review">Jan.&nbsp;27/29: Regression Review</h3>
+<ul>
+<li><a href="files/01-regression-review.pdf">PDF Notes</a> <br> <!-- <span class="fas fa-link" style="color: #f1f1f1; font-size: 17px;"></span> --></li>
+<li><a href="scripts/01-regression-review.R">R Script File</a></li>
+</ul>
+<div class="todo">
+<p><strong>To-Do</strong></p>
+<p>Before next class, look at your computer files and your organization of those files. Here are some things to reflect on:</p>
+<ul>
+<li>Are your files organized into folders/directories? Or are they all in your Downloads folder?
+<ul>
+<li>How did you organize all the data files, notes, etc. from EPsy 8251?</li>
+</ul></li>
+<li>If I asked you to find a specific file, could you locate it without using “Search”?</li>
+<li>Can you tell what is in a particular file by just looking at its name?</li>
+<li>Do your file names contain spaces? What about characters that aren’t letters, numbers, dashes, or underscores?</li>
+<li>Are your file names consistent (all lower case letters, or all title case)? Or are they all different?</li>
+</ul>
+</div>
+<br>
+<hr>
+</section>
+</section>
+<section id="unit-1-introduction-to-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="unit-1-introduction-to-quarto">UNIT 1: INTRODUCTION TO QUARTO</h2>
+<section id="feb.-03-project-organization" class="level3">
+<h3 class="anchored" data-anchor-id="feb.-03-project-organization">Feb.&nbsp;03: Project Organization</h3>
+<ul>
+<li><a href="notes/02-project-organization.html">Notes</a> <br></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/02-project-organization.qmd">QMD Document</a></li>
+<li><a href="scripts/01-regression-review.R">R Script File</a></li>
+</ul>
+<div class="todo">
+<p><strong>To-Do</strong></p>
+<p>Before next class install Quarto.</p>
+<ol type="1">
+<li>Head over to <a href="https://quarto.org/" class="uri">https://quarto.org/</a> and click on the big, blue “Get Started” button. Then follow the instructions to install Quarto.</li>
+<li>Open RStudio. (Note if RStudio was open when you installed Quarto, quit and re-open it.) At this point in RStudio, if you go to <code>File &gt; New File...</code> you should see options to choose <code>Quarto Document</code> and <code>Quarto Presentation</code>.</li>
+<li>Work through the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Hello Quarto Tutorial</a>. This will introduce you to some of the basic concepts of creating and rendering a Quarto document. Click the link on the left-side of the “Getting Started” page. Make sure that the RStudio tool is selected at the top of the tutorial.</li>
+<li>Work through the <a href="https://quarto.org/docs/get-started/computations/rstudio.html">Computations Tutorial</a> to learn how to integrate R syntax into your Quarto document. Again, before starting, ensure that the RStudio tool is selected at the top of the tutorial.</li>
+</ol>
+</div>
+<br>
+<hr>
+</section>
+<section id="feb.-05-introduction-to-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="feb.-05-introduction-to-quarto">Feb.&nbsp;05: Introduction to Quarto</h3>
+<ul>
+<li><a href="notes/03-introduction-to-quarto.html">Notes</a> <br></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-introduction-to-quarto.qmd">QMD Document</a></li>
+</ul>
+<p><strong>Additional Resources</strong></p>
+<p>There are several <a href="https://quarto.org/docs/guide/">guides and tutorials</a> available on the Quarto website. These include:</p>
+<ul>
+<li>Creating basic content (e.g., figures, tables, diagrams, footnotes, citations)</li>
+<li>Including computation/syntax</li>
+<li>Generating output in different formats (e.g., HTML, PDF, MS Word)</li>
+<li>Creating slides and presentations (These notes are a Quarto presentation!)</li>
+<li>Building websites</li>
+<li>Building books</li>
+<li>Creating interactive dashboards</li>
+</ul>
+<p>Check out the Welcome to Quarto Workshop. This is a 2 1/2 hour workshop introducing people to Quarto.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=yvi5uXQMvu4">Welcome to Quarto Workshop! (YouTube Video)</a></li>
+</ul>
+<p>If you are familiar with RMarkdown and want to learn how to switch over to Quarto, here is a nice 30 minute talk by Mine Çetinkaya-Rundel that helps you do that.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=6p4vOKS6Xls">2022 Toronto Workshop on Reproducibility - Mine Çetinkaya-Rundel (YouTube Video)</a></li>
+</ul>
+<br>
+<hr>
+</section>
+<section id="feb.-10-more-quartocitations-equations-creating-tables-with-gt" class="level3">
+<h3 class="anchored" data-anchor-id="feb.-10-more-quartocitations-equations-creating-tables-with-gt">Feb.&nbsp;10: More Quarto—Citations, Equations, Creating Tables with <code>gt</code></h3>
+<ul>
+<li><a href="notes/03-more-quarto.html">Notes: Citations</a> <br></li>
+<li><a href="notes/03-creating-tables.html">Notes: Creating Tables</a> <br></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-more-quarto.qmd">QMD Document: Citations</a></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-creating-tables.qmd">QMD Document: Creating Tables</a></li>
+</ul>
+<p><br></p>
+</section>
+</section>
+<section id="unit-02-model-selction-and-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="unit-02-model-selction-and-evidence">UNIT 02: MODEL SELCTION AND EVIDENCE</h2>
+<hr>
+<section id="feb.-1217-likelihood-a-framework-for-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="feb.-1217-likelihood-a-framework-for-evidence">Feb.&nbsp;12/17: Likelihood: A Framework for Evidence</h3>
+<ul>
+<li><a href="notes/03-more-quarto.html">Notes: Citations</a> <br></li>
+<li><a href="notes/03-creating-tables.html">Notes: Creating Tables</a> <br></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-more-quarto.qmd">QMD Document: Citations</a></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-creating-tables.qmd">QMD Document: Creating Tables</a></li>
+<li><a href="scripts/01-regression-review.R">R Script File</a></li>
+</ul>
+<br>
+<hr>
+</section>
+<section id="feb.-192426-polynomial-effects" class="level3">
+<h3 class="anchored" data-anchor-id="feb.-192426-polynomial-effects">Feb.&nbsp;19/24/26: Polynomial Effects</h3>
+<br>
+<hr>
+</section>
+<section id="mar.-03" class="level3">
+<h3 class="anchored" data-anchor-id="mar.-03">Mar.&nbsp;03</h3>
+<br>
+<hr>
+</section>
+<section id="mar.-05-log-transforming-the-outcome" class="level3">
+<h3 class="anchored" data-anchor-id="mar.-05-log-transforming-the-outcome">Mar.&nbsp;05: Log-Transforming the Outcome</h3>
+<br>
+<hr>
+</section>
+<section id="mar.-1012-spring-break" class="level3">
+<h3 class="anchored" data-anchor-id="mar.-1012-spring-break">Mar.&nbsp;10/12 (Spring Break)</h3>
+<br>
+<hr>
+</section>
+<section id="mar.-1719-log-transforming-the-outcome" class="level3">
+<h3 class="anchored" data-anchor-id="mar.-1719-log-transforming-the-outcome">Mar.&nbsp;17/19: Log-Transforming the Outcome</h3>
+<br>
+<hr>
+</section>
+<section id="mar.-2426-log-transforming-the-predictor" class="level3">
+<h3 class="anchored" data-anchor-id="mar.-2426-log-transforming-the-predictor">Mar.&nbsp;24/26: Log-Transforming the Predictor</h3>
+<br>
+<hr>
+</section>
+<section id="mar.-31-rule-of-the-bulgean-exampleapr.-02" class="level3">
+<h3 class="anchored" data-anchor-id="mar.-31-rule-of-the-bulgean-exampleapr.-02">Mar.&nbsp;31: Rule of the Bulge—An Example/Apr.&nbsp;02</h3>
+<br>
+<hr>
+</section>
+<section id="apr.-020709-logistic-regression-model" class="level3">
+<h3 class="anchored" data-anchor-id="apr.-020709-logistic-regression-model">Apr.&nbsp;02/07/09: Logistic Regression Model</h3>
+<br>
+<hr>
+</section>
+<section id="apr.-1416-introduction-to-mixed-effects-regression-models" class="level3">
+<h3 class="anchored" data-anchor-id="apr.-1416-introduction-to-mixed-effects-regression-models">Apr.&nbsp;14/16: Introduction to Mixed-Effects Regression Models</h3>
+<br>
+<hr>
+</section>
+<section id="apr.-2123-lmer-average-change-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="apr.-2123-lmer-average-change-over-time">Apr.&nbsp;21/23: LMER: Average Change Over Time</h3>
+<br>
+<hr>
+</section>
+<section id="apr.-2830-lmer-other-random-effects-and-covariates" class="level3">
+<h3 class="anchored" data-anchor-id="apr.-2830-lmer-other-random-effects-and-covariates">Apr.&nbsp;28/30: LMER: Other Random-Effects and Covariates</h3>
+<br>
+<hr>
+</section>
+<section id="may-05-qa-and-future-coursework" class="level3">
+<h3 class="anchored" data-anchor-id="may-05-qa-and-future-coursework">May 05: Q&amp;A and Future Coursework</h3>
+<!-- <!-- <br /><span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Updated 02-13-2023]*</span> -->
+<p>–&gt;</p>
+<!-- <!-- ------------------------------------- -->
+<p>–&gt; <!-- <!-- Unit 02: Model Selection and Evidence --> –&gt; <!-- <!-- ------------------------------------- --> –&gt;</p>
+<!-- <tr> -->
+<!-- <td colspan="7"><b>Unit 02: Model Selection and Evidence</b></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Feb. 06</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/04-probability-distributions.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;" rowspan="2"></td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/04-likelihood-evidence.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-likelihood-evidence.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/04-likelihood-evidence.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Feb. 08</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>*Optional* </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <span class="fa fa-book" style="font-size: 17px; color: #f1f1f1"></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;">Likelihood: A Framework for Estimation</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/04-optional-likelihood-estimation.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-optional-likelihood-estimation.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <span class="fa fa-code" style="font-size: 17px; color: #f1f1f1"></span> -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td colspan="7"><b>Unit 03: Dealing with Nonlinearity</b></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Feb. 13</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="3"> -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/05-polynomial-effects.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;" rowspan="3">Polynomial Effects</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="3"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/05-polynomial-effects.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="3"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/05-polynomial-effects.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="3"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/05-polynomial-effects.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Feb. 15</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Feb. 20</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td colspan="7"><b>Unit 02 (Revisited): Model Selection and Evidence</b></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Feb. 22</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/06-information-criteria-and-model-selection.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;">Information Criteria and Model Selection</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/06-information-criteria-and-model-selection.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/06-information-criteria-and-model-selection.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/06-information-criteria-and-model-selection.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <!-- ---------------------------------- -->
+<p>–&gt; <!-- <!-- Unit 03: Dealing with Nonlinearity --> –&gt; <!-- <!-- ---------------------------------- --> –&gt;</p>
+<!-- <tr> -->
+<!-- <td colspan="7"><b>Unit 03 (Revisited): Dealing with Nonlinearity</b></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Feb. 27</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/07-logarithmic-transformations-outcome.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;" rowspan="2">Log-Transforming the Outcome</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/07-logarithmic-transformations-outcome.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/07-logarithmic-transformations-outcome.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Feb. 29</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Mar. 06&ndash;10</td> -->
+<!-- <td align="center" style="vertical-align:middle;"></td> -->
+<!-- <td style="vertical-align:middle;" colspan=4>🎉🍹 SPRING BREAK &mdash; NO CLASS &nbsp; 🛌</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Mar. 12</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/07-logarithmic-transformations-outcome.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;">Log-Transforming the Outcome</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/07-logarithmic-transformations-outcome.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/07-logarithmic-transformations-outcome.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Mar. 14</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/08-logarithmic-transformations-predictor.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;" rowspan="2">Log-Transforming the Predictor</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/08-logarithmic-transformations-predictor.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/08-logarithmic-transformations-predictor.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Mar. 19</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Mar. 21</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;">Rule of the Bulge---An Example</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/09-rule-of-the-bulge.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/09-rule-of-the-bulge.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/09-rule-of-the-bulge.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <!-- -------------------------------------- -->
+<p>–&gt; <!-- <!-- Unit 04: Modeling Dichotomous Outcomes --> –&gt; <!-- <!-- -------------------------------------- --> –&gt;</p>
+<!-- <tr> -->
+<!-- <td colspan="7"><b>Unit 04: Modeling Dichotomous Outcomes</b></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>*Optional*</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;">Linear Probability Model</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/10-optional-linear-probability-model.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <span class="fa fa-code" style="font-size: 17px; color: #f1f1f1"></span> -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Mar. 26</td> -->
+<!-- <td align="center" style="vertical-align:middle;" > -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/10-logistic-regression.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;">Logistic Regression Model</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/10-logistic-regression.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-logistic-regression.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/10-logistic-regression.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Mar. 28</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   <span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;" rowspan="2">More Logistic Regression</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/11-more-logistic-regression.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/11-more-logistic-regression.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](scripts/11-more-logistic-regression.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Apr. 02</td> -->
+<!-- </tr> -->
+<!-- <!-- ----------------------------------------------- -->
+<p>–&gt; <!-- <!-- Unit 05: Linear Mixed-Effects Regression Models --> –&gt; <!-- <!-- ----------------------------------------------- --> –&gt;</p>
+<!-- <tr> -->
+<!-- <td colspan="7"><b>Unit 05: Linear Mixed-Effects Regression Models</b></td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Apr. 04</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   <span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;" rowspan="2">Introduction to Mixed-Effects Regression Models</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fas fa-link" style="font-size: 17px;"></span>](https://zief0002.github.io/fluffy-ants/notes/12-introduction-to-mixed-effects-models.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/12-introduction-to-mixed-effects-models.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](https://github.com/zief0002/fluffy-ants/raw/main/scripts/12-introduction-to-mixed-effects-models.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Apr. 09</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Apr. 11</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/13-lmer-average-change-over-time.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;" rowspan="2">LMER: Average Change Over Time</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fas fa-link" style="font-size: 17px;"></span>](https://zief0002.github.io/fluffy-ants/notes/13-lmer-average-change-over-time.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/13-lmer-average-change-over-time.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](https://github.com/zief0002/fluffy-ants/raw/main/scripts/13-lmer-average-change-over-time.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Apr. 16</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Apr. 18</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-book" style="font-size: 17px;"></span>](readings/14-lmer-other-random-effects-and-covariates.html) -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;" rowspan="2">LMER: Other Random-Effects and Covariates</td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fas fa-link" style="font-size: 17px;"></span>](https://zief0002.github.io/fluffy-ants/notes/14-lmer-other-random-effects-and-covariates.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/14-lmer-other-random-effects-and-covariates.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;" rowspan="2"> -->
+<!--   [<span class="fa fa-code" style="font-size: 17px;"></span>](https://github.com/zief0002/fluffy-ants/raw/main/scripts/14-lmer-other-random-effects-and-covariates.R) -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Apr. 23</td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>*Optional*</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;">LMER: Alternative Representations &amp; Assumptions</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--    [<span class="fas fa-link" style="font-size: 17px;"></span>](notes/15-optional-lmer-alt-representations-and-assumptions.html) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   [<span class="fab fa-markdown" style="font-size: 17px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/15-optional-lmer-alt-representations-and-assumptions.qmd) -->
+<!-- </td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--   <span class="fa fa-code" style="font-size: 17px; color: #f1f1f1"></span> -->
+<!-- </td> -->
+<!-- </tr> -->
+<!-- <tr> -->
+<!-- <td align="center" style="vertical-align:middle;">&nbsp;</td> -->
+<!-- <td>Apr. 25</td> -->
+<!-- <td align="center" style="vertical-align:middle;" > -->
+<!--   <span class="fa fa-book" style="color: #f1f1f1; font-size: 17px;"></span> -->
+<!-- </td> -->
+<!-- <td style="vertical-align:middle;">Q&amp;A and Future Coursework</td> -->
+<!-- <td align="center" style="vertical-align:middle;"> -->
+<!--    <!-- [<span class="fas fa-link" style="font-size: 17px;"></span>](files/qme-course-map-2023-04-10.pdf) -->
+<p>–&gt; <!-- </td> --> <!-- <td align="center" style="vertical-align:middle;"> --> <!--   <span class="fab fa-markdown" style="font-size: 17px; color: #f1f1f1;"></span> --> <!-- </td> --> <!-- <td align="center" style="vertical-align:middle;"> --> <!--   <span class="fa fa-code" style="font-size: 17px; color: #f1f1f1;"></span> --> <!-- </td> --> <!-- </tr> --></p>
+<!-- </tbody> -->
+<!-- </table>     -->
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -877,18 +750,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -920,7 +782,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -955,7 +855,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1003,7 +907,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
