@@ -1,0 +1,88 @@
+---
+title: "Regression Review"
+format:
+  html:
+    highlight-style: a11y-dark
+    css: "../assets/sticky-notes.css"
+date: "today"
+---
+
+You will need to reference the [slide deck on regression review](../files/01-regression-review.pdf) to answer these questions. This deck is broken up into seven different sections. Answer the questions below (which will reference the different parts of the slide deck). Doing this will review the regression content you learned in EPSY 8251. Here are a few other resources that you can also refer to.
+
+- [Data Codebook](http://zief0002.github.io/fluffy-ants/codebooks/pew.html) for the *pew.csv* data
+- [R Script](../scripts/01-regression-review.R) for the analysis presented in the slide deck
+- [Modeling textbook](https://zief0002.github.io/modeling/) from EPSY 8251
+
+<br />
+
+# Part I: Data and Analytic Strategy
+
+1. Which of the covariates will you need to creat dummy variables for? 
+
+2. Remind yourself how to create these dummy variables.
+
+<br />
+
+# Part II: Exploration and Relationships
+
+3. Slide 10 introduces output from the `skim()` function (available in the `{skimr}` package). You can see the syntax for this in the script file. The variables being summarized in the output are being selected in the line: `select(age:republican, -party)`. Explain what this syntax does.
+
+4. What summaries are being computed for each variable in the `skim()` output?
+
+5. Describe the relationship depicted in the scatterplot of news knowledge and news exposure.
+
+6. In the syntax to create the scatterplot (see the script file) the `theme()` layer is customizing the plot. Describe how `text = element_text(size = 20)` customizes this plot? What does it do? (Hint: Run the syntax with and without the `theme()` layer.)
+
+7. Interpret the correlation between Democrat and news knowledge.
+
+<br />
+
+# Part III: Research Question 1
+
+8. Remind yourself what $\epsilon_i \overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})$ indicates. Translate this from math to words.
+
+9. The *df* for the *F*-statistic are 1 and 98. Explain why we get those values.
+
+10. Interpret the intercept.
+
+11. Interpret the slope.
+
+<br />
+
+# Part IV: Research Question 2
+
+12. Interpret the effect of news exposure from Model 2.
+
+13. Evaluate the assumptions of Model 2.
+
+<br />
+
+# Part VI: Research Question 3
+
+14. The interpretation for the interaction effect in Model 3 was: "The effect of news exposure on political knowledge depends on education level, after controlling for the set of demographic and political covariates." Provide an alternate interpretation of this effect. (Remember you can always interpret an interaction two ways...)
+
+15. Based on the interaction plot, is the interaction between news exposure and education level ordinal or disordinal? Explain.
+
+16. In the interaction plot, the effect of news exposure on political knowledge (seen in the slopes) is larger for Americans with 12 years of education than it is for Americans with 16 years of eduation. In general, the effect of news exposure on political knowledge diminishes at higher levels of education. Using the plot, describe the effect of education level on political knowledge.
+
+<br />
+
+# Part VII: Tables for Publication
+
+17. Where in the R output do we find the Root Mean-Square Error (RMSE) estimates ?
+
+<br />
+
+# Part VIII: For Next Class...
+
+18. Answer the questions about your computer files and your organization of those files on the final slide.
+
+<br />
+
+
+
+
+<br />
+
+
+

@@ -1,5 +1,5 @@
 ---
-title: "📖 Polynomial Effects"
+title: "Polynomial Effects"
 format:
   html:
     css: ["../assets/sticky-notes.css"]
@@ -9,7 +9,7 @@ date: "today"
 
 **Required**
 
-Read the following:
+Prior to class, read the following:
 
 - Elliott, L. P., &amp; Brook, B. W. (2007). [Revisiting Chamberlin: Multiple working hypotheses for the 21st century](https://academic.oup.com/bioscience/article/57/7/608/238555). *BioScience, 57*(7), 608--614. doi: 10.1641/B570708
 

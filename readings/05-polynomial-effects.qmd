@@ -1,5 +1,5 @@
 ---
-title: "📖 Polynomial Effects"
+title: "Polynomial Effects"
 format:
   html:
     css: ["../assets/sticky-notes.css"]
@@ -7,9 +7,9 @@ date: "today"
 ---
 
 
-**Required**
+Prior to class:
 
-Refresh your knowledge about parabolas and quadratic functions by going though the [Khan Academy Parabolas Intro](https://www.khanacademy.org/math/algebra-home/alg-quadratics).
+- Refresh your knowledge about parabolas and quadratic functions by going though the [Khan Academy Parabolas Intro](https://www.khanacademy.org/math/algebra-home/alg-quadratics).
 
 <br />
 

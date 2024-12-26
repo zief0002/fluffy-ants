@@ -32,10 +32,12 @@ ggplot(data = pew, aes(x = knowledge)) +
   geom_density() +
   theme_light() +
   xlab("Political knowledge") +
-  ylab("Probability density")
+  ylab("Probability density") +
+  theme(
+    text = element_text(size = 20)
+  )
 
 # Numerical Summaries
-
 pew |> 
   summarize(
     M = mean(knowledge),
@@ -52,7 +54,10 @@ ggplot(data = pew, aes(x = news)) +
   geom_density() +
   theme_light() +
   xlab("News exposure") +
-  ylab("Probability density")
+  ylab("Probability density") +
+  theme(
+    text = element_text(size = 20)
+  )
 
 # Numerical Summaries
 pew |> 
@@ -81,6 +86,7 @@ pew |>
   skim()
 
 
+
 ##################################################
 ### Explore Relationships
 ##################################################
@@ -90,7 +96,10 @@ ggplot(data = pew, aes(x = news, y = knowledge)) +
   geom_point(size = 4, shape = 21, color = "black", fill = "skyblue") +
   theme_light() +
   xlab("News exposure") +
-  ylab("Political knowledge")
+  ylab("Political knowledge") +
+  theme(
+    text = element_text(size = 20)
+  )
 
 # Correlation
 pew |> 
@@ -119,14 +128,14 @@ pew |>
 lm.1 = lm(knowledge ~ 1 + news, data = pew)
 
 # model-level output
-glance(lm.1)
+glance(lm.1) |> print(width = Inf)
 
 # Coefficient-level output
 tidy(lm.1)
 
 # Assumptions
 # Need educate and patchwork libraries loaded
-residual_plots(lm.1)
+residual_plots(lm.1) 
 
 
 
@@ -134,7 +143,7 @@ residual_plots(lm.1)
 ### Evaluate RQ 2
 ##################################################
 
-lm.2 = lm(knowledge ~ 1 + age + educ + male + engagement + ideology + democrat + republican + state_blue + news, data = pew)
+lm.2 = lm(knowledge ~ 1 +  news + age + education + male + engagement + ideology + democrat + republican, data = pew)
 
 # model-level output
 glance(lm.2)
@@ -151,8 +160,8 @@ residual_plots(lm.2)
 ### Evaluate RQ 3
 ##################################################
 
-lm.3 = lm(knowledge ~ 1 + age + educ + male + engagement + ideology + democrat + republican + 
-            state_blue + news + news:educ, data = pew)
+lm.3 = lm(knowledge ~ 1 + news + age + education + male + engagement + ideology + democrat + republican + 
+            news:education, data = pew)
 
 # model-level output
 glance(lm.3)
@@ -160,8 +169,7 @@ glance(lm.3)
 # Coefficient-level output
 tidy(lm.3)
 
-# Assumptions
-residual_plots(lm.3)
+
 
 
 
@@ -169,14 +177,24 @@ residual_plots(lm.3)
 ### Plot interaction effect
 ##################################################
 
+# Intercept for education = 12: -79.9 + .107*50 + 6.28*12 + 11.3*0 +.0323*50 -.062*0 + 3.71*1 + 8.29*0
+# Slope for education = 12: 1.14 -0.0651*12
+
+# Intercept for education = 16: -79.9 + .107*50 + 6.28*16 + 11.3*0 +.0323*50 -.062*0 + 3.71*1 + 8.29*0
+# Slope for education = 16: 1.14 -0.0651*16
+
 ggplot(data = pew, aes(x = news, y = knowledge)) +
   geom_point(alpha = 0) +
-  geom_abline(intercept = 32.28, slope = 0.17, color = "#2dd7f8", linewidth = 1.5) + #HS education
-  geom_abline(intercept = 49.12, slope = 0.09, color = "#6d92ee", linewidth = 1.5) + #UG education
+  geom_abline(intercept = 6.135, slope = 0.3588, color = "#2dd7f8", linewidth = 1.5, linetype = "dashed") + #HS education
+  geom_abline(intercept = 31.255, slope = 0.0984, color = "#6d92ee", linewidth = 1.5) + #UG education
   theme_light() +
   xlab("News exposure") +
-  ylab("Political knowledge")
+  ylab("Political knowledge") +
+  theme(
+    text = element_text(size = 20)
+  )
 
 
 
-
+# Assumptions
+residual_plots(lm.3)

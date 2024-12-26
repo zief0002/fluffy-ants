@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-06">
+<meta name="dcterms.date" content="2024-12-16">
 
-<title>Introduction to Probability Distributions – EPsy 8252</title>
+<title>Probability Distributions for Regression – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,10 +90,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d3043699f4f525e226433170f63674df.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-84dc681269fe2dde50ab188c8ed2bd64.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -121,8 +121,6 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
-<script src="../site_libs/pagedtable/js/pagedtable.js"></script>
 <script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -263,7 +261,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Probability Distributions</h1>
+<h1 class="title">Probability Distributions for Regression</h1>
 </div>
 
 
@@ -274,7 +272,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 6, 2024</p>
+      <p class="date">December 16, 2024</p>
     </div>
   </div>
   
@@ -301,10 +299,10 @@ window.Quarto = {
 <p>A probability distribution is simply a mapping of every outcome in the sample space to a probability. (It is conventional to use <em>x</em> to denote the outcomes.) This mapping can take many forms such a list, a plot, or an equation. All are reasonable to define the probability distribution, although some of these are more typical for discrete variables (e.g., list, plot), while others are more typical for continuous distributions (e.g., plot, equation). Here are a couple different probability distributions:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-01" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An example of a discrete and continuous probability distribution." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figs/04-probability-distributions-example.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+<img src="figs/04-probability-distributions-example.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="An example of a discrete and continuous probability distribution.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: An example of a discrete and continuous probability distribution.
@@ -442,10 +440,10 @@ P\bigg(x=65 \mid \mathcal{N}(30,20)\bigg) = 0.004313866
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">x =</span> <span class="dv">65</span>, <span class="at">y =</span> <span class="fl">0.004313866</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#c62f4b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-02" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the probability density function (PDF) for a N(50,10) distribution (blue, solid line) and for a N(30,20) distribution (red, dashed line). The probability density value for x=65 is also displayed on both PDFs." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-02-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+<img src="04-probability-distributions_files/figure-html/fig-02-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Plot of the probability density function (PDF) for a N(50,10) distribution (blue, solid line) and for a N(30,20) distribution (red, dashed line). The probability density value for x=65 is also displayed on both PDFs.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Plot of the probability density function (PDF) for a <span class="math inline">\(\mathcal{N}(50,10)\)</span> distribution (blue, solid line) and for a <span class="math inline">\(\mathcal{N}(30,20)\)</span> distribution (red, dashed line). The probability density value for <span class="math inline">\(x=65\)</span> is also displayed on both PDFs.
@@ -500,13 +498,13 @@ P\bigg(x \leq 65 \mid \mathcal{N}(50,10)\bigg)
 <span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-03" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-03" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the probability density function (PDF) for a N(50,10) distribution. The area that is shaded grey (relative to the total area under the PDF) represents the cumulative probability density for x=65." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-03-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<img src="04-probability-distributions_files/figure-html/fig-03-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Plot of the probability density function (PDF) for a N(50,10) distribution. The area that is shaded grey (relative to the total area under the PDF) represents the cumulative probability density for x=65.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Plot of the probability density function (PDF) for a <span class="math inline">\(\mathcal{N}(50,10)\)</span> distribution. The area that is shaded grey (relative to the total area under the PDF) represents the cumulative probability density for <span class="math inline">\(x=65\)</span>.
+Figure&nbsp;3: Plot of the probability density function (PDF) for a N(50,10) distribution. The area that is shaded grey (relative to the total area under the PDF) represents the cumulative probability density for x=65.
 </figcaption>
 </figure>
 </div>
@@ -558,10 +556,10 @@ Figure&nbsp;3: Plot of the probability density function (PDF) for a <span class=
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-04" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-04" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the probability density function (PDF) for the standard normal distribution (M=0, SD=1). The cumulative density representing the p-value for a two-tailed test evaluating whether mu=0 using an observed mean of 2.5 is also displayed." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-04-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<img src="04-probability-distributions_files/figure-html/fig-04-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Plot of the probability density function (PDF) for the standard normal distribution (M=0, SD=1). The cumulative density representing the p-value for a two-tailed test evaluating whether mu=0 using an observed mean of 2.5 is also displayed.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Plot of the probability density function (PDF) for the standard normal distribution (<span class="math inline">\(M=0\)</span>, <span class="math inline">\(SD=1\)</span>). The cumulative density representing the <em>p</em>-value for a two-tailed test evaluating whether <span class="math inline">\(\mu=0\)</span> using an observed mean of 2.5 is also displayed.
@@ -639,10 +637,10 @@ Figure&nbsp;4: Plot of the probability density function (PDF) for the standard n
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-05" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-05" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the probability density function (PDF) for both the standard normal distribution (dotted, red line) and Student's t(5) distribution (solid, black line)." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-05-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<img src="04-probability-distributions_files/figure-html/fig-05-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Plot of the probability density function (PDF) for both the standard normal distribution (dotted, red line) and Student's t(5) distribution (solid, black line).">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Plot of the probability density function (PDF) for both the standard normal distribution (dotted, red line) and Student’s <span class="math inline">\(t(5)\)</span> distribution (solid, black line).
@@ -720,10 +718,10 @@ Figure&nbsp;5: Plot of the probability density function (PDF) for both the stand
 <span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-06" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-06" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of several t-Distributions with differing degrees of freedom." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-06-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+<img src="04-probability-distributions_files/figure-html/fig-06-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Plot of several t-Distributions with differing degrees of freedom.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Plot of several <em>t</em>-Distributions with differing degrees of freedom.
@@ -1217,7 +1215,7 @@ Table&nbsp;1: Means and standard deviations for four <em>t</em>-Distributions an
 
 <table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="df" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>df</em></th>
 <th id="M" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>M</em></th>
 <th id="SD" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>SD</em></th>
@@ -1328,10 +1326,10 @@ Table&nbsp;1: Means and standard deviations for four <em>t</em>-Distributions an
 <span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">name =</span> <span class="st">""</span>, <span class="at">values =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-07" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-07" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of several F-Distributions with differing degrees of freedom." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-07-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+<img src="04-probability-distributions_files/figure-html/fig-07-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Plot of several F-Distributions with differing degrees of freedom.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-07-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Plot of several <em>F</em>-Distributions with differing degrees of freedom.
@@ -1840,7 +1838,7 @@ Table&nbsp;2: Means and standard deviations for four <em>F</em>-distributions.
 
 <table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header gt_col_headings">
+<tr class="gt_col_headings header">
 <th id="df1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>df1</em></th>
 <th id="df2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>df2</em></th>
 <th id="M" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><em>M</em></th>
@@ -1906,10 +1904,10 @@ Table&nbsp;2: Means and standard deviations for four <em>F</em>-distributions.
 <span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-08" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-08" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the probability density function (PDF) for the F(5,25)-distribution. The cumulative density representing the p-value associated with an F-statistic of 2 is shaded in grey." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-08-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+<img src="04-probability-distributions_files/figure-html/fig-08-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Plot of the probability density function (PDF) for the F(5,25)-distribution. The cumulative density representing the p-value associated with an F-statistic of 2 is shaded in grey.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-08-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Plot of the probability density function (PDF) for the <span class="math inline">\(F(5,25)\)</span>-distribution. The cumulative density representing the <em>p</em>-value associated with an <em>F</em>-statistic of 2 is shaded in grey.
@@ -1944,26 +1942,28 @@ Figure&nbsp;8: Plot of the probability density function (PDF) for the <span clas
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(fig_09)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["X"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Y"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.00","2":"0.000000000","_rn_":"1"},{"1":"0.01","2":"0.008319698","_rn_":"2"},{"1":"0.02","2":"0.022838243","_rn_":"3"},{"1":"0.03","2":"0.040722606","_rn_":"4"},{"1":"0.04","2":"0.060856280","_rn_":"5"},{"1":"0.05","2":"0.082557740","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     X           Y
+1 0.00 0.000000000
+2 0.01 0.008319698
+3 0.02 0.022838243
+4 0.03 0.040722606
+5 0.04 0.060856280
+6 0.05 0.082557740</code></pre>
 </div>
 </div>
 <p>Then we can plot the <em>Y</em> versus the <em>X</em> values and connect them using <code>geom_line()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fig_09, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"F"</span>) <span class="sc">+</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Probability density"</span>) <span class="sc">+</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fig_09, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"F"</span>) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Probability density"</span>) <span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-09" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-09" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the probability density function (PDF) for the F(5,25)-distribution." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-09-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+<img src="04-probability-distributions_files/figure-html/fig-09-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Plot of the probability density function (PDF) for the F(5,25)-distribution.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-09-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9: Plot of the probability density function (PDF) for the <span class="math inline">\(F(5,25)\)</span>-distribution.
@@ -1974,36 +1974,38 @@ Figure&nbsp;9: Plot of the probability density function (PDF) for the <span clas
 </div>
 <p>To add shading under the curve we need to create a new dataset that only includes the <em>X</em> and <em>Y</em> values in the shaded region. For example to shade the area under the PDF where <span class="math inline">\(F &gt; 2\)</span>, we need to create a new dataset where the <em>X</em> values are greater than 2. Below I do this using <code>filter()</code> and store the data in an object called <code>shade_01</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter data included in the shaded region</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>shade_09 <span class="ot">=</span> fig_09 <span class="sc">%&gt;%</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(X <span class="sc">&gt;=</span> <span class="dv">2</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(shade_09)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["X"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Y"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"2.00","2":"0.1558647","_rn_":"1"},{"1":"2.01","2":"0.1537083","_rn_":"2"},{"1":"2.02","2":"0.1515807","_rn_":"3"},{"1":"2.03","2":"0.1494816","_rn_":"4"},{"1":"2.04","2":"0.1474106","_rn_":"5"},{"1":"2.05","2":"0.1453676","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter data included in the shaded region</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>shade_09 <span class="ot">=</span> fig_09 <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(X <span class="sc">&gt;=</span> <span class="dv">2</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(shade_09)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     X         Y
+1 2.00 0.1558647
+2 2.01 0.1537083
+3 2.02 0.1515807
+4 2.03 0.1494816
+5 2.04 0.1474106
+6 2.05 0.1453676</code></pre>
 </div>
 </div>
 <p>We re-draw the PDF and then use <code>geom_ribbon()</code> to add shading. This layer requires us to define the area we want shaded. Here we want to shade from <span class="math inline">\(Y=0\)</span> to <span class="math inline">\(Y=\)</span> the probability density for each of the <em>X</em> values in the shading data. To carry this out we need to define <code>x=</code>, <code>ymin=</code> and <code>ymax=</code>.</p>
 <p>Since the <em>X</em> values are in a column called <code>X</code> and the probability densities are in a column called <code>Y</code> in the shaded dataa frame, we can call <code>x=X</code> and <code>ymax=Y</code> in the <code>aes()</code> of <code>geom_ribbon()</code>. The <code>ymin=</code> value of 0 is not a column in the data frame, so it is specified OUTSIDE the <code>aes()</code> function. We can then also set characteristics like color of the shading (<code>color=</code>) and transparency level (<code>alpha=</code>). Finally, to ensure that <code>geom_ribbon()</code> is shading only the region we want, we set <code>data=shade_01</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fig_09, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y))  <span class="sc">+</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> shade_09, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">ymax =</span> Y), </span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#bbbbbb"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"F"</span>) <span class="sc">+</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Probability density"</span>) <span class="sc">+</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fig_09, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y))  <span class="sc">+</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> shade_09, <span class="at">ymin =</span> <span class="dv">0</span>, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">ymax =</span> Y), </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#bbbbbb"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"F"</span>) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Probability density"</span>) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-10" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the probability density function (PDF) for the F(5,25)-distribution. The cumulative density representing the p-value associated with an F-statistic of 2 is shaded in grey." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+<img src="04-probability-distributions_files/figure-html/fig-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Plot of the probability density function (PDF) for the F(5,25)-distribution. The cumulative density representing the p-value associated with an F-statistic of 2 is shaded in grey.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10: Plot of the probability density function (PDF) for the <span class="math inline">\(F(5,25)\)</span>-distribution. The cumulative density representing the <em>p</em>-value associated with an <em>F</em>-statistic of 2 is shaded in grey.
@@ -2021,21 +2023,30 @@ Figure&nbsp;10: Plot of the probability density function (PDF) for the <span cla
 <h1>Probability Distributions in Regression</h1>
 <p>To illustrate how probability distributions are used in practice, we will will use the data in the file <em>riverview.csv</em> (see the <a href="https://zief0002.github.io/bespectacled-antelope/codebooks/riverview.html">data codebook</a> for more information about these data) and fit a regression model that uses education level and seniority to predict variation in employee income. Some (most?) of this content should also be review from EPsy 8251.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>city <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/zief0002/bespectacled-antelope/main/data/riverview.csv"</span>)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>city</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["education"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["income"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["seniority"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["gender"],"name":[4],"type":["chr"],"align":["left"]},{"label":["party"],"name":[5],"type":["chr"],"align":["left"]}],"data":[{"1":"8","2":"26.430","3":"9","4":"female","5":"Independent"},{"1":"8","2":"37.449","3":"7","4":"Not female","5":"Democrat"},{"1":"10","2":"34.182","3":"16","4":"female","5":"Independent"},{"1":"10","2":"25.479","3":"1","4":"female","5":"Republican"},{"1":"10","2":"47.034","3":"14","4":"Not female","5":"Democrat"},{"1":"12","2":"46.488","3":"11","4":"female","5":"Democrat"},{"1":"12","2":"52.480","3":"16","4":"female","5":"Independent"},{"1":"12","2":"37.656","3":"14","4":"Not female","5":"Democrat"},{"1":"12","2":"50.265","3":"24","4":"Not female","5":"Democrat"},{"1":"14","2":"32.631","3":"5","4":"female","5":"Independent"},{"1":"14","2":"49.968","3":"18","4":"Not female","5":"Independent"},{"1":"14","2":"64.926","3":"26","4":"Not female","5":"Independent"},{"1":"15","2":"37.302","3":"8","4":"female","5":"Democrat"},{"1":"16","2":"38.586","3":"11","4":"female","5":"Independent"},{"1":"16","2":"55.878","3":"22","4":"female","5":"Independent"},{"1":"16","2":"59.499","3":"20","4":"female","5":"Independent"},{"1":"16","2":"55.782","3":"6","4":"Not female","5":"Democrat"},{"1":"16","2":"63.471","3":"10","4":"Not female","5":"Democrat"},{"1":"17","2":"60.068","3":"10","4":"female","5":"Independent"},{"1":"18","2":"54.840","3":"20","4":"female","5":"Republican"},{"1":"18","2":"62.466","3":"16","4":"female","5":"Republican"},{"1":"19","2":"56.019","3":"21","4":"female","5":"Independent"},{"1":"19","2":"65.142","3":"16","4":"Not female","5":"Republican"},{"1":"20","2":"56.343","3":"22","4":"female","5":"Independent"},{"1":"20","2":"54.672","3":"12","4":"female","5":"Independent"},{"1":"20","2":"61.629","3":"5","4":"Not female","5":"Republican"},{"1":"20","2":"82.726","3":"23","4":"Not female","5":"Republican"},{"1":"21","2":"71.202","3":"26","4":"female","5":"Democrat"},{"1":"21","2":"73.542","3":"16","4":"Not female","5":"Republican"},{"1":"22","2":"56.322","3":"8","4":"female","5":"Independent"},{"1":"22","2":"70.044","3":"14","4":"Not female","5":"Independent"},{"1":"24","2":"79.227","3":"27","4":"Not female","5":"Democrat"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>city <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/zief0002/bespectacled-antelope/main/data/riverview.csv"</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>city</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 32 × 5
+   education income seniority gender     party      
+       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      
+ 1         8   26.4         9 female     Independent
+ 2         8   37.4         7 Not female Democrat   
+ 3        10   34.2        16 female     Independent
+ 4        10   25.5         1 female     Republican 
+ 5        10   47.0        14 Not female Democrat   
+ 6        12   46.5        11 female     Democrat   
+ 7        12   52.5        16 female     Independent
+ 8        12   37.7        14 Not female Democrat   
+ 9        12   50.3        24 Not female Democrat   
+10        14   32.6         5 female     Independent
+# ℹ 22 more rows</code></pre>
 </div>
 </div>
 <p>To begin, we will fit a multiple regression model that uses level of education and seniority to predict variation in employee’s incomes. The model is:</p>
@@ -2048,40 +2059,45 @@ Figure&nbsp;10: Plot of the probability density function (PDF) for the <span cla
 <p>We have four unknowns in this model that need to be estimated: <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, and <span class="math inline">\(\sigma^2_{\epsilon}\)</span>. This last unknown is the error (or residual) variance. As a side note, when you report results from a fitted regression model, you should report the estimated residual variance (or residual standard error) along with the coefficient estimates.</p>
 <p>Aside from the estimates for the coefficients and RSE, we are also generally interested in the estimates of uncertainty for the coefficients (i.e., the standard errors). These uncertainty estimates also allow us to carry out hypothesis tests on the effects included in the model.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit regression model</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">lm</span>(income <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> education <span class="sc">+</span> seniority, <span class="at">data =</span> city)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit regression model</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>lm<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">lm</span>(income <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> education <span class="sc">+</span> seniority, <span class="at">data =</span> city)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In practice, all of the estimates, SEs, and inferential output are available using functionality in R. For example, the model-level output, including <span class="math inline">\(R^2\)</span>, the <em>F</em>-statistic, the model and residual <em>df</em>, and the residual standard error are all outputted from the <code>glance()</code> function from the <code>{broom}</code> package. We can also partition the variation using the <code>anova()</code> function.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model-level output</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["r.squared"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["adj.r.squared"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["sigma"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["df"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["logLik"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["AIC"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["BIC"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["deviance"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["df.residual"],"name":[11],"type":["int"],"align":["right"]},{"label":["nobs"],"name":[12],"type":["int"],"align":["right"]}],"data":[{"1":"0.7417857","2":"0.7239778","3":"7.645854","4":"41.6549","5":"0.000000002976563","6":"2","7":"-108.9242","8":"225.8484","9":"231.7114","10":"1695.313","11":"29","12":"32"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model-level output</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 12
+  r.squared adj.r.squared sigma statistic       p.value    df logLik   AIC   BIC
+      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     0.742         0.724  7.65      41.7 0.00000000298     2  -109.  226.  232.
+# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
 </div>
-</div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Partition the variation</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Df"],"name":[1],"type":["int"],"align":["right"]},{"label":["Sum Sq"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Mean Sq"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["F value"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>F)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"4147.3305","3":"4147.33049","4":"70.94416","5":"0.000000002780644","_rn_":"education"},{"1":"1","2":"722.8836","3":"722.88365","4":"12.36564","5":"0.001459777425592","_rn_":"seniority"},{"1":"29","2":"1695.3133","3":"58.45908","4":"NA","5":"NA","_rn_":"Residuals"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Partition the variation</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: income
+          Df Sum Sq Mean Sq F value         Pr(&gt;F)    
+education  1 4147.3  4147.3  70.944 0.000000002781 ***
+seniority  1  722.9   722.9  12.366        0.00146 ** 
+Residuals 29 1695.3    58.5                           
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <p>Similarly the <code>tidy()</code> function from the <code>{broom}</code> package outputs coefficient-level output, including the coefficients, standard errors, <em>t</em>-values, and associated <em>p</em>-values.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient-level output</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(lm<span class="fl">.1</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["term"],"name":[1],"type":["chr"],"align":["left"]},{"label":["estimate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["std.error"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["conf.low"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["conf.high"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"(Intercept)","2":"6.7691720","3":"5.3728914","4":"1.259875","5":"0.2177593428983","6":"-4.2196249","7":"17.75797"},{"1":"education","2":"2.2518456","3":"0.3346443","4":"6.729073","5":"0.0000002202903","6":"1.5674213","7":"2.93627"},{"1":"seniority","2":"0.7387965","3":"0.2100954","4":"3.516481","5":"0.0014597774256","6":"0.3091031","7":"1.16849"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient-level output</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(lm<span class="fl">.1</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 7
+  term        estimate std.error statistic     p.value conf.low conf.high
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)    6.77      5.37       1.26 0.218         -4.22      17.8 
+2 education      2.25      0.335      6.73 0.000000220    1.57       2.94
+3 seniority      0.739     0.210      3.52 0.00146        0.309      1.17</code></pre>
 </div>
 </div>
 <p>Our goal here is to understand how the probability distributions play a role in determining some of these values.</p>
@@ -2130,14 +2146,18 @@ F &amp;= \frac{0.742}{1-0.742} \times \frac{29}{2} \\
 <h2 class="anchored" data-anchor-id="computing-f-from-the-anova-partitioning">Computing F from the ANOVA Partitioning</h2>
 <p>We can also compute the model-level <em>F</em>-statistic directly using the partitioning of variation from the ANOVA table.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Partition the variation</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Df"],"name":[1],"type":["int"],"align":["right"]},{"label":["Sum Sq"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Mean Sq"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["F value"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Pr(>F)"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"4147.3305","3":"4147.33049","4":"70.94416","5":"0.000000002780644","_rn_":"education"},{"1":"1","2":"722.8836","3":"722.88365","4":"12.36564","5":"0.001459777425592","_rn_":"seniority"},{"1":"29","2":"1695.3133","3":"58.45908","4":"NA","5":"NA","_rn_":"Residuals"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Partition the variation</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(lm<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Variance Table
+
+Response: income
+          Df Sum Sq Mean Sq F value         Pr(&gt;F)    
+education  1 4147.3  4147.3  70.944 0.000000002781 ***
+seniority  1  722.9   722.9  12.366        0.00146 ** 
+Residuals 29 1695.3    58.5                           
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <p>The <em>F</em>-statistic is a ratio of the mean square for the model and the mean square for the error. To compute a mean square we use the general formula:</p>
@@ -2189,29 +2209,29 @@ F &amp;= \frac{R^2}{1-R^2} \times \frac{\mathrm{df}_{\mathrm{Error}}}{\mathrm{df
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>fig_11 <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="fl">0.01</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y =</span> <span class="fu">df</span>(<span class="at">x =</span> X, <span class="at">df1 =</span> <span class="dv">2</span>, <span class="at">df2 =</span> <span class="dv">29</span>)</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter shaded area</span></span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>shade <span class="ot">=</span> fig_11 <span class="sc">%&gt;%</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(X <span class="sc">&gt;=</span> <span class="fl">41.7</span>)</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fig_11, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> shade, <span class="at">ymin =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="fu">aes</span>(<span class="at">ymax =</span> Y), <span class="at">color =</span> <span class="st">"#bbbbbb"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>fig_11 <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">50</span>, <span class="at">by =</span> <span class="fl">0.01</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y =</span> <span class="fu">df</span>(<span class="at">x =</span> X, <span class="at">df1 =</span> <span class="dv">2</span>, <span class="at">df2 =</span> <span class="dv">29</span>)</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter shaded area</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>shade <span class="ot">=</span> fig_11 <span class="sc">%&gt;%</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(X <span class="sc">&gt;=</span> <span class="fl">41.7</span>)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> fig_11, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> shade, <span class="at">ymin =</span> <span class="sc">-</span><span class="dv">10</span>, <span class="fu">aes</span>(<span class="at">ymax =</span> Y), <span class="at">color =</span> <span class="st">"#bbbbbb"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-11" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Plot of the probability density function (PDF) for the F(2,~29)-distribution. The cumulative density representing the p-value for a test evaluating whether rho-squared=0 using an observed F-statistic of 41.7 is also displayed." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-probability-distributions_files/figure-html/fig-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+<img src="04-probability-distributions_files/figure-html/fig-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Plot of the probability density function (PDF) for the F(2,~29)-distribution. The cumulative density representing the p-value for a test evaluating whether rho-squared=0 using an observed F-statistic of 41.7 is also displayed.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;11: Plot of the probability density function (PDF) for the <span class="math inline">\(F(2,~29)\)</span>-distribution. The cumulative density representing the <em>p</em>-value for a test evaluating whether <span class="math inline">\(\rho^2=0\)</span> using an observed <em>F</em>-statistic of 41.7 is also displayed.
@@ -2222,16 +2242,16 @@ Figure&nbsp;11: Plot of the probability density function (PDF) for the <span cla
 </div>
 <p>The computation using the cumulative density function, <code>pf()</code>, to obtain the <em>p</em>-value is:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p-value for F(2,29)=41.7</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pf</span>(<span class="fl">41.7</span>, <span class="at">df1 =</span> <span class="dv">2</span>, <span class="at">df2 =</span> <span class="dv">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p-value for F(2,29)=41.7</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pf</span>(<span class="fl">41.7</span>, <span class="at">df1 =</span> <span class="dv">2</span>, <span class="at">df2 =</span> <span class="dv">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.000000002942114</code></pre>
 </div>
 </div>
 <p>Because we want the upper-tail, rather than taking the difference from 1, we can also use the <code>lower.tail=FALSE</code> argument in <code>pf()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p-value for F(2,29)=41.7</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pf</span>(<span class="fl">41.7</span>, <span class="at">df1 =</span> <span class="dv">2</span>, <span class="at">df2 =</span> <span class="dv">29</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p-value for F(2,29)=41.7</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pf</span>(<span class="fl">41.7</span>, <span class="at">df1 =</span> <span class="dv">2</span>, <span class="at">df2 =</span> <span class="dv">29</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.000000002942114</code></pre>
 </div>
@@ -2249,10 +2269,10 @@ Figure&nbsp;11: Plot of the probability density function (PDF) for the <span cla
 <p>The mean squared error (from the <code>anova()</code> output) plays a special role in regression analysis. It is the variance estimate for the conditional distributions of the residuals in our visual depiction of the distributional assumptions of the residuals underlying linear regression.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-12" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Visual Depiction of the Distributional Assumptions of the Residuals Underlying Linear Regression" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figs/04-regression-assumptions-residuals.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+<img src="figs/04-regression-assumptions-residuals.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Visual Depiction of the Distributional Assumptions of the Residuals Underlying Linear Regression">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;12: Visual Depiction of the Distributional Assumptions of the Residuals Underlying Linear Regression
@@ -2267,8 +2287,8 @@ Figure&nbsp;12: Visual Depiction of the Distributional Assumptions of the Residu
 <p>The <em>residual standard error</em> (RSE) is sometimes referred to as the <em>Root Mean Squared Error</em> (RMSE).</p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute RMSE</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fl">58.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute RMSE</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fl">58.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7.648529</code></pre>
 </div>
@@ -2308,13 +2328,13 @@ t(29) = 6.72
 \]</span></p>
 <p>Using the <em>t</em>-distribution with 29 <em>df</em>, we can compute the <em>p</em>-value associated with the two-tailed test that <span class="math inline">\(\beta_{\mathrm{Education}=0}\)</span>:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p-value for the two-tailed test of no effect of education</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="at">q =</span> <span class="sc">-</span><span class="fl">6.72</span>, <span class="at">df =</span> <span class="dv">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p-value for the two-tailed test of no effect of education</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="at">q =</span> <span class="sc">-</span><span class="fl">6.72</span>, <span class="at">df =</span> <span class="dv">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.0000002257125</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># alternatively</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="at">q =</span> <span class="fl">6.72</span>, <span class="at">df =</span> <span class="dv">29</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># alternatively</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="at">q =</span> <span class="fl">6.72</span>, <span class="at">df =</span> <span class="dv">29</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.0000002257125</code></pre>
 </div>
@@ -2341,8 +2361,8 @@ t^{*}_{.975}
 \]</span></p>
 <p>Say we wanted to find the 95% confidence interval for the education coefficient. We know that the estimated coefficient for education is 2.25, and the standard error for this estimate is 0.335. We also know that based on the model fitted, the residual <em>df</em> is 29. We need to find the 0.975th quantile in the <em>t</em>-distribution with 29 <em>df</em>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find 0.975th quantile</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="at">p =</span> <span class="fl">0.975</span>, <span class="at">df =</span> <span class="dv">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find 0.975th quantile</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="at">p =</span> <span class="fl">0.975</span>, <span class="at">df =</span> <span class="dv">29</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.04523</code></pre>
 </div>
@@ -2465,8 +2485,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -2577,7 +2595,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

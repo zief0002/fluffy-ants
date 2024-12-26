@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Quarto (Day 2)"
+title: "More Quarto"
 format:
   html:
    css: "../assets/sticky-notes.css"
@@ -7,7 +7,7 @@ date: "today"
 ---
 
 
-## Install a Citation Manager
+## Download and Install a Citation Manager
 
 For the next class you will need a citation manager. If you don't have a citation manager, I strongly recommend Zotero.
 

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-06">
+<meta name="dcterms.date" content="2024-12-20">
 
 <title>Introduction to Quarto – EPsy 8252</title>
 <style>
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1ac806232514e37960ecf399a0d2ddfa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -141,11 +141,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On This Page</h2>
    
   <ul>
-  <li><a href="#install-quarto" id="toc-install-quarto" class="nav-link active" data-scroll-target="#install-quarto">Install Quarto</a></li>
-  <li><a href="#help-and-tutorials" id="toc-help-and-tutorials" class="nav-link" data-scroll-target="#help-and-tutorials">Help and Tutorials</a></li>
-  <li><a href="#create-your-first-quarto-document" id="toc-create-your-first-quarto-document" class="nav-link" data-scroll-target="#create-your-first-quarto-document">Create Your First Quarto Document</a></li>
-  <li><a href="#learning-how-to-integrate-r-code" id="toc-learning-how-to-integrate-r-code" class="nav-link" data-scroll-target="#learning-how-to-integrate-r-code">Learning How to Integrate R Code</a></li>
-  <li><a href="#learn-more" id="toc-learn-more" class="nav-link" data-scroll-target="#learn-more">Learn More</a></li>
+  <li><a href="#learn-more" id="toc-learn-more" class="nav-link active" data-scroll-target="#learn-more">Learn More</a></li>
   </ul>
 </nav>
     </div>
@@ -165,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 6, 2024</p>
+      <p class="date">December 20, 2024</p>
     </div>
   </div>
   
@@ -177,45 +173,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- ## What is Quarto? -->
-<!-- Quarto® is an open-source scientific and technical publishing system built on Pandoc. For us, it allows us to embed R syntax directly in a text document. Using Quarto is one of the first steps to making your research more reproducible. By integrating your R syntax and your text into a single document, it also improves your analytical workflow. -->
-<!-- ## Similar to RMarkdown...But Better -->
-<!-- For those of you familiar with RMarkdown, Quarto® is a multi-language, next generation version of R Markdown from RStudio, with many new new features and capabilities. Like R Markdown, Quarto® uses Knitr to execute R code, and is therefore able to render most existing Rmd files without modification. -->
-<section id="install-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="install-quarto">Install Quarto</h2>
+<p>Before next class install Quarto.</p>
 <ol type="1">
 <li>Head over to <a href="https://quarto.org/" class="uri">https://quarto.org/</a> and click on the big, blue “Get Started” button. Then follow the instructions to install Quarto.</li>
-<li>Open RStudio. (Note if RStudio was open when you installed Quarto, quit and re-open it.)</li>
+<li>Open RStudio. (Note if RStudio was open when you installed Quarto, quit and re-open it.) At this point in RStudio, if you go to <code>File &gt; New File...</code> you should see options to choose <code>Quarto Document</code> and <code>Quarto Presentation</code>.</li>
+<li>Work through the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Hello Quarto Tutorial</a>. This will introduce you to some of the basic concepts of creating and rendering a Quarto document. Click the link on the left-side of the “Getting Started” page. Make sure that the RStudio tool is selected at the top of the tutorial.</li>
+<li>Work through the <a href="https://quarto.org/docs/get-started/computations/rstudio.html">Computations Tutorial</a> to learn how to integrate R syntax into your Quarto document. Again, before starting, ensure that the RStudio tool is selected at the top of the tutorial.</li>
 </ol>
-<p>At this point in RStudio, if you go to <code>File &gt; New File...</code> you should see options to choose <code>Quarto Document</code> and <code>Quarto Presentation</code>.</p>
 <p><br></p>
-</section>
-<section id="help-and-tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="help-and-tutorials">Help and Tutorials</h2>
-<p>There are several <a href="https://quarto.org/docs/guide/">guides and tutorials</a> available on the Quarto website. These include:</p>
-<ul>
-<li>Creating basic content (e.g., figures, tables, diagrams, footnotes, citations)</li>
-<li>Including computation/syntax</li>
-<li>Generating output in different formats (e.g., HTML, PDF, MS Word)</li>
-<li>Creating slides and presentations (These notes are a Quarto presentation!)</li>
-<li>Building websites</li>
-<li>Building books</li>
-<li>Creating interactive dashboards</li>
-</ul>
-<p><br></p>
-</section>
-<section id="create-your-first-quarto-document" class="level2">
-<h2 class="anchored" data-anchor-id="create-your-first-quarto-document">Create Your First Quarto Document</h2>
-<p>Click the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Tutorial: Hello Quarto</a> link on the left-side of the “Getting Started” page. Make sure that the RStudio tool is selected at the top of the tutorial.</p>
-<p><br></p>
-<p>Work through this tutorial. This will introduce you to some of the basic concepts of creating and rendering a Quarto document.</p>
-<p><br></p>
-</section>
-<section id="learning-how-to-integrate-r-code" class="level2">
-<h2 class="anchored" data-anchor-id="learning-how-to-integrate-r-code">Learning How to Integrate R Code</h2>
-<p>Also work through the <a href="https://quarto.org/docs/get-started/computations/rstudio.html">Tutorial: Computations</a>. Again, before starting, ensure that the RStudio tool is selected at the top of the tutorial.</p>
-<p><br></p>
-</section>
 <section id="learn-more" class="level2">
 <h2 class="anchored" data-anchor-id="learn-more">Learn More</h2>
 <p>Check out the Welcome to Quarto Workshop. This is a 2 1/2 hour workshop introducing people to Quarto.</p>
@@ -313,8 +278,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -425,7 +388,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

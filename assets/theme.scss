@@ -4,13 +4,13 @@
 $font-weight-base: 400 !default;
 
 //Links
-$toc-color: #c10088;  /*-- Set active link color for TOC sidebar (RIGHT) --*/
+$toc-color: #7a0019; /*c10088;  /*-- Set active link color for TOC sidebar (RIGHT) --*/
 
 
 // Top Navigation
-$nav-link-color: #000;
-$nav-link-hover-color: #c10088;
-$navbar-bg: #49C6E5;
+$navbar-bg: #5b0013; /*#0B3948;*/
+$navbar-fg: #fff;
+$navbar-hl: #fff;
 
 /*-- scss:rules --*/
 
@@ -49,7 +49,7 @@ li > p {
 
 // Mouse over link
 a:hover {
-  color: #c10088;
+  color: #7a0019; /*c10088;*/
 }
 
 

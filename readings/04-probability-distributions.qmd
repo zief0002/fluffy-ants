@@ -1,11 +1,11 @@
 ---
-title: "Introduction to Probability Distributions"
+title: "Probability Distributions for Regression"
 format:
   html:
     code-copy: true
     code-fold: false
-    highlight-style: zenburn
-    df-print: paged
+    highlight-style: a11y-dark
+    # df-print: paged
     css: ["../assets/sticky-notes.css"]
 date: "today"
 bibliography: "../assets/epsy8252.bib"
@@ -40,8 +40,9 @@ A probability distribution is simply a mapping of every outcome in the sample sp
 ```{r}
 #| label: fig-01
 #| fig-cap: "An example of a discrete and continuous probability distribution."
+#| fig-alt: "An example of a discrete and continuous probability distribution."
 #| echo: false
-#| out-width: "70%"
+#| out-width: "100%"
 knitr::include_graphics("figs/04-probability-distributions-example.png")
 ```
 
@@ -179,6 +180,7 @@ In general, when we think about the normal distribution, we are thinking about t
 #| fig-width: 8
 #| fig-height: 6
 #| out-width: "80%"
+#| fig-alt: "Plot of the probability density function (PDF) for a N(50,10) distribution (blue, solid line) and for a N(30,20) distribution (red, dashed line). The probability density value for x=65 is also displayed on both PDFs."
 #| fig-cap: "Plot of the probability density function (PDF) for a $\\mathcal{N}(50,10)$ distribution (blue, solid line) and for a $\\mathcal{N}(30,20)$ distribution (red, dashed line). The probability density value for $x=65$ is also displayed on both PDFs."
 #| code-fold: true
 # Load library
@@ -240,7 +242,8 @@ This is akin to finding the proportion of the area under the $\mathcal{N}(50,10)
 ```{r}
 #| label: fig-03
 #| out-width: "60%"
-#| fig-cap: "Plot of the probability density function (PDF) for a $\\mathcal{N}(50,10)$ distribution. The area that is shaded grey (relative to the total area under the PDF) represents the cumulative probability density for $x=65$."
+#| fig-alt: "Plot of the probability density function (PDF) for a N(50,10) distribution. The area that is shaded grey (relative to the total area under the PDF) represents the cumulative probability density for x=65."
+#| fig-cap: "Plot of the probability density function (PDF) for a N(50,10) distribution. The area that is shaded grey (relative to the total area under the PDF) represents the cumulative probability density for x=65."
 #| code-fold: true
 # Create dataset
 fig_03 = data.frame(
@@ -287,6 +290,7 @@ The most common application for finding the cumulative density is to compute a *
 ```{r}
 #| label: fig-04
 #| out-width: "60%"
+#| fig-alt: "Plot of the probability density function (PDF) for the standard normal distribution (M=0, SD=1). The cumulative density representing the p-value for a two-tailed test evaluating whether mu=0 using an observed mean of 2.5 is also displayed."
 #| fig-cap: "Plot of the probability density function (PDF) for the standard normal distribution ($M=0$, $SD=1$). The cumulative density representing the *p*-value for a two-tailed test evaluating whether $\\mu=0$ using an observed mean of 2.5 is also displayed."
 #| code-fold: true
 # Create data
@@ -369,6 +373,7 @@ The PDF of Student's *t*-distribution looks similar to the PDF for a standard no
 ```{r}
 #| label: fig-05
 #| out-width: "60%"
+#| fig-alt: "Plot of the probability density function (PDF) for both the standard normal distribution (dotted, red line) and Student's t(5) distribution (solid, black line)."
 #| fig-cap: "Plot of the probability density function (PDF) for both the standard normal distribution (dotted, red line) and Student's $t(5)$ distribution (solid, black line)."
 #| code-fold: true
 # Create data
@@ -403,6 +408,7 @@ Student's *t*-distribution also constitutes a family of distributions; there is 
 #| fig-width: 8
 #| fig-height: 6
 #| out-width: "80%"
+#| fig-alt: "Plot of several t-Distributions with differing degrees of freedom."
 #| fig-cap: "Plot of several *t*-Distributions with differing degrees of freedom."
 #| code-fold: true
 # Create data for t(3)
@@ -525,6 +531,7 @@ The *F*-distribution, like the *t*-distribution, constitutes a family of distrib
 #| fig-width: 8
 #| fig-height: 6
 #| out-width: "80%"
+#| fig-alt: "Plot of several F-Distributions with differing degrees of freedom."
 #| fig-cap: "Plot of several *F*-Distributions with differing degrees of freedom."
 #| code-fold: true
 # Create data for F(1,10)
@@ -631,6 +638,7 @@ Because there is no negative side of the distribution, when we use the *F*-distr
 ```{r}
 #| label: fig-08
 #| out-width: "70%"
+#| fig-alt: "Plot of the probability density function (PDF) for the F(5,25)-distribution. The cumulative density representing the p-value associated with an F-statistic of 2 is shaded in grey."
 #| fig-cap: "Plot of the probability density function (PDF) for the $F(5,25)$-distribution. The cumulative density representing the *p*-value associated with an *F*-statistic of 2 is shaded in grey."
 #| code-fold: true
 # Create data for F(5,25)
@@ -694,6 +702,7 @@ Then we can plot the *Y* versus the *X* values and connect them using `geom_line
 ```{r}
 #| label: fig-09
 #| out-width: "70%"
+#| fig-alt: "Plot of the probability density function (PDF) for the F(5,25)-distribution."
 #| fig-cap: "Plot of the probability density function (PDF) for the $F(5,25)$-distribution."
 ggplot(data = fig_09, aes(x = X, y = Y)) +
   geom_line() +
@@ -720,6 +729,7 @@ Since the *X* values are in a column called `X` and the probability densities ar
 ```{r}
 #| label: fig-10
 #| out-width: "70%"
+#| fig-alt: "Plot of the probability density function (PDF) for the F(5,25)-distribution. The cumulative density representing the p-value associated with an F-statistic of 2 is shaded in grey."
 #| fig-cap: "Plot of the probability density function (PDF) for the $F(5,25)$-distribution. The cumulative density representing the *p*-value associated with an *F*-statistic of 2 is shaded in grey."
 # Create plot
 ggplot(data = fig_09, aes(x = X, y = Y))  +
@@ -923,6 +933,7 @@ We evaluate our test statistic (*F* in this case) in the appropriate test distri
 #| fig-width: 8
 #| fig-height: 4
 #| out-width: "80%"
+#| fig-alt: "Plot of the probability density function (PDF) for the F(2,~29)-distribution. The cumulative density representing the p-value for a test evaluating whether rho-squared=0 using an observed F-statistic of 41.7 is also displayed."
 #| fig-cap: "Plot of the probability density function (PDF) for the $F(2,~29)$-distribution. The cumulative density representing the *p*-value for a test evaluating whether $\\rho^2=0$ using an observed *F*-statistic of 41.7 is also displayed."
 #| code-fold: true
 # Create data
@@ -980,6 +991,7 @@ The mean squared error (from the `anova()` output) plays a special role in regre
 #| label: fig-12
 #| echo: false
 #| out-width: "70%"
+#| fig-alt: "Visual Depiction of the Distributional Assumptions of the Residuals Underlying Linear Regression"
 #| fig-cap: "Visual Depiction of the Distributional Assumptions of the Residuals Underlying Linear Regression"
 knitr::include_graphics("figs/04-regression-assumptions-residuals.png")
 ```

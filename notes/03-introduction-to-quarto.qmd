@@ -1,13 +1,13 @@
 ---
-title: "📖 Introduction to Quarto"
+title: "Introduction to Quarto"
 format:
   html:
     code-copy: true
     code-fold: false
-    highlight-style: zenburn
+    highlight-style: a11y-dark
     df-print: paged
     css: ["../assets/sticky-notes.css"]
-date: "`r format(Sys.Date(), '%B %d %Y')`"
+date: today
 bibliography: "../assets/epsy8252.bib"
 csl: "../assets/apa-single-spaced.csl"
 ---
@@ -30,7 +30,9 @@ Trying to operate on an object that we created in the R environment, but do not 
 
 To begin:
 
-::: exercises
+::: fyi
+**Your Turn**
+
 1.  Open the Assignment 1 R project (`assignment-01.Rproj`) you created.
 2.  Create a new Quarto document called `assignment-01.qmd` and save this in your root directory. The tree for your project should now look like this:
 
@@ -58,7 +60,9 @@ Before we start updating the document, here is a useful resource.
 
 # Update the YAML
 
-::: exercises
+:::fyi
+**Your Turn**
+
 In the `assignment-01.qmd` file, update the YAML to the following:
 
     ---
@@ -77,7 +81,9 @@ Change the `date:` key to today's date. For the `editor:` key you can choose `vi
 
 # Adding Text
 
-::: exercises
+:::fyi
+**Your Turn**
+
 Start by clearing all the text in the document below the YAML (underneath the three hyphens). Then add some text into your document. Within this text, make some words italics and some words bold. Also add a bulletted list. (Maybe the names of the pets/plants/kids for everyone in your group.)
 :::
 
@@ -85,11 +91,14 @@ Start by clearing all the text in the document below the YAML (underneath the th
 
 # Adding Headings
 
-::: exercises
+:::fyi
+**Your Turn**
+
 Add a Level-1 and a Level-2 heading into your document. Separate each of these by adding some text after each of them. If you need a refresher, see the "Headings" section in the [Markdown Basics Tutorial](https://quarto.org/docs/authoring/markdown-basics.html#headings).
 :::
 
 <br />
+
 
 # Code Chunks
 
@@ -104,7 +113,9 @@ The first question on Assignment 1 is:
 
 > Import the data and display the first several rows of data (not all of it). Use one of the paged table options in your YAML to ensure that this is printed nicely. All syntax for these commands should be hidden.
 
-::: exercises
+:::fyi
+**Your Turn**
+
 -   Create a Level-2 Heading in your QMD document that is called "Question 1".
 -   Then create a new R chunk. In that chunk load the `{tidyverse}` library. Don't forget to add a comment.
 -   In the same R chunk, import the `woods.csv` data into an object called `woods`.
@@ -119,7 +130,9 @@ woods = read_csv("data/woods.csv")
 
 The path inside the quotation marks gives the location (relative to the QMD file) of the `woods.csv` data. Here, the data are in the directory called `data`. Thus the path `data/woods.csv` indicates go to the data folder and inside of that locate `woods.csv`.
 
-::: exercises
+:::fyi
+**Your Turn**
+
 What would the path be inside the quotation marks if our project had the following tree?
 
     assignment-01
@@ -136,7 +149,9 @@ What would the path be inside the quotation marks if our project had the followi
 :::
 
 
-:::protip
+:::fyi
+**FYI**
+
 Use the first code chunk in your Quarto document to load all the packages and datasets used in the document. Label this chunk `setup`. This has the added advantage that others can immediately see what packages and datasets are needed to run the document. Labelling it `setup` also runs that chunk when you try to run other chunks, so your code works!
 :::
 
@@ -145,7 +160,9 @@ Use the first code chunk in your Quarto document to load all the packages and da
 
 ## Displaying Data
 
-::: exercises
+:::fyi
+**Your Turn**
+
 In the same R chunk display the data by typing the data object name after you import the data.
 :::
 
@@ -153,7 +170,9 @@ In the same R chunk display the data by typing the data object name after you im
 
 Rendering the document should display the entire data set in your outputted HTML file! In general, we do not want to take the space (especially when data sets are large) to do this. One option is to change the way that data frames/tibbles are printed in the Quarto document. To do this we need to update our YAML.
 
-::: exercises
+:::fyi
+**Your Turn**
+
 Update the YAML of your QMD to the following:
 
     ---
@@ -174,7 +193,9 @@ Re-render the document.
 
 This sets the printing option for data frames into an HTML table that has clickable paging when the data are large. The Quarto documentation [Data Frames](https://quarto.org/docs/computations/r.html#data-frames), includes other options for printing data frames.
 
-::: protip
+:::protip
+**Important**
+
 Pay attention to the spacing in the YAML!!!!
 :::
 
@@ -182,7 +203,9 @@ Pay attention to the spacing in the YAML!!!!
 
 ## Add a Code Chunk to Create a Plot
 
-::: exercises
+:::fyi
+**Your Turn**
+
 Create another Level-1 header in your document called "Scatterplot". Then create a code chunk in which you create a scatterplot of infant mortality rates (*y*-axis) versus female education level (*x*-axis).
 :::
 
@@ -205,6 +228,7 @@ woods = read_csv("https://raw.githubusercontent.com/zief0002/benevolent-anteater
 #| echo: fenced
 #| label: fig-scatterplot
 #| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."
+#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."
 ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +
    geom_point()
 ```
@@ -222,6 +246,7 @@ There are a couple other chunk options for figures that help set the aspect rati
 #| echo: fenced
 #| label: fig-scatterplot-2
 #| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."
+#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."
 #| fig-width: 9
 #| fig-height: 5
 ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +
@@ -230,7 +255,9 @@ ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +
 
 
 
-:::protip
+:::fyi
+**FYI**
+
 It is important to change the aspect ratio when you have legends or when you are using `{patchwork}` to stack or put multiple figures next to each other. Many times you need to find a good aspect ratio though trial-and-error of trying different values.
 :::
 
@@ -240,6 +267,7 @@ The actual size of the figure in the document is independent of the aspect ratio
 #| echo: fenced
 #| label: fig-scatterplot-3
 #| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."
+#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."
 #| fig-width: 9
 #| fig-height: 5
 #| out-width: "40%"
@@ -248,7 +276,9 @@ ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +
 ```
 
 
-:::protip
+:::fyi
+**FYI**
+
 If you set the aspect ratio of the figure, you need only set `out-width:` or `out-height:`. You don't need to set both as the other will be determined by the aspect ratio.
 :::
 
@@ -284,6 +314,12 @@ You can also do this in a separate code chunk and then call the values in the in
 
 # Equations
 
+:::protip
+**Important**
+
+Equation syntax is not R code. Therefore this syntax should not be placed inside of a code chunk!
+:::
+
 There are two different manners in which equations/mathematics is included in a document.
 
 -   **Display equations** are typeset on a separate line from the body text and are centered on the page.
@@ -303,7 +339,9 @@ The syntax I used to create this display equation is:
 
 Here is the same equation as an inline equation: $y_i = \beta_0 + \beta_1(x_i) + \epsilon_i$. Notice that in an inline equation, the equation is embedded directly in the text. To create the inline equation we embed the mathematical expression in single dollar signs (`$y_i = \beta_0 + \beta_1(x_i) + \epsilon_i$`) rather than double dollar signs.
 
-::: fyi
+:::fyi
+**Learn More**
+
 If you need a reminder about how to create these, check out the "Equations" section of the [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html#equations) tutorial.
 :::
 
@@ -312,7 +350,7 @@ The syntax we use to create the mathematical expressions is from LaTeX. Here are
 -   [List of LaTeX mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
 -   [LaTeX Mathematical Symbols](https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf)
 
-::: exercises
+:::fyi
 **Your Turn**
 
 Part of Question #5 asks you to use a display equation to write the fitted equation based on the following output.
@@ -353,7 +391,9 @@ If you want to include a hyphen, we need to include it in `\mbox{}`. For example
     \text{Check\mbox{-}In}
     $$
 
-::: exercises
+:::fyi
+**Your Turn**
+
 Update your fitted equation from before to include spaces in variable names. Also be sure the variable names are written in normal font.
 :::
 
@@ -389,7 +429,9 @@ $$
 
 Note that the ampersand appeared immediately before the equal sign in each line of the equation, so that is where the two lines are aligned vertically (the equal signs are on top of each other). You can add as many lines to this as you want.
 
-::: protip
+:::fyi
+**FYI**
+
 Multiline equations are quite useful to show your work and when you have really long single equations that need to be broken up so they fit on the page (e.g., a regression equation with many predictors).
 :::
 
@@ -419,8 +461,8 @@ $$
 
 Here we have added line space of 1 em. An *em* is a unit for measuring the width of printed work, equal to the height of the type size being used (typically the width of the letter "m"). Other common printing units include the *en* (the width of the letter "n"), and the *ex* (the width of the letter "x").
 
-::: exercises
-Question #8 actually asks:
+:::fyi
+Question #8 on the assignment actually asks:
 
 > Use a display equation to write the equation for the underlying regression model (including error and assumptions) using Greek letters, subscripts, and variable names. Also write the equation for the fitted least squares regression equation based on the output from `lm()`. Type these two equations in the same display equation, each on a separate line of text in your document, and align the equals signs.
 

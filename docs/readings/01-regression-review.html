@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-06">
+<meta name="dcterms.date" content="2024-12-16">
 
-<title>📖 Regression Review – EPsy 8252</title>
+<title>Regression Review – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ff194d8a695c2f77728765b6ad80f34b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">📖 Regression Review</h1>
+<h1 class="title">Regression Review</h1>
 </div>
 
 
@@ -155,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 6, 2024</p>
+      <p class="date">December 16, 2024</p>
     </div>
   </div>
   
@@ -167,12 +167,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Here are some things to do before class:</p>
+<p>Before next class, update R, RStudio, and all of your packages!</p>
 <ul>
-<li><a href="https://www.r-project.org/">Update R</a> to the most recent version (v. 4.3.2; <em>Eye Holes</em>)</li>
-<li><a href="https://posit.co/download/rstudio-desktop/">Update RStudio Desktop</a> to the most recent version (v. 2023.12.0+369)</li>
-<li>Update all of your R packages (In the <code>Packages</code> tab in RStudio click <code>Update</code>)</li>
-<li>Update the <code>{educate}</code> package (to at least v.0.3.0.1). This is a github package, so see the instructions in <a href="https://zief0002.github.io/toolkit-quarto/03-getting-started-with-r.html">Installing Packages from GitHub</a></li>
+<li><a href="https://www.r-project.org/">Update R</a> to the most recent version (v. 4.4.2; Pile of Leaves). You can check your current version by typing <code>R.version</code> into the console.</li>
+<li><a href="https://posit.co/download/rstudio-desktop/">Update RStudio Desktop</a> to the most recent version (v. 2024.09.1+394). You can check your current version by selecting <code>RStudio &gt; About RStudio</code>.</li>
+<li>Once you have updated R and RStudio, update all of your R packages (In the <code>Packages</code> tab in RStudio click <code>Update</code>).</li>
 </ul>
 <p>Remind yourself of the EPsy 8251 content</p>
 <ul>
@@ -265,8 +264,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -377,7 +374,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -1,0 +1,33 @@
+---
+title: "Mathematics for Likelihood"
+format:
+  html:
+    css: ["../assets/sticky-notes.css"]
+date: "today"
+bibliography: "../assets/epsy8252.bib"
+csl: "../assets/apa-single-spaced.csl"
+---
+
+To understand likelihood, you need to have an understanding of probability density, and logarithms. To cement that foundational knowledge, complete the following prior to class:
+
+- To refresh your knowledge about probability distributions, read **Section 3.1.1:** (*Probability Basics*) in [@Fox:2009]. 
+- Read my notes on [probability distributions for regression](readings/04-probability-distributions.html).
+- Refresh your knowledge about logarithms by going through the [Khan Academy Intro to Logarithms Tutorial](https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/v/logarithms)
+
+<br />
+
+
+**Additional Resources**
+
+In addition to the notes and what we cover in class, there are many other resources for learning about probability density and log-transformations. Here are some resources that may be helpful in that endeavor:
+
+- [Kahn Academy: Random Variables and Probability Distributions](https://www.khanacademy.org/math/probability/random-variables-topic) tutorial
+- Sections 3.3.1--3.3.4: (*Continuous Distributions*) in @Fox:2009
+- [Math with Bad Drawings: ABC Book of e](https://mathwithbaddrawings.com/2018/02/05/the-abc-book-of-e/)
+
+
+## References
+
+
+
+

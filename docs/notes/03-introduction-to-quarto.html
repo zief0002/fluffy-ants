@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-06">
+<meta name="dcterms.date" content="2024-12-20">
 
-<title>📖 Introduction to Quarto – EPsy 8252</title>
+<title>Introduction to Quarto – EPsy 8252</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d3043699f4f525e226433170f63674df.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dc4a6631b43f7e4effed9818b538476b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -240,7 +240,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">📖 Introduction to Quarto</h1>
+<h1 class="title">Introduction to Quarto</h1>
 </div>
 
 
@@ -251,7 +251,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 6, 2024</p>
+      <p class="date">December 20, 2024</p>
     </div>
   </div>
   
@@ -273,7 +273,8 @@ window.Quarto = {
 <section id="your-first-task" class="level1">
 <h1>Your First Task</h1>
 <p>To begin:</p>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <ol type="1">
 <li>Open the Assignment 1 R project (<code>assignment-01.Rproj</code>) you created.</li>
 <li>Create a new Quarto document called <code>assignment-01.qmd</code> and save this in your root directory. The tree for your project should now look like this:</li>
@@ -298,7 +299,8 @@ window.Quarto = {
 </section>
 <section id="update-the-yaml" class="level1">
 <h1>Update the YAML</h1>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <p>In the <code>assignment-01.qmd</code> file, update the YAML to the following:</p>
 <pre><code>---
 title: "Assignment 1"
@@ -314,14 +316,16 @@ editor: visual
 </section>
 <section id="adding-text" class="level1">
 <h1>Adding Text</h1>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <p>Start by clearing all the text in the document below the YAML (underneath the three hyphens). Then add some text into your document. Within this text, make some words italics and some words bold. Also add a bulletted list. (Maybe the names of the pets/plants/kids for everyone in your group.)</p>
 </div>
 <p><br></p>
 </section>
 <section id="adding-headings" class="level1">
 <h1>Adding Headings</h1>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <p>Add a Level-1 and a Level-2 heading into your document. Separate each of these by adding some text after each of them. If you need a refresher, see the “Headings” section in the <a href="https://quarto.org/docs/authoring/markdown-basics.html#headings">Markdown Basics Tutorial</a>.</p>
 </div>
 <p><br></p>
@@ -336,7 +340,8 @@ editor: visual
 <blockquote class="blockquote">
 <p>Import the data and display the first several rows of data (not all of it). Use one of the paged table options in your YAML to ensure that this is printed nicely. All syntax for these commands should be hidden.</p>
 </blockquote>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <ul>
 <li>Create a Level-2 Heading in your QMD document that is called “Question 1”.</li>
 <li>Then create a new R chunk. In that chunk load the <code>{tidyverse}</code> library. Don’t forget to add a comment.</li>
@@ -348,7 +353,8 @@ editor: visual
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>woods <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"data/woods.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The path inside the quotation marks gives the location (relative to the QMD file) of the <code>woods.csv</code> data. Here, the data are in the directory called <code>data</code>. Thus the path <code>data/woods.csv</code> indicates go to the data folder and inside of that locate <code>woods.csv</code>.</p>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <p>What would the path be inside the quotation marks if our project had the following tree?</p>
 <pre><code>assignment-01
     ├── README
@@ -362,19 +368,22 @@ editor: visual
     ├── figs
     └── scripts</code></pre>
 </div>
-<div class="protip">
+<div class="fyi">
+<p><strong>FYI</strong></p>
 <p>Use the first code chunk in your Quarto document to load all the packages and datasets used in the document. Label this chunk <code>setup</code>. This has the added advantage that others can immediately see what packages and datasets are needed to run the document. Labelling it <code>setup</code> also runs that chunk when you try to run other chunks, so your code works!</p>
 </div>
 <p><br></p>
 </section>
 <section id="displaying-data" class="level2">
 <h2 class="anchored" data-anchor-id="displaying-data">Displaying Data</h2>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <p>In the same R chunk display the data by typing the data object name after you import the data.</p>
 </div>
 <p><br></p>
 <p>Rendering the document should display the entire data set in your outputted HTML file! In general, we do not want to take the space (especially when data sets are large) to do this. One option is to change the way that data frames/tibbles are printed in the Quarto document. To do this we need to update our YAML.</p>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <p>Update the YAML of your QMD to the following:</p>
 <pre><code>---
 title: "Assignment 1"
@@ -391,13 +400,15 @@ editor: visual
 <p><br></p>
 <p>This sets the printing option for data frames into an HTML table that has clickable paging when the data are large. The Quarto documentation <a href="https://quarto.org/docs/computations/r.html#data-frames">Data Frames</a>, includes other options for printing data frames.</p>
 <div class="protip">
+<p><strong>Important</strong></p>
 <p>Pay attention to the spacing in the YAML!!!!</p>
 </div>
 <p><br></p>
 </section>
 <section id="add-a-code-chunk-to-create-a-plot" class="level2">
 <h2 class="anchored" data-anchor-id="add-a-code-chunk-to-create-a-plot">Add a Code Chunk to Create a Plot</h2>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <p>Create another Level-1 header in your document called “Scatterplot”. Then create a code chunk in which you create a scatterplot of infant mortality rates (<em>y</em>-axis) versus female education level (<em>x</em>-axis).</p>
 </div>
 <p><br></p>
@@ -406,14 +417,15 @@ editor: visual
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-scatterplot</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot showing the relationship between political corruption and environmental program strength.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-1.png" class="img-fluid figure-img" width="672">
+<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-1.png" class="img-fluid figure-img" alt="Scatterplot showing the relationship between political corruption and environmental program strength." width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Scatterplot showing the relationship between political corruption and environmental program strength.
@@ -431,16 +443,17 @@ Figure&nbsp;1: Scatterplot showing the relationship between political corruption
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-scatterplot-2</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 9</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 5</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 9</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-scatterplot-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-scatterplot-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot showing the relationship between political corruption and environmental program strength.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatterplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-2-1.png" class="img-fluid figure-img" width="864">
+<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-2-1.png" class="img-fluid figure-img" alt="Scatterplot showing the relationship between political corruption and environmental program strength." width="864">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Scatterplot showing the relationship between political corruption and environmental program strength.
@@ -449,7 +462,8 @@ Figure&nbsp;2: Scatterplot showing the relationship between political corruption
 </div>
 </div>
 </div>
-<div class="protip">
+<div class="fyi">
+<p><strong>FYI</strong></p>
 <p>It is important to change the aspect ratio when you have legends or when you are using <code>{patchwork}</code> to stack or put multiple figures next to each other. Many times you need to find a good aspect ratio though trial-and-error of trying different values.</p>
 </div>
 <p>The actual size of the figure in the document is independent of the aspect ratio and can be set using the <code>out-width:</code> or <code>out-height:</code> chunk option. These options take a character string of the direct size (in HTML documents this is typically in pixels) or of the percentage of the output width/height. Here we keep the same aspect ratio, but make the figure smaller by setting the figure width to 40% of the document’s width.</p>
@@ -457,17 +471,18 @@ Figure&nbsp;2: Scatterplot showing the relationship between political corruption
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-scatterplot-3</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 9</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 5</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-width: "40%"</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 9</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-width: "40%"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-scatterplot-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-scatterplot-3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot showing the relationship between political corruption and environmental program strength.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-scatterplot-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-3-1.png" class="img-fluid figure-img" style="width:40.0%">
+<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-3-1.png" class="img-fluid figure-img" style="width:40.0%" alt="Scatterplot showing the relationship between political corruption and environmental program strength.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Scatterplot showing the relationship between political corruption and environmental program strength.
@@ -476,7 +491,8 @@ Figure&nbsp;3: Scatterplot showing the relationship between political corruption
 </div>
 </div>
 </div>
-<div class="protip">
+<div class="fyi">
+<p><strong>FYI</strong></p>
 <p>If you set the aspect ratio of the figure, you need only set <code>out-width:</code> or <code>out-height:</code>. You don’t need to set both as the other will be determined by the aspect ratio.</p>
 </div>
 <p><br></p>
@@ -505,6 +521,10 @@ Figure&nbsp;3: Scatterplot showing the relationship between political corruption
 </section>
 <section id="equations" class="level1">
 <h1>Equations</h1>
+<div class="protip">
+<p><strong>Important</strong></p>
+<p>Equation syntax is not R code. Therefore this syntax should not be placed inside of a code chunk!</p>
+</div>
 <p>There are two different manners in which equations/mathematics is included in a document.</p>
 <ul>
 <li><strong>Display equations</strong> are typeset on a separate line from the body text and are centered on the page.</li>
@@ -520,6 +540,7 @@ y_i = \beta_0 + \beta_1(x_i) + \epsilon_i
 $$</code></pre>
 <p>Here is the same equation as an inline equation: <span class="math inline">\(y_i = \beta_0 + \beta_1(x_i) + \epsilon_i\)</span>. Notice that in an inline equation, the equation is embedded directly in the text. To create the inline equation we embed the mathematical expression in single dollar signs (<code>$y_i = \beta_0 + \beta_1(x_i) + \epsilon_i$</code>) rather than double dollar signs.</p>
 <div class="fyi">
+<p><strong>Learn More</strong></p>
 <p>If you need a reminder about how to create these, check out the “Equations” section of the <a href="https://quarto.org/docs/authoring/markdown-basics.html#equations">Markdown Basics</a> tutorial.</p>
 </div>
 <p>The syntax we use to create the mathematical expressions is from LaTeX. Here are a couple reference you can use:</p>
@@ -527,7 +548,7 @@ $$</code></pre>
 <li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">List of LaTeX mathematical symbols</a></li>
 <li><a href="https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf">LaTeX Mathematical Symbols</a></li>
 </ul>
-<div class="exercises">
+<div class="fyi">
 <p><strong>Your Turn</strong></p>
 <p>Part of Question #5 asks you to use a display equation to write the fitted equation based on the following output.</p>
 <div class="cell">
@@ -561,7 +582,8 @@ $$</code></pre>
 <pre><code>$$
 \text{Check\mbox{-}In}
 $$</code></pre>
-<div class="exercises">
+<div class="fyi">
+<p><strong>Your Turn</strong></p>
 <p>Update your fitted equation from before to include spaces in variable names. Also be sure the variable names are written in normal font.</p>
 </div>
 <p><br></p>
@@ -590,7 +612,8 @@ $$</code></pre>
 \end{split}
 \]</span></p>
 <p>Note that the ampersand appeared immediately before the equal sign in each line of the equation, so that is where the two lines are aligned vertically (the equal signs are on top of each other). You can add as many lines to this as you want.</p>
-<div class="protip">
+<div class="fyi">
+<p><strong>FYI</strong></p>
 <p>Multiline equations are quite useful to show your work and when you have really long single equations that need to be broken up so they fit on the page (e.g., a regression equation with many predictors).</p>
 </div>
 <p><br></p>
@@ -611,8 +634,8 @@ $$</code></pre>
 \end{split}
 \]</span></p>
 <p>Here we have added line space of 1 em. An <em>em</em> is a unit for measuring the width of printed work, equal to the height of the type size being used (typically the width of the letter “m”). Other common printing units include the <em>en</em> (the width of the letter “n”), and the <em>ex</em> (the width of the letter “x”).</p>
-<div class="exercises">
-<p>Question #8 actually asks:</p>
+<div class="fyi">
+<p>Question #8 on the assignment actually asks:</p>
 <blockquote class="blockquote">
 <p>Use a display equation to write the equation for the underlying regression model (including error and assumptions) using Greek letters, subscripts, and variable names. Also write the equation for the fitted least squares regression equation based on the output from <code>lm()</code>. Type these two equations in the same display equation, each on a separate line of text in your document, and align the equals signs.</p>
 </blockquote>
@@ -729,8 +752,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -841,7 +862,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

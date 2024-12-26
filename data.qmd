@@ -23,12 +23,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>carbon.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/carbon.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/carbon.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/carbon.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/carbon.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -38,12 +38,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>fertility.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/fertility.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/fertility.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/fertility.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/fertility.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -52,12 +52,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>graduation.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/graduation.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/graduation.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/graduation.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/graduation.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -67,20 +67,20 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>mammals.csv</td>
 <td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-file-csv" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/mammals.csv)
+  [<span class="fas fa-file-csv" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mammals.csv)
 </td>
 <td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-book-open" style="font-size: 20px;"></span>](http://zief0002.github.io/benevolent-anteater/codebooks/mammals.html)
+  [<span class="fas fa-book-open" style="font-size: 20px;"></span>](http://zief0002.github.io/fluffy-ants/codebooks/mammals.html)
 </td>
 </tr>
 
 <tr>
 <td>minneapolis.csv</td>
 <td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-file-csv" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/minneapolis.csv)
+  [<span class="fas fa-file-csv" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/minneapolis.csv)
 </td>
 <td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-book-open" style="font-size: 20px;"></span>](http://zief0002.github.io/benevolent-anteater/codebooks/minneapolis.html)
+  [<span class="fas fa-book-open" style="font-size: 20px;"></span>](http://zief0002.github.io/fluffy-ants/codebooks/minneapolis.html)
 </td>
 </tr>
 
@@ -88,12 +88,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>mn-schools.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/mn-schools.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mn-schools.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/mn-schools.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/mn-schools.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -103,12 +103,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>nhl.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/nhl.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/nhl.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/nhl.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/nhl.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -118,12 +118,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>pew.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/pew.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/pew.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/pew.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -134,12 +134,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>riverview.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/riverview.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/riverview.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/riverview.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/riverview.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -148,12 +148,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>same-sex-marriage.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/same-sex-marriage.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/same-sex-marriage.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/same-sex-marriage.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/same-sex-marriage.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -163,12 +163,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>usnwr-2024.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/usnwr-2024.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/usnwr-2024.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/usnwr-2024.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -178,12 +178,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>vocabulary.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/vocabulary.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/vocabulary.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/vocabulary.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/vocabulary.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -193,12 +193,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>wine.csv</td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/wine.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/wine.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/wine.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/wine.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>
@@ -208,12 +208,12 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tr>
 <td>woods.csv<br /><span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Updated 01-24-2024]*</span></td>
 <td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/woods.csv">
+  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/woods.csv">
     <span class="fas fa-file-csv" style="font-size: 20px;"></span>
   </a>
 </td>
 <td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/benevolent-anteater/codebooks/woods.html">
+  <a href="http://zief0002.github.io/fluffy-ants/codebooks/woods.html">
     <span class="fas fa-book-open" style="font-size: 20px;"></span>
   </a>
 </td>

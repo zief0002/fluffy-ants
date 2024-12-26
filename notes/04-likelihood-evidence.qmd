@@ -4,12 +4,12 @@ format:
   html:
     code-copy: true
     code-fold: false
-    highlight-style: zenburn
+    highlight-style: a11y-dark
     df-print: paged
     css: ["../assets/sticky-notes.css"]
 date: "today"
 bibliography: "../assets/epsy8252.bib"
-csl: "../assets/apa-single-spaced.csl"
+csl: "../assets/apa.csl"
 ---
 
 ```{r}
@@ -19,7 +19,7 @@ source("../assets/notes-setup.R")
 
 # Preparation
 
-In this set of notes, you will learn about the law of likelihood, and the use of likelihood ratios as statistical evidence for model selection. To do so, we will use the [usnwr-2024.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv) dataset (see the [data codebook](http://zief0002.github.io/benevolent-anteater/codebooks/usnwr-2024.html)) to fit a set of models that explain variation in peer ratings of graduate schools of education. 
+In this set of notes, you will learn about the law of likelihood, and the use of likelihood ratios as statistical evidence for model selection. To do so, we will use the [pew.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv) dataset (see the [data codebook](http://zief0002.github.io/fluffy-ants/codebooks/pew.html)) to fit a set of models that explain variation in American's political knowledge. 
 
 
 
@@ -33,99 +33,59 @@ library(tidyverse)
 library(tidyr)
 
 # Import data
-usnwr = read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv")
+pew = read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv")
 
 # View data
-usnwr
+pew
 ```
 
 <br />
 
 
-# Modeling Strategy
+# Research Questions and Modeling Strategy
 
-We are going to mimic an analysis undertaken by @Sweitzer:2009. They used 2009 U.S. News and World Report data and a conceptual model of institutional prestige adapted from @Volkwein:2006 (see @fig-04-01) to explain variation in institutional prestige as measured by peer ratings.
+Recall that we had three research questions for these data:
 
-```{r}
-#| label: fig-04-01
-#| fig-cap: "Conceptual model of institutional prestige."
-#| out-width: "60%"
-#| echo: false
-knitr::include_graphics("figs/04-conceptual-model.png")
-```
-
-They categorized their predictors based on this conceptual model and then carried out a regression analysis which they described as follows:
-
-> Using the conceptual framework...as a guide, the peer assessment score was employed as the dependent variable and a blocked (set-wise) regression model was estimated for each of the five separate graduate/professional school disciplines...In the first block of the regressions, institutional characteristics were entered, such as the size and wealth of the school. In the second block, faculty and student indicators were entered. In the third block, variables reflecting faculty and student outcomes were entered. (p. 827)
-
-We will use more current data (that available as of January 2024) to carry out a similar analysis. The categorization of attributes is shown in @fig-04-02.
-
-```{r}
-#| label: fig-04-02
-#| fig-cap: "Categorization of attributes into different parts of the conceptual model and their corresponding blocks."
-#| out-width: "70%"
-#| echo: false
-knitr::include_graphics("figs/04-blocks-and-attributes.png")
-```
-
-:::fyi
-Note that we will not be directly replicating the analysis in @Sweitzer:2009. For example, they standardized the predictors, where we will be using the unstandardized predictors. They also only used one predictor per each part of the conceptual framework, where we will have multiple predictors in these components. The replication is more of whether the findings are robust to changes in the models, and measurements we use...do different choices in the analysis produce similar results?
-:::
+1. Is there an effect of news exposure on political knowledge?
+2. Is there an effect of news exposure on political knowledge after controlling for demographic and political covariates?
+3. Does education level *moderate* the effect of news exposure on political knowledge after controlling for demographic and political covariates?
 
 
-Any analysis should begin with looking at plots and computing summary statistics of the sample data. (I will leave this exploration as an exercise for the reader.) One thing that would come up at this stage in the analysis is that there are some institutions with missing data for some attributes. Because we are mimicing the analysis in the @Sweitzer:2009 paper we will carry out all analyses on "...only those schools or colleges in the analysis with complete data for every variable in that discipline. (p. 820)" To obtain a dataset of complete cases, we will use the `drop_na()` function from the `{tidyr}` package. This function drops any row from the data that has a missing value. This is called *listwise deletion*.
+Any analysis should begin with looking at plots and computing summary statistics of the sample data. (We already did this in a previous set of notes.) After the data exploration, we can begin to think about fitting one or more models to the data. It is good science to consider the modeling strategy you will be using before you begin fitting models. There are many modeling strategies that educational scientists use in practice (e.g., forward-selection, backward-elimination) and there is no one "right" method. As you consider a modeling strategy, think about how this strategy helps provide a narrative structure for answering your research question; sometimes this leads to one strategy being more productive than others.
 
-```{r}
-# Drop cases with missing values
-usnwr_complete = usnwr |>
-  drop_na()
-
-# View data (n = 83)
-usnwr_complete
-```
-
-
-After the data exploration, we can begin to think about fitting one or more models to the data. It is good science to consider the modeling strategy you will be using before you begin fitting models. There are many modeling strategies that educational scientists use in practice (e.g., forward-selection, backward-elimination) and there is no one "right" method. As you consider a modeling strategy, think about how this strategy helps provide a narrative structure for answering your research question; sometimes this leads to one strategy being more productive than others.
-
-Because we are mimicing the block approach described in @Sweitzer:2009, we will start by fitting a model using the predictors in Block 1 to explain variation in peer ratings. Then we will fit a second model that includes all the predictors in Block 2 in addition to the predictors in Block 1. Finally, Model 3 will include all of the predictors in Blocks 1, 2, and 3.
+In the previous set of notes we began by fitting a model that only included the main-effect of news exposure. Evaluating the effect of news exposure in this model helped us answer RQ 1. We then fitted a model that included news exposure along with the set of demographic and political covariates. Evaluating the effect of news exposure in this model helped us answer RQ 2. Finally, we fitted a model that included an interaction effect of news exposure and education in along with the demographic and political covariates. Evaluating the interaction effect allowed us to answer RQ 3. These three models are:
 
 $$
 \begin{split}
-\mathbf{Model~0:~} \quad \mathrm{Peer~Rating}_i = &\beta_0 + \epsilon_i \\[2ex]
-\mathbf{Model~1:~} \quad \mathrm{Peer~Rating}_i = &\beta_0 + \beta_1(\mathrm{Enroll}_i) + \beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \epsilon_i \\[2ex]
-\mathbf{Model~2:~} \quad \mathrm{Peer~Rating}_i = &\beta_0 + \beta_1(\mathrm{Enroll}_i) + \beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \\ 
-&\beta_5(\mathrm{SF~Ratio}_i) + \beta_6(\mathrm{Percent~Doctoral~Students}_i) + \beta_7(\mathrm{UG~GPA}_i) +\\
-&\beta_8(\mathrm{GRE}_i) + \beta_{9}(\mathrm{PhD~Acceptance~Rate}_i) +\epsilon_i \\[2ex]
-\mathbf{Model~3:~} \quad \mathrm{Peer~Rating}_i = &\beta_0 + \beta_1(\mathrm{Enroll}_i) + \beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \\ 
-&\beta_5(\mathrm{SF~Ratio}_i) + \beta_6(\mathrm{Percent~Doctoral~Students}_i) + \beta_7(\mathrm{UG~GPA}_i) +\\
-&\beta_8(\mathrm{GRE}_i) + \beta_9(\mathrm{PhD~Acceptance~Rate}_i) + \\
-&\beta_{10}(\mathrm{Total~Publications}_i) + \beta_{11}(\mathrm{Total~Research}_i) + \epsilon_i 
+\mathbf{Model~1:~} \quad \mathrm{News~Knowledge}_i = &\beta_0 + \beta_1(\mathrm{News~Exposure}_i) + \epsilon_i \\[2ex]
+\mathbf{Model~2:~} \quad \mathrm{News~Knowledge}_i = &\beta_0 + \beta_1(\mathrm{Age}_i) + \beta_2(\mathrm{Education}_i) + \beta_3(\mathrm{Male}_i) + \beta_4(\mathrm{Engagement}_i) + \beta_5(\mathrm{Ideology}_i)+ \beta_6(\mathrm{Democrat}_i) + \\ &\beta_7(\mathrm{Republican}_i) + \beta_8(\mathrm{News~Exposure}_i) + \epsilon_i \\[2ex]
+\mathbf{Model~3:~} \quad \mathrm{News~Knowledge}_i = &\beta_0 + \beta_1(\mathrm{Age}_i) + \beta_2(\mathrm{Education}_i) + \beta_3(\mathrm{Male}_i) + \beta_4(\mathrm{Engagement}_i) + \beta_5(\mathrm{Ideology}_i)+ \beta_6(\mathrm{Democrat}_i) + \\ &\beta_7(\mathrm{Republican}_i) + \beta_8(\mathrm{News~Exposure}_i) + \beta_9(\mathrm{News~Exposure}_i)(\mathrm{Education}_i) + \epsilon_i \\[2ex]
 \end{split}
 $$
 
+
 where $\epsilon_i \overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})$ for each of the models. 
 
-For each subsequent model fitted after Model 0, we will examine the change in $R^2$ along with whether that change was statistically different than 0. Then, for the final model, Model 3, we will examine whether the magnitude of each predictor is statistically relevant.
 
 <br />
 
 
 # Classical Framework of Evidence
 
-When we have looked at statistical evidence to this point, it has been from a hypothesis testing point of view. The primary piece of evidence we use in this paradigm is the *p*-value. For example, if we fit Model 1 and examine the evidence for the effect of institutional characteristics of size and wealth on peer ratings, we find:
+When we have looked at statistical evidence to this point, it has been from a hypothesis testing point of view. The primary piece of evidence we use in this paradigm is the *p*-value. For example, if we fit Model 1 and examine the evidence for the effect of news exposure on news knoledge, we find:
 
 
 ```{r}
 # Fit Model 1
-lm.1 = lm(peer_rating ~ 1 + enroll + ft_students + ft_fac + nonres_tuition, data = usnwr_complete)
-lm.1 = lm(peer_rating ~ 1 + ft_students + pct_doc + gre + doc_acc + tot_pubs, data = usnwr_complete)
+lm.1 = lm(knowledge ~ 1 + news, data = pew)
+
 # Coefficient-level output
 tidy(lm.1)
 ```
 
-The *p*-values associated with the effect of full-time students ($p=.007$), and non-resident tuition ($p=.009$) suggest that these two effects are more than we would expect because of chance. While the effects of total graduate enrollment ($p=.124$) and full-time faculty ($p=.409$) may be completely due to chance.
+The *p*-value associated with the effect of news exposure ($p<.001$), which suggests that the size of this effect is more than we would expect because of chance if the population effect was 0.
 
-Interpreting one of these *p*-values, say that for the effect of full-time students, we would say that the probability of seeing the empirical evidence we observed, or evidence that is more extreme, if the null hypothesis that there is no effect of full-time students is true, is 0.007. This implies that our observed data are inconsistent with the hypothesized model that there is no effect of full-time students. In an applied setting, we might use such evidence to decide that the number of full-time students (institution size) does indeed predict variation in institutions' peer ratings (prestige).
+Interpreting this *p*-values, we would say that the probability of seeing the empirical evidence we observed (or evidence that is more extreme) if the null hypothesis that there is no effect of news exposure on news knowledge is true, is 0.000442. This implies that our observed data are inconsistent with the hypothesized model that there is no effect of news exposure. In an applied setting, we might use such evidence to decide that the level of news exposure does indeed predict variation in American's news knowledge.
 
 Despite being the predominant evidential paradigm used in the education and social sciences, hypothesis testing has many criticisms [e.g., @Johansson:2011; @Weakliem:2016]. Among some of the stronger criticisms,
 
@@ -142,8 +102,8 @@ $$
 
 While hypothesis tests have filled a need in the educational and social science to have some standard for evaluating statistical evidence, it is unclear whether this is the approach we should be using. As statistician David Lindley so aptly states,  "[significance tests] are widely used, yet are logically indefensible" [comment in @Johnstone:1986, p. 502]. Psychologist Jacob Cohen was more pointed, saying "[hypothesis testing] has not only failed to support the advance of psychology as a science but also has seriously impeded it" [@Cohen:1994, p. 997].
 
-:::fyi
-"The main purpose of a significance test is to inhibit the natural enthusiasm of the investigator" (@Mosteller:1954, p. 331--332).
+:::todo
+"The main purpose of a significance test is to inhibit the natural enthusiasm of the investigator" [@Mosteller:1954, p. 331--332].
 :::
 
 
@@ -213,6 +173,8 @@ $$
 $$
 
 :::fyi
+**FYI**
+
 Although we need to specify the model this is typically not included in the symbolic notation; instead it is often a part of the assumptions.
 :::
 
@@ -252,10 +214,12 @@ The empirical support for the $\mathcal{N}(25,4^2)$ parameterization is 31 times
 It is important to note that although we use the joint probability under a set of parameters to compute the likelihood of those parameters, theoretically joint density and likelihood are very different. Likelihood takes the data and model as given and computes the probability of a set of parameters. Whereas joint density assumes that the model and parameters are given and gives us the probability of the data.
 
 :::fyi
+**FYI**
+
 Likelihood refers to the probability of the parameters and joint probability density refers to the probability of the data.
 :::
 
-Once we collect the data, the probability of observing that set of data is 1; it is no longer unknown. The likelihood method treats our data as known and offers us a way of making probabilistic statements about the unknown parameters. This is more aligned with our scientific process than making some assumption about the parameter (e.g., $\beta_1=0$) and then trying to deterine the probability of the data under that assumption. Moreover, likelihood does not use unobserved data (e.g., data more extreme than what we observed) in the computation.
+Once we collect the data, the probability of observing that set of data is 1; it is no longer unknown. The likelihood method treats our data as known and offers us a way of making probabilistic statements about the unknown parameters. This is more aligned with our scientific process than making some assumption about the parameter (e.g., $\beta_1=0$) and then trying to determine the probability of the data under that assumption. Moreover, likelihood does not use unobserved data (e.g., data more extreme than what we observed) in the computation.
 
 It is also important to acknowledge what likelihood and the likelihood ratio don't tell us. First, they only tell us the probability of a set of parameters for the data we have. Future collections of data might change the amount of support or which set of parameters is supported. Since changing the data, changes the likelihood, this also means we cannot make cross study comparisons of the likelihood (unless the studies used the exact same data). Secondly, the model assumed is important. If a different model is assumed, the likelihood will be different, and again could change the amount of support or which set of parameters is supported.
 
@@ -268,44 +232,47 @@ These shortcomings are not unique to the likelihood paradigm The also exist in t
 
 # Likelihood in Regression: Back to Our Example
 
-When fitting a regression model, we make certain assumptions about the relationship between a set of predictors and the outcome. For example, in Model 1 from our earlier example, we assume that the relationship between median SAT score and graduation rate can be described by the following model:
+When fitting a regression model, we make certain assumptions about the relationship between a set of predictors and the outcome. For example, in Model 1 from our earlier example, we assume that the relationship between news exposure and news knowledge can be described by the following model:
 
 $$
 \begin{split}
-\mathrm{Peer~Rating}_i = \beta_0 + \beta_1(\mathrm{Enroll}_i) + &\beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \epsilon_i \\[1ex]
+\mathrm{News~Knowledge}_i = &\beta_0 + \beta_1(\mathrm{News~Exposure}_i) + \epsilon_i \\[1ex]
 &\mathrm{where~}\epsilon_i \overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})
 \end{split}
 $$
 
 Here we use OLS to estimate the regression coefficients. Then we can use those, along with the observed data to obtain the residuals and the estimate for the residual standard error. The residuals are the GIVEN data and the set up distributional assumptions for the model (e.g., normal, mean of 0, constant variance) allow us to compute the likelihood for the entire set of parameters in this model ($\beta_0$, $\beta_1$, $\sigma^2_{\epsilon}$).
 
-Below is a set of syntax to compute the likelihood, based on fitting `lm.1`. We use the `resid()` function to compute the residuals. (It is the same as grabbing the column called `.resid` from the `augment()` output.) We also use the estimated value of the residual standard error ($\hat{\sigma}_{\epsilon} = 0.432$) from the `glance()` output.
+Below is a set of syntax to compute the likelihood, based on fitting `lm.1`. We use the `resid()` function to compute the residuals. (It is the same as grabbing the column called `.resid` from the `augment()` output.) We also use the estimated value of the residual standard error ($\hat{\sigma}_{\epsilon} = 20.3$) from the `glance()` output.
 
 ```{r}
+# Get RSE for use in likelihood
+glance(lm.1)
+
 # Compute likelihood for lm.1
-prod(dnorm(x = resid(lm.1), mean = 0, sd = 0.432))
+prod(dnorm(x = resid(lm.1), mean = 0, sd = 20.3))
 ```
 
-This value by itself is somewhat meaningless. It is only worthwhile when we compare it to the likelihood from another model. For example, let's compute the likelihood for Model 0 (the intercept-only model) and compare this to the likelihood for `lm.1`. 
+This value by itself is somewhat meaningless. It is only worthwhile when we compare it to the likelihood from another model. For example, let's compute the likelihood for an intercept-only model (Model 0) and compare this to the likelihood for `lm.1`. 
 
 ```{r}
 # Fit Model 0
-lm.0 = lm(peer_rating ~ 1, data = usnwr_complete)
+lm.0 = lm(knowledge ~ 1, data = pew)
 
 # Get RSE for use in likelihood
 glance(lm.0)
 
 # Compute likelihood for lm.2
-prod(dnorm(x = resid(lm.0), mean = 0, sd = 0.491))
+prod(dnorm(x = resid(lm.0), mean = 0, sd = 21.5))
 ```
 
-The likelihood value for `lm.0` is higher than the likelihood value for `lm.1`. Computing the likelihood ratio:
+The likelihood value for `lm.1` is higher than the likelihood value for `lm.0`. Computing the likelihood ratio:
 
 ```{r}
-1.680643e-20 / 5.452323e-26
+1.382925e-192 / 2.489266e-195
 ```
 
-This suggests that given the data, Model 1 is 308243.5 times more likely than Model 0. In practice, we would adopt Model 1 over Model 0 because it is more likely given the evidence we have.
+This suggests that given the data, Model 1 is 555.6 times more likely than Model 0. In practice, we would adopt Model 1 over Model 0 because it is more likely given the empirical evidence (data) we have.
 
 :::mathnote
 ### Mathematics of Likelihood
@@ -374,58 +341,68 @@ where $\sigma^2_{\epsilon} = \frac{\sum \epsilon_i^2}{n}$. Because the numerator
 
 ## Log-Likelihood
 
-The likelihood values are quite small since we are multiplying several probability densities (values between 0 and 1) together. Since it is hard to work with these smaller values, in practice, we often compute and work with the natural logarithm of the likelihood. So in our example, Model 0 ($\mathcal{L}_0 = 5.452323 \times 10^{-26}$) has a log-likelihood of:
+The likelihood values are quite small since we are multiplying several probability densities (values between 0 and 1) together. Since it is hard to work with these smaller values, in practice, we often compute and work with the natural logarithm of the likelihood. So in our example, Model 0 ($\mathcal{L}_0 = 2.489266 \times 10^{-195}$) has a log-likelihood of:
 
 ```{r}
 # Log-likelihood for Model 0
-log(5.452323e-26)
+log(2.489266e-195)
 ```
 
 Similarly, we can compute the log-likelihood for Model 1 as:
 
 ```{r}
 # Log-likelihood for Model 1
-log(1.680643e-20)
+log(1.382925e-192)
 ```
 
 We typically denote log-likelihood using a scripted lower-case "l" ($\mathcal{l}$). Here,
 
 $$
 \begin{split}
-\mathcal{l}_0 &= -58.17117 \\[1ex]
-\mathcal{l}_1 &= -45.53253 \\[1ex]
+\mathcal{l}_0 &= -448.0921 \\[1ex]
+\mathcal{l}_1 &= -441.7721 \\[1ex]
 \end{split}
 $$
 
-Note that the logarithm of a decimal will be negative, so the log-likelihood will be a negative value. Less negative log-likelihood values correspond to higher likelihood values, which indicate more empirical support. Here Model 1 has a log-likelihood value ($-58.2$) that is less negative than Model 0's log-likelihood value ($-45.5$), which indicates there is more empirical support for Model 1 than Model 0.
+Note that the logarithm of a decimal will be negative, so the log-likelihood will be a negative value. Less negative log-likelihood values correspond to higher likelihood values, which indicate more empirical support. Here Model 1 has a log-likelihood value ($-441.8$) that is less negative than Model 0's log-likelihood value ($-448.1$), which indicates there is more empirical support for Model 1 than Model 0.
 
-We can also express the likelihood ratio using log-likelihoods. To do so we take the natural logarithm of the likelihood ratio. We also re-write it using the rules of logarithms from algebra.
 
-$$
-\begin{split}
-\ln(\mathrm{LR}) &= \ln \bigg(\frac{\mathcal{L}_2}{\mathcal{L}_1}\bigg) \\[2ex]
-&= \ln \big(\mathcal{L}_2\big) - \ln \big(\mathcal{L}_1\big)
-\end{split}
-$$
+:::fyi
+**FYI**
 
-That is, we can find an equivalent relative support metric to the LR based on the log-likelihoods by computing the difference between them. For our example:
+While it is possible using algebra to express the likelihood ratio using log-likelihoods, it does not have the same interpretational value as the LR does. Because of this, the likelihood ratio is not often expresseds using log-likelihoods.
+:::
 
-```{r}
-# Difference in log-likelihoods
-log(1.680643e-20) - log(5.452323e-26)
+<!-- We can also express the likelihood ratio using log-likelihoods. To do so we take the natural logarithm of the likelihood ratio. We also re-write it using the rules of logarithms (from algebra). -->
 
-# Equivalent to ln(LR)
-log(1.680643e-20 / 5.452323e-26)
-```
+<!-- $$ -->
+<!-- \begin{split} -->
+<!-- \ln(\mathrm{LR}) &= \ln \bigg(\frac{\mathcal{L}_2}{\mathcal{L}_1}\bigg) \\[2ex] -->
+<!-- &= \ln \big(\mathcal{L}_2\big) - \ln \big(\mathcal{L}_1\big) -->
+<!-- \end{split} -->
+<!-- $$ -->
 
-Unfortunately, this difference doesn't have the same interpretational value as the LR does, bcause this difference is in log-units. In order to get that interpretation back, we need to exponentiate (the reverse function of the logarithm) the difference:
+<!-- That is, we can find an equivalent relative support metric to the LR based on the log-likelihoods by computing the difference between them. For our example: -->
 
-```{r}
-# Exponentiate the difference in log-likelihoods
-exp(12.63865)
-```
+<!-- ```{r} -->
+<!-- # Difference in log-likelihoods -->
+<!-- log(2.910762e-196) - log(2.089334e-199) -->
 
-Again, Model 1 has 308244.9 times the empirical support than Model 0.
+<!-- # Equivalent to ln(LR) -->
+<!-- log(2.910762e-196 / 2.089334e-199) -->
+<!-- ``` -->
+
+<!-- Unfortunately, this difference doesn't have the same interpretational value as the LR does, bcause this difference is in log-units. In order to get that interpretation back, we need to exponentiate (the reverse function of the logarithm) the difference: -->
+
+<!-- ```{r} -->
+<!-- # Exponentiate the difference in log-likelihoods -->
+<!-- exp(7.239325) -->
+<!-- ``` -->
+
+<!-- Again, Model 1 has 308244.9 times the empirical support than Model 0. -->
+
+
+
 
 :::mathnote
 ### Mathematics of Log-Likelihood
@@ -466,33 +443,42 @@ The `logLik()` function can be used to obtain the log-likelihood directly from a
 logLik(lm.1)
 ```
 
-The `df` output tells us how many **total parameters** are being estimated in the model. In our case this is six ($\beta_0$, $\beta_{\mathrm{Enrollment}}$, $\beta_{\mathrm{FT~Students}}$, $\beta_{\mathrm{FT~Faculty}}$, $\beta_{\mathrm{Tuition}}$, and $\sigma^2_{\epsilon}$). What is more important to us currently, is the log-likelihood value; $\mathcal{l}_1=-45.44917$.
+The `df` output tells us how many **total parameters** are being estimated in the model. In our case the number of total parameters in Model 0 is three ($\beta_0$, $\beta_{\mathrm{News~Exposure}}$, and $\sigma^2_{\epsilon}$). What is more important to us currently, is the log-likelihood value; $\mathcal{l}_1=-450.2233$.
 
-This value is slightly different than the log-likelihood we just computed of $-45.53253$. This is not because of rounding in this case. It has to do with how the model is being estimated; the `logLik()` function assumes the parameters are being estimated using maximum likelihood (ML) rather than ordinary least squares (OLS). You can learn more about ML estimation in the optional set of notes, but for now, we will just use `logLik()` to compute the log-likelihood.
+This value is slightly different than the log-likelihood we just computed of $-441.7721$. This is not because of rounding in this case. It has to do with how the model is being estimated; the `logLik()` function assumes the parameters are being estimated using maximum likelihood (ML) rather than ordinary least squares (OLS). You can learn more about ML estimation in the optional set of notes, but for now, we will just use `logLik()` to compute the log-likelihood.
 
-Here we compute the log-likelihood for Model 0 using the `logLik()` function. We also use the output to compute the likelihood, and the likelihood ratio between Model 1 and Model 0
+Here we compute the log-likelihood for Model 0 using the `logLik()` function. We also use the output to compute the likelihood for Model 0. To compute the likelihood from the log-likelihood we need to exponentiate (the reverse function of the logarithm) the the log-likelihood value using the `exp()` function. We also compute the log-likelihood and likelihood value for Model 1. 
 
 ```{r}
 # Compute log-likelihood for Model 0
 logLik(lm.0)
 
-# Compute likelihood for Model 2
+# Compute likelihood for Model 0
 exp(logLik(lm.0)[1])
 
-# Compute difference in log-likelihoods
-logLik(lm.1)[1] - logLik(lm.0)[1]
 
-# Compute LR
-exp( logLik(lm.1)[1] - logLik(lm.0)[1] )
+# Compute log-likelihood for Model 1
+logLik(lm.1)
+
+# Compute likelihood for Model 1
+exp(logLik(lm.1)[1])
 ```
 
 Because the output from `logLik()` includes extraneous information (e.g., `df`), we use indexing (square brackets) to extract only the part of the output we want. In this case, the `[1]` extracts the log-likelihood value from the `logLik()` output (ignoring the `df` part).
 
-Also of note is that the `df` for Model 0 is two, indicating that this model is estimating two parameters ($\beta_0$, and $\sigma^2_{\epsilon}$). The value of `df` in the `logLik()` output is a quantification of the model's complexity. Here Model 1 2 (`df` = 6) is more complex than Model 0 (`df` = 2).
 
-As we consider using the likelihood ratio (LR) or the difference in log-likelihoods for model selection, we also need to consider the model complexity. In our example, the likelihood ratio of 333754.4 (computed using `logLik()`) indicates that Model 1 has approximately 333,754 times the empirical support than Model 0. But, Model 1 is more complex than Model 0, so we would expect that it  would be more empirically supported.
+<br />
 
-In this case, with a LR of 333,754, it seems like the data certainly support adopting Model 1 over Model 0, despite the added complexity of Model 1. But what if the LR was 10? Would that be enough additional support to warrant adopting Model 1 over Model 0? What about a LR of 5?
+## Model Complexity
+
+One aspect that we need to consider is that more complex models tend to have higher likelihoods and log-likelihoods. Therefore when we compare likelihoods (or log-likelihoods) we need to consider the complexity in addition to the likelihoods. One way to quantify a model's complexity is to consider the number of parameters that are being estimated. The more parameters that we need to estimate, the more complex the model. Recall that the number of parameters for a model are given in the `df` value from the `logLik()` function's output.
+
+
+In our example, the `df` value for Model 0 is two, indicating that this model is estimating two parameters ($\beta_0$, and $\sigma^2_{\epsilon}$). For Model 1, the `df` value was three. This indicates that Model 1 is more complex than Model 0.
+
+As we consider using the likelihood ratio (LR) or the difference in log-likelihoods for model selection, we also need to consider the model complexity. In our example, the likelihood ratio of 555.6 indicates that Model 1 has approximately 555.6 times the empirical support than Model 0. But, Model 1 is more complex than Model 0, so we would expect that it would be more empirically supported.
+
+In this case, with a likelihood ratio of 555.6, it seems like the empirical data certainly support adopting Model 1 over Model 0. despite the added complexity of Model 1. But what if the LR was 10? Would that be enough additional support to warrant adopting Model 1 over Model 0? What about a LR of 5? 
 
 
 <br />
@@ -500,13 +486,13 @@ In this case, with a LR of 333,754, it seems like the data certainly support ado
 
 # Likelihood Ratio Test for Nested Models
 
-One question that arises is, if the likelihood for a more complex model is higher than the likelihood for a simpler model, how large does the likelihood ratio have to be before we adopt the more complex model? In general, there is no perfect answer for this.
+One key question that arises is, if the likelihood for a more complex model is higher than the likelihood for a simpler model, how large does the likelihood ratio have to be before we adopt the more complex model? In general, there is no perfect answer for this.
 
 If the models being compared are nested, then we can carry out a hypothesis test^[This is in some sense mixing the paradigms of likelihood-based evidence and classical hypothesis test-based evidence. In a future set of notes we will learn about information criteria which eliminate the need to mix these two paradigms.] to see if the LR is more than we would expect because of chance. Models are nested when the parameters in the simpler model are a subset of the parameters in the more complex model. For example, in our example, the parameters in Model 0 are a subset of the parameters in Model 1:
 
 $$
 \begin{split}
-\mathbf{Model~1~Parameters:}&\quad\{\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Model~1~Parameters:}&\quad\{\beta_0,~\beta_{\mathrm{News~Exposure}},~\sigma^2_{\epsilon}\} \\[1ex]
 \mathbf{Model~0~Parameters:}&\quad\{\beta_0,~\sigma^2_{\epsilon}\} \\[1ex]
 \end{split}
 $$
@@ -523,7 +509,7 @@ When we have nested models we can carry out a hypothesis test to decide between 
 $$
 \begin{split}
 H_0:& ~\theta_0 = \{\beta_0,~\sigma^2_{\epsilon}\}\\[1ex]
-H_A:& \theta_1 = \{\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\}
+H_A:& \theta_1 = \{\beta_0,~\beta_{\mathrm{News~Exposure}},~\sigma^2_{\epsilon}\}
 \end{split}
 $$
 
@@ -600,42 +586,43 @@ In practice, we will use the `logLik()` function to compute the deviance.
 -2 * logLik(lm.1)[1]
 ```
 
-Here the deviance for Model 1 (90.9) is less than the deviance for Model 0 (116.3). This indicates that the data have better fit to Model 1 than Model 0. How much better is the model--data fit for Model 1?
+Here the deviance for Model 1 (883.5) is less than the deviance for Model 0 (896.2). This indicates that the data have better fit to Model 1 than Model 0. How much better is the model--data fit for Model 1?
 
 ```{r}
 # Compute difference in deviances
-116.3347 - 90.89834
+896.2 - 883.5
 ```
 
-Model 1 improves the fit (reduces the misfit) by 25.44 over Model 0. This is the value of our $\chi^2$-statistic. That is, the $\chi^2$-statistic is difference in residual deviance values and measures the amount of improvement in the model--data misfit.
+Model 1 improves the fit (reduces the misfit) by 12.7 over Model 0. This is the value of our $\chi^2$-statistic. That is, the $\chi^2$-statistic is the difference in residual deviance values and measures the amount of improvement in the model--data misfit.
 
 <br />
 
 
 ## Modeling the Variation in the Test Statistic
 
-If the null hypothesis is true, the difference in deviances can be modeled using a $\chi^2$-distribution. The degrees-of-freedom for this $\chi^2$-distribution is based on the difference in the number of parameters between the complex and simpler model. In our case this difference is four ($6-2=4$):
+If the null hypothesis is true, the difference in deviances can be modeled using a $\chi^2$-distribution. The degrees-of-freedom for this $\chi^2$-distribution is based on the difference in the number of parameters between the complex and simpler model. In our case this difference is four ($3-2=1$):
 
 $$
-\chi^2(4) = 25.44
+\chi^2(1) = 12.66
 $$
 
 ```{r}
 #| label: fig-01
 #| out-width: "70%"
-#| fig-cap: "Plot of the probability density function (PDF) for a $\\chi^2(4)$ distribution. The grey shaded area represents the *p*-value based on $\\chi^2=25.44$."
+#| fig-cap: "Plot of the probability density function (PDF) for a $\\chi^2(1)$ distribution. The grey shaded area represents the *p*-value based on $\\chi^2=12.66$."
+#| fig-alt: "Plot of the probability density function (PDF) for a $\\chi^2(1)$ distribution. The grey shaded area represents the *p*-value based on $\\chi^2=12.66$."
 #| code-fold: true
 # Create dataset
 fig_01 = data.frame(
-  X = seq(from = 0, to = 30, by = 0.01)
+  X = seq(from = 0, to = 20, by = 0.01)
   ) %>%
   mutate(
-    Y = dchisq(x = X, df = 4)
+    Y = dchisq(x = X, df = 1)
     )
 
 # Filter out X<=65
 shaded = fig_01 %>%
-  filter(X >=25.44)
+  filter(X >=12.66)
 
 # Create plot
 ggplot(data = fig_01, aes(x = X, y = Y)) +
@@ -649,26 +636,26 @@ ggplot(data = fig_01, aes(x = X, y = Y)) +
 To compute the *p*-value we use the `pchisq()` function.
 
 ```{r}
-# Compute p-value for X^2 = 25.44
-1 - pchisq(q = 25.44, df = 4)
+# Compute p-value for X^2(1) = 14.50
+1 - pchisq(q = 12.66, df = 1)
 
 # Alternative method
-pchisq(q = 25.44, df = 4, lower.tail = FALSE)
+pchisq(q = 12.66, df = 1, lower.tail = FALSE)
 ```
 
-Based on the *p*-value, we would reject the null hypothesis for the likelihood ratio test, which suggests that we should adopt the more complex model (Model 1). This means that the model that includes the set of predictors measuring the institutional characteristics of size and wealth is more empirically supported than a model that includes no predictors. Note that we are making a holistic evaluation about the model rather than about individual predictors. Based on the LR test we conducted we cannot say which predictors are statistically relevant, only that the set of predictors included in Model 1 is more supported than no predictors.
+Based on the *p*-value, we would reject the null hypothesis for the likelihood ratio test, which suggests that we should adopt the more complex model (Model 1). This means that the model that includes the effect of news exposure is more empirically supported than a model that includes no predictors. Note that we are making a holistic evaluation about the model rather than about individual predictors. 
 
-To determine how much more variation Model 1 explains in peer ratingfs than Model 0 does, we look at the $R^2$ values from the `glance()` output.
+<!-- To determine how much more variation Model 1 explains in news knowledge than Model 0 does, we look at the $R^2$ values from the `glance()` output. -->
 
-```{r}
-# Model-level output Model 0
-glance(lm.0)
+<!-- ```{r} -->
+<!-- # Model-level output Model 0 -->
+<!-- glance(lm.0) -->
 
-# Model-level output Model 1
-glance(lm.1)
-```
+<!-- # Model-level output Model 1 -->
+<!-- glance(lm.1) -->
+<!-- ``` -->
 
-Model 1 explains 26.4% of the variation in peer ratings compared to Model 0, which explains 0% of the variation in peer ratings. This difference is statistically significant based on the *p*-value obtained from the likelihood ratio test ($p=0.000041$). 
+<!-- Model 1 explains 26.4% of the variation in peer ratings compared to Model 0, which explains 0% of the variation in peer ratings. This difference is statistically significant based on the *p*-value obtained from the likelihood ratio test ($p=0.000041$).  -->
 
 
 
@@ -677,7 +664,7 @@ Model 1 explains 26.4% of the variation in peer ratings compared to Model 0, whi
 
 # Using the `lrtest()` Function
 
-We can also use the `lrtest()` function from the `{lmtest}` package to carry out a likelihood ratio test. We provide this function the name of the model object for the simpler model, followed by the name of the model object for the more complex model.
+In practice, we can also use the `lrtest()` function from the `{lmtest}` package to carry out a likelihood ratio test. We provide this function the name of the model object for the simpler model, followed by the name of the model object for the more complex model.
 
 ```{r}
 # Load library
@@ -691,230 +678,299 @@ lrtest(lm.0, lm.1)
 <br />
 
 
-# Adding the Predictors in Block 2
+# Evaluating the Effect of News Exposure in Research Question 2
 
-The next analysis compares Model 1 (institution characteristics) to a model (Model 2) that will also include the student- and faculty-resource attributes. Below we fit that model and examine the $R^2$ value.
-
-```{r}
-# Fit Model 2
-lm.2 = lm(peer_rating ~ 1 + enroll + ft_students + ft_fac + nonres_tuition + 
-            sf_ratio + pct_doc + ug_gpa + gre + doc_acc, data = usnwr_complete)
-
-# Coefficient-level output
-glance(lm.2)
-```
-
-Based on this model, 57.2% of the variation in institutional prestige (peer ratings) is explained by differences in the set of institutional characteristics and student- and faculty-resources. This is an increase of 30.8% of the variation from Model 1. Is this increase in the amount of variation accounted for more than we expect because of chance? To evaluate this, because Model 1 is nested in Model 2, we again turn to the likelihood ratio test.
+In RQ 2, we are evaluating the effect of news exposure on news knowledge after controlling for the set of political and demographic covariates. To do this using a likelihood ratio test, we need to compare a baseline model that includes all of the covariates to a model that includes the covariates AND the effect of news exposure. That is, the only thing that is different between the two models is that the second model includes the effect of news exposure on top of the covariates. That is we will be comparing the following two models:
 
 $$
 \begin{split}
-\mathbf{Model~2~Parameters:}\quad\{&\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\beta_{\mathrm{SF~Ratio}},~\beta_{\mathrm{Pct.~PhD~Students}},\\
-&~\beta_{\mathrm{UG~GPA}},~\beta_{\mathrm{GRE}},~\beta_{\mathrm{PhD~Acceptance~Rate}},~\sigma^2_{\epsilon}\} \\[1ex]
-\mathbf{Model~1~Parameters:}\quad\{&\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} \\[1ex]
-\mathbf{Model~0~Parameters:}\quad\{&\beta_0,~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Simple~Model:~} \quad \mathrm{News~Knowledge}_i = &\beta_0 + \beta_1(\mathrm{Education}_i) + \beta_2(\mathrm{Male}_i) + \beta_3(\mathrm{Engagement}_i) + \epsilon_i \\[2ex]
+\mathbf{Complex~Model:~} \quad \mathrm{News~Knowledge}_i = &\beta_0 + \beta_1(\mathrm{Education}_i) + \beta_2(\mathrm{Male}_i) + \beta_3(\mathrm{Engagement}_i) + \beta_8(\mathrm{News~Exposure}_i) + \epsilon_i \\[2ex]
 \end{split}
 $$
 
-To carry out the LRT we compute the difference in model deviances and evaluate that difference in a $\chi^2$-distribution with degrees-of-freedom equal to the difference in model complexity (based on the number of parameters being estimated).
+By comparing the parameters of the two models, we can see that the simpler model is nested in the more complex model. 
+
+
+$$
+\begin{split}
+\mathbf{Simple~Model~Parameters:}&\quad\{\beta_0,~\beta_{\mathrm{Education}},~\beta_{\mathrm{Male}},~\beta_{\mathrm{Engagement}},~\sigma^2_{\epsilon}\} \\[1ex]
+\mathbf{Complex~Model~Parameters:}&\quad\{\beta_0, ~\beta_{\mathrm{Education}},~\beta_{\mathrm{Male}},~\beta_{\mathrm{Engagement}},~\beta_{\mathrm{News~Exposure}},~\sigma^2_{\epsilon}\} \\[1ex]
+\end{split}
+$$
+
+To carry out the LRT we fit the two models, compute the difference in model deviances, and evaluate that difference in a $\chi^2$-distribution with degrees-of-freedom equal to the difference in model complexity (based on the number of parameters being estimated).
 
 ```{r}
+# Simple model
+lm.2 = lm(knowledge ~ 1 + education + male + engagement, data = pew)
+
+# Complex model
+lm.3 = lm(knowledge ~ 1 + education + male + engagement + news, data = pew)
+
 # Compute the difference in deviances between Model 1 and Model 2
--2 * logLik(lm.1)[1] - (-2 * logLik(lm.2)[1])
+-2 * logLik(lm.2)[1] - (-2 * logLik(lm.3)[1])
 
 # Compute the difference in model complexity
-11 - 6
+6 - 5
 
 
-# Compute p-value for X^2(5) = 45.0956
-pchisq(q = 45.0956, df = 5, lower.tail = FALSE)
+# Compute p-value for X^2(1) = 7.960401
+pchisq(q = 8.924345, df = 1, lower.tail = FALSE)
 ```
 
-The *p*-value is .0000000139, suggesting that the change in the variance accounted for is more than is expected by chance. This implies that the student- and faculty-resources explain additional variation in institutional prestige. Again, we could obtain this same result via using the `lrtest()` function.
+The *p*-value is 0.002813943, suggesting that there is an effect of news exposure on news knowledge, after controlling for the set of political and demographic covariates. Again, we could also obtain this same result via using the `lrtest()` function.
 
 ```{r}
-# LRT to compare Model 1 and Model 2
-lrtest(lm.1, lm.2)
+# LRT to compare Model 2 and Model 3
+lrtest(lm.2, lm.3)
 ```
 
 <br />
 
 
-# Adding the Predictors in Block 3
+# Evaluating the Interaction Effect in Research Question 3
 
-The next analysis compares Model 2 (institution characteristics and student/faculty-resources) to a model (Model 3) that will also includes the student- and faculty-outcome attributes. Below we fit that model and examine the $R^2$ value.
+To evaluate the potential interaction effect between news exposure and education on news knowledge, after controlling for demographic and political covariates, we need to fit the interaction model and then compare it to a model that includes all the same predictors EXCEPT the interaction effect.
 
 ```{r}
-# Fit Model 3
-lm.3 = lm(peer_rating ~ 1 + enroll + ft_students + ft_fac + nonres_tuition + 
-            sf_ratio + pct_doc + ug_gpa + gre + doc_acc + 
-            tot_pubs + tot_res, data = usnwr_complete)
-
-# Coefficient-level output
-glance(lm.3)
+# Fit interaction model
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
 ```
 
-Based on this model, 81.9% of the variation in institutional prestige (peer ratings) is explained by differences in the set of institutional characteristics, student- and faculty-resources, and student- and faculty-outcomes . This is an increase of 24.7% of the variation from Model 2. Is this increase in the amount of variation accounted for more than we expect because of chance? To evaluate this, because Model 2 is nested in Model 3, we again turn to the likelihood ratio test.
-
-$$
-\begin{split}
-\mathbf{Model~3~Parameters:}\quad\{&\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\beta_{\mathrm{SF~Ratio}},~\beta_{\mathrm{Pct.~PhD~Students}},\\
-&~\beta_{\mathrm{UG~GPA}},~\beta_{\mathrm{GRE}},~\beta_{\mathrm{PhD~Acceptance~Rate}},~\beta_{\mathrm{Total~Publications}},~\beta_{\mathrm{Total~Research}},~\sigma^2_{\epsilon}\} \\[1ex]
-\mathbf{Model~2~Parameters:}\quad\{&\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\beta_{\mathrm{SF~Ratio}},~\beta_{\mathrm{Pct.~PhD~Students}},\\
-&~\beta_{\mathrm{UG~GPA}},~\beta_{\mathrm{GRE}},~\beta_{\mathrm{PhD~Acceptance~Rate}},~\sigma^2_{\epsilon}\} \\[1ex]
-\mathbf{Model~1~Parameters:}\quad\{&\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} \\[1ex]
-\mathbf{Model~0~Parameters:}\quad\{&\beta_0,~\sigma^2_{\epsilon}\} \\[1ex]
-\end{split}
-$$
+Note that Model 3 (fitted earlier) is the baseline comparison model to evaluate the interaction effect. Here we will use the `lrtest()` function to compare Models 3 and 4 to evaluate the interaction effect.
 
 
 ```{r}
 # LRT to compare Model 1 and Model 2
-lrtest(lm.2, lm.3)
+lrtest(lm.3, lm.4)
 ```
 
-The *p*-value is ..00000000000000036, suggesting that the change in the variance accounted for is more than is expected by chance. This implies that the student- and faculty-outcomes explain additional variation in institutional prestige.
+The *p*-value is 0.02324, suggesting that there is an interaction effect between news exposure and education level after controlling for differences in the set of political and demographic covariates.
+
 
 <br />
 
 # Evaluating Assumptions
 
-We will also evaluate the final model's (Model 3) assumptions.
+If we were adopting a "final model", the empirical evidence would support adopting Model 4. It is always important to evaluate any adopted final models' assumptions.
 
 ```{r}
 #| label: fig-residuals-linear
-#| fig-cap: "Two residual plots for the model regressing institutional prestige on a set of institutional characteristics, student- and faculty-resources, and student- and faculty-outcomes."
+#| fig-cap: "Two residual plots for Model 4."
+#| fig-alt: "Two residual plots for Model 4."
 #| fig-width: 8
 #| fig-height: 4
 #| out-width: "80%"
 # Create residual plots
-residual_plots(lm.3)
+residual_plots(lm.4)
 ```
 
-Based on the density plot, the assumption of normality looks reasonably met. The scatterplot suggests the assumption that the average residual is 0 is not met---the loess smoother suggests systematic differences in the average residual from 0. The homoscadasticity assumption does seem reasonable with the range of residuals generally being constant across the different fitted values. There is one institution that has an unusually high residual given its fitted value. (Its peer rating is three standard errors higher than what its value based on its predictor values would suggest it should be!) But, this is more of an outlier rather than a violation of the assumption. 
-
-```{r}
-# Identify outlying institution
-augment(lm.3) |>
-  mutate(
-    school = usnwr_complete$school
-  ) |>
-  filter(.std.resid > 3) |>
-  print(width = Inf)
-```
-
-It might be interesting to consider why the University of Virginia is being rated more highly than we would expect it to be based on it institutional characteristics, student- and faculty-resources, and student- and faculty-outcomes. Is it because it is our nation's first public university? Or something else?
+Based on the density plot, the assumption of normality looks reasonably met. The scatterplot suggests the assumption that the average residual is 0 is generally met---the loess smoother suggests the average residual is close to 0 at all fitted values. The homoscadasticity assumption also seems reasonable with the range of residuals generally being constant across the different fitted values. Lastly, since the sample is a random sample of Americans, the independence assumption also seems tenable.
 
 
-# Presenting the Results
+# Presenting the Results from the LRTs
 
-Below we present the results of the fitted models in a regression table. As is common, we report the coefficient estimates, standard errors for those coefficients, and error variances (RMSE). We also report the $R^2$ values and pertinent information for the LRTs: $\chi^2$-values, number of parameters (*k*), and associated *p*-values.
+Below we present a table summarizing the results of the likelihood ratio tests.
+
 
 
 ```{r}
-#| results: asis
+#| label: tbl-model-likelihood
+#| tbl-cap: "Results from a set of likelihood ratio tests (LRT) to compare sets of nested candidate models. "
 #| code-fold: true
 # Load library
-library(texreg)
+library(gt)
 
-# Create the table
-htmlreg(
-  l = list(lm.0, lm.1, lm.2, lm.3),
-  stars = numeric(0),    #No p-value stars
-  digits = 3,
-  padding = 20,          #Add space around columns (you may need to adjust this via trial-and-error)
-  include.adjrs = FALSE, #Omit Adjusted R^2
-  include.nobs = FALSE,  #Omit sample size
-  include.rmse = TRUE,   #Include RMSE
-  custom.model.names = c("Model 1", "Model 2", "Model 3", "Model 4"),
-  custom.coef.names = c("Intercept", "Total Enrollment", "Full-time Students",
-                        "Full-time Faculty", "Nonresident Tuition",
-                        "Student/Faculty Ratio", "Percent Ph.D. Students", "Undergraduate GPA", 
-                        "GRE Score", "Ph.D. Acceptance Rate", "Total Publications", "Total Research"),
-  #custom.note = "Note. (L) = Linear effect. (Q) = Quadratic effect.",
-  reorder.coef = c(2:12, 1), #Put intercept at bottom of table
-  custom.gof.rows = list(
-    `$k$` = c(2, 6, 11, 13), # Add parameters
-    `$\\chi^2$` = c(NA, 25.43, 45.10, 71.12),  # Add X^2 values
-    `$p$` = c("", "<.001", "<.001", "<.001")
-  ),
-  reorder.gof = c(3, 4, 5, 1, 2),
-  caption.above = TRUE, #Move caption above table
-  inner.rules = 1, #Include line rule before model-level output
-  outer.rules = 1,  #Include line rules around table
-  caption = "Table 2: Coefficients (and standard errors) for four models evaluating predictors of institutional prestige. The $\\chi^2$-values, number of parameters (*k*), and associated *p*-values are also reported from the likelihood ratio tests."
-  )
+# Set up data
+d = data.frame(
+  comparison = c("Model 0 vs. Model 1", "Model 2 vs. Model 3", "Model 3 vs. Model 4"),
+  chi = c("$$\\chi^2(1) = 12.66$$", "$$\\chi^2(1) = 8.92$$", "$$\\chi^2(1) = 5.15$$"),
+  p = c("<.001", ".003", ".023")
+)
+
+# Create table
+d |>
+  gt() |>
+  cols_label(
+    comparison = md("*Model Comparison*"),
+    chi = "LRT Result",
+    p = md("*p*")
+  ) |>
+  cols_align(
+    columns = c(comparison),
+    align = "left"
+  ) |>
+  cols_align(
+    columns = c(chi, p),
+    align = "center"
+  ) |> 
+  tab_options(
+    table.width = pct(60)
+    )
 ```
+
+
+
+
+
+
+
+
+<!-- ```{r} -->
+<!-- #| results: asis -->
+<!-- #| code-fold: true -->
+<!-- # Load library -->
+<!-- library(texreg) -->
+
+<!-- # Create the table -->
+<!-- htmlreg( -->
+<!--   l = list(lm.0, lm.1, lm.2, lm.3, lm.4), -->
+<!--   stars = numeric(0),    #No p-value stars -->
+<!--   digits = 3, -->
+<!--   padding = 20,          #Add space around columns (you may need to adjust this via trial-and-error) -->
+<!--   include.adjrs = FALSE, #Omit Adjusted R^2 -->
+<!--   include.nobs = FALSE,  #Omit sample size -->
+<!--   include.rmse = TRUE,   #Include RMSE -->
+<!--   custom.model.names = c("Model 0", "Model 1", "Model 2", "Model 3", "Model 4"), -->
+<!--   custom.coef.names = c("Intercept", "News Exposure", -->
+<!--                         "Education (in years)", "Male", -->
+<!--                         "Political Engagement", -->
+<!--                         "Education x News Exposure"), -->
+<!--   custom.note = "Note. Male, is a dummy-coded predictors. The reference group is non-males.", -->
+<!--   reorder.coef = c(2:6, 1), #Put intercept at bottom of table -->
+<!--   custom.gof.rows = list( -->
+<!--     `ln(Likelihood)` = c(-448.09, -441.76, -417.93, -413.92, -411.33) -->
+<!--   ), -->
+<!--   reorder.gof = c(3, 2, 1), -->
+<!--   caption.above = TRUE, #Move caption above table -->
+<!--   inner.rules = 1, #Include line rule before model-level output -->
+<!--   outer.rules = 1,  #Include line rules around table -->
+<!--   caption = "Table 2: Coefficients (and standard errors) for five models evaluating predictors of news knowledge." -->
+<!--   ) -->
+<!-- ``` -->
 
 
 <br />
 
 
-# Testing Individual Predictors From a Model
+# Reporting Individual Predictors From a Model
 
-Although it doesn't make sense with the goals of this particular analysis, we can also use the LRT to evaluate individual predictors. To illustrate this, let's revisit Model 1, the model that only included the institutional characteristics:
+It is also good practice to report the coefficient-level and model-level estimates from any adopted models in a regression table. We will report results from Model 4. At the coefficient-level, the coefficients and standard errors can be reported from the `tidy()` output. However, since we are using a likelihood framework, the *p*-values from the `tidy()` output are incorrect! We need to compute and report likelihood-based *p*-values.
 
-$$
-\begin{split}
-\mathrm{Peer~Rating}_i = \beta_0 + \beta_1(\mathrm{Enroll}_i) + &\beta_2(\mathrm{FT~Students}_i) + \beta_3(\mathrm{FT~Faculty}_i) + \beta_4(\mathrm{Tuition}_i) + \epsilon_i \\[1ex]
-&\mathrm{where~}\epsilon_i \overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})
-\end{split}
-$$
-
-The parameters in this model are:
+For example, to evaluate the effect of education on news knowledge we would essentially want to test the hypothesis that:
 
 $$
-\{\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\}
-$$
-
-To evaluate the effect of total enrollment we would essentially want to test the hypothesis that:
-
-$$
-H_0: \beta_{\mathrm{Enrollment}} = 0
+H_0: \beta_{\mathrm{Education}} = 0
 $$
 
 To do this with a LRT, we need to compare two models:
 
-- One model that includes all of the predictors;
-- One model that includes everything *except* the effect of total enrollment.
+- One model that includes all of the predictors from Model 4;
+- One model that includes everything from Model 4 *except* the effect of education.
 
-In terms of the parameters, we are testing these two models:
 
-$$
-\begin{split}
-\mathbf{Model~1:}\quad\{&\beta_0,~\beta_{\mathrm{Enrollment}},~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} \\[1ex]
-\mathbf{Model~1a:}\quad\{&\beta_0,~\beta_{\mathrm{FT~Students}},~\beta_{\mathrm{FT~Faculty}},~\beta_{\mathrm{Tuition}},~\sigma^2_{\epsilon}\} 
-\end{split}
-$$
-
-The only difference between these two models is the inclusion of the effect of total enrollment in Model 1 relative to Model 1a. That means any additional variance explained by Model 1 over Model 1a is completely due to the effect of total enrollment. Moreover, if that increase in variation explained is more than we expect because of chance, that means the effect of total enrollment is statistically relevant, even after accounting for the other effects in the model. ANd, because Model 1a is nested in Model 1, we can evaluate this via a LRT.
+The only difference between these two models is the inclusion of the effect of education in the second model. That means any additional empirical support for the second model over the first is completely due to the effect of education. And, because the second model is nested in the first, we can evaluate this via a LRT.
 
 ```{r}
-# Fit Model 1a
-lm.1a = lm(peer_rating ~ 1 + ft_students + ft_fac + nonres_tuition, data = usnwr_complete)
+# Fit full model 4
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+
+# Fit model without education
+lm.4_education = lm(knowledge ~ 1 + male + engagement + news + news:education, data = pew)
 
 # Carry out LRT
-lrtest(lm.1a, lm.1)
+lrtest(lm.4_education, lm.4)
 ```
 
-Here the output of the LRT, $\chi^2(1)=2.54$, $p=.111$, suggest that after accounting for the other predictors in the model, the effect of total enrollment might be completely due to chance (it is not statistically relevant). 
-
-We could test each of the other effects in a similar manner.
+The *p*-value associated with the test of whether or not there is an effect of education (at least for the main effect) is 0.0001314. We will need to obtain the likelihood-based *p*-value for all of the other effects in a similar way. We will
 
 ```{r}
-# Evaluate effect of number of full-time students
-lm.1b = lm(peer_rating ~ 1 + enroll + ft_fac + nonres_tuition, data = usnwr_complete)
-lrtest(lm.1b, lm.1)
+# Effect of male
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_male = lm(knowledge ~ 1 + education + engagement + news + news:education, data = pew)
+lrtest(lm.4_male, lm.4) # Carry out LRT
 
-# Evaluate effect of number of full-time faculty
-lm.1c = lm(peer_rating ~ 1 + enroll + ft_students + nonres_tuition, data = usnwr_complete)
-lrtest(lm.1c, lm.1)
+# Effect of engagement
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_engage = lm(knowledge ~ 1 + education + male + news + news:education, data = pew)
+lrtest(lm.4_engage, lm.4) # Carry out LRT
 
-# Evaluate effect of tuition
-lm.1d = lm(peer_rating ~ 1 + enroll + ft_students + ft_fac , data = usnwr_complete)
-lrtest(lm.1d, lm.1)
+# Effect of new exposure (main-effect)
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_news = lm(knowledge ~ 1 + education + male + engagement + news:education, data = pew)
+lrtest(lm.4_news, lm.4) # Carry out LRT
+
+# Effect of interaction
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_interaction = lm(knowledge ~ 1 + education + male + engagement + news, data = pew)
+lrtest(lm.4_interaction, lm.4) # Carry out LRT
+
+# Intercept
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_intercept = lm(knowledge~ 0 + education + male + engagement + news + news:education, data = pew)
+lrtest(lm.4_intercept, lm.4) # Carry out LRT
 ```
 
-Based on these tests, the effects of number of full-time students ($\chi^2(1)=7.75$, $p=.005$), and wealth (nonresident tuition; $\chi^2(1)=7.26$, $p=.007$) are the only predictors in the model that are statistically relevant after accounting for the other predictors in the model.
+We can then replace the *p*-values from the `tidy()` output with these likelihood-based *p*-values. Also, since these *p*-values are based on chi-squared (not a *t*-value), we should replace the *t*-values from the `tidy()` output with the $\chi^2$-values from the LRTs.
+
+
+```{r}
+tidy(lm.4) |>
+  mutate(
+    statistic = c(11.38, 14.62, 12.80, 17.94, 7.45, 5.15),
+    p.value = c(0.0007417, 0.0001314, 0.0003466, 0.0000228, 0.006351, 0.02324)
+  ) 
+```
+
+If we were reporting this for publication, we could round the *p*-values to three decimal places. We would also want to indicate that these are likelihood-based *p*-values, and that the LRT is based on 1 *df*.
+
+```{r}
+#| label: tbl-model-4
+#| tbl-cap: "Coefficients and standard errors for Model 4. The $\\chi^2$ values and *p*-values are based on likelihood ratio tests (LRT) with 1 degree-of-freedom to evaluate each predictor."
+#| code-fold: true
+# Load library
+library(gt)
+library(gtsummary) # for formatting p-values
+
+# Create table
+tidy(lm.4) |>
+  mutate(
+    term = c("Intercept", "Education-level", "Male", "Political engagement", "News exposure", "Education-level x News exposure"),
+    statistic = c(11.38, 14.62, 12.80, 17.94, 7.45, 5.15),
+    p.value = style_pvalue(c(0.001, 0.0001314, 0.0003466, 0.0000228, 0.006351, 0.02324), digits = 3)
+  )  |>
+  gt() |>
+  cols_label(
+    term = md("*Predictor*"),
+    estimate = md("*B*"),
+    std.error = md("*SE*"),
+    statistic = "$$\\chi^2$$",
+    p.value = md("*p*")
+  ) |>
+  cols_align(
+    columns = c(term),
+    align = "left"
+  ) |>
+  cols_align(
+    columns = c(estimate, std.error, statistic, p.value),
+    align = "center"
+  ) |> 
+  fmt_number(
+    columns = c(estimate, std.error),
+    decimals = 2,
+    use_seps = FALSE
+  ) |>
+  tab_options(
+    table.width = pct(70)
+    ) |>
+  tab_footnote(
+    footnote = md("Male is a dummy-coded predictor with non-male as the reference group."),
+    locations =  cells_body(columns = term, rows = 3)
+  ) 
+```
+
+
 
 
 

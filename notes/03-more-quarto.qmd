@@ -4,7 +4,7 @@ format:
   html:
     code-copy: true
     code-fold: false
-    highlight-style: zenburn
+    highlight-style: a11y-dark
     df-print: paged
     css: ["../assets/sticky-notes.css"]
 date: "today"
@@ -51,6 +51,7 @@ Name the BibTex file (here I named it `my-bibliography.bib`) and save it in the 
 ```{r}
 #| echo: false
 #| out-width: "90%"
+#| fig-alt: "Zotero screenshot showing exporting of BibTeX file."
 knitr::include_graphics("figs/02-zotero-bibtex.png")
 ```
 
@@ -145,6 +146,7 @@ The rendered document now includes a citation where you added this is the QMD do
 ```{r}
 #| echo: false
 #| out-width: "90%"
+#| fig-alt: "Screenshot of rendered Quarto document with citation."
 knitr::include_graphics("figs/02-citations-01.png")
 ```
 
@@ -240,6 +242,7 @@ One R package that is extremely useful, especially if you are using the visual e
 
 ```{r}
 #| echo: false
+#| fig-alt: "Screenshot of the citr package."
 knitr::include_graphics("figs/02-citr-package.png")
 ```
 

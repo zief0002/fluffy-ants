@@ -1,17 +1,17 @@
 ---
-title: "📖 Regression Review"
+title: "Regression Review"
 format:
   html:
    css: "../assets/sticky-notes.css"
 date: "today"
 ---
 
-Here are some things to do before class:
+Before next class, update R, RStudio, and all of your packages!
 
-- [Update R](https://www.r-project.org/) to the most recent version (v. 4.3.2; *Eye Holes*)
-- [Update RStudio Desktop](https://posit.co/download/rstudio-desktop/) to the most recent version (v. 2023.12.0+369)
-- Update all of your R packages (In the `Packages` tab in RStudio click `Update`)
-- Update the `{educate}` package (to at least v.0.3.0.1). This is a github package, so see the instructions in [Installing Packages from GitHub](https://zief0002.github.io/toolkit-quarto/03-getting-started-with-r.html)
+- [Update R](https://www.r-project.org/) to the most recent version (v. 4.4.2; Pile of Leaves). You can check your current version by typing `R.version` into the console.
+- [Update RStudio Desktop](https://posit.co/download/rstudio-desktop/) to the most recent version (v. 2024.09.1+394). You can check your current version by selecting `RStudio > About RStudio`.
+- Once you have updated R and RStudio, update all of your R packages (In the `Packages` tab in RStudio click `Update`).
+
 
 
 Remind yourself of the EPsy 8251 content
