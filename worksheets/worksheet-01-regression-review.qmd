@@ -17,7 +17,7 @@ You will need to reference the [slide deck on regression review](../files/01-reg
 
 # Part I: Data and Analytic Strategy
 
-1. Which of the covariates will you need to creat dummy variables for? 
+1. Which of the covariates will you need to create dummy variables for? 
 
 2. Remind yourself how to create these dummy variables.
 
@@ -29,11 +29,11 @@ You will need to reference the [slide deck on regression review](../files/01-reg
 
 4. What summaries are being computed for each variable in the `skim()` output?
 
-5. Describe the relationship depicted in the scatterplot of news knowledge and news exposure.
+5. Describe the relationship depicted in the scatterplot of news exposure and news knowledge.
 
 6. In the syntax to create the scatterplot (see the script file) the `theme()` layer is customizing the plot. Describe how `text = element_text(size = 20)` customizes this plot? What does it do? (Hint: Run the syntax with and without the `theme()` layer.)
 
-7. Interpret the correlation between Democrat and news knowledge.
+7. Interpret the correlation between Republican and news knowledge.
 
 <br />
 
@@ -69,7 +69,7 @@ You will need to reference the [slide deck on regression review](../files/01-reg
 
 # Part VII: Tables for Publication
 
-17. Where in the R output do we find the Root Mean-Square Error (RMSE) estimates ?
+17. Where in the R output do we find the Root Mean-Square Error (RMSE) estimates?
 
 <br />
 

@@ -1,0 +1,212 @@
+---
+title: "Regression Review"
+subtitle: "Answer Key"
+format:
+  html:
+    highlight-style: a11y-dark
+    css: "../assets/sticky-notes.css"
+date: "today"
+---
+
+You will need to reference the [slide deck on regression review](../files/01-regression-review.pdf) to answer these questions. This deck is broken up into seven different sections. Answer the questions below (which will reference the different parts of the slide deck). Doing this will review the regression content you learned in EPSY 8251. Here are a few other resources that you can also refer to.
+
+- [Data Codebook](http://zief0002.github.io/fluffy-ants/codebooks/pew.html) for the *pew.csv* data
+- [R Script](../scripts/01-regression-review.R) for the analysis presented in the slide deck
+- [Modeling textbook](https://zief0002.github.io/modeling/) from EPSY 8251
+
+<br />
+
+# Part I: Data and Analytic Strategy
+
+1. Which of the covariates will you need to create dummy variables for? 
+
+:::answerkey
+You will need to create dummy variables for political party. Sex (`male`) is already a dummy variable.
+:::
+
+---
+
+2. Remind yourself how to create these dummy variables.
+
+:::answerkey
+```{r}
+#| eval: false
+
+pew |>
+  mutate(
+    democrat = if_else(party == "Democrat", 1, 0),
+    independent = if_else(party == "Independent", 1, 0),
+    republican = if_else(party == "Republican", 1, 0)
+  )
+```
+
+:::
+
+---
+
+<br />
+
+# Part II: Exploration and Relationships
+
+3. Slide 10 introduces output from the `skim()` function (available in the `{skimr}` package). You can see the syntax for this in the script file. The variables being summarized in the output are being selected in the line: `select(age:republican, -party)`. Explain what this syntax does.
+
+:::answerkey
+The `select()` function selects particular columns. In this case, it selects all of the columns between `age` and `republican`. The `-party` omits the `party` column.
+:::
+
+---
+
+4. What summaries are being computed for each variable in the `skim()` output?
+
+:::answerkey
+The following summaries are being computed for each variable in the `skim()` output:
+
+- The number of missing cases (`n_missing`)
+- The proportion of cases with data (`complete_rate`)
+- The mean of the Variable
+- The standard deviation of the variable
+- The minimum (`p0`), maximum (`p100`), 25th percentile (`p25`), 50th percentile/median (`p50`), and 75th percentile (`p75`)
+- A histogram of the variable (`hist`)
+:::
+
+---
+
+5. Describe the relationship depicted in the scatterplot of news knowledge and news exposure.
+
+:::answerkey
+The relationship between news exposure and news knowledge is a positive, linear relationship, indicating that Americans with more news exposure tend to have higher news knowledge scores. This is a fairly weak relationship (*r* = 0.345). 
+:::
+
+---
+
+6. In the syntax to create the scatterplot (see the script file) the `theme()` layer is customizing the plot. Describe how `text = element_text(size = 20)` customizes this plot? What does it do? (Hint: Run the syntax with and without the `theme()` layer.)
+
+:::answerkey
+It increases the text size to 20 points (the default size is 11 points) for all text in the plot. 
+:::
+
+---
+
+7. Interpret the correlation between Republican and news knowledge.
+
+:::answerkey
+The correlation is positive indicating that Republicans have higher news knowledge scores than non-Republicans, on average. Note here that non-Republicans is the combined group of Democrats and Independents.
+:::
+
+---
+
+<br />
+
+# Part III: Research Question 1
+
+8. Remind yourself what $\epsilon_i \overset{i.i.d.}{\sim}\mathcal{N}(0,\sigma^2_{\epsilon})$ indicates. Translate this from math to words.
+
+:::answerkey
+This relates to the assumptions of the model, namely that the errors are independent and identically distributed (i.i.d.). Moreover, each distribution of errors is normally distributed with a mean of 0 and some variance ($\sigma^2_{\epsilon}$) that is the same in all distributions. (Note: Because the variances are the same, the standard deviations should also be the same.)
+:::
+
+---
+
+9. The *df* for the *F*-statistic are 1 and 98. Explain why we get those values.
+
+:::answerkey
+The first *df* value is based on the number of predictors in the model (1). The second *df* value is the difference between the total *df* ($n-1$) and the model *df*. Since the sample size is 100, the total *df* is 99 and $99-1=98$.
+:::
+
+---
+
+10. Interpret the intercept.
+
+:::answerkey
+The political knowledge score for American adults who have no news exposure is 39.7, on average.
+:::
+
+---
+
+11. Interpret the slope.
+
+:::answerkey
+Each 1-unit increase in news exposure is associated with a 0.33-unit increase in political knowledge, on average.
+:::
+
+---
+
+<br />
+
+# Part IV: Research Question 2
+
+12. Interpret the effect of news exposure from Model 2.
+
+:::answerkey
+Each 1-unit increase in news exposure is associated with a 0.202-unit increase in political knowledge, on average, controlling for the set of demographic and political covariates.
+:::
+
+---
+
+13. Evaluate the assumptions of Model 2.
+
+:::answerkey
+
+- There seems to be some violation of the linearity assumption. 
+- The independence assumption is met since the sample was selected randomly as indicated in the codebook. 
+- The normality assumption seems met as the loess smoother for the sample residuals' density is within the confidence envelope of what we expect if the population of residuals was normally distributed. 
+- The homoscedasticity assumption seems tenable as the range of the residual values seems fairly constant across the different predicted values.
+:::
+
+---
+
+<br />
+
+# Part VI: Research Question 3
+
+14. The interpretation for the interaction effect in Model 3 was: "The effect of news exposure on political knowledge depends on education level, after controlling for the set of demographic and political covariates." Provide an alternate interpretation of this effect. (Remember you can always interpret an interaction two ways...)
+
+:::answerkey
+The effect of education level on political knowledge depends on news exposure, after controlling for the set of demographic and political covariates.
+:::
+
+---
+
+15. Based on the interaction plot, is the interaction between news exposure and education level ordinal or disordinal? Explain.
+
+:::answerkey
+It is a disordinal interaction as the lines cross within the range of news exposure values in the data.
+:::
+
+---
+
+16. In the interaction plot, the effect of news exposure on political knowledge (seen in the slopes) is larger for Americans with 12 years of education than it is for Americans with 16 years of eduation. In general, the effect of news exposure on political knowledge diminishes at higher levels of education. Using the plot, describe the effect of education level on political knowledge.
+
+:::answerkey
+Here we are looking at the vertical distances between the lines. The effect of education level is larger at low levels of news exposure than it is at high levels of news exposure. 
+:::
+
+---
+
+<br />
+
+# Part VII: Tables for Publication
+
+17. Where in the R output do we find the Root Mean-Square Error (RMSE) estimates?
+
+:::answerkey
+It is in the `sigma` column of the `glance()` output.
+:::
+
+---
+
+<br />
+
+# Part VIII: For Next Class...
+
+18. Answer the questions about your computer files and your organization of those files on the final slide.
+
+<br />
+
+
+
+
+<br />
+
+
+
