@@ -1,0 +1,102 @@
+---
+title: "More Quarto"
+format:
+  html:
+    highlight-style: "a11y-dark"
+    css: ["../assets/sticky-notes.css"]
+date: "today"
+---
+
+You will be adding to your `assignment-01.qmd` document. Each question will ask you to add something to your Quarto document. As you complete these tasks, you will not only be learning about a tool that is useful for reproducibile analytic work, but also beginning Assignment 1. As you work on this, you might want to reference different resources:
+
+- If you are using the `Source` editor, check out the [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html) page. This will include the Markdown syntax for basic things like creating headers, lists, adding links, etc.
+- [R Script](../scripts/01-regression-review.R) for the analysis presented in the slide deck
+- [Modeling textbook](https://zief0002.github.io/modeling/) from EPSY 8251
+- [Assignment 1](../assignments/assignment-01.html)
+
+<br />
+
+
+# Add a Code Chunk to Create a Figure
+
+1. Open the Assignment 1 R project (`assignment-01.Rproj`) you created from last class. Then open the QMD document you started last class.
+
+2. In the "Question 7" section of your document, add a code chunk. In this chunk, write the syntax to create a scatterplot of new knowledge scores (*y*-axis) versus news exposure (*x*-axis).
+
+3. Add a label, appropriate caption, and alternative text to your code chunk using code chunk options.
+
+4.  Adjust the aspect ratio of the plot using `#| fig-width:` and `#| fig-height:` in the code chunk so that it looks good.
+
+5. Change the values of the chunk options `#| out-width:` and/or `#| out-height:` to change the size of the rendered plot from the default values.
+
+<br />
+
+
+# Add an Inline Equation and an Inline Code Chunk
+
+6. In the "Question 4" section of your document, Write the following sentence: "The Root Mean Square Error (RMSE; $\hat\sigma_{\epsilon}$) is $x$."
+
+7. Prior to that sentence, add a regular code chunk that assigns the `glance()` output for Model 1 into an object. Hide the syntax for this code chunk.
+
+8. Use an inline code chunk to replace $x$ in that sentence with the value for the RMSE from the fitted equation by extracting the `sigma` value from the object that contains the `glance()` output.
+
+<br />
+
+
+# Add a Multiline Equation
+
+9. In the "Question 6" section of your document, add a display equation. In this equation, compute $R^2$ using the sum-of-squares values from the ANOVA decomposition you computed in Question 5. You can use `\frac{}{}` to create a fraction---inside the first curly braces put what you want in the numerator, and in the second set of curly braces put what you want in the denominator.
+
+<br />
+
+
+
+# Cross-Reference a Figure
+
+10. In the "Question 10" section of your document, add a sentence that cross-references the figure you created in for Question 1 in the assignment. The rendered sentence should produce a link that, when clicked, brings you to the plot.
+
+
+<br />
+
+
+# Citations and Bibliography
+
+11. Download the PDF file of the Fox textbook and add it to your Zotero library. (Or to whichever reference/bibliography software you are using.)
+
+12. Also download a PDF of a journal article---you probably already have one :)---and add it to your Zotero library.
+
+13. Be sure to update the metadata for both references after you import them into Zotero.
+
+14. Use Zotero to export a BIB file that includes the Fox textbook and your journal article. Place that BIB file in the `assets` directory of your project. 
+
+15. Download one of the APA CSL files from the [Zotero Style Repository](https://www.zotero.org/styles?q=apa). Place that CSL file in the `assets` directory of your project.
+
+16. Update the YAML of your QMD document to include the `bibliography:` key. For its value, inside of quotation marks, provide the path and filename of your BIB file relative to your QMD file.
+
+17. Update the YAML of your QMD document to include the `csl:` key. For its value, inside of quotation marks, provide the path and filename of your CSL file relative to your QMD file.
+
+18. In the "Question 9" section of your document, write a sentence that includes citations to both references. You can choose the topic of the sentence and how the two references are used in the citation.
+
+19. Add a Level-1 header called "References" at the end of your QMD file.
+
+20. After you do all of this and render the file, check your sentence to see that it looks correct and that the references have rendered properly.
+
+<br />
+
+
+# Add a Table 
+
+21. In the "setup" code chunk, load the `{gt}` library. (If you haven't yet installed it, you will need to do that first.)
+
+22. In the "Question 8" section of your document, add a code chunk. In this chunk, write the syntax included in Question 2 from Assignment 1 to compute the summary statistics.
+
+23. Use the functions from the `{gt}` package to re-create Table 1 from Slide 34. Do this in steps, rendering after you add each line of `gt` syntax.
+
+  - Pipe `tab_01` into the `gt()` function.
+  - Pipe that into the function to re-name the variables.
+  - Pipe that output into the function to round numerical output to the same number of decimal places as in the slides.
+  - Pipe that output into the function to add a the footnotes.
+  
+24. Add the code chunk option `#| label:` and `#| tab-cap:` to label the table and add a caption.
+
+<br />

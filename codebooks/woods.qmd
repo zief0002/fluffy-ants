@@ -2,13 +2,11 @@
 title: "woods.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -17,7 +15,7 @@ csl: '../assets/apa-single-spaced.csl'
 source("../assets/codebook-setup.R")
 ```
 
-The data in [woods.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/woods.csv) were collected from several sources to assesses the effect of political corruption on state environmental policy [@woods:2008].
+The data in [woods.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/woods.csv) were collected from several sources to assesses the effect of political corruption on state environmental policy [@woods:2008].
 
 > Environmental regulation often imposes concentrated costs on regulated organizations that would benefit from the reduction in regulatory burdens. As with several other areas of regulatory policy, industry has the incentive to mobilize for political action in order to reduce regulatory burdens, but citizens face a collective action problem in attempting to mobilize to preserve social amenities. This is a perennial issue in environmental politics, one that several observers have suggested leads environmental policy making to have an intrinsic pro-industry bias...The question that motivates this study, then, is whether the presence of corrupt political officials serves to exacerbate this bias.
 
@@ -48,7 +46,7 @@ The data in [woods.csv](https://raw.githubusercontent.com/zief0002/benevolent-an
 
 ```{r}
 # Import data
-woods = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/woods.csv")
+woods = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/woods.csv")
 
 # View data
 woods |>

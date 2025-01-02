@@ -9,7 +9,7 @@ format:
     css: ["../assets/sticky-notes.css"]
 date: "today"
 bibliography: "../assets/epsy8252.bib"
-csl: "../assets/apa-single-spaced.csl"
+csl: "../assets/apa.csl"
 ---
 
 ```{r}
@@ -155,21 +155,21 @@ We can add files and directories by creating them using an application on our co
 :::todo
 **Your Turn**
 
-Download the [woods.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/woods.csv) file to your computer. Make sure that the file suffix is `.csv`. (Sometimes Safari users will find that the suffix `.txt` gets appended to the end of the filename---`woods.csv.txt`. If that is the case delete the `.txt` part that was appended.) Place `woods.csv` into the `data` directory of your project. The new tree is:
+Download the [pew.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv) file to your computer. Make sure that the file suffix is `.csv`. (Sometimes Safari users will find that the suffix `.txt` gets appended to the end of the filename---`pew.csv.txt`. If that is the case delete the `.txt` part that was appended.) Place `pew.csv` into the `data` directory of your project. The new tree is:
 
 ```
 assignment-01
     ├── assets
     ├── assignment-01.Rproj
     ├── data
-    │   └── woods.csv
+    │   └── pew.csv
     ├── figs
     └── scripts
 ```
 :::
 
 
-In RStudio, in the `Files` pane, if you click on the `data` directory, you should see `woods.csv`. 
+In RStudio, in the `Files` pane, if you click on the `data` directory, you should see `pew.csv`. 
 
 
 <br />
@@ -202,7 +202,7 @@ assignment-01
     ├── assets
     ├── assignment-01.Rproj
     ├── data
-    │   └── woods.csv
+    │   └── pew.csv
     ├── figs
     └── scripts
 ```

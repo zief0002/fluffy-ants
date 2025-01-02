@@ -1,0 +1,23 @@
+---
+title: "Mathematical Foundations: Logarithms"
+format:
+  html:
+    css: ["../assets/sticky-notes.css"]
+date: "today"
+bibliography: "../assets/epsy8252.bib"
+csl: "../assets/apa.csl"
+---
+
+Refresh your knowledge about logarithms by completing the following prior to class:
+
+- Go through the [Khan Academy Intro to Logarithms Tutorial](https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/v/logarithms)
+- You might also enjoy the [Math with Bad Drawings: ABC Book of e](https://mathwithbaddrawings.com/2018/02/05/the-abc-book-of-e/)
+
+<br />
+
+
+## References
+
+
+
+

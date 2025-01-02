@@ -2,13 +2,11 @@
 title: "vocabulary.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -18,7 +16,7 @@ source("../assets/codebook-setup.R")
 ```
 
 
-The data in [vocabulary.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/vocabulary.csv), adapted from data provided by @Bock:1975, come from the Laboratory School of the University of Chicago and include scaled test scores across four grades from the vocabulary section of the Cooperative Reading Test for $n=64$ students. The attributes in the dataset include:
+The data in [vocabulary.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/vocabulary.csv), adapted from data provided by @Bock:1975, come from the Laboratory School of the University of Chicago and include scaled test scores across four grades from the vocabulary section of the Cooperative Reading Test for $n=64$ students. The attributes in the dataset include:
 
 - `id`: The student ID number
 - `vocab_08`: The scaled vocabulary test score in 8th grade
@@ -32,7 +30,7 @@ The data in [vocabulary.csv](https://raw.githubusercontent.com/zief0002/benevole
 
 ```{r}
 # Import data
-vocab = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/vocabulary.csv")
+vocab = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/vocabulary.csv")
 
 # View data
 vocab

@@ -4,320 +4,440 @@ format:
   html:
     code-copy: true
     code-fold: false
-    highlight-style: a11y-dark
-    df-print: paged
+    highlight-style: "a11y-dark"
+    df-print: "paged"
+    toc: true
     css: ["../assets/sticky-notes.css"]
-date: today
+date: "today"
 bibliography: "../assets/epsy8252.bib"
-csl: "../assets/apa-single-spaced.csl"
+csl: "../assets/apa.csl"
 ---
 
-In this set of notes, you will continue your Quarto journey. One important note before we begin:
-
-:::fyi
-In EPsy 8251, when we create objects, they are stored in the R environment and we can operate on those objects. For example, in this document we will read in the *woods.csv* data and assign it to the object `woods`. We can then use functions to compute values and operate on the data.
-
-Trying to operate on an object that we created in the R environment, but do not create in our Quarto document will lead to an error. This is because the R environment and your Quarto document are completely independent from one another.
-
-**If you want to operate on an object you have to create the object in the Quarto document.**
-:::
-
-
-<br />
-
-
-# Your First Task
-
-To begin:
-
-::: fyi
-**Your Turn**
-
-1.  Open the Assignment 1 R project (`assignment-01.Rproj`) you created.
-2.  Create a new Quarto document called `assignment-01.qmd` and save this in your root directory. The tree for your project should now look like this:
-
-```{=html}
-<!-- -->
-```
-    assignment-01
-        ├── README
-        ├── assets
-        ├── assignment-01.qmd
-        ├── assignment-01.Rproj
-        ├── data
-        │   └── woods.csv
-        ├── figs
-        └── scripts
-:::
-
-<br />
-
-Before we start updating the document, here is a useful resource.
-
--   If you are using the `Source` editor, there is a *Markdown Reference Guide* available in RStudio via `Help > Markdown Quick Reference`. This will include the Markdown syntax for basic things like changing the font style, creating lists, adding links, etc.
-
-<br />
-
-# Update the YAML
-
-:::fyi
-**Your Turn**
-
-In the `assignment-01.qmd` file, update the YAML to the following:
-
-    ---
-    title: "Assignment 1"
-    subtitle: "Introduction to Quarto"
-    author: "Your Group's Names"
-    date: "January XX, 2023"
-    format: html
-    editor: visual
-    ---
-
-Change the `date:` key to today's date. For the `editor:` key you can choose `visual` or `source` depending on whether you want the document to open with the visual editor or the source editor.
-:::
-
-<br />
-
-# Adding Text
-
-:::fyi
-**Your Turn**
-
-Start by clearing all the text in the document below the YAML (underneath the three hyphens). Then add some text into your document. Within this text, make some words italics and some words bold. Also add a bulletted list. (Maybe the names of the pets/plants/kids for everyone in your group.)
-:::
-
-<br />
-
-# Adding Headings
-
-:::fyi
-**Your Turn**
-
-Add a Level-1 and a Level-2 heading into your document. Separate each of these by adding some text after each of them. If you need a refresher, see the "Headings" section in the [Markdown Basics Tutorial](https://quarto.org/docs/authoring/markdown-basics.html#headings).
-:::
-
-<br />
-
-
-# Code Chunks
-
-Recall from the [Computations Tutorial](https://quarto.org/docs/get-started/computations/rstudio.html), we can add R syntax to our document using a code chunk. 
-
-<br />
-
-
-## Add a Code Chunk to Load Libraries and Import Data
-
-The first question on Assignment 1 is:
-
-> Import the data and display the first several rows of data (not all of it). Use one of the paged table options in your YAML to ensure that this is printed nicely. All syntax for these commands should be hidden.
-
-:::fyi
-**Your Turn**
-
--   Create a Level-2 Heading in your QMD document that is called "Question 1".
--   Then create a new R chunk. In that chunk load the `{tidyverse}` library. Don't forget to add a comment.
--   In the same R chunk, import the `woods.csv` data into an object called `woods`.
-:::
-
-To import the data (which you put in the `data` directory of your project last class) use the following syntax:
-
 ```{r}
-#| eval: false
-woods = read_csv("data/woods.csv")
-```
-
-The path inside the quotation marks gives the location (relative to the QMD file) of the `woods.csv` data. Here, the data are in the directory called `data`. Thus the path `data/woods.csv` indicates go to the data folder and inside of that locate `woods.csv`.
-
-:::fyi
-**Your Turn**
-
-What would the path be inside the quotation marks if our project had the following tree?
-
-    assignment-01
-        ├── README
-        ├── assets
-        ├── assignment-01.qmd
-        ├── assignment-01.Rproj
-        ├── data
-           ├── assignment-data
-              └── woods.csv
-           └── notes-data
-        ├── figs
-        └── scripts
-:::
-
-
-:::fyi
-**FYI**
-
-Use the first code chunk in your Quarto document to load all the packages and datasets used in the document. Label this chunk `setup`. This has the added advantage that others can immediately see what packages and datasets are needed to run the document. Labelling it `setup` also runs that chunk when you try to run other chunks, so your code works!
-:::
-
-
-<br />
-
-## Displaying Data
-
-:::fyi
-**Your Turn**
-
-In the same R chunk display the data by typing the data object name after you import the data.
-:::
-
-<br />
-
-Rendering the document should display the entire data set in your outputted HTML file! In general, we do not want to take the space (especially when data sets are large) to do this. One option is to change the way that data frames/tibbles are printed in the Quarto document. To do this we need to update our YAML.
-
-:::fyi
-**Your Turn**
-
-Update the YAML of your QMD to the following:
-
-    ---
-    title: "Assignment 1"
-    subtitle: "Introduction to Quarto"
-    author: "Your Group's Names"
-    date: "January XX, 2023"
-    format:
-      html:
-        df-print: paged
-    editor: visual
-    ---
-
-Re-render the document.
-:::
-
-<br />
-
-This sets the printing option for data frames into an HTML table that has clickable paging when the data are large. The Quarto documentation [Data Frames](https://quarto.org/docs/computations/r.html#data-frames), includes other options for printing data frames.
-
-:::protip
-**Important**
-
-Pay attention to the spacing in the YAML!!!!
-:::
-
-<br />
-
-## Add a Code Chunk to Create a Plot
-
-:::fyi
-**Your Turn**
-
-Create another Level-1 header in your document called "Scatterplot". Then create a code chunk in which you create a scatterplot of infant mortality rates (*y*-axis) versus female education level (*x*-axis).
-:::
-
-<br />
-
-It is a good idea to include a label in the chunk options for each plot you create. A label is the name of this code chunk. (Any code chunk, even if it is not a plot, can have a label.) In the plot below, the chunk's label is `fig-scatterplot`.
-
-```{r}
+#| label: setup
 #| echo: false
 #| message: false
+source("../assets/notes-setup.R")
+
 # Load libraries
 library(broom)
 library(tidyverse)
 
 # Import data
-woods = read_csv("https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/woods.csv")
+pew = read_csv("https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv")
+
+lm.1 = lm(knowledge ~ 1 + news, data = pew)
+
+lm1coef = tidy(lm.1)
 ```
 
-```{r}
-#| echo: fenced
-#| label: fig-scatterplot
-#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."
-#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."
-ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +
-   geom_point()
-```
+In this set of notes, you will begin your Quarto journey.
 
-Notice that by labeling this chunk, the figure is numbered in the document. We also added a caption using the `fig-cap:` option.
+
 
 <br />
 
+# Creating a New Quarto Document
 
-### Figure Size
-
-There are a couple other chunk options for figures that help set the aspect ratio and size of the figure in your document. The aspect ratio is the ratio of a figure's width to its height. We set this using the `fig-width:` and `fig-height:` chunk options. (The default value for both is 6; thus the figure appears square.) Below we change these so that the figure appears wider than it is tall.
+To create a new Quarto document, go to the directory where you want to put the file and click `New File` under the "Files" tab, and select `Quarto Document`. In the popup box, give your new document a name. Quarto documents have the extension .qmd.
 
 ```{r}
-#| echo: fenced
-#| label: fig-scatterplot-2
-#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."
-#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."
-#| fig-width: 9
-#| fig-height: 5
-ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +
-   geom_point()
+#| echo: false
+#| out-width: "80%"
+include_graphics("figs/03-01-new-quarto-doc.png")
 ```
 
+<br />
 
+# YAML: The Stuff Between the Sets of Three Dashes
 
-:::fyi
-**FYI**
+YAML (pronounced Yam-el) is an acronym for "Yet Another Markup Language". It constitutes the metadata for your Quarto document. Not only is it informational, but it also helps format your document. The metadata in your newly created Quarto document looks something like this:
 
-It is important to change the aspect ratio when you have legends or when you are using `{patchwork}` to stack or put multiple figures next to each other. Many times you need to find a good aspect ratio though trial-and-error of trying different values.
+```{r}
+#| eval: false
+---
+title: "hello-world"
+format: html
+---
+```
+
+These are called key-value pairs. The "keys" are "title" and "format". The value associated with title is "hello-world" (by default this will be whatever you named the document), and the value associated with format is "html".
+
+<br />
+
+# Rendering the Document
+
+Click the `Render` button above your Quarto document. This will render the quarto document (i.e., the QMD file) into a human-consumable format---in this case an HTML file that can be opened in a web browser. The rendered document should also open in your "Viewer" tab in RStudio. If you go back and look at yuor project directory, you should also see a new HTML file has been created. (In my case, this was "hello-world.html".) This can be opened in a web-browser; try it by double-clicking the HTML file.
+
+<br />
+
+# Update the YAML
+
+Our document is pretty boring---it only has a title that is the same as our file name. Let's edit the YAML to see how we can add to our document's metadata. First you can update the title value to whatever you want the title of your document to be:
+
+```{r}
+#| eval: false       
+---
+title: "My First Quarto Document"
+format: html
+---
+```
+
+We can also add additional metadata. Here we add a subtitle, author(s), and date.
+
+```{r}
+#| eval: false        
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format: html
+---
+```
+
+Once you have edited and added in the new YAML keys and values, re-click the `Render` button.
+
+:::protip
+**Notice**
+
+All the YAML keys and special values (e.g. html) are all lower case! Special values do not need quotes. All other strings need quotes.
 :::
 
-The actual size of the figure in the document is independent of the aspect ratio and can be set using the `out-width:` or `out-height:` chunk option. These options take a character string of the direct size (in HTML documents this is typically in pixels) or of the percentage of the output width/height. Here we keep the same aspect ratio, but make the figure smaller by setting the figure width to 40% of the document's width.
+
+The keys "subtitle", "author", and "date" are all keys that Quarto recognizes. Some of these keys are more global (e.g., title, author) and work across different formats. Others are unique to the type of document format. For example, some keys work with HTML formatted documents and others work with PDF formatted documents. You can learn about some of the YAML that works with HTML formatted documents here: <https://quarto.org/docs/output-formats/html-basics.html>
+
+<br />
+
+## Autopopulating the Date
+
+We can auto-populate the `date:` key in our document's YAML by including "today" rather than a specifc date. The date will update to the current date when you render the document.
 
 ```{r}
-#| echo: fenced
-#| label: fig-scatterplot-3
-#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."
-#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."
-#| fig-width: 9
-#| fig-height: 5
-#| out-width: "40%"
-ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +
-   geom_point()
+#| eval: false        
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format: html
+---
 ```
 
 
-:::fyi
-**FYI**
 
-If you set the aspect ratio of the figure, you need only set `out-width:` or `out-height:`. You don't need to set both as the other will be determined by the aspect ratio.
+
+# Adding Content
+
+The primary part of a Quarto document is not the YAML, but the actual body of the document. Things like headings, text, analysis, and other content are part of the body of the Quarto document. This is all added BELOW the sets of three dashes.
+
+Let's add some text to our document. 
+
+```{r}
+#| eval: false       
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format: html
+---
+
+Here is some text for my document. Notice that it is below the YAML.
+
+Here is a new paragraph. A line space indicates that we start a new paragraph.
+```
+
+:::fyi
+**WORKFLOW**
+
+As you add content to your QMD file you should save it often. To see how the new content looks, you need to render the document. Rendering the document also typically saves the added content to the QMD file. So your workflow is: Add content --> Render.
 :::
 
-<br />
-
-
-## Inline Code Chunks for Better Reproducibility
-
-In writing papers where there are results from data analyses being reported in the text, inline code chunks are boss! For example, consider writing the following sentence in an analysis of the *woods.csv* data.
-
-> The mean environmental program strength is 17.6 (SD = 8.23).
-
-Rather than computing these values and then transposing the values into the sentence, we can use inline code chunks to directly compute and write the values in the sentence. Here is some syntax we could use:
-
-The mean environmental program strength is `` `r knitr::inline_expr("mean(woods$envprogstr)")` `` (SD = `` `r knitr::inline_expr("sd(woods$envprogstr)")` ``).
-
-This produces the following sentence in the rendered document:
-
-> The mean environmental program strength is `r mean(woods$envprogstr)` (SD = `r sd(woods$envprogstr)`).
-
-<br />
-
-
-### Rounding
-
-There are several ways to set the rounding to two decimal places. One is to embed the computation in the `round()` function. For example, in the first inline chunk we could use: `round(mean(woods$envprogstr), 2)`.
-
-You can also do this in a separate code chunk and then call the values in the inline computation (as suggested in the [Quarto Computations Tutorial](https://quarto.org/docs/get-started/computations/rstudio.html)).
-
 
 
 <br />
+
+## Headings
+
+In an HTML document there are six levels of headings. You can think about headings as denoting sections and subsections (and sub-sub-sections, etc.) in a document. 
+
+Headings need to be on their own line and the star of the line is one or more hashtags. A level-1 heading uses one hashtag, a level-2 heading uses two hashtags. A level-3 heading uses three hastags. Etc. You also need a blank line above and below the heading line.
+
+
+```{r}
+#| eval: false         
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format: html
+---
+
+# Hello
+
+This is a level-1 heading. Note the blank line above and below the heading.
+
+## World
+
+This is a level-2 heading. Note the heading starts with two hashtags.
+
+```
+
+<br />
+
+## Bold and Italics
+
+Text can be bolded or italicized by adding asterisks around the text. A single set of asterisks is placed around text that you want to italicize and a double set placed around text you want to bold. (Note: You can also use underscores to italicize or bold things in a similar manner.)
+
+```{r}
+#| eval: false        
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format: html
+---
+
+# Bold and Italics Text
+
+Here is *italicized text*. And here is **bold text**.
+
+We can also use undercores to create _italicized text_ or __bold text__.
+
+Combinations of asterisks and underscore create __*bold, italicized text*__.
+
+```
+
+<br />
+
+## Other Fun Content
+
+You can also add content such as unordered (i.e., bulleted) lists, ordered (i.e., numbered) lists, hyperlinks, images, footnotes and blockquotes. To see how to do check out the [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html) page.
+
+
+<br />
+
+
+## Source versus Visual Editor
+
+Above the QMD document is a set of buttons named "Source" and "Visual". These buttons change the editong mode of the document. By default the "Source" mode is used. Clicking the "Visual" button will switch to the visual editing mode. The visual editing mode is more like Word or Google Docs---there is a toolbar to select things like bold/italics, etc.
+
+You can use whatever editor you want, but  In my experience, novices like to use the visual editor because it is closer to other editing programs they have used before. Experts tend to use the source editor. Not only is it faster for them, but as your documents become more complex, the visual editor has many shortcomings.
+
+For that reason, I encourage you to become proficient with the source editor. To further encourage this all of the instruction I give will be in the source editor. 
+
+<br />
+
+## Back to the YAML: Indentation for Options
+
+Now that you have added a few headings and some text to youe QMD file, let's include some additional YAML. The new YAML will add a table-of-contents to your rendered document. Note that the `format: html` key-value pair is now separated---`html` is on a new line and indented.
+
+```{r}
+#| eval: false        
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format:
+  html:
+    toc: true
+    toc-location: left
+---
+```
+
+As you try out different YAML it is important to pay attention to the indentation. Keys that are indented have to be 2 or 4 spaces (generally 1 tab). The indentation is a way of denoting options for different keys. For example, consider the following YAML:
+
+
+
+Now the value "html" is indented (2 spaces) from the "format" key. This is because we have now added additional keys that set options in our HTML document. Namely adding a table of contents ("toc: true") and a location for that table of contents ("toc-location: left"). These keys are indented an additional two spaces to indicate they are options for the "html" key.
+
+::: protip
+**IMPORTANT**
+
+The spacing in the YAML really matters a lot. If you don't have the correct spacing, the document will not render.
+:::
+
+You can think of the indentation as indicating the hierarchical structure of elements withing the YAML. In our example the key "html" is a subcomponent of the "format" key. And, the "toc" and "toc-location" keys are subcomponents of the "html" key.
+
+Here is a more complex example. Don't worry what the new keys do, but instead think about the heirarchy. Which keys are subcomponents of which other keys?
+
+```{r}
+#| eval: false        
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format:
+  html:
+    toc: true
+    toc-location: left
+    html-math-method:
+      method: mathjax
+  pdf:
+    mainfont: "Open Sans"
+---
+```
+
+<br />
+
+
+
+
+
+# Code Chunks: Integrating R Syntax into Your QMD Document
+
+The real bang-for-your-buck of wrting in a Quarto document is that you can integrate your R syntax directly into your text document. To do this we need to add a code chunk. To add a code chunk click the green "+C" above your quarto document and select "R". This will add a blank R code chunk to your QMD document.
+
+Any R code you add inside the code chunk will be executed when you render the document.
+
+````         
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format: html
+---
+
+# Code Chunk
+
+```{{r}}
+2 + 3 * 3
+```
+
+
+````
+
+
+When you render the document, both the syntax and output from the syntax are printed in the rendered HTML document. 
+
+< br />
+
+
+## Code Chunk Options
+
+We can include options for code chunks that customize what will be printed into the HTML document. For example, in a paper, you often want to include the figure, but may not want to print all of the syntax that was used to create that plot in the final paper. Code chunk options are placed at the beginning of the code chunk and begin with `#|`. Similar to YAML, they are key-value pairs. For example, the code chunk below has two options: `#| label:` and `#| echo`.
+
+
+````         
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format: html
+---
+
+# Code Chunk
+
+```{{r}}
+#| label: order-of-operations
+#| echo: true
+2 + 3 * 3
+```
+
+
+````
+
+The  `#| label:` option should be included with every code chunk. It is a way of naming the code chunk. Here, the name of this code chunk is `order-of-operations`. Other code chunks can have any label you want. They should be descriptive of what code is being run in the chunk. For example, `label: correlations` or `label: fit-model-1`. Note that labels can't include space or special characters. They also have to be unique, so a label name cannot be used again.
+
+
+The second option, `#| echo:` indicates whether the syntax should be printed in the HTML document. If the value of this option is `true`, then the syntax is printed along with the output of the syntax. If the value of this option is `false`, then only the output of the syntax is printed to the HTML document.
+
+You can see more code chunk options in the Quarto documentation page, [Executable Options](https://quarto.org/docs/computations/execution-options.html). 
+
+:::fyi
+**PROTIP**
+
+At the beginning of a Quarto document (immediately after the YAML)  include a code chunk that loads all the libraries you need and also imports any datasets for an analysis. In this code chunk I often use the following code options:
+
+- `#| label: setup`
+- `#| echo: false`
+- `#| message: false`
+- `#| warning: false`
+
+The last two options supress any messages or warnings that are elicited when you load your libraries. The `setup` label is special value. The code chunk labelled `setup` will be run when you try to run other chunks. This is important since other code often relies on you having loaded libraries and imported the data!
+:::
+
+
+Here is an example of where I would include the first setup code chunk.
+
+````         
+---
+title: "My First Quarto Document"
+subtitle: "Hello World"
+author: "Andy and Iggy"
+date: today
+format: html
+---
+
+# Code Chunk
+
+```{{r}}
+#| label: setup
+#| echo: false
+#| message: false
+#| warning: false
+
+# Load libraries
+library(tidyverse)
+
+# Import data
+pew = read_csv("data/pew.csv")
+```
+
+
+````
+
+
+::: fyi
+**SUPER IMPORTANT**
+
+In EPsy 8251, when we create objects, they are stored in the R environment and we can operate on those objects. For example, in this document we will read in the *pew.csv* data and assign it to the object `pew`. We can then use functions to compute values and operate on the data.
+
+Trying to operate on an object that we created in the R environment, but do not create in our Quarto document will lead to an error. This is because the R environment and your Quarto document are completely independent from one another.
+
+If you want to operate on an object you have to create the object in a code chunk in the Quarto document.
+:::
+
+
+<!-- Watch the [Computations Tutorial](https://quarto.org/docs/get-started/computations/rstudio.html) to learn more. -->
+
+<br />
+
+
+<!-- ::: fyi -->
+<!-- **Your Turn** -->
+
+<!-- What would the path be inside the quotation marks if our project had the following tree? -->
+
+<!-- ```          -->
+<!-- assignment-01 -->
+<!--     ├── README -->
+<!--     ├── assets -->
+<!--     ├── assignment-01.qmd -->
+<!--     ├── assignment-01.Rproj -->
+<!--     ├── data -->
+<!--        ├── assignment-data -->
+<!--           └── pew.csv -->
+<!--        └── notes-data -->
+<!--     ├── figs -->
+<!--     └── scripts -->
+<!-- ``` -->
+<!-- ::: -->
+
 
 # Equations
 
-:::protip
-**Important**
+::: protip
+**IMPORTANT**
 
-Equation syntax is not R code. Therefore this syntax should not be placed inside of a code chunk!
+Equation syntax is not R code. Therefore equation syntax should not be placed inside of a code chunk!
 :::
 
 There are two different manners in which equations/mathematics is included in a document.
@@ -333,14 +453,16 @@ $$
 
 The syntax I used to create this display equation is:
 
-    $$
-    y_i = \beta_0 + \beta_1(x_i) + \epsilon_i
-    $$
+```         
+$$
+y_i = \beta_0 + \beta_1(x_i) + \epsilon_i
+$$
+```
 
 Here is the same equation as an inline equation: $y_i = \beta_0 + \beta_1(x_i) + \epsilon_i$. Notice that in an inline equation, the equation is embedded directly in the text. To create the inline equation we embed the mathematical expression in single dollar signs (`$y_i = \beta_0 + \beta_1(x_i) + \epsilon_i$`) rather than double dollar signs.
 
-:::fyi
-**Learn More**
+::: fyi
+**LEARN MORE**
 
 If you need a reminder about how to create these, check out the "Equations" section of the [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html#equations) tutorial.
 :::
@@ -350,20 +472,14 @@ The syntax we use to create the mathematical expressions is from LaTeX. Here are
 -   [List of LaTeX mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
 -   [LaTeX Mathematical Symbols](https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf)
 
-:::fyi
-**Your Turn**
+To write fitted equations, you need a hat over the outcome. To do that we can use `\hat{}` or `\widehat{}`. I use widehat over words (e.g., $\widehat{\text{Knowledge}_i}$) and hat over single letters (e.g., $\hat{y}_i$). In both, whatever you want to add the hat over is placed in between the curly braces. For example, here is how you might write the equation for the sample fitted line:
 
-Part of Question #5 asks you to use a display equation to write the fitted equation based on the following output.
-
-```{r}
-#| echo: false
-# Display coefficient-output
-lm.1 = lm(envprogstr ~ 1 + corrupt + legprof + wealth + toxicwaste + publicenv + demcontrol + interpartycomp, data = woods)
-tidy(lm.1)
+```         
+$$
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1(x_i)
+$$
 ```
 
-Try to write this fitted equation in your Quarto document using a display equation.
-:::
 
 <br />
 
@@ -371,128 +487,30 @@ Try to write this fitted equation in your Quarto document using a display equati
 
 When we typeset equations, there are a couple things we should do:
 
--   Use variable names that make sense to our reader, rather than their name in our dataset/R. For example "Environmental Program Strength" is a better name than "envprogstr".
+-   Use variable names that make sense to our reader, rather than their name in our dataset/R. For example "News Exposure" is a better name than "news".
 -   Variable names should also be typeset using normal text rather than italic (the default in mathematical expressions).
 
-We can fix both issues by including the variable names in a text environment (`\text{}`). So to get the name "Environmental Program Strength" we need to use the following in our equation:
+We can fix both issues by including the variable names in a text environment (`\text{}`). So to get the name "News Knowledge" we need to use the following in our equation:
 
-    $$
-    \text{Environmental Program Strength}
-    $$
-
+```         
+$$
+\text{News Knowledge}
+$$
+```
 
 Other useful environments include: `\mathit{}` (italics), `\mathbf{}` (bold), `\mathtt{}` (typewriter text), and `\mathcal{}` (caligraphy; this is useful for the "N" we use to indicate a normal distribution). If you want a space when using these, you include a tilde (`~`) to denote a space.
 
 -   Hyphens need special syntax since a hyphen would be interpreted as a minus sign. In typesetting, the minus sign is longer than the hyphen symbol.
 
-If you want to include a hyphen, we need to include it in `\mbox{}`. For example, to add a hyphen in our variable name to get "Check-In", we use:
+If you want to include a hyphen, we need to include it in `\mbox{}`. For example, to add a hyphen in our variable name to get "Education-Level", we use:
 
-    $$
-    \text{Check\mbox{-}In}
-    $$
-
-:::fyi
-**Your Turn**
-
-Update your fitted equation from before to include spaces in variable names. Also be sure the variable names are written in normal font.
-:::
-
-<br />
-
-# Multiline Equations
-
-There are a couple of ways to create multiline equations in a Quarto document. I tend to use the `split` environment from LaTeX to do this. To use this:
-
--   Include `\begin{split}` and `\end{split}` in the display equation.
--   At the end of each line (where you want a linebreak) include a double backslash, `\\`.
--   In each line of the multiline equation, also include the ampersand sign (`&`) at the point we want the multiple lines to align vertically.
-
-Here is an example:
-
-```
+```         
 $$
-\begin{split}
-\hat{y}_i &= 3 + 4(1) \\
-&= 7
-\end{split}
+\text{Education\mbox{-}Level}
 $$
 ```
 
-And the resulting display equation is:
-
-$$
-\begin{split}
-\hat{y}_i &= 3 + 4(1) \\
-&= 7
-\end{split}
-$$
-
-Note that the ampersand appeared immediately before the equal sign in each line of the equation, so that is where the two lines are aligned vertically (the equal signs are on top of each other). You can add as many lines to this as you want.
-
-:::fyi
-**FYI**
-
-Multiline equations are quite useful to show your work and when you have really long single equations that need to be broken up so they fit on the page (e.g., a regression equation with many predictors).
-:::
 
 <br />
 
-## Spacing Out the Lines
 
-You can add space between the lines of your multiline equation by including a unit of measurement between square brackets after the double backslashes.
-
-```
-$$
-\begin{split}
-\hat{y}_i &= 3 + 4(1) \\[1em]
-&= 7
-\end{split}
-$$
-```
-
-Here the resulting display equation is:
-
-$$
-\begin{split}
-\hat{y}_i &= 3 + 4(1) \\[1em]
-&= 7
-\end{split}
-$$
-
-Here we have added line space of 1 em. An *em* is a unit for measuring the width of printed work, equal to the height of the type size being used (typically the width of the letter "m"). Other common printing units include the *en* (the width of the letter "n"), and the *ex* (the width of the letter "x").
-
-:::fyi
-Question #8 on the assignment actually asks:
-
-> Use a display equation to write the equation for the underlying regression model (including error and assumptions) using Greek letters, subscripts, and variable names. Also write the equation for the fitted least squares regression equation based on the output from `lm()`. Type these two equations in the same display equation, each on a separate line of text in your document, and align the equals signs.
-
-Try writing this multiline equation.
-:::
-
-<br />
-
-# Hyphens, Minus Signs, and Dashes
-
-In printed work the width of a hyphen, a minus sign, and dashes are all different. Quarto will correctly typeset these, but you have to indicate what you want. Below are how we indicate these in Quarto.
-
--   **Hyphen:** A hyphen is used to join two or more words together. To typeset a hyphen in Quarto, use a single hyphen; `-`.
--   **En Dash:** An en dash is used to mark ranges and to indicate the meaning "to" in phrases like "Minneapolis--St. Paul". An en dash is slightly longer than a hyphen and is typeset in Quarto using two hyphens; `--`.
--   **Em Dash:** An em dash is used to separate extra information or mark a break in a sentence. An em dash is slightly longer than an en dash and is typeset in Quarto using three hyphens; `---`.
--   **Minus Sign:** A minus sign is used in mathematical expressions (e.g., in subtraction or to indicate a negative number). To typeset a minus sign, use the inline equation with a single hyphen; `$-$`. When a minus sign is typeset, not only is the length of it different than a hyphen, but it also includes the correct spacing around it for mathematical typesetting.
-
-Here is a sentence incorporating each of these so you can see the differences:
-
-*During the time from January--February, my three dogs enjoy playing in the snow---apparently snow is fun for canines---with their sweaters on since it is* $-30$-degrees Fahrenheit outside.
-
-The input for this sentence was:
-
-`During the time from January--February, my three dogs enjoy playing in the snow---apparently snow is fun for canines---with their sweaters on since it is $-30$-degrees Fahrenheit outside.`
-
-Note that you can also typeset these in Word:
-
--   **Hyphen:** On both a Mac and PC, press "hyphen".
--   **En Dash:** On a Mac, press "option+hyphen key". On a PC, press "ctrl+hyphen".
--   **Em Dash:** On a Mac, press "option+shift+hyphen key". On a PC, press "alt+ctrl+hyphen".
--   **Minus Sign:** For a minus sign, you should use Equation Editor.
-
-<br />

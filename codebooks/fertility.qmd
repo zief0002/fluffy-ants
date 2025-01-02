@@ -2,13 +2,11 @@
 title: "fertility.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -18,7 +16,7 @@ source("../assets/codebook-setup.R")
 ```
 
 
-Human overpopulation is a growing concern and has been associated with depletion of Earth's natural resources (water is a big one that ) and degredation of the environment. This, in turn, has social and economic consequences such as global tension over resources such as water and food, higher cost of living and higher unemployment rates. The data in [fertility.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/fertility.csv) were collected from several sources (e.g., World Bank) and are thought to correlate with fertility rates, a measure directly linked to population. The variables are:
+Human overpopulation is a growing concern and has been associated with depletion of Earth's natural resources (water is a big one that ) and degredation of the environment. This, in turn, has social and economic consequences such as global tension over resources such as water and food, higher cost of living and higher unemployment rates. The data in [fertility.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/fertility.csv) were collected from several sources (e.g., World Bank) and are thought to correlate with fertility rates, a measure directly linked to population. The variables are:
 
 - `country`: Country name
 - `region`: Region of the world
@@ -40,7 +38,7 @@ Human overpopulation is a growing concern and has been associated with depletion
 
 ```{r}
 # Import data
-fertility = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/fertility.csv")
+fertility = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/fertility.csv")
 
 # View data
 fertility

@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-01-01">
+
+<title>More Quarto – EPsy 8252</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d3043699f4f525e226433170f63674df.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f711e14002b6196f89aba41c46f307b9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable/js/pagedtable.js"></script>
+<script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/sticky-notes.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EPsy 8252</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../assignments.html"> 
+<span class="menu-text">Assignments &amp; Grading</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data.html"> 
+<span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../class-policies.html"> 
+<span class="menu-text">Class Policies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../instructor.html"> 
+<span class="menu-text">Instructor &amp; TA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../mission-statements.html"> 
+<span class="menu-text">Mission Statements</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../umn-policies.html"> 
+<span class="menu-text">University Policies</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On This Page</h2>
+   
+  <ul>
+  <li><a href="#code-chunks-for-figures" id="toc-code-chunks-for-figures" class="nav-link active" data-scroll-target="#code-chunks-for-figures">Code Chunks for Figures</a>
+  <ul class="collapse">
+  <li><a href="#figure-size" id="toc-figure-size" class="nav-link" data-scroll-target="#figure-size">Figure Size</a></li>
+  </ul></li>
+  <li><a href="#inline-code-chunks-for-better-reproducibility" id="toc-inline-code-chunks-for-better-reproducibility" class="nav-link" data-scroll-target="#inline-code-chunks-for-better-reproducibility">Inline Code Chunks for Better Reproducibility</a>
+  <ul class="collapse">
+  <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding">Rounding</a></li>
+  </ul></li>
+  <li><a href="#multiline-equations" id="toc-multiline-equations" class="nav-link" data-scroll-target="#multiline-equations">Multiline Equations</a>
+  <ul class="collapse">
+  <li><a href="#spacing-out-the-lines" id="toc-spacing-out-the-lines" class="nav-link" data-scroll-target="#spacing-out-the-lines">Spacing Out the Lines</a>
+  <ul class="collapse">
+  <li><a href="#typesetting-101-hyphens-minus-signs-and-dashes" id="toc-typesetting-101-hyphens-minus-signs-and-dashes" class="nav-link" data-scroll-target="#typesetting-101-hyphens-minus-signs-and-dashes">Typesetting 101: Hyphens, Minus Signs, and Dashes</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a>
+  <ul class="collapse">
+  <li><a href="#creating-.bib-files-using-zotero" id="toc-creating-.bib-files-using-zotero" class="nav-link" data-scroll-target="#creating-.bib-files-using-zotero">Creating .bib Files Using Zotero</a></li>
+  <li><a href="#including-the-bib-file-in-your-yaml" id="toc-including-the-bib-file-in-your-yaml" class="nav-link" data-scroll-target="#including-the-bib-file-in-your-yaml">Including the BIB File in your YAML</a></li>
+  <li><a href="#bibtex-files" id="toc-bibtex-files" class="nav-link" data-scroll-target="#bibtex-files">BibTex Files</a></li>
+  <li><a href="#including-citations-in-your-quarto-document" id="toc-including-citations-in-your-quarto-document" class="nav-link" data-scroll-target="#including-citations-in-your-quarto-document">Including Citations in Your Quarto Document</a></li>
+  <li><a href="#use-apa-formatted-citations-and-references" id="toc-use-apa-formatted-citations-and-references" class="nav-link" data-scroll-target="#use-apa-formatted-citations-and-references">Use APA Formatted Citations and References</a></li>
+  <li><a href="#citation-extras" id="toc-citation-extras" class="nav-link" data-scroll-target="#citation-extras">Citation Extras</a></li>
+  </ul></li>
+  <li><a href="#auto-populating-the-date-in-your-yaml" id="toc-auto-populating-the-date-in-your-yaml" class="nav-link" data-scroll-target="#auto-populating-the-date-in-your-yaml">Auto-Populating the Date in Your YAML</a></li>
+  <li><a href="#learn-more" id="toc-learn-more" class="nav-link" data-scroll-target="#learn-more">Learn More</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">More Quarto</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 1, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This document contains some additional instruction for EPsy 8252. Note that I might add to this as students hit me with questions over the course of the semester.</p>
+<p><br></p>
+<section id="code-chunks-for-figures" class="level2">
+<h2 class="anchored" data-anchor-id="code-chunks-for-figures">Code Chunks for Figures</h2>
+<p>Code chunks can be used to do anything you can do in R. For example we can fit regression models, create plots, compute summary measures, or mutate dummy variables into our data. For figures, there are a bunch of chunk options that are useful.</p>
+<p>To label code chunks that include figures, we will append <code>fig-</code> to the label name. For example, we can use <code>#| label: fig-density-knowledge</code> to label a code chunk where we are creating a density plot of the news knowledge variable.</p>
+<p>We can add a caption using the <code>#| fig-cap:</code> chunk option. It is also a good idea to also include the <code>#| fig-alt:</code> chunk option with figures. This provides alternative text for screenreaders (which is required under the new federal accessability laws). Below is an example of this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My First Quarto Document"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Hello World"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Andy and Iggy"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Code Chunk</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-density-knowledge</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Here is your figure caption."</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Here is alternative text for screenreaders."</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = pew, aes(x = knowledge)) +</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_density()</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notice that by labeling this chunk with <code>fig-</code>, the figure is numbered in the document. This allows the figure to also be cross-referenced. You can do this by using the “at” symbol (@) along with the figure’s label name. For example, to cross-reference to the density plot we created, we could use something like:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My First Quarto Document"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Hello World"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Andy and Iggy"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Code Chunk</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-density-knowledge</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Here is your figure caption."</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Here is alternative text for screenreaders."</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = pew, aes(x = knowledge)) +</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_density()</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>The distribution of news knowledge is unimodal (see @fig-density-knowledge).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<section id="figure-size" class="level3">
+<h3 class="anchored" data-anchor-id="figure-size">Figure Size</h3>
+<p>There are a couple other chunk options for figures that help set the aspect ratio and size of the figure in your document. The aspect ratio is the ratio of a figure’s width to its height. We set this using the <code>#| fig-width:</code> and <code>#| fig-height:</code> chunk options. (The default value for both is 6; thus the figure appears square.) Below we change these so that the figure appears wider than it is tall.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-density-knowledge-2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Density plot showing the distribution of news knowledge."</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Density plot showing a a unimodal distribution of news knowledge."</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 9</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = pew, aes(x = knowledge)) +</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_density()</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-density-knowledge-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Density plot showing a a unimodal distribution of news knowledge." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-density-knowledge-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04-01-more-quarto_files/figure-html/fig-density-knowledge-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Density plot showing a a unimodal distribution of news knowledge.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-density-knowledge-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Density plot showing the distribution of news knowledge.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="fyi">
+<p><strong>FYI</strong></p>
+<p>It is important to change the aspect ratio when you have legends or when you are using <code>{patchwork}</code> to stack or put multiple figures next to each other. Many times you need to find a good aspect ratio though trial-and-error of trying different values.</p>
+</div>
+<p>The actual size of the figure in the document is independent of the aspect ratio and can be set using the <code>#| out-width:</code> or <code>#| out-height:</code> chunk option. These options take a character string of the direct size (in HTML documents this is typically in pixels) or of the percentage of the output width/height. Here we keep the same aspect ratio, but make the figure smaller by setting the figure width to 40% of the document’s width.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-density-knowledge-3</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Density plot showing the distribution of news knowledge."</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Density plot showing a a unimodal distribution of news knowledge."</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-width: "40%"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = pew, aes(x = news, y = knowledge)) +</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-density-knowledge-3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Density plot showing a a unimodal distribution of news knowledge." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-density-knowledge-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04-01-more-quarto_files/figure-html/fig-density-knowledge-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Density plot showing a a unimodal distribution of news knowledge.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-density-knowledge-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Density plot showing the distribution of news knowledge.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="fyi">
+<p><strong>PROTIP</strong></p>
+<p>If you set the aspect ratio of the figure, you need only set <code>#| out-width:</code> or <code>#| out-height:</code>. You don’t need to set both as the other will be determined by the aspect ratio.</p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="inline-code-chunks-for-better-reproducibility" class="level1">
+<h1>Inline Code Chunks for Better Reproducibility</h1>
+<p>In writing papers where there are results from data analyses being reported in the text, inline code chunks are boss! For example, consider writing the following sentence in an analysis of the <em>pew.csv</em> data.</p>
+<blockquote class="blockquote">
+<p>The effect of news exposure on news knowledge is 0.327 (SE = 0.09).</p>
+</blockquote>
+<p>Rather than computing these values and then transposing the values into the sentence, we can use inline code chunks to directly compute and write the values in the sentence. Recall, earlier we assigned the <code>tidy()</code> output into an object called <code>lm1coef</code>. The results from <code>tidy()</code> are a tibble (or data frame).</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print output</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>lm1coef</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["term"],"name":[1],"type":["chr"],"align":["left"]},{"label":["estimate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["std.error"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"(Intercept)","2":"39.6845434","3":"5.20203862","4":"7.628652","5":"1.558760e-11"},{"1":"news","2":"0.3271158","3":"0.08994213","4":"3.636958","5":"4.421004e-04"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>A tibble/data frame is a combination of rows and columns. We can access different parts of the tibble by indexing the row and column that we want. For example, to access the slope standard error, which is in the 2nd row and 3rd column, we could use:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Access slope SE</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>lm1coef[<span class="dv">2</span>, <span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["std.error"],"name":[1],"type":["dbl"],"align":["right"]}],"data":[{"1":"0.08994213"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Unfortunately, this also comes out as a labelled tibble. If we just want the SE value we double index this. Thus to get the value of the slope SE, we use:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Access slope SE number only</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lm1coef[[<span class="dv">2</span>, <span class="dv">3</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.08994213</code></pre>
+</div>
+</div>
+<p>Here is how we could extract the slope value and the SE of the slope value to write our earlier sentence:</p>
+<blockquote class="blockquote">
+<p>The effect of news exposure on news knowledge is <code>`r lm1coef[[2, 2]]`</code> (SE = <code>`r lm1coef[[2, 3]]`</code>).</p>
+</blockquote>
+<p>This produces the following sentence in the rendered document:</p>
+<blockquote class="blockquote">
+<p>The effect of news exposure on news knowledge is 0.3271158 (SE = 0.0899421).</p>
+</blockquote>
+<p>Note: You don’t need to assign the output to an object to index it. For example, the SE could also be extracted using: <code>`r tidy(lm.1)[[2, 2]]`</code></p>
+<p><br></p>
+<section id="rounding" class="level3">
+<h3 class="anchored" data-anchor-id="rounding">Rounding</h3>
+<p>There are several ways to set the rounding to two decimal places. One is to embed the computation in the <code>round()</code> function. For example, in the first inline chunk we could use: <code>round(lm1coef[[2, 3]], 2)</code>.</p>
+<p>You can also do this in a separate code chunk and then call the values in the inline computation (as suggested in the <a href="https://quarto.org/docs/get-started/computations/rstudio.html">Quarto Computations Tutorial</a>).</p>
+<p><br></p>
+</section>
+</section>
+<section id="multiline-equations" class="level1">
+<h1>Multiline Equations</h1>
+<p>There are a couple of ways to create multiline equations in a Quarto document. I tend to use the <code>split</code> environment from LaTeX to do this. To use this:</p>
+<ul>
+<li>Include <code>\begin{split}</code> and <code>\end{split}</code> in the display equation.</li>
+<li>At the end of each line (where you want a linebreak) include a double backslash, <code>\\</code>.</li>
+<li>In each line of the multiline equation, also include the ampersand sign (<code>&amp;</code>) at the point we want the multiple lines to align vertically.</li>
+</ul>
+<p>Here is an example:</p>
+<pre><code>$$
+\begin{split}
+\hat{y}_i &amp;= 3 + 4(1) \\
+&amp;= 7
+\end{split}
+$$</code></pre>
+<p>And the resulting display equation is:</p>
+<p><span class="math display">\[
+\begin{split}
+\hat{y}_i &amp;= 3 + 4(1) \\
+&amp;= 7
+\end{split}
+\]</span></p>
+<p>Note that the ampersand appeared immediately before the equal sign in each line of the equation, so that is where the two lines are aligned vertically (the equal signs are on top of each other). You can add as many lines to this as you want.</p>
+<div class="fyi">
+<p><strong>FYI</strong></p>
+<p>Multiline equations are quite useful to show your work and when you have really long single equations that need to be broken up so they fit on the page (e.g., a regression equation with many predictors).</p>
+</div>
+<p><br></p>
+<section id="spacing-out-the-lines" class="level2">
+<h2 class="anchored" data-anchor-id="spacing-out-the-lines">Spacing Out the Lines</h2>
+<p>You can add space between the lines of your multiline equation by including a unit of measurement between square brackets after the double backslashes.</p>
+<pre><code>$$
+\begin{split}
+\hat{y}_i &amp;= 3 + 4(1) \\[1em]
+&amp;= 7
+\end{split}
+$$</code></pre>
+<p>Here the resulting display equation is:</p>
+<p><span class="math display">\[
+\begin{split}
+\hat{y}_i &amp;= 3 + 4(1) \\[1em]
+&amp;= 7
+\end{split}
+\]</span></p>
+<p>Here we have added line space of 1 em. An <em>em</em> is a unit for measuring the width of printed work, equal to the height of the type size being used (typically the width of the letter “m”). Other common printing units include the <em>en</em> (the width of the letter “n”), and the <em>ex</em> (the width of the letter “x”).</p>
+<!-- ::: fyi -->
+<!-- Question #8 on the assignment actually asks: -->
+<!-- > Use a display equation to write the equation for the underlying regression model (including error and assumptions) using Greek letters, subscripts, and variable names. Also write the equation for the fitted least squares regression equation based on the output from `lm()`. Type these two equations in the same display equation, each on a separate line of text in your document, and align the equals signs. -->
+<!-- Try writing this multiline equation. -->
+<!-- ::: -->
+<section id="typesetting-101-hyphens-minus-signs-and-dashes" class="level3 fyi">
+<h3 class="anchored" data-anchor-id="typesetting-101-hyphens-minus-signs-and-dashes">Typesetting 101: Hyphens, Minus Signs, and Dashes</h3>
+<p>In printed work the width of a hyphen, a minus sign, and dashes are all different. Quarto will correctly typeset these, but you have to indicate what you want. Below are how we indicate these in Quarto.</p>
+<ul>
+<li><strong>Hyphen:</strong> A hyphen is used to join two or more words together. To typeset a hyphen in Quarto, use a single hyphen; <code>-</code>.</li>
+<li><strong>En Dash:</strong> An en dash is used to mark ranges and to indicate the meaning “to” in phrases like “Minneapolis–St.&nbsp;Paul”. An en dash is slightly longer than a hyphen and is typeset in Quarto using two hyphens; <code>--</code>.</li>
+<li><strong>Em Dash:</strong> An em dash is used to separate extra information or mark a break in a sentence. An em dash is slightly longer than an en dash and is typeset in Quarto using three hyphens; <code>---</code>.</li>
+<li><strong>Minus Sign:</strong> A minus sign is used in mathematical expressions (e.g., in subtraction or to indicate a negative number). To typeset a minus sign, use the inline equation with a single hyphen; <code>$-$</code>. When a minus sign is typeset, not only is the length of it different than a hyphen, but it also includes the correct spacing around it for mathematical typesetting.</li>
+</ul>
+<p>Here is a sentence incorporating each of these so you can see the differences:</p>
+<p><em>During the time from January–February, my three dogs enjoy playing in the snow—apparently snow is fun for canines—with their sweaters on since it is</em> <span class="math inline">\(-30\)</span>-degrees Fahrenheit outside.</p>
+<p>The input for this sentence was:</p>
+<p><code>During the time from January--February, my three dogs enjoy playing in the snow---apparently snow is fun for canines---with their sweaters on since it is $-30$-degrees Fahrenheit outside.</code></p>
+<p>Note that you can also typeset these in Word:</p>
+<ul>
+<li><strong>Hyphen:</strong> On both a Mac and PC, press “hyphen”.</li>
+<li><strong>En Dash:</strong> On a Mac, press “option+hyphen key”. On a PC, press “ctrl+hyphen”.</li>
+<li><strong>Em Dash:</strong> On a Mac, press “option+shift+hyphen key”. On a PC, press “alt+ctrl+hyphen”.</li>
+<li><strong>Minus Sign:</strong> For a minus sign, you should use Equation Editor.</li>
+</ul>
+</section>
+<p><br></p>
+</section>
+</section>
+<section id="citations" class="level1">
+<h1>Citations</h1>
+<p>To add citations, we need to:</p>
+<ul>
+<li>Create a BibTeX (.bib) file that holds the metadata for our references.</li>
+<li>Save the BibTeX file to our project directory (typically in the <code>assets</code> directory)</li>
+<li>Include <code>bibliography: "location/bibliography-name.bib"</code> in the YAML of our QMD document</li>
+</ul>
+<p><br></p>
+<section id="creating-.bib-files-using-zotero" class="level2">
+<h2 class="anchored" data-anchor-id="creating-.bib-files-using-zotero">Creating .bib Files Using Zotero</h2>
+<p>Most reference managers (e.g., Papers, Zotero, Mendelay) can produce BibTex files. Here I will illustrate the process using Zotero.</p>
+<ul>
+<li>Create a <code>New Collection</code>.</li>
+<li>Drag the references you want in your BibTeX database into this collection. For today, drag the <span class="citation" data-cites="carmichael_1954">Carmichael (<a href="#ref-carmichael_1954" role="doc-biblioref">1954</a>)</span> and <span class="citation" data-cites="ross_2020">Ross et al. (<a href="#ref-ross_2020" role="doc-biblioref">2020</a>)</span> references into this collection.</li>
+<li>Right-click the collection and select <code>Export Collection</code>.</li>
+<li>In the pop-up window, change the format of the exported collection to <code>BibTex</code>.</li>
+<li>Click <code>OK</code>.</li>
+</ul>
+<p>Name the BibTex file (here I named it <code>my-bibliography.bib</code>) and save it in the <code>assets</code> folder.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/02-zotero-bibtex.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="Zotero screenshot showing exporting of BibTeX file."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>When you call the BibTex file in the <code>bibliography:</code> key of the YAML in your QMD document, you will need to give the location of the BibTex (relative to the QMD document) and the name you just gave it. For example if you are calling a bibliography in the quarto document <code>assignment-01.qmd</code> that has the following directory/folder structure:</p>
+<pre><code>assignment-01
+    ├── README
+    ├── assets
+       └── my-bibliography.bib
+    ├── assignment-01.qmd
+    ├── assignment-01.Rproj
+    ├── data
+       └── fertility.csv
+    ├── figs
+    └── scripts</code></pre>
+<p><br></p>
+</section>
+<section id="including-the-bib-file-in-your-yaml" class="level2">
+<h2 class="anchored" data-anchor-id="including-the-bib-file-in-your-yaml">Including the BIB File in your YAML</h2>
+<p>You would then include the following in your Quarto document’s YAML:</p>
+<pre><code>---
+title: "Assignment 1"
+subtitle: "Introduction to Quarto"
+author: "Your Group's Names"
+date: "January XX, 2023"
+format: html
+editor: visual
+bibliography: "assets/my-bibliography.bib"
+---</code></pre>
+<p><br></p>
+</section>
+<section id="bibtex-files" class="level2">
+<h2 class="anchored" data-anchor-id="bibtex-files">BibTex Files</h2>
+<p>BibTeX files are essentially databases that store bibliographic information in a plain-text (style-independent) file. The database includes a set of references and their metadata. Here is the raw text inside an example BibTex file that includes two articles written by <span class="citation" data-cites="carmichael_1954">Carmichael (<a href="#ref-carmichael_1954" role="doc-biblioref">1954</a>)</span> and <span class="citation" data-cites="ross_2020">Ross et al. (<a href="#ref-ross_2020" role="doc-biblioref">2020</a>)</span>.</p>
+<pre><code>@article{carmichael_1954,
+    title = {Laziness and the Scholarly Life},
+    volume = {78},
+    number = {4},
+    journal = {The Scientific Monthly},
+    author = {Carmichael, Leonard},
+    year = {1954},
+    pages = {208--213}
+}
+
+@article{ross_2020,
+    title = {Racial disparities in police use of deadly force against unarmed individuals persist after appropriately benchmarking shooting data on violent crime rates},
+    issn = {1948-5506, 1948-5514},
+    url = {http://journals.sagepub.com/doi/10.1177/1948550620916071},
+    doi = {10.1177/1948550620916071},
+    language = {en},
+    urldate = {2020-06-24},
+    journal = {Social Psychological and Personality Science},
+    author = {Ross, Cody T. and Winterhalder, Bruce and McElreath, Richard},
+    month = jun,
+    year = {2020},
+    pages = {194855062091607}
+}</code></pre>
+<p>The citation identifiers in this example are <code>carmichael_1954</code> and <code>ross_2020</code>. These identifiers are the first bit of text after the initial curly brace in the reference. This is how we will refer to the citations in our QMD document. (Typically these are auto-generated from our reference manager.) To determine the citiation identifiers, you can open your BibTeX file in RStudio. (Do this by using <code>Open File...</code> within RStudio; double-clicking on the BibTeX file will likely open it in a different application.)</p>
+<p><br></p>
+</section>
+<section id="including-citations-in-your-quarto-document" class="level2">
+<h2 class="anchored" data-anchor-id="including-citations-in-your-quarto-document">Including Citations in Your Quarto Document</h2>
+<p>Citations go inside square brackets and are separated by semicolons. Each citation must have a key, composed of <code>@citation_identifier</code> from the database (no spaces between them). For example to cite the Carmichael article:</p>
+<pre><code>Here is some text and a citation [@carmichael_1954].</code></pre>
+<p>This will create a citation where you included it in the text and also add the reference at the end of the document. If you want a section header for your references, include a level-1 heading called “References” at the end of your document.</p>
+<p>The rendered document now includes a citation where you added this is the QMD document. The associated reference is also included at the end of the document.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/02-citations-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="Screenshot of rendered Quarto document with citation."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Citations may also include. additional text before and after the citation. In this example we have prefixed the citation with the word “see” and added a page number after the citation. The citation identifier and the text following the citation identifier are separated by a comma.</p>
+<pre><code>Here is some text and a citation [see @carmichael_1954, p. 208].</code></pre>
+<p>The output of this is:</p>
+<blockquote class="blockquote">
+<p>Here is some text and a citation <span class="citation" data-cites="carmichael_1954">(see <a href="#ref-carmichael_1954" role="doc-biblioref">Carmichael, 1954, p. 208</a>)</span>.</p>
+</blockquote>
+<p>You can also include multiple citations. To do this we include the different citation identifiers separated by a semicolon.</p>
+<pre><code>Here are multiple citations [@ross_2020; @carmichael_1954].</code></pre>
+<p>The output of this is:</p>
+<blockquote class="blockquote">
+<p>Here are multiple citations <span class="citation" data-cites="ross_2020 carmichael_1954">(<a href="#ref-carmichael_1954" role="doc-biblioref">Carmichael, 1954</a>; <a href="#ref-ross_2020" role="doc-biblioref">Ross et al., 2020</a>)</span>.</p>
+</blockquote>
+<p>We can also change the format of the citation. For example, here we use a format common to starting a sentence with a citation. To do that we omit the square brackets.</p>
+<pre><code>@carmichael_1954 suggests something is true.</code></pre>
+<p>The output of this is:</p>
+<blockquote class="blockquote">
+<p><span class="citation" data-cites="carmichael_1954">Carmichael (<a href="#ref-carmichael_1954" role="doc-biblioref">1954</a>)</span> suggests something is true.</p>
+</blockquote>
+<div class="fyi">
+<p>You can learn more on the <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">Citations and Footnotes Help Page</a> in the Quarto documentation.</p>
+</div>
+<p><br></p>
+</section>
+<section id="use-apa-formatted-citations-and-references" class="level2">
+<h2 class="anchored" data-anchor-id="use-apa-formatted-citations-and-references">Use APA Formatted Citations and References</h2>
+<p>By default, citations and references are formatted using the Chicago style. To use another style, you will need to:</p>
+<ul>
+<li>Download the appropriate citation style language (CSL) file. (Find many at https://zotero.org/styles)</li>
+<li>Place the CSL file in the <code>assets</code> folder of your project’s directory.</li>
+<li>Specify the name of the CSL style file in the <code>csl:</code> key in the QMD file’s YAML.</li>
+</ul>
+<p>For example, say you have downloaded and saved the <code>apa.csl</code> file and placed it in the <code>assets</code> directory, giving the following directory/folder structure:</p>
+<pre><code>assignment-01
+    ├── README
+    ├── assets
+       ├── apa.csl
+       └── my-bibliography.bib
+    ├── assignment-01.qmd
+    ├── assignment-01.Rproj
+    ├── data
+       └── fertility.csv
+    ├── figs
+    └── scripts</code></pre>
+<p>You would include the following in your YAML.</p>
+<p>If, for example, you had named the BIB file <code>my-bibliography.bib</code> and had put this file in the <code>assets</code> directory, your YAML would be:</p>
+<pre><code>---
+title: "Assignment 1"
+subtitle: "Introduction to Quarto"
+author: "Your Group's Names"
+date: "January XX, 2023"
+format: html
+editor: visual
+bibliography: "assets/my-bibliography.bib"
+csl: "assets/apa-single-spaced.csl"
+---</code></pre>
+<p>Use of the APA CSL file not only formats the references according to APA format, but it also fixed the order of the citations in the text itself! (Even though we included the Ross citation identifier prior to the Carmichael citation identifier in the multiple references example, the APA CSL file put them in the text alphabetically!)</p>
+<p><br></p>
+</section>
+<section id="citation-extras" class="level2">
+<h2 class="anchored" data-anchor-id="citation-extras">Citation Extras</h2>
+<p>One R package that is extremely useful, especially if you are using the visual editor in RStudio for writing QMD documents, is <code>{citr}</code>. This package provides functionality and an RStudio Add-In to search a BibTeX-file to create and insert formatted Markdown citations into a QMD document.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/02-citr-package.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%" alt="Screenshot of the citr package."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <code>{citr}</code> package is only available via GitHub, so you will need to install it using <code>{remotes}</code> or <code>{devtools}</code>. (See the Computational Toolkit book for a reminder on how to do this.) The directions for installing <code>{citr}</code> are also on the <a href="https://github.com/crsh/citr">citr webpage</a> along with instructions for using the package.</p>
+<p><br></p>
+</section>
+</section>
+<section id="auto-populating-the-date-in-your-yaml" class="level1">
+<h1>Auto-Populating the Date in Your YAML</h1>
+<p>We can auto-populate the <code>date:</code> key in our document’s YAML by including “today”.</p>
+<pre><code>---
+title: "Assignment 1"
+subtitle: "Introduction to Quarto"
+author: "Your Group's Names"
+date: "today"
+format: html
+editor: visual
+bibliography: "assets/my-bibliography.bib"
+---</code></pre>
+<p>You can also use an inline code chunk that calls the <code>Sys.Date()</code> function. This function returns your computer’s idea of the current date in the <code>YYYY-MM-DD</code> format (ISO 8601 standard). If you want to be hyper specific, you can use <code>Sys.time()</code> to return the date and time in the format: <code>YYYY-MM-DD HH-MM:SS Time Zone</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Return date</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.Date</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2025-01-01"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Return time</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2025-01-01 19:33:51 CST"</code></pre>
+</div>
+</div>
+<p>Here is an example of the YAML in the <code>date:</code> key to use <code>Sys.Date()</code> to auto-populate the date.</p>
+<pre><code>---
+title: "Assignment 1"
+subtitle: "Introduction to Quarto"
+author: "Your Group's Names"
+date: " `r Sys.Date()` "
+format: html
+editor: visual
+bibliography: "assets/my-bibliography.bib"
+---</code></pre>
+<p>Note that the inline chunk is embedded in quotation marks. We can custom format each of these using the <code>format()</code> function. This function takes the <code>Sys.Date()</code> function as its first argument, and then a character string of formatting rules. Here I format the date to have the full month name, day of the month, and year (with century): e.g., January 12, 2023.</p>
+<pre><code>---
+title: "Assignment 1"
+subtitle: "Introduction to Quarto"
+author: "Your Group's Names"
+date: " `r format(Sys.Date(), '%B %d %Y')`"
+format: html
+editor: visual
+bibliography: "assets/my-bibliography.bib"
+---</code></pre>
+<p>You can see all the formatting options by calling <code>help(strptime)</code>.</p>
+<p><br></p>
+</section>
+<section id="learn-more" class="level1">
+<h1>Learn More</h1>
+<p>Yihui Xie, the creater of the RMarkdown package (which does a lot of the work in converting your QMD file to an HTML/PDF file, gave a nice trechnical talk to the <em>American Statistical Association’s Section on Statistical Computing</em> that explain what actually happens behind the scenes when you click the <code>Knit</code> or <code>Render</code> button in RStudio to render a RMD or QMD document.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=fiy32LjgGUE">An anatomy of R Markdown with minimal applications</a></li>
+</ul>
+<p><br></p>
+</section>
+<section id="references" class="level1">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-carmichael_1954" class="csl-entry" role="listitem">
+Carmichael, L. (1954). Laziness and the scholarly life. <em>The Scientific Monthly</em>, <em>78</em>(4), 208–213.
+</div>
+<div id="ref-ross_2020" class="csl-entry" role="listitem">
+Ross, C. T., Winterhalder, B., &amp; McElreath, R. (2020). Racial disparities in police use of deadly force against unarmed individuals persist after appropriately benchmarking shooting data on violent crime rates. <em>Social Psychological and Personality Science</em>, 194855062091607. <a href="https://doi.org/10.1177/1948550620916071">https://doi.org/10.1177/1948550620916071</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

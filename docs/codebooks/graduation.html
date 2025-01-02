@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,10 +89,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d3043699f4f525e226433170f63674df.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-131667c49e816541d847132b97f02bbe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -250,7 +250,7 @@ window.Quarto = {
 </header>
 
 
-<p>The data in <a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/graduation.csv">graduation.csv</a> include student-level attributes for <span class="math inline">\(n=2,344\)</span> randomly sampled students who were first-year, full-time students from the 2002 cohort at a large, midwestern research university. Any students who transferred to another institution were removed from the data. The source of these data is <span class="citation" data-cites="Jones-White:2014">Jones-White, Radcliffe, Lorenz, &amp; Soria (<a href="#ref-Jones-White:2014" role="doc-biblioref">2014</a>)</span>. The attributes, collected for these students are:</p>
+<p>The data in <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/graduation.csv">graduation.csv</a> include student-level attributes for <span class="math inline">\(n=2,344\)</span> randomly sampled students who were first-year, full-time students from the 2002 cohort at a large, midwestern research university. Any students who transferred to another institution were removed from the data. The source of these data is <span class="citation" data-cites="Jones-White:2014">Jones-White et al. (<a href="#ref-Jones-White:2014" role="doc-biblioref">2014</a>)</span>. The attributes, collected for these students are:</p>
 <ul>
 <li><code>student</code>: Student ID number in the dataset</li>
 <li><code>degree</code>: Did the student obtain a degree (i.e., graduate) from the institution? (No; Yes)</li>
@@ -264,7 +264,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="preview">Preview</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>graduation <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/graduation.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>graduation <span class="ot">=</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/graduation.csv"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View data</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>graduation</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -293,7 +293,7 @@ window.Quarto = {
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Jones-White:2014" class="csl-entry" role="listitem">
 Jones-White, D. R., Radcliffe, P. M., Lorenz, L. M., &amp; Soria, K. M. (2014). Priced out?: The influence of financial aid on the educational trajectories of first-year students starting college at a large research university. <em>Research in Higher Education</em>, <em>55</em>(4), 329–350.
 </div>
@@ -380,8 +380,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -492,7 +490,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

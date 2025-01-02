@@ -48,16 +48,16 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Jan. 27</td>
 <td align="center" style="vertical-align:middle;" headers="todo">
-  [{{< iconify game-icons:read size=25px >}}](readings/01-regression-review.html)
+  [{{< iconify game-icons:read size=30px >}}](readings/01-update-tech.html)
 </td>
 <td style="vertical-align:middle;" headers="topic">Regression Review</td>
-<td align="center" style="vertical-align:middle;" h957eaders="notes">
-  [{{< iconify lineicons:file-pencil size=25px >}}](worksheets/worksheet-01-regression-review.html)<br/><br />
-  [{{< iconify uiw:file-pdf size=25px >}}](files/01-regression-review.pdf)
+<td align="center" style="vertical-align:middle;" headers="notes">
+  [{{< iconify fa6-solid:file-pen size=25px title="Worksheet">}}](worksheets/worksheet-01-regression-review.html)<br/><br />
+  [{{< iconify fa6-solid:file-pdf size=25px title="Regression Review Slides">}}](files/01-regression-review.pdf)
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd"></td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  [{{< iconify file-icons:r size=25px >}}](scripts/01-regression-review.R)
+  [{{< iconify file-icons:r size=30px title="Regression Review R Script File">}}](scripts/01-regression-review.R)
 </td>
 </tr>
 
@@ -72,48 +72,55 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Jan. 29</td>
+<td style="vertical-align:middle;" headers="date">Jan. 29</td>
 <td align="center" style="vertical-align:middle;" headers="todo">
-  [{{< iconify game-icons:read size=25px >}}](readings/02-project-organization.html)
+  [{{< iconify game-icons:read size=30px >}}](readings/02-project-organization.html)
 </td>
 <td style="vertical-align:middle;" headers="topic">Project Organization</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/02-project-organization.html)
+  [{{< iconify tabler:file-type-html size=30px title="Project Organization Notes">}}](notes/02-project-organization.html)
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-  [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/02-project-organization.qmd)
+  [{{< iconify simple-icons:quarto size=25px title="Project Organization QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/02-project-organization.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Feb. 03</td>
+<td style="vertical-align:middle;" headers="date">Feb. 03</td>
 <td align="center" style="vertical-align:middle;" headers="todo">
-  [{{< iconify game-icons:read size=25px >}}](readings/03-introduction-to-quarto.html)
+  [{{< iconify game-icons:read size=30px >}}](readings/03-introduction-to-quarto.html)
 </td>
 <td style="vertical-align:middle;" headers="topic">Introduction to Quarto</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/03-introduction-to-quarto.html)
+  [{{< iconify fa6-solid:file-pen size=25px title="Introduction to Quarto Worksheet" >}}](worksheets/worksheet-03-hello-world-quarto.html)<br/><br />
+  [{{< iconify tabler:file-type-html size=30px title="Introduction to Quarto Notes" >}}](notes/03-introduction-to-quarto.html)
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-introduction-to-quarto.qmd)
+   [{{< iconify simple-icons:quarto size=25px title="Worksheet QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/worksheets/worksheet-03-hello-world-quarto.qmd)<br/><br />
+   [{{< iconify simple-icons:quarto size=25px  title="Introduction to Quarto QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-introduction-to-quarto.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
 
+
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Feb. 05</td>
+<td style="vertical-align:middle;" headers="date">Feb. 05</td>
 <td align="center" style="vertical-align:middle;" headers="todo">
-  [{{< iconify game-icons:read size=25px >}}](readings/04-more-quarto.html)
+  [{{< iconify game-icons:read size=30px >}}](readings/04-more-quarto.html)
 </td>
 <td style="vertical-align:middle;" headers="topic">More Quarto</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/03-introduction-to-quarto.html)
+  [{{< iconify fa6-solid:file-pen size=25px title="Worksheet">}}](worksheets/worksheet-04-more-quarto.html)<br/><br />
+  [{{< iconify tabler:file-type-html size=30px title="More Quarto Notes">}}](notes/04-01-more-quarto.html)<br/><br />
+  [{{< iconify tabler:file-type-html size=30px title="Creating Tables Notes">}}](notes/04-02-creating-tables.html)
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-introduction-to-quarto.qmd)
+   [{{< iconify simple-icons:quarto size=25px title="Worksheet QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/worksheets/worksheet-04-more-quarto.qmd)<br/><br />
+   [{{< iconify simple-icons:quarto size=25px title="More Quarto QMD File">}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-01-more-quarto.qmd)<br/><br />
+   [{{< iconify simple-icons:quarto size=25px title="Creating Tables QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-02-creating-tables.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
@@ -128,73 +135,73 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Feb. 10</td>
+<td style="vertical-align:middle;" headers="date">Feb. 10</td>
 <td align="center" style="vertical-align:middle;" headers="todo">
-  <!-- [{{< iconify game-icons:read size=25px >}}](readings/05-mathematics-for-likelihood.html) -->
+  [{{< iconify game-icons:read size=30px >}}](readings/05-mathematical-foundations-probability.html)
 </td>
 <td style="vertical-align:middle;" headers="topic">Mathematical Foundations: Probability Density</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/03-introduction-to-quarto.html) -->
+  [{{< iconify tabler:file-type-html size=30px title="Mathematical Foundations: Probability Density Notes">}}](notes/05-mathematical-foundations-probability-density.html)
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-introduction-to-quarto.qmd) -->
+   [{{< iconify simple-icons:quarto size=25px title="Mathematical Foundations: Probability Density QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/05-mathematical-foundations-probability-density.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- <span class="fa fa-code" style="color: #f1f1f1; font-size: 17px;"></span> -->
+  [{{< iconify file-icons:r size=30px title="Mathematical Foundations: Probability Density R Script File">}}](scripts/05-mathematical-foundations-probability-density.R)
 </td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Feb. 12</td>
+<td style="vertical-align:middle;" headers="date">Feb. 12</td>
 <td align="center" style="vertical-align:middle;" headers="todo">
-  <!-- [{{< iconify game-icons:read size=25px >}}](readings/05-mathematics-for-likelihood.html) -->
+  [{{< iconify game-icons:read size=30px >}}](readings/06-mathematical-foundations-logarithms.html)
 </td>
 <td style="vertical-align:middle;" headers="topic">Mathematical Foundations: Logarithms</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/03-introduction-to-quarto.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/06-mathematical-foundations-logarithms.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-introduction-to-quarto.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/06-mathematical-foundations-logarithms.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- <span class="fa fa-code" style="color: #f1f1f1; font-size: 17px;"></span> -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/06-mathematical-foundations-logarithms.R) -->
 </td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Feb. 17</td>
+<td style="vertical-align:middle;" headers="date">Feb. 17</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Likelihood: A Framework for Evidence</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/04-likelihood-evidence.html)
+  [{{< iconify tabler:file-type-html size=30px >}}](notes/04-likelihood-evidence.html)
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-likelihood-evidence.qmd)
+   [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-likelihood-evidence.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  [{{< iconify file-icons:r size=25px >}}](scripts/04-likelihood-evidence.R)
+  [{{< iconify file-icons:r size=30px >}}](scripts/04-likelihood-evidence.R)
 </td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Feb. 19</td>
+<td style="vertical-align:middle;" headers="date">Feb. 19</td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">*Optional* </td>
+<td style="vertical-align:middle;" headers="date">*Optional* </td>
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Likelihood: A Framework for Estimation</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-   [{{< iconify bi:filetype-html size=25px >}}](notes/04-optional-likelihood-estimation.html)
+   [{{< iconify tabler:file-type-html size=30px >}}](notes/04-optional-likelihood-estimation.html)
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-  [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-optional-likelihood-estimation.qmd)
+  [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-optional-likelihood-estimation.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
@@ -211,25 +218,25 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Feb. 24</td>
+<td style="vertical-align:middle;" headers="date">Feb. 24</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo">
-  <!-- [{{< iconify game-icons:read size=25px >}}](readings/05-polynomial-effects.html) -->
+  <!-- [{{< iconify game-icons:read size=30px >}}](readings/05-polynomial-effects.html) -->
 </td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Polynomial Effects</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/05-polynomial-effects.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/05-polynomial-effects.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/05-polynomial-effects.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/05-polynomial-effects.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=25px >}}](scripts/05-polynomial-effects.R) -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/05-polynomial-effects.R) -->
 </td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Feb. 26</td>
+<td style="vertical-align:middle;" headers="date">Feb. 26</td>
 </tr>
 
 
@@ -239,19 +246,19 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Mar. 03</td>
+<td style="vertical-align:middle;" headers="date">Mar. 03</td>
 <td align="center" style="vertical-align:middle;" headers="todo">
-  [{{< iconify game-icons:read size=25px >}}](readings/06-information-criteria-and-model-selection.html)
+  <!-- [{{< iconify game-icons:read size=30px >}}](readings/06-information-criteria-and-model-selection.html) -->
 </td>
 <td style="vertical-align:middle;" headers="topic">Information Criteria and Model Selection</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/06-information-criteria-and-model-selection.html)
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/06-information-criteria-and-model-selection.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/06-information-criteria-and-model-selection.qmd)
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/06-information-criteria-and-model-selection.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  [{{< iconify file-icons:r size=25px >}}](scripts/06-information-criteria-and-model-selection.R)
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/06-information-criteria-and-model-selection.R) -->
 </td>
 </tr>
 
@@ -266,17 +273,17 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Mar. 05</td>
+<td style="vertical-align:middle;" headers="date">Mar. 05</td>
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Log-Transforming the Outcome</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/07-logarithmic-transformations-outcome.html)
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/07-logarithmic-transformations-outcome.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd)
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  [{{< iconify file-icons:r size=25px >}}](scripts/07-logarithmic-transformations-outcome.R)
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/07-logarithmic-transformations-outcome.R) -->
 </td>
 </tr>
 
@@ -284,7 +291,7 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td colspan=2 headers="date notes">Mar. 12&ndash;14</td>
+<td style="vertical-align:middle;" colspan=2 headers="date notes">Mar. 12&ndash;14</td>
 <td style="vertical-align:middle;" colspan=4 headers="topic qmd script">🎉🍹 SPRING BREAK &mdash; NO CLASS &nbsp; 🛌</td>
 </tr>
 
@@ -292,61 +299,61 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Mar. 17</td>
+<td style="vertical-align:middle;" headers="date">Mar. 17</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Log-Transforming the Outcome</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/07-logarithmic-transformations-outcome.html)
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/07-logarithmic-transformations-outcome.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd)
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  [{{< iconify file-icons:r size=25px >}}](scripts/07-logarithmic-transformations-outcome.R)
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/07-logarithmic-transformations-outcome.R) -->
 </td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Mar. 19</td>
+<td style="vertical-align:middle;" headers="date">Mar. 19</td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Mar. 24</td>
+<td style="vertical-align:middle;" headers="date">Mar. 24</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Log-Transforming the Predictor</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/08-logarithmic-transformations-predictor.html)
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd)
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  [{{< iconify file-icons:r size=25px >}}](scripts/08-logarithmic-transformations-predictor.R)
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
 </td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Mar. 26</td>
+<td style="vertical-align:middle;" headers="date">Mar. 26</td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Mar. 31</td>
+<td style="vertical-align:middle;" headers="date">Mar. 31</td>
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Rule of the Bulge</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/09-rule-of-the-bulge.html)
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/09-rule-of-the-bulge.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/09-rule-of-the-bulge.qmd)
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/09-rule-of-the-bulge.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  [{{< iconify file-icons:r size=25px >}}](scripts/09-rule-of-the-bulge.R)
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/09-rule-of-the-bulge.R) -->
 </td>
 </tr>
 
@@ -362,57 +369,57 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">*Optional*</td>
+<td style="vertical-align:middle;" headers="date">*Optional*</td>
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Linear Probability Model</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify bi:filetype-html size=25px >}}](notes/10-optional-linear-probability-model.html)
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd)
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  [{{< iconify file-icons:r size=25px >}}](scripts/10-optional-linear-probability-model.R)
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/10-optional-linear-probability-model.R) -->
 </td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Apr. 02</td>
+<td style="vertical-align:middle;" headers="date">Apr. 02</td>
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Logistic Regression Model</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/10-optional-linear-probability-model.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=25px >}}](scripts/10-optional-linear-probability-model.R) -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/10-optional-linear-probability-model.R) -->
 </td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Apr. 07</td>
+<td style="vertical-align:middle;" headers="date">Apr. 07</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">More Logistic Regression</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=25px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
 </td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Apr. 09</td>
+<td style="vertical-align:middle;" headers="date">Apr. 09</td>
 </tr>
 
 <!-- ----------------------------------------------- -->
@@ -426,17 +433,17 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Apr. 14</td>
+<td style="vertical-align:middle;" headers="date">Apr. 14</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Introduction to Linear Mixed-Effects Regression Models</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=25px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
 </td>
 </tr>
 
@@ -448,77 +455,77 @@ As part of the course, there are several articles, papers and technical reports 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Apr. 21</td>
+<td style="vertical-align:middle;" headers="date">Apr. 21</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">LMER: Average Change Over Time</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=25px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
 </td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Apr. 23</td>
+<td style="vertical-align:middle;" headers="date">Apr. 23</td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Apr. 28</td>
+<td style="vertical-align:middle;" headers="date">Apr. 28</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">LMER: Other Random-Effects and Covariates</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=25px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
 </td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">Apr. 30</td>
+<td style="vertical-align:middle;" headers="date">Apr. 30</td>
 </tr>
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">*Optional*</td>
+<td style="vertical-align:middle;" headers="date">*Optional*</td>
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">LMER: Alternative Representations &amp; Assumptions</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/10-optional-linear-probability-model.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=25px >}}](scripts/10-optional-linear-probability-model.R) -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/10-optional-linear-probability-model.R) -->
 </td>
 </tr>
 
 
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
-<td headers="date">May 05</td>
+<td style="vertical-align:middle;" headers="date">May 05</td>
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Q&amp;A and Future Coursework</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify bi:filetype-html size=25px >}}](notes/10-optional-linear-probability-model.html) -->
+  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=20px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
+   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=25px >}}](scripts/10-optional-linear-probability-model.R) -->
+  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/10-optional-linear-probability-model.R) -->
 </td>
 </tr>
 

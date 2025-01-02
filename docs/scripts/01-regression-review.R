@@ -75,6 +75,7 @@ pew |>
 pew = pew |>
   mutate(
     democrat = if_else(party == "Democrat", 1, 0),
+    independent = if_else(party == "Independent", 1, 0),
     republican = if_else(party == "Republican", 1, 0)
   )
 

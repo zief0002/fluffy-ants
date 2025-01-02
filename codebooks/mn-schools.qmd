@@ -2,13 +2,11 @@
 title: "mn-schools.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -19,7 +17,7 @@ source("../assets/codebook-setup.R")
 
 
 
-The data in [mnSchools.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/mn-schools.csv) were collected from [http://www.collegeresults.org](http://www.collegeresults.org) and contain 2011 institutional data for $n=33$ Minnesota colleges and universities. The attributes include:
+The data in [mnSchools.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mn-schools.csv) were collected from [http://www.collegeresults.org](http://www.collegeresults.org) and contain 2011 institutional data for $n=33$ Minnesota colleges and universities. The attributes include:
 
 - `name`: College/university name
 - `grad`: Six-year graduation rate (as a percentage)
@@ -32,7 +30,7 @@ The data in [mnSchools.csv](https://raw.githubusercontent.com/zief0002/benevolen
 
 ```{r}
 # Import data
-mn = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/mn-schools.csv")
+mn = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mn-schools.csv")
 
 # View data
 mn

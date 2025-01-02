@@ -2,13 +2,11 @@
 title: "carbon.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -18,7 +16,7 @@ source("../assets/codebook-setup.R")
 ```
 
 
-Carbon dioxide emissions are the primary driver of global climate change. Some of the biggest predictors of these emissions include economic growth, industrialization, and urbanization. The data in [carbon.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/carbon.csv) are from 2017 and include some predictors of carbon dioxide emissions for several countries around the world. The variables are:
+Carbon dioxide emissions are the primary driver of global climate change. Some of the biggest predictors of these emissions include economic growth, industrialization, and urbanization. The data in [carbon.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/carbon.csv) are from 2017 and include some predictors of carbon dioxide emissions for several countries around the world. The variables are:
 
 - `country`: Country name
 - `region`: Region of the world
@@ -32,7 +30,7 @@ Carbon dioxide emissions are the primary driver of global climate change. Some o
 
 ```{r}
 # Import data
-carbon = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/carbon.csv")
+carbon = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/carbon.csv")
 
 # View data
 carbon

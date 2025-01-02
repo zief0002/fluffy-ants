@@ -1,0 +1,99 @@
+---
+title: "Hello World: Quarto"
+format:
+  html:
+    highlight-style: "a11y-dark"
+    css: ["../assets/sticky-notes.css"]
+date: "today"
+---
+
+You will be creating your first (or second? third?) Quarto document. Each question will ask you to add something to your Quarto document. As you complete these tasks, you will not only be learning about a tool that is useful for reproducibile analytic work, but also beginning Assignment 1. As you work on this, you might want to reference different resources:
+
+- If you are using the `Source` editor, check out the [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html) page. This will include the Markdown syntax for basic things like creating headers, lists, adding links, etc.
+- [R Script](../scripts/01-regression-review.R) for the analysis presented in the slide deck
+- [Modeling textbook](https://zief0002.github.io/modeling/) from EPSY 8251
+- [Assignment 1](../assignments/assignment-01.html)
+
+<br />
+
+# Creating a Quarto Document
+
+1. Open the Assignment 1 R project (`assignment-01.Rproj`) you created from last class.
+
+2. Create a new Quarto document called `assignment-01.qmd` and save this in your root directory. The tree for your project should now look like this:
+
+```
+    assignment-01
+        ├── README
+        ├── assets
+        ├── assignment-01.qmd
+        ├── assignment-01.Rproj
+        ├── data
+        │   └── pew.csv
+        ├── figs
+        └── scripts 
+```
+
+
+<br />
+
+# Updating the YAML
+
+3. In the `assignment-01.qmd` file, update the title key to "Assignment 1".
+
+4. Also add a subtitle ("Introduction to Quarto"), author, and date key to the YAML.
+
+
+# Adding Headings and Text
+
+5. Add three Level-1 headings to your document: "Model 1", "Figures and Tables", and "Miscellaneous". (Remember, headings need to have a blank line above and below them!)
+
+6. Below the "Model 1" heading add six different Level-2 headings: "Question 1", "Question 2", "Question 3", "Question 4", "Question 5", and "Question 6".  Below the "Figures and Tables" heading, add two Level-2 headings called "Question 7" and "Question 8". Finally, below the "Miscellaneous" header add two Level-2 headers: "Question 9" and "Question 10".
+
+7. Separate each of the headings by adding some random text after each of them. Within some of the text, make some words italics and some words bold.
+
+<br />
+
+
+# Add a Code Chunk to Load Libraries and Import Data
+
+8. Immediately after the YAML (after the three dashes and before your first header), skip a line and create a new R chunk. (This should be before any of the headings you created previously.) In that chunk load the `{broom}` and `{tidyverse}` libraries. Don't forget to add a comment.
+
+9. In the same R chunk, import the `pew.csv` data into an object called `pew` (see below). This has to be done *after* you load the libraries. To import the data (which you put in the `data` directory of your project last class) use the following syntax:
+
+```{r}
+#| eval: false
+pew = read_csv("data/pew.csv")
+```
+
+10. Give this chunk a label of `setup`. Also be sure that the syntax in this chunk is not printed to your rendered document and that there are no warnings or messages printed.
+
+<br />
+
+# Add a Code Chunk to Fit a Regression Model
+
+11. Under the "Question 1" heading add a code chunk to fit the `lm()` that regresses news knowledge on news exposure. Be sure to give this chunk a good label.
+
+12. In the same chunk, use `tidy()` to obtain the coefficient-level output. Assign this output into an object called `lm1coef` and print the results of `lm1coef`.
+
+<br />
+
+# Unordered (Bulleted) List
+
+13. Under the "Question 2" heading, use a bulleted list to interpret the intercept and slope from the regression output. Use one bullet to interpret the intercept, and another to interpret the slope.
+
+<br />
+
+# Add an Equation
+
+14. Under the "Question 3" heading, use a display equation to write the fitted equation for the model you fitted that regressed news knowledge on news exposure. Be sure to use the variable names and include subscripts. Also be sure the variable names are written in normal (non-italicized) font.
+
+<br />
+
+# Add a Code Chunk to Output an ANOVA Decomposition
+
+15. Under the "Question 5" heading add a code chunk to output the ANOVA decomposition for Model 1 using the `anova()` function. Be sure to give this chunk a good label.
+
+16. Use code chunk options to hide the syntax and only print the results from `anova()` in the rendered document.
+
+<br />

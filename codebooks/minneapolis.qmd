@@ -2,13 +2,11 @@
 title: "minneapolis.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -17,7 +15,7 @@ csl: '../assets/apa-single-spaced.csl'
 source("../assets/codebook-setup.R")
 ```
 
-The data in [minneapolis.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/minneapolis.csv) were provided in @Long:2012. They constitute a sample of $n=22$ students taken from a much larger dataset collected by the Minneapolis Public School District. The data were collected to comply with the No Child Left Behind Act of 2001 and began during the 2004-05 school year. The variables included in the data are:
+The data in [minneapolis.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/minneapolis.csv) were provided in @Long:2012. They constitute a sample of $n=22$ students taken from a much larger dataset collected by the Minneapolis Public School District. The data were collected to comply with the No Child Left Behind Act of 2001 and began during the 2004-05 school year. The variables included in the data are:
 
 - `student_id`: De-identified student ID number
 - `reading_score`: Reading achievement score$^\dagger$. 
@@ -33,7 +31,7 @@ $^\dagger$The reading achievement scores are based on the reading section of th 
 
 ```{r}
 # Import data
-mpls = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/minneapolis.csv")
+mpls = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/minneapolis.csv")
 
 # View data
 mpls

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-20">
+<meta name="dcterms.date" content="2025-01-01">
 
 <title>Introduction to Quarto – EPsy 8252</title>
 <style>
@@ -73,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-d3043699f4f525e226433170f63674df.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dc4a6631b43f7e4effed9818b538476b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f711e14002b6196f89aba41c46f307b9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -101,8 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="../site_libs/pagedtable/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable/js/pagedtable.js"></script>
 <script src="https://kit.fontawesome.com/e5da75ca36.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -206,32 +206,29 @@ window.Quarto = {
     <h2 id="toc-title">On This Page</h2>
    
   <ul>
-  <li><a href="#your-first-task" id="toc-your-first-task" class="nav-link active" data-scroll-target="#your-first-task">Your First Task</a></li>
-  <li><a href="#update-the-yaml" id="toc-update-the-yaml" class="nav-link" data-scroll-target="#update-the-yaml">Update the YAML</a></li>
-  <li><a href="#adding-text" id="toc-adding-text" class="nav-link" data-scroll-target="#adding-text">Adding Text</a></li>
-  <li><a href="#adding-headings" id="toc-adding-headings" class="nav-link" data-scroll-target="#adding-headings">Adding Headings</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks">Code Chunks</a>
+  <li><a href="#creating-a-new-quarto-document" id="toc-creating-a-new-quarto-document" class="nav-link active" data-scroll-target="#creating-a-new-quarto-document">Creating a New Quarto Document</a></li>
+  <li><a href="#yaml-the-stuff-between-the-sets-of-three-dashes" id="toc-yaml-the-stuff-between-the-sets-of-three-dashes" class="nav-link" data-scroll-target="#yaml-the-stuff-between-the-sets-of-three-dashes">YAML: The Stuff Between the Sets of Three Dashes</a></li>
+  <li><a href="#rendering-the-document" id="toc-rendering-the-document" class="nav-link" data-scroll-target="#rendering-the-document">Rendering the Document</a></li>
+  <li><a href="#update-the-yaml" id="toc-update-the-yaml" class="nav-link" data-scroll-target="#update-the-yaml">Update the YAML</a>
   <ul class="collapse">
-  <li><a href="#add-a-code-chunk-to-load-libraries-and-import-data" id="toc-add-a-code-chunk-to-load-libraries-and-import-data" class="nav-link" data-scroll-target="#add-a-code-chunk-to-load-libraries-and-import-data">Add a Code Chunk to Load Libraries and Import Data</a></li>
-  <li><a href="#displaying-data" id="toc-displaying-data" class="nav-link" data-scroll-target="#displaying-data">Displaying Data</a></li>
-  <li><a href="#add-a-code-chunk-to-create-a-plot" id="toc-add-a-code-chunk-to-create-a-plot" class="nav-link" data-scroll-target="#add-a-code-chunk-to-create-a-plot">Add a Code Chunk to Create a Plot</a>
-  <ul class="collapse">
-  <li><a href="#figure-size" id="toc-figure-size" class="nav-link" data-scroll-target="#figure-size">Figure Size</a></li>
+  <li><a href="#autopopulating-the-date" id="toc-autopopulating-the-date" class="nav-link" data-scroll-target="#autopopulating-the-date">Autopopulating the Date</a></li>
   </ul></li>
-  <li><a href="#inline-code-chunks-for-better-reproducibility" id="toc-inline-code-chunks-for-better-reproducibility" class="nav-link" data-scroll-target="#inline-code-chunks-for-better-reproducibility">Inline Code Chunks for Better Reproducibility</a>
+  <li><a href="#adding-content" id="toc-adding-content" class="nav-link" data-scroll-target="#adding-content">Adding Content</a>
   <ul class="collapse">
-  <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding">Rounding</a></li>
+  <li><a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings">Headings</a></li>
+  <li><a href="#bold-and-italics" id="toc-bold-and-italics" class="nav-link" data-scroll-target="#bold-and-italics">Bold and Italics</a></li>
+  <li><a href="#other-fun-content" id="toc-other-fun-content" class="nav-link" data-scroll-target="#other-fun-content">Other Fun Content</a></li>
+  <li><a href="#source-versus-visual-editor" id="toc-source-versus-visual-editor" class="nav-link" data-scroll-target="#source-versus-visual-editor">Source versus Visual Editor</a></li>
+  <li><a href="#back-to-the-yaml-indentation-for-options" id="toc-back-to-the-yaml-indentation-for-options" class="nav-link" data-scroll-target="#back-to-the-yaml-indentation-for-options">Back to the YAML: Indentation for Options</a></li>
   </ul></li>
+  <li><a href="#code-chunks-integrating-r-syntax-into-your-qmd-document" id="toc-code-chunks-integrating-r-syntax-into-your-qmd-document" class="nav-link" data-scroll-target="#code-chunks-integrating-r-syntax-into-your-qmd-document">Code Chunks: Integrating R Syntax into Your QMD Document</a>
+  <ul class="collapse">
+  <li><a href="#code-chunk-options" id="toc-code-chunk-options" class="nav-link" data-scroll-target="#code-chunk-options">Code Chunk Options</a></li>
   </ul></li>
   <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations">Equations</a>
   <ul class="collapse">
   <li><a href="#better-typesetting-of-equations" id="toc-better-typesetting-of-equations" class="nav-link" data-scroll-target="#better-typesetting-of-equations">Better Typesetting of Equations</a></li>
   </ul></li>
-  <li><a href="#multiline-equations" id="toc-multiline-equations" class="nav-link" data-scroll-target="#multiline-equations">Multiline Equations</a>
-  <ul class="collapse">
-  <li><a href="#spacing-out-the-lines" id="toc-spacing-out-the-lines" class="nav-link" data-scroll-target="#spacing-out-the-lines">Spacing Out the Lines</a></li>
-  </ul></li>
-  <li><a href="#hyphens-minus-signs-and-dashes" id="toc-hyphens-minus-signs-and-dashes" class="nav-link" data-scroll-target="#hyphens-minus-signs-and-dashes">Hyphens, Minus Signs, and Dashes</a></li>
   </ul>
 </nav>
     </div>
@@ -251,7 +248,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 20, 2024</p>
+      <p class="date">January 1, 2025</p>
     </div>
   </div>
   
@@ -263,267 +260,309 @@ window.Quarto = {
 </header>
 
 
-<p>In this set of notes, you will continue your Quarto journey. One important note before we begin:</p>
-<div class="fyi">
-<p>In EPsy 8251, when we create objects, they are stored in the R environment and we can operate on those objects. For example, in this document we will read in the <em>woods.csv</em> data and assign it to the object <code>woods</code>. We can then use functions to compute values and operate on the data.</p>
-<p>Trying to operate on an object that we created in the R environment, but do not create in our Quarto document will lead to an error. This is because the R environment and your Quarto document are completely independent from one another.</p>
-<p><strong>If you want to operate on an object you have to create the object in the Quarto document.</strong></p>
+<p>In this set of notes, you will begin your Quarto journey.</p>
+<p><br></p>
+<section id="creating-a-new-quarto-document" class="level1">
+<h1>Creating a New Quarto Document</h1>
+<p>To create a new Quarto document, go to the directory where you want to put the file and click <code>New File</code> under the “Files” tab, and select <code>Quarto Document</code>. In the popup box, give your new document a name. Quarto documents have the extension .qmd.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/03-01-new-quarto-doc.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
 </div>
 <p><br></p>
-<section id="your-first-task" class="level1">
-<h1>Your First Task</h1>
-<p>To begin:</p>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<ol type="1">
-<li>Open the Assignment 1 R project (<code>assignment-01.Rproj</code>) you created.</li>
-<li>Create a new Quarto document called <code>assignment-01.qmd</code> and save this in your root directory. The tree for your project should now look like this:</li>
-</ol>
-<!-- -->
-<pre><code>assignment-01
-    ├── README
-    ├── assets
-    ├── assignment-01.qmd
-    ├── assignment-01.Rproj
-    ├── data
-    │   └── woods.csv
-    ├── figs
-    └── scripts</code></pre>
+</section>
+<section id="yaml-the-stuff-between-the-sets-of-three-dashes" class="level1">
+<h1>YAML: The Stuff Between the Sets of Three Dashes</h1>
+<p>YAML (pronounced Yam-el) is an acronym for “Yet Another Markup Language”. It constitutes the metadata for your Quarto document. Not only is it informational, but it also helps format your document. The metadata in your newly created Quarto document looks something like this:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"hello-world"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> html</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>These are called key-value pairs. The “keys” are “title” and “format”. The value associated with title is “hello-world” (by default this will be whatever you named the document), and the value associated with format is “html”.</p>
 <p><br></p>
-<p>Before we start updating the document, here is a useful resource.</p>
-<ul>
-<li>If you are using the <code>Source</code> editor, there is a <em>Markdown Reference Guide</em> available in RStudio via <code>Help &gt; Markdown Quick Reference</code>. This will include the Markdown syntax for basic things like changing the font style, creating lists, adding links, etc.</li>
-</ul>
+</section>
+<section id="rendering-the-document" class="level1">
+<h1>Rendering the Document</h1>
+<p>Click the <code>Render</code> button above your Quarto document. This will render the quarto document (i.e., the QMD file) into a human-consumable format—in this case an HTML file that can be opened in a web browser. The rendered document should also open in your “Viewer” tab in RStudio. If you go back and look at yuor project directory, you should also see a new HTML file has been created. (In my case, this was “hello-world.html”.) This can be opened in a web-browser; try it by double-clicking the HTML file.</p>
 <p><br></p>
 </section>
 <section id="update-the-yaml" class="level1">
 <h1>Update the YAML</h1>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>In the <code>assignment-01.qmd</code> file, update the YAML to the following:</p>
-<pre><code>---
-title: "Assignment 1"
-subtitle: "Introduction to Quarto"
-author: "Your Group's Names"
-date: "January XX, 2023"
-format: html
-editor: visual
----</code></pre>
-<p>Change the <code>date:</code> key to today’s date. For the <code>editor:</code> key you can choose <code>visual</code> or <code>source</code> depending on whether you want the document to open with the visual editor or the source editor.</p>
+<p>Our document is pretty boring—it only has a title that is the same as our file name. Let’s edit the YAML to see how we can add to our document’s metadata. First you can update the title value to whatever you want the title of your document to be:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Quarto Document"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> html</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
-</section>
-<section id="adding-text" class="level1">
-<h1>Adding Text</h1>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>Start by clearing all the text in the document below the YAML (underneath the three hyphens). Then add some text into your document. Within this text, make some words italics and some words bold. Also add a bulletted list. (Maybe the names of the pets/plants/kids for everyone in your group.)</p>
+<p>We can also add additional metadata. Here we add a subtitle, author(s), and date.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Quarto Document"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>subtitle<span class="sc">:</span> <span class="st">"Hello World"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Andy and Iggy"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> html</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br></p>
-</section>
-<section id="adding-headings" class="level1">
-<h1>Adding Headings</h1>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>Add a Level-1 and a Level-2 heading into your document. Separate each of these by adding some text after each of them. If you need a refresher, see the “Headings” section in the <a href="https://quarto.org/docs/authoring/markdown-basics.html#headings">Markdown Basics Tutorial</a>.</p>
-</div>
-<p><br></p>
-</section>
-<section id="code-chunks" class="level1">
-<h1>Code Chunks</h1>
-<p>Recall from the <a href="https://quarto.org/docs/get-started/computations/rstudio.html">Computations Tutorial</a>, we can add R syntax to our document using a code chunk.</p>
-<p><br></p>
-<section id="add-a-code-chunk-to-load-libraries-and-import-data" class="level2">
-<h2 class="anchored" data-anchor-id="add-a-code-chunk-to-load-libraries-and-import-data">Add a Code Chunk to Load Libraries and Import Data</h2>
-<p>The first question on Assignment 1 is:</p>
-<blockquote class="blockquote">
-<p>Import the data and display the first several rows of data (not all of it). Use one of the paged table options in your YAML to ensure that this is printed nicely. All syntax for these commands should be hidden.</p>
-</blockquote>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<ul>
-<li>Create a Level-2 Heading in your QMD document that is called “Question 1”.</li>
-<li>Then create a new R chunk. In that chunk load the <code>{tidyverse}</code> library. Don’t forget to add a comment.</li>
-<li>In the same R chunk, import the <code>woods.csv</code> data into an object called <code>woods</code>.</li>
-</ul>
-</div>
-<p>To import the data (which you put in the <code>data</code> directory of your project last class) use the following syntax:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>woods <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"data/woods.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The path inside the quotation marks gives the location (relative to the QMD file) of the <code>woods.csv</code> data. Here, the data are in the directory called <code>data</code>. Thus the path <code>data/woods.csv</code> indicates go to the data folder and inside of that locate <code>woods.csv</code>.</p>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>What would the path be inside the quotation marks if our project had the following tree?</p>
-<pre><code>assignment-01
-    ├── README
-    ├── assets
-    ├── assignment-01.qmd
-    ├── assignment-01.Rproj
-    ├── data
-       ├── assignment-data
-          └── woods.csv
-       └── notes-data
-    ├── figs
-    └── scripts</code></pre>
-</div>
-<div class="fyi">
-<p><strong>FYI</strong></p>
-<p>Use the first code chunk in your Quarto document to load all the packages and datasets used in the document. Label this chunk <code>setup</code>. This has the added advantage that others can immediately see what packages and datasets are needed to run the document. Labelling it <code>setup</code> also runs that chunk when you try to run other chunks, so your code works!</p>
-</div>
-<p><br></p>
-</section>
-<section id="displaying-data" class="level2">
-<h2 class="anchored" data-anchor-id="displaying-data">Displaying Data</h2>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>In the same R chunk display the data by typing the data object name after you import the data.</p>
-</div>
-<p><br></p>
-<p>Rendering the document should display the entire data set in your outputted HTML file! In general, we do not want to take the space (especially when data sets are large) to do this. One option is to change the way that data frames/tibbles are printed in the Quarto document. To do this we need to update our YAML.</p>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>Update the YAML of your QMD to the following:</p>
-<pre><code>---
-title: "Assignment 1"
-subtitle: "Introduction to Quarto"
-author: "Your Group's Names"
-date: "January XX, 2023"
-format:
-  html:
-    df-print: paged
-editor: visual
----</code></pre>
-<p>Re-render the document.</p>
-</div>
-<p><br></p>
-<p>This sets the printing option for data frames into an HTML table that has clickable paging when the data are large. The Quarto documentation <a href="https://quarto.org/docs/computations/r.html#data-frames">Data Frames</a>, includes other options for printing data frames.</p>
+<p>Once you have edited and added in the new YAML keys and values, re-click the <code>Render</code> button.</p>
 <div class="protip">
-<p><strong>Important</strong></p>
-<p>Pay attention to the spacing in the YAML!!!!</p>
+<p><strong>Notice</strong></p>
+<p>All the YAML keys and special values (e.g.&nbsp;html) are all lower case! Special values do not need quotes. All other strings need quotes.</p>
 </div>
+<p>The keys “subtitle”, “author”, and “date” are all keys that Quarto recognizes. Some of these keys are more global (e.g., title, author) and work across different formats. Others are unique to the type of document format. For example, some keys work with HTML formatted documents and others work with PDF formatted documents. You can learn about some of the YAML that works with HTML formatted documents here: <a href="https://quarto.org/docs/output-formats/html-basics.html" class="uri">https://quarto.org/docs/output-formats/html-basics.html</a></p>
 <p><br></p>
+<section id="autopopulating-the-date" class="level2">
+<h2 class="anchored" data-anchor-id="autopopulating-the-date">Autopopulating the Date</h2>
+<p>We can auto-populate the <code>date:</code> key in our document’s YAML by including “today” rather than a specifc date. The date will update to the current date when you render the document.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Quarto Document"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>subtitle<span class="sc">:</span> <span class="st">"Hello World"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Andy and Iggy"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> html</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="add-a-code-chunk-to-create-a-plot" class="level2">
-<h2 class="anchored" data-anchor-id="add-a-code-chunk-to-create-a-plot">Add a Code Chunk to Create a Plot</h2>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>Create another Level-1 header in your document called “Scatterplot”. Then create a code chunk in which you create a scatterplot of infant mortality rates (<em>y</em>-axis) versus female education level (<em>x</em>-axis).</p>
-</div>
-<p><br></p>
-<p>It is a good idea to include a label in the chunk options for each plot you create. A label is the name of this code chunk. (Any code chunk, even if it is not a plot, can have a label.) In the plot below, the chunk’s label is <code>fig-scatterplot</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-scatterplot</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-scatterplot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot showing the relationship between political corruption and environmental program strength.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-1.png" class="img-fluid figure-img" alt="Scatterplot showing the relationship between political corruption and environmental program strength." width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Scatterplot showing the relationship between political corruption and environmental program strength.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Notice that by labeling this chunk, the figure is numbered in the document. We also added a caption using the <code>fig-cap:</code> option.</p>
-<p><br></p>
-<section id="figure-size" class="level3">
-<h3 class="anchored" data-anchor-id="figure-size">Figure Size</h3>
-<p>There are a couple other chunk options for figures that help set the aspect ratio and size of the figure in your document. The aspect ratio is the ratio of a figure’s width to its height. We set this using the <code>fig-width:</code> and <code>fig-height:</code> chunk options. (The default value for both is 6; thus the figure appears square.) Below we change these so that the figure appears wider than it is tall.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-scatterplot-2</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 9</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 5</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-scatterplot-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot showing the relationship between political corruption and environmental program strength.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatterplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-2-1.png" class="img-fluid figure-img" alt="Scatterplot showing the relationship between political corruption and environmental program strength." width="864">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Scatterplot showing the relationship between political corruption and environmental program strength.
-</figcaption>
-</figure>
-</div>
-</div>
+</section>
+<section id="adding-content" class="level1">
+<h1>Adding Content</h1>
+<p>The primary part of a Quarto document is not the YAML, but the actual body of the document. Things like headings, text, analysis, and other content are part of the body of the Quarto document. This is all added BELOW the sets of three dashes.</p>
+<p>Let’s add some text to our document.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Quarto Document"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>subtitle<span class="sc">:</span> <span class="st">"Hello World"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Andy and Iggy"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> html</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Here is some text <span class="cf">for</span> my document. Notice that it is below the YAML.</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>Here is a new paragraph. A line space indicates that we start a new paragraph.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fyi">
-<p><strong>FYI</strong></p>
-<p>It is important to change the aspect ratio when you have legends or when you are using <code>{patchwork}</code> to stack or put multiple figures next to each other. Many times you need to find a good aspect ratio though trial-and-error of trying different values.</p>
+<p><strong>WORKFLOW</strong></p>
+<p>As you add content to your QMD file you should save it often. To see how the new content looks, you need to render the document. Rendering the document also typically saves the added content to the QMD file. So your workflow is: Add content –&gt; Render.</p>
 </div>
-<p>The actual size of the figure in the document is independent of the aspect ratio and can be set using the <code>out-width:</code> or <code>out-height:</code> chunk option. These options take a character string of the direct size (in HTML documents this is typically in pixels) or of the percentage of the output width/height. Here we keep the same aspect ratio, but make the figure smaller by setting the figure width to 40% of the document’s width.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-scatterplot-3</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "Scatterplot showing the relationship between political corruption and environmental program strength."</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-width: 9</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-height: 5</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="in">#| out-width: "40%"</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(data = woods, aes(x = envprogstr, y = corrupt)) +</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="in">   geom_point()</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-scatterplot-3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot showing the relationship between political corruption and environmental program strength.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatterplot-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="03-introduction-to-quarto_files/figure-html/fig-scatterplot-3-1.png" class="img-fluid figure-img" style="width:40.0%" alt="Scatterplot showing the relationship between political corruption and environmental program strength.">
+<p><br></p>
+<section id="headings" class="level2">
+<h2 class="anchored" data-anchor-id="headings">Headings</h2>
+<p>In an HTML document there are six levels of headings. You can think about headings as denoting sections and subsections (and sub-sub-sections, etc.) in a document.</p>
+<p>Headings need to be on their own line and the star of the line is one or more hashtags. A level-1 heading uses one hashtag, a level-2 heading uses two hashtags. A level-3 heading uses three hastags. Etc. You also need a blank line above and below the heading line.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Quarto Document"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>subtitle<span class="sc">:</span> <span class="st">"Hello World"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Andy and Iggy"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> html</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Hello</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>This is a level<span class="dv">-1</span> heading. Note the blank line above and below the heading.</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="do">## World</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>This is a level<span class="dv">-2</span> heading. Note the heading starts with two hashtags.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatterplot-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Scatterplot showing the relationship between political corruption and environmental program strength.
-</figcaption>
-</figure>
+<p><br></p>
+</section>
+<section id="bold-and-italics" class="level2">
+<h2 class="anchored" data-anchor-id="bold-and-italics">Bold and Italics</h2>
+<p>Text can be bolded or italicized by adding asterisks around the text. A single set of asterisks is placed around text that you want to italicize and a double set placed around text you want to bold. (Note: You can also use underscores to italicize or bold things in a similar manner.)</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Quarto Document"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>subtitle<span class="sc">:</span> <span class="st">"Hello World"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Andy and Iggy"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span> html</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Bold and Italics Text</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>Here is <span class="sc">*</span>italicized text<span class="sc">*</span>. And here is <span class="sc">**</span>bold text<span class="sc">**</span>.</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>We can also use undercores to create _italicized text_ or __bold text__.</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>Combinations of asterisks and underscore create __<span class="sc">*</span>bold, italicized text<span class="sc">*</span>__.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
+</section>
+<section id="other-fun-content" class="level2">
+<h2 class="anchored" data-anchor-id="other-fun-content">Other Fun Content</h2>
+<p>You can also add content such as unordered (i.e., bulleted) lists, ordered (i.e., numbered) lists, hyperlinks, images, footnotes and blockquotes. To see how to do check out the <a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown Basics</a> page.</p>
+<p><br></p>
+</section>
+<section id="source-versus-visual-editor" class="level2">
+<h2 class="anchored" data-anchor-id="source-versus-visual-editor">Source versus Visual Editor</h2>
+<p>Above the QMD document is a set of buttons named “Source” and “Visual”. These buttons change the editong mode of the document. By default the “Source” mode is used. Clicking the “Visual” button will switch to the visual editing mode. The visual editing mode is more like Word or Google Docs—there is a toolbar to select things like bold/italics, etc.</p>
+<p>You can use whatever editor you want, but In my experience, novices like to use the visual editor because it is closer to other editing programs they have used before. Experts tend to use the source editor. Not only is it faster for them, but as your documents become more complex, the visual editor has many shortcomings.</p>
+<p>For that reason, I encourage you to become proficient with the source editor. To further encourage this all of the instruction I give will be in the source editor.</p>
+<p><br></p>
+</section>
+<section id="back-to-the-yaml-indentation-for-options" class="level2">
+<h2 class="anchored" data-anchor-id="back-to-the-yaml-indentation-for-options">Back to the YAML: Indentation for Options</h2>
+<p>Now that you have added a few headings and some text to youe QMD file, let’s include some additional YAML. The new YAML will add a table-of-contents to your rendered document. Note that the <code>format: html</code> key-value pair is now separated—<code>html</code> is on a new line and indented.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Quarto Document"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>subtitle<span class="sc">:</span> <span class="st">"Hello World"</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Andy and Iggy"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  html<span class="sc">:</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">:</span> true</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">-</span>location<span class="sc">:</span> left</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>As you try out different YAML it is important to pay attention to the indentation. Keys that are indented have to be 2 or 4 spaces (generally 1 tab). The indentation is a way of denoting options for different keys. For example, consider the following YAML:</p>
+<p>Now the value “html” is indented (2 spaces) from the “format” key. This is because we have now added additional keys that set options in our HTML document. Namely adding a table of contents (“toc: true”) and a location for that table of contents (“toc-location: left”). These keys are indented an additional two spaces to indicate they are options for the “html” key.</p>
+<div class="protip">
+<p><strong>IMPORTANT</strong></p>
+<p>The spacing in the YAML really matters a lot. If you don’t have the correct spacing, the document will not render.</p>
 </div>
+<p>You can think of the indentation as indicating the hierarchical structure of elements withing the YAML. In our example the key “html” is a subcomponent of the “format” key. And, the “toc” and “toc-location” keys are subcomponents of the “html” key.</p>
+<p>Here is a more complex example. Don’t worry what the new keys do, but instead think about the heirarchy. Which keys are subcomponents of which other keys?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"My First Quarto Document"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>subtitle<span class="sc">:</span> <span class="st">"Hello World"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Andy and Iggy"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> today</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>format<span class="sc">:</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  html<span class="sc">:</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">:</span> true</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">-</span>location<span class="sc">:</span> left</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    html<span class="sc">-</span>math<span class="sc">-</span>method<span class="sc">:</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>      method<span class="sc">:</span> mathjax</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  pdf<span class="sc">:</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    mainfont<span class="sc">:</span> <span class="st">"Open Sans"</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="code-chunks-integrating-r-syntax-into-your-qmd-document" class="level1">
+<h1>Code Chunks: Integrating R Syntax into Your QMD Document</h1>
+<p>The real bang-for-your-buck of wrting in a Quarto document is that you can integrate your R syntax directly into your text document. To do this we need to add a code chunk. To add a code chunk click the green “+C” above your quarto document and select “R”. This will add a blank R code chunk to your QMD document.</p>
+<p>Any R code you add inside the code chunk will be executed when you render the document.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My First Quarto Document"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Hello World"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Andy and Iggy"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Code Chunk</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="in">2 + 3 * 3</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you render the document, both the syntax and output from the syntax are printed in the rendered HTML document.</p>
+<p>&lt; br /&gt;</p>
+<section id="code-chunk-options" class="level2">
+<h2 class="anchored" data-anchor-id="code-chunk-options">Code Chunk Options</h2>
+<p>We can include options for code chunks that customize what will be printed into the HTML document. For example, in a paper, you often want to include the figure, but may not want to print all of the syntax that was used to create that plot in the final paper. Code chunk options are placed at the beginning of the code chunk and begin with <code>#|</code>. Similar to YAML, they are key-value pairs. For example, the code chunk below has two options: <code>#| label:</code> and <code>#| echo</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My First Quarto Document"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Hello World"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Andy and Iggy"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Code Chunk</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: order-of-operations</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: true</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="in">2 + 3 * 3</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>#| label:</code> option should be included with every code chunk. It is a way of naming the code chunk. Here, the name of this code chunk is <code>order-of-operations</code>. Other code chunks can have any label you want. They should be descriptive of what code is being run in the chunk. For example, <code>label: correlations</code> or <code>label: fit-model-1</code>. Note that labels can’t include space or special characters. They also have to be unique, so a label name cannot be used again.</p>
+<p>The second option, <code>#| echo:</code> indicates whether the syntax should be printed in the HTML document. If the value of this option is <code>true</code>, then the syntax is printed along with the output of the syntax. If the value of this option is <code>false</code>, then only the output of the syntax is printed to the HTML document.</p>
+<p>You can see more code chunk options in the Quarto documentation page, <a href="https://quarto.org/docs/computations/execution-options.html">Executable Options</a>.</p>
 <div class="fyi">
-<p><strong>FYI</strong></p>
-<p>If you set the aspect ratio of the figure, you need only set <code>out-width:</code> or <code>out-height:</code>. You don’t need to set both as the other will be determined by the aspect ratio.</p>
+<p><strong>PROTIP</strong></p>
+<p>At the beginning of a Quarto document (immediately after the YAML) include a code chunk that loads all the libraries you need and also imports any datasets for an analysis. In this code chunk I often use the following code options:</p>
+<ul>
+<li><code>#| label: setup</code></li>
+<li><code>#| echo: false</code></li>
+<li><code>#| message: false</code></li>
+<li><code>#| warning: false</code></li>
+</ul>
+<p>The last two options supress any messages or warnings that are elicited when you load your libraries. The <code>setup</code> label is special value. The code chunk labelled <code>setup</code> will be run when you try to run other chunks. This is important since other code often relies on you having loaded libraries and imported the data!</p>
 </div>
+<p>Here is an example of where I would include the first setup code chunk.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "My First Quarto Document"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Hello World"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Andy and Iggy"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Code Chunk</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: setup</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="in"># Load libraries</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="in"># Import data</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="in">pew = read_csv("data/pew.csv")</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fyi">
+<p><strong>SUPER IMPORTANT</strong></p>
+<p>In EPsy 8251, when we create objects, they are stored in the R environment and we can operate on those objects. For example, in this document we will read in the <em>pew.csv</em> data and assign it to the object <code>pew</code>. We can then use functions to compute values and operate on the data.</p>
+<p>Trying to operate on an object that we created in the R environment, but do not create in our Quarto document will lead to an error. This is because the R environment and your Quarto document are completely independent from one another.</p>
+<p>If you want to operate on an object you have to create the object in a code chunk in the Quarto document.</p>
+</div>
+<!-- Watch the [Computations Tutorial](https://quarto.org/docs/get-started/computations/rstudio.html) to learn more. -->
 <p><br></p>
-</section>
-</section>
-<section id="inline-code-chunks-for-better-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="inline-code-chunks-for-better-reproducibility">Inline Code Chunks for Better Reproducibility</h2>
-<p>In writing papers where there are results from data analyses being reported in the text, inline code chunks are boss! For example, consider writing the following sentence in an analysis of the <em>woods.csv</em> data.</p>
-<blockquote class="blockquote">
-<p>The mean environmental program strength is 17.6 (SD = 8.23).</p>
-</blockquote>
-<p>Rather than computing these values and then transposing the values into the sentence, we can use inline code chunks to directly compute and write the values in the sentence. Here is some syntax we could use:</p>
-<p>The mean environmental program strength is <code>`r mean(woods$envprogstr)`</code> (SD = <code>`r sd(woods$envprogstr)`</code>).</p>
-<p>This produces the following sentence in the rendered document:</p>
-<blockquote class="blockquote">
-<p>The mean environmental program strength is 17.6 (SD = 8.2263886).</p>
-</blockquote>
-<p><br></p>
-<section id="rounding" class="level3">
-<h3 class="anchored" data-anchor-id="rounding">Rounding</h3>
-<p>There are several ways to set the rounding to two decimal places. One is to embed the computation in the <code>round()</code> function. For example, in the first inline chunk we could use: <code>round(mean(woods$envprogstr), 2)</code>.</p>
-<p>You can also do this in a separate code chunk and then call the values in the inline computation (as suggested in the <a href="https://quarto.org/docs/get-started/computations/rstudio.html">Quarto Computations Tutorial</a>).</p>
-<p><br></p>
-</section>
+<!-- ::: fyi -->
+<!-- **Your Turn** -->
+<!-- What would the path be inside the quotation marks if our project had the following tree? -->
+<!-- ```          -->
+<!-- assignment-01 -->
+<!--     ├── README -->
+<!--     ├── assets -->
+<!--     ├── assignment-01.qmd -->
+<!--     ├── assignment-01.Rproj -->
+<!--     ├── data -->
+<!--        ├── assignment-data -->
+<!--           └── pew.csv -->
+<!--        └── notes-data -->
+<!--     ├── figs -->
+<!--     └── scripts -->
+<!-- ``` -->
+<!-- ::: -->
 </section>
 </section>
 <section id="equations" class="level1">
 <h1>Equations</h1>
 <div class="protip">
-<p><strong>Important</strong></p>
-<p>Equation syntax is not R code. Therefore this syntax should not be placed inside of a code chunk!</p>
+<p><strong>IMPORTANT</strong></p>
+<p>Equation syntax is not R code. Therefore equation syntax should not be placed inside of a code chunk!</p>
 </div>
 <p>There are two different manners in which equations/mathematics is included in a document.</p>
 <ul>
@@ -540,7 +579,7 @@ y_i = \beta_0 + \beta_1(x_i) + \epsilon_i
 $$</code></pre>
 <p>Here is the same equation as an inline equation: <span class="math inline">\(y_i = \beta_0 + \beta_1(x_i) + \epsilon_i\)</span>. Notice that in an inline equation, the equation is embedded directly in the text. To create the inline equation we embed the mathematical expression in single dollar signs (<code>$y_i = \beta_0 + \beta_1(x_i) + \epsilon_i$</code>) rather than double dollar signs.</p>
 <div class="fyi">
-<p><strong>Learn More</strong></p>
+<p><strong>LEARN MORE</strong></p>
 <p>If you need a reminder about how to create these, check out the “Equations” section of the <a href="https://quarto.org/docs/authoring/markdown-basics.html#equations">Markdown Basics</a> tutorial.</p>
 </div>
 <p>The syntax we use to create the mathematical expressions is from LaTeX. Here are a couple reference you can use:</p>
@@ -548,125 +587,34 @@ $$</code></pre>
 <li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">List of LaTeX mathematical symbols</a></li>
 <li><a href="https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf">LaTeX Mathematical Symbols</a></li>
 </ul>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>Part of Question #5 asks you to use a display equation to write the fitted equation based on the following output.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div data-pagedtable="false">
-  <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["term"],"name":[1],"type":["chr"],"align":["left"]},{"label":["estimate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["std.error"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["statistic"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p.value"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"(Intercept)","2":"-68.63407867","3":"24.11348049","4":"-2.8462950","5":"0.006877513"},{"1":"corrupt","2":"-12.00501425","3":"4.57638232","4":"-2.6232542","5":"0.012174252"},{"1":"legprof","2":"12.30028084","3":"7.28600643","4":"1.6882061","5":"0.098965263"},{"1":"wealth","2":"0.03908701","3":"0.02392998","4":"1.6333909","5":"0.110043947"},{"1":"toxicwaste","2":"0.24824077","3":"0.68341937","4":"0.3632334","5":"0.718296655"},{"1":"publicenv","2":"28.34663776","3":"9.85503365","4":"2.8763613","5":"0.006356284"},{"1":"demcontrol","2":"6.34051657","3":"3.77871375","4":"1.6779563","5":"0.100963735"},{"1":"interpartycomp","2":"0.27060890","3":"0.09250613","4":"2.9253079","5":"0.005585897"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-</div>
-</div>
-<p>Try to write this fitted equation in your Quarto document using a display equation.</p>
-</div>
+<p>To write fitted equations, you need a hat over the outcome. To do that we can use <code>\hat{}</code> or <code>\widehat{}</code>. I use widehat over words (e.g., <span class="math inline">\(\widehat{\text{Knowledge}_i}\)</span>) and hat over single letters (e.g., <span class="math inline">\(\hat{y}_i\)</span>). In both, whatever you want to add the hat over is placed in between the curly braces. For example, here is how you might write the equation for the sample fitted line:</p>
+<pre><code>$$
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1(x_i)
+$$</code></pre>
 <p><br></p>
 <section id="better-typesetting-of-equations" class="level2">
 <h2 class="anchored" data-anchor-id="better-typesetting-of-equations">Better Typesetting of Equations</h2>
 <p>When we typeset equations, there are a couple things we should do:</p>
 <ul>
-<li>Use variable names that make sense to our reader, rather than their name in our dataset/R. For example “Environmental Program Strength” is a better name than “envprogstr”.</li>
+<li>Use variable names that make sense to our reader, rather than their name in our dataset/R. For example “News Exposure” is a better name than “news”.</li>
 <li>Variable names should also be typeset using normal text rather than italic (the default in mathematical expressions).</li>
 </ul>
-<p>We can fix both issues by including the variable names in a text environment (<code>\text{}</code>). So to get the name “Environmental Program Strength” we need to use the following in our equation:</p>
+<p>We can fix both issues by including the variable names in a text environment (<code>\text{}</code>). So to get the name “News Knowledge” we need to use the following in our equation:</p>
 <pre><code>$$
-\text{Environmental Program Strength}
+\text{News Knowledge}
 $$</code></pre>
 <p>Other useful environments include: <code>\mathit{}</code> (italics), <code>\mathbf{}</code> (bold), <code>\mathtt{}</code> (typewriter text), and <code>\mathcal{}</code> (caligraphy; this is useful for the “N” we use to indicate a normal distribution). If you want a space when using these, you include a tilde (<code>~</code>) to denote a space.</p>
 <ul>
 <li>Hyphens need special syntax since a hyphen would be interpreted as a minus sign. In typesetting, the minus sign is longer than the hyphen symbol.</li>
 </ul>
-<p>If you want to include a hyphen, we need to include it in <code>\mbox{}</code>. For example, to add a hyphen in our variable name to get “Check-In”, we use:</p>
+<p>If you want to include a hyphen, we need to include it in <code>\mbox{}</code>. For example, to add a hyphen in our variable name to get “Education-Level”, we use:</p>
 <pre><code>$$
-\text{Check\mbox{-}In}
+\text{Education\mbox{-}Level}
 $$</code></pre>
-<div class="fyi">
-<p><strong>Your Turn</strong></p>
-<p>Update your fitted equation from before to include spaces in variable names. Also be sure the variable names are written in normal font.</p>
-</div>
-<p><br></p>
-</section>
-</section>
-<section id="multiline-equations" class="level1">
-<h1>Multiline Equations</h1>
-<p>There are a couple of ways to create multiline equations in a Quarto document. I tend to use the <code>split</code> environment from LaTeX to do this. To use this:</p>
-<ul>
-<li>Include <code>\begin{split}</code> and <code>\end{split}</code> in the display equation.</li>
-<li>At the end of each line (where you want a linebreak) include a double backslash, <code>\\</code>.</li>
-<li>In each line of the multiline equation, also include the ampersand sign (<code>&amp;</code>) at the point we want the multiple lines to align vertically.</li>
-</ul>
-<p>Here is an example:</p>
-<pre><code>$$
-\begin{split}
-\hat{y}_i &amp;= 3 + 4(1) \\
-&amp;= 7
-\end{split}
-$$</code></pre>
-<p>And the resulting display equation is:</p>
-<p><span class="math display">\[
-\begin{split}
-\hat{y}_i &amp;= 3 + 4(1) \\
-&amp;= 7
-\end{split}
-\]</span></p>
-<p>Note that the ampersand appeared immediately before the equal sign in each line of the equation, so that is where the two lines are aligned vertically (the equal signs are on top of each other). You can add as many lines to this as you want.</p>
-<div class="fyi">
-<p><strong>FYI</strong></p>
-<p>Multiline equations are quite useful to show your work and when you have really long single equations that need to be broken up so they fit on the page (e.g., a regression equation with many predictors).</p>
-</div>
-<p><br></p>
-<section id="spacing-out-the-lines" class="level2">
-<h2 class="anchored" data-anchor-id="spacing-out-the-lines">Spacing Out the Lines</h2>
-<p>You can add space between the lines of your multiline equation by including a unit of measurement between square brackets after the double backslashes.</p>
-<pre><code>$$
-\begin{split}
-\hat{y}_i &amp;= 3 + 4(1) \\[1em]
-&amp;= 7
-\end{split}
-$$</code></pre>
-<p>Here the resulting display equation is:</p>
-<p><span class="math display">\[
-\begin{split}
-\hat{y}_i &amp;= 3 + 4(1) \\[1em]
-&amp;= 7
-\end{split}
-\]</span></p>
-<p>Here we have added line space of 1 em. An <em>em</em> is a unit for measuring the width of printed work, equal to the height of the type size being used (typically the width of the letter “m”). Other common printing units include the <em>en</em> (the width of the letter “n”), and the <em>ex</em> (the width of the letter “x”).</p>
-<div class="fyi">
-<p>Question #8 on the assignment actually asks:</p>
-<blockquote class="blockquote">
-<p>Use a display equation to write the equation for the underlying regression model (including error and assumptions) using Greek letters, subscripts, and variable names. Also write the equation for the fitted least squares regression equation based on the output from <code>lm()</code>. Type these two equations in the same display equation, each on a separate line of text in your document, and align the equals signs.</p>
-</blockquote>
-<p>Try writing this multiline equation.</p>
-</div>
-<p><br></p>
-</section>
-</section>
-<section id="hyphens-minus-signs-and-dashes" class="level1">
-<h1>Hyphens, Minus Signs, and Dashes</h1>
-<p>In printed work the width of a hyphen, a minus sign, and dashes are all different. Quarto will correctly typeset these, but you have to indicate what you want. Below are how we indicate these in Quarto.</p>
-<ul>
-<li><strong>Hyphen:</strong> A hyphen is used to join two or more words together. To typeset a hyphen in Quarto, use a single hyphen; <code>-</code>.</li>
-<li><strong>En Dash:</strong> An en dash is used to mark ranges and to indicate the meaning “to” in phrases like “Minneapolis–St.&nbsp;Paul”. An en dash is slightly longer than a hyphen and is typeset in Quarto using two hyphens; <code>--</code>.</li>
-<li><strong>Em Dash:</strong> An em dash is used to separate extra information or mark a break in a sentence. An em dash is slightly longer than an en dash and is typeset in Quarto using three hyphens; <code>---</code>.</li>
-<li><strong>Minus Sign:</strong> A minus sign is used in mathematical expressions (e.g., in subtraction or to indicate a negative number). To typeset a minus sign, use the inline equation with a single hyphen; <code>$-$</code>. When a minus sign is typeset, not only is the length of it different than a hyphen, but it also includes the correct spacing around it for mathematical typesetting.</li>
-</ul>
-<p>Here is a sentence incorporating each of these so you can see the differences:</p>
-<p><em>During the time from January–February, my three dogs enjoy playing in the snow—apparently snow is fun for canines—with their sweaters on since it is</em> <span class="math inline">\(-30\)</span>-degrees Fahrenheit outside.</p>
-<p>The input for this sentence was:</p>
-<p><code>During the time from January--February, my three dogs enjoy playing in the snow---apparently snow is fun for canines---with their sweaters on since it is $-30$-degrees Fahrenheit outside.</code></p>
-<p>Note that you can also typeset these in Word:</p>
-<ul>
-<li><strong>Hyphen:</strong> On both a Mac and PC, press “hyphen”.</li>
-<li><strong>En Dash:</strong> On a Mac, press “option+hyphen key”. On a PC, press “ctrl+hyphen”.</li>
-<li><strong>Em Dash:</strong> On a Mac, press “option+shift+hyphen key”. On a PC, press “alt+ctrl+hyphen”.</li>
-<li><strong>Minus Sign:</strong> For a minus sign, you should use Equation Editor.</li>
-</ul>
 <p><br></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

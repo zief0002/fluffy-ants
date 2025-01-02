@@ -2,13 +2,11 @@
 title: "wine.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -18,7 +16,7 @@ source("../assets/codebook-setup.R")
 ```
 
 
-The data in [wine.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/wine.csv) includes data on 200 different wines. These data are a subset of a larger database ($n = 6,613$) from [wine.com](https://www.wine.com/), one of the biggest e-commerce wine retailers in the U.S. It allows customers to buy wine according to any price range, grape variety, country of origin, etc. The data were made available at [http://insightmine.com/](http://insightmine.com/bring-your-own-data-analyzing-wine-market/). The attributes include:
+The data in [wine.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/wine.csv) includes data on 200 different wines. These data are a subset of a larger database ($n = 6,613$) from [wine.com](https://www.wine.com/), one of the biggest e-commerce wine retailers in the U.S. It allows customers to buy wine according to any price range, grape variety, country of origin, etc. The data were made available at [http://insightmine.com/](http://insightmine.com/bring-your-own-data-analyzing-wine-market/). The attributes include:
 
 - `wine`: Wine name
 - `vintage`: Year the wine was produced (centered so that 0 = 2008, 1 = 2009, etc.) 
@@ -32,7 +30,7 @@ The data in [wine.csv](https://raw.githubusercontent.com/zief0002/benevolent-ant
 
 ```{r}
 # Import data
-wine = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/wine.csv")
+wine = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/wine.csv")
 
 # View data
 wine

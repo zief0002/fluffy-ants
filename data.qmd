@@ -7,13 +7,16 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 
 <br />
 
+<!-- <br /><span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Updated 01-24-2024]*</span> -->
+
 <table class="table">
+<caption>Data and Codebooks for EPSY 8252</caption>
 
 <thead>
 <tr>
-<th style="width:50%;">Name</th>
-<th style="width:25%;text-align:center;">Data</th>
-<th style="width:25%;text-align:center;">Codebook</th>
+<th style="width:50%;" id="name">Name</th>
+<th style="width:25%;text-align:center;" id="csv">Data</th>
+<th style="width:25%;text-align:center;" id="codebook">Codebook</th>
 </tr>
 </thead>
 
@@ -21,201 +24,153 @@ Below are the links to the data sets and data codebooks used in the notes, scrip
 <tbody>
 
 <tr>
-<td>carbon.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/carbon.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">carbon.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/carbon.csv)
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/carbon.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/carbon.html)
 </td>
 </tr>
 
 
 <tr>
-<td>fertility.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/fertility.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">fertility.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/fertility.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/fertility.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/fertility.html")
 </td>
 </tr>
 
 <tr>
-<td>graduation.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/graduation.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">graduation.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}]("https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/graduation.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/graduation.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/graduation.html")
 </td>
 </tr>
 
 
 <tr>
-<td>mammals.csv</td>
-<td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-file-csv" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mammals.csv)
+<td headers="name">mammals.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mammals.csv)
 </td>
-<td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-book-open" style="font-size: 20px;"></span>](http://zief0002.github.io/fluffy-ants/codebooks/mammals.html)
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/mammals.html)
 </td>
 </tr>
 
 <tr>
-<td>minneapolis.csv</td>
-<td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-file-csv" style="font-size: 20px;"></span>](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/minneapolis.csv)
+<td headers="name">minneapolis.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/minneapolis.csv)
 </td>
-<td align="center" style="vertical-align:middle;">
-  [<span class="fas fa-book-open" style="font-size: 20px;"></span>](http://zief0002.github.io/fluffy-ants/codebooks/minneapolis.html)
-</td>
-</tr>
-
-
-<tr>
-<td>mn-schools.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mn-schools.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
-</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/mn-schools.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/minneapolis.html)
 </td>
 </tr>
 
 
 <tr>
-<td>nhl.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/nhl.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">mn-schools.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mn-schools.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/nhl.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/mn-schools.html")
 </td>
 </tr>
 
 
 <tr>
-<td>pew.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">nhl.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}]("https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/nhl.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/pew.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/nhl.html")
+</td>
+</tr>
+
+
+<tr>
+<td headers="name">pew.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv")
+</td>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/pew.html")
 </td>
 </tr>
 
 
 
 <tr>
-<td>riverview.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/riverview.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">riverview.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/riverview.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/riverview.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/riverview.html")
 </td>
 </tr>
 
 <tr>
-<td>same-sex-marriage.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/same-sex-marriage.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">same-sex-marriage.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/same-sex-marriage.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/same-sex-marriage.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/same-sex-marriage.html")
 </td>
 </tr>
 
 
 <tr>
-<td>usnwr-2024.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/usnwr-2024.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">usnwr-2024.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/usnwr-2024.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/usnwr-2024.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/usnwr-2024.html")
 </td>
 </tr>
 
 
 <tr>
-<td>vocabulary.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/vocabulary.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">vocabulary.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/vocabulary.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/vocabulary.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/vocabulary.html")
 </td>
 </tr>
 
 
 <tr>
-<td>wine.csv</td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/wine.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">wine.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/wine.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/wine.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/wine.html")
 </td>
 </tr>
 
 
 <tr>
-<td>woods.csv<br /><span style="margin-left:5px; color:#5a067d;font-size:12px;">*[Updated 01-24-2024]*</span></td>
-<td align="center" style="vertical-align:middle;">
-  <a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/woods.csv">
-    <span class="fas fa-file-csv" style="font-size: 20px;"></span>
-  </a>
+<td headers="name">woods.csv</td>
+<td align="center" style="vertical-align:middle;" headers="csv">
+  [{{< iconify fa6-solid:file-csv size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/woods.csv")
 </td>
-<td align="center" style="vertical-align:middle;">
-  <a href="http://zief0002.github.io/fluffy-ants/codebooks/woods.html">
-    <span class="fas fa-book-open" style="font-size: 20px;"></span>
-  </a>
+<td align="center" style="vertical-align:middle;" headers="codebook">
+  [{{< iconify vaadin:notebook size=25px >}}](http://zief0002.github.io/fluffy-ants/codebooks/woods.html")
 </td>
 </tr>
 

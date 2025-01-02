@@ -2,13 +2,11 @@
 title: "mammals.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -18,7 +16,7 @@ source("../assets/codebook-setup.R")
 ```
 
 
-The data in [mammals.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/mammals.csv) come from @Allison:1976 and contain data on 62 species of mammals. The attributes include:
+The data in [mammals.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mammals.csv) come from @Allison:1976 and contain data on 62 species of mammals. The attributes include:
 
 - `species`: Common name of species
 - `body_weight`: Body weight, in *kg*
@@ -39,7 +37,7 @@ The data in [mammals.csv](https://raw.githubusercontent.com/zief0002/benevolent-
 
 ```{r}
 # Import data
-mammals = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/mammals.csv")
+mammals = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mammals.csv")
 
 # View data
 mammals

@@ -2,13 +2,11 @@
 title: "usnwr-2024.csv"
 output: 
   html:
-    css: '../assets/codebooks.css'
     df_print: paged
     code_folding: show
-theme: "lumen"
-highlight-style: "atom-one"
+highlight-style: "a11y-dark"
 bibliography: '../assets/epsy8252.bib'
-csl: '../assets/apa-single-spaced.csl'
+csl: '../assets/apa.csl'
 ---
 
 
@@ -17,7 +15,7 @@ csl: '../assets/apa-single-spaced.csl'
 source("../assets/codebook-setup.R")
 ```
 
-The data in [usnwr-2024.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv) includes 13 attributes collected from the n=111 graduate schools of education ranked in the U.S. News and World Report’s 2023--2024 Best Education Graduate Schools.
+The data in [usnwr-2024.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/usnwr-2024.csv) includes 13 attributes collected from the n=111 graduate schools of education ranked in the U.S. News and World Report’s 2023--2024 Best Education Graduate Schools.
 
 
 <br />
@@ -48,7 +46,7 @@ The data in [usnwr-2024.csv](https://raw.githubusercontent.com/zief0002/benevole
 
 ```{r}
 # Import data
-usnwr = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv")
+usnwr = readr::read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/usnwr-2024.csv")
 
 # View data
 usnwr |>
