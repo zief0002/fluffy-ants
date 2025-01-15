@@ -5,16 +5,15 @@ title: "Instructor/TA"
 ```{r}
 #| echo: false
 #| fig-align: 'center'
-#| layout-ncol: 2
 knitr::include_graphics(c("img/andy-avatar.png"))
 ```
 
 
 **Instructor:** Andrew Zieffler <br />
 **Email:** [zief0002@umn.edu](mailto://zief0002@umn.edu) <br />
-**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
-**Office Hours:** Wednesday 11:00 AM&ndash;12:00 PM; and by appointment <br />
-**Virtual Office:** If you want to meet virtually, send me a Google calendar invite and include a Zoom link in the invite. 
+**Office:** [Education Sciences Building 178](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150) <br />
+**Office Hours:** Monday 8:30 AM&ndash;9:30 AM; and by appointment at [Bruininks Hall 131A](https://campusmaps.umn.edu/robert-h-bruininks-hall)<br /> 
+**Virtual Office:** If you want to meet virtually at another time, send me a Google calendar invite and include a Zoom link in the invite. 
 
 <br />
 
@@ -22,14 +21,14 @@ knitr::include_graphics(c("img/andy-avatar.png"))
 ```{r}
 #| echo: false
 #| fig-align: 'center'
-#| layout-ncol: 2
-knitr::include_graphics(c("img/shelby.jpg"))
+#| out-width: "25%"
+knitr::include_graphics(c("img/xinyue.jpg"))
 ```
 
-**TA:** Shelby Weisen  <br />
-**Email:** [weise207@umn.edu](mailto://weise207@umn.edu) <br />
-**Office:** [Education Sciences Building 197](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150) or by [Zoom](https://umn.zoom.us/j/4964019985) <br />
-**Office Hours:** Wednesday 12:00 PM&ndash;1:00 PM; and by appointment <br/>
-**Virtual Office:** During office hours, Shelby will be available via [Zoom](https://umn.zoom.us/j/4964019985). If you want to meet Shelby virtually outside of office hours, send her a Google calendar invite and include a Zoom link in the invite.
+**TA:** Xinyue Zhang  <br />
+**Email:** [zhan6764@umn.edu](mailto://zhan6764@umn.edu) <br />
+**Office:** [Education Sciences Building 197](https://www.google.com/maps/place/Education+Sciences+Building/@44.9784043,-93.2394586,15z/data=!4m2!3m1!1s0x0:0x45656dac481b9150)  <br />
+**Office Hours:** Tuesday 2:00 PM&ndash;3:00 PM; and by appointment
+**Virtual Office:** If you want to meet Xinyue virtually, send her a Google calendar invite and include a Zoom link in the invite.
 
 <br />
