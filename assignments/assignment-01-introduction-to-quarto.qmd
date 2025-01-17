@@ -54,7 +54,7 @@ Include an initial `setup` code chunk that loads all your libraries and imports 
 ## Model 1
 
 
-1. Use the `lm()` function to fit Model 1 from the slides. Use the `tidy()` function from the `{broom}` package to display the model's coefficient-level output. Display the syntax for this along with the coefficient-level output in your rendered document.
+1. Use the `lm()` function to fit Model 1 (for RQ1) from the slides. Use the `tidy()` function from the `{broom}` package to display the model's coefficient-level output. Display the syntax for this along with the coefficient-level output in your rendered document.
 
 2. Use a bulleted list to provide an interpretation of the following estimated regression coefficients from the regression you fitted in Question 3: (a) the intercept, (b) the effect of news exposure. Give one interpretation per list item.
 
