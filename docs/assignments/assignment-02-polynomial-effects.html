@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-30">
+<meta name="dcterms.date" content="2025-01-24">
 <meta name="description" content="The goal of this assignment is to give you experience fitting, interpreting, and evaluating models with polynomial effects. This assignment is worth 15 points.   Copyright EPSY 8252, 2024">
 
 <title>Assignment 02 – EPsy 8252</title>
@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5d49d10100c2109f0e206fca45115040.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-98bd35fd7fe63b1eeafa02631a961574.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 30, 2024</p>
+      <p class="date">January 24, 2025</p>
     </div>
   </div>
   
@@ -188,36 +188,37 @@ ul.task-list li input[type="checkbox"] {
 
 <p>In this assignment, you will use the data from the file <em>fertility.csv</em> to explain variation in in infant mortality rates.</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/master/data/fertility.csv">[CSV]</a></li>
-<li><a href="http://zief0002.github.io/benevolent-anteater/codebooks/fertility.html">[Data Codebook]</a></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main//fertility.csv">[CSV]</a></li>
+<li><a href="http://zief0002.github.io/fluffy-ants/codebooks/fertility.html">[Data Codebook]</a></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figs/assign-02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="figs/assign-02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Decorative image"></p>
 </figure>
 </div>
 </div>
 </div>
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>This assignment needs to be completed using Quarto. Submit a zipped version of your entire assignment-02 project directory. Your QMD document should include a response to each of the questions below. Please adhere to the following guidelines for further formatting your assignment:</p>
+<p>Create a project directory called “assignment-02”. Within this directory, create a document (this can be a QMD, or word-processed documents) to respond to each of the questions below.</p>
 <ul>
-<li>All graphics should be resized so that they do not take up more room than necessary and should have an appropriate caption.</li>
-<li>Any typed mathematics (equations, matrices, vectors, etc.) should be appropriately typeset within the document using Markdown’s equation typesetting.</li>
-<li>All syntax should be hidden (i.e., not displayed) unless specifically asked for.</li>
-<li>Any messages or warnings produced (e.g., from loading packages) should also be hidden.</li>
+<li>Your project directory should be well organized (e.g., the BIB and CSL files should be in the <code>assets</code> directory).</li>
+<li>Your project directory should have a README file that is descriptive of the project.</li>
+<li>If you use a QMD document, all code chunks should include a label <code>#| label:</code> and include comments. If you create a word-processed document, include a commented, organized script file in the <code>scripts</code> directory of your syntax for the assignment.</li>
 </ul>
-<p>For each question, specify the question number (e.g., Question 2) using a level-2 (or smaller) header. This assignment is worth 15 points.</p>
+<p>You need to submit a zipped version of your entire <code>assignment-02</code> project directory.</p>
+<ul>
+<li>You will receive <strong>1 point</strong> for a well-organized project directory, including a README file.</li>
+<li>You will receive <strong>1 point</strong> for a QMD or R script file that includes clean, organized, and commented syntax.</li>
+</ul>
 <p><br></p>
 </section>
 <section id="model-1-linear-effect-of-female-education-level" class="level2">
 <h2 class="anchored" data-anchor-id="model-1-linear-effect-of-female-education-level">Model 1: Linear Effect of Female Education Level</h2>
 <ol type="1">
-<li><p>Create a scatterplot showing the relationship between female education level and infant mortality rates.</p></li>
-<li><p>Describe the relationship between female education level and infant mortality rates. Be sure to comment on the structural form, direction and strength of the relationship. Also comment on any potential observations that deviate from following this relationship (unusual observations or clusters of observations).</p></li>
-<li><p>Compute and report the Pearson correlation coefficient between female education level and infant mortality rate. Based on your response to Question 2, explain whether the Pearson correlation coefficient is an appropriate summary measure of the relationship.</p></li>
+<li><p>Create a scatterplot showing the relationship between female education level and infant mortality rates. Does this plot suggest problems about meeting the assumption of linearity? Explain.</p></li>
 <li><p>Regress infant mortality rates on female education level. For this model, posit a linear effect of female education level on infant mortality rate (Model 1). Create the scatterplot of the standardized residuals versus the fitted values from Model 1.</p></li>
 <li><p>Does this plot suggest problems about meeting the assumption that the average residual is zero at each fitted value? Explain.</p></li>
 </ol>
@@ -225,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="model-2-quadratic-effect-of-female-education-level" class="level2">
 <h2 class="anchored" data-anchor-id="model-2-quadratic-effect-of-female-education-level">Model 2: Quadratic Effect of Female Education Level</h2>
-<ol start="6" type="1">
+<ol start="4" type="1">
 <li><p>Regress infant mortality rates on female education level. For this model, posit a quadratic effect of female education level on infant mortality rate (Model 2). Write the <em>fitted equation</em> using Equation Editor (or some other program that correctly types mathematical expressions).</p></li>
 <li><p>Compute, report, and interpret the likelihood ratio between Model 2 and Model 1.</p></li>
 <li><p>Carry out a likelihood ratio test to compare Model 1 and Model 2. Report the results from this test in a nicely formatted table.</p></li>
@@ -234,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="model-3-control-for-differences-in-gross-national-income-gni" class="level2">
 <h2 class="anchored" data-anchor-id="model-3-control-for-differences-in-gross-national-income-gni">Model 3: Control for Differences in Gross National Income (GNI)</h2>
-<ol start="9" type="1">
+<ol start="7" type="1">
 <li><p>Regress infant mortality rates on female education level. For this model, posit a quadratic effect of female education level on infant mortality rate, and also control for differences in Gross National Income (Model 3). (Use all four levels of GNI.) Write the <em>fitted equation</em> using Equation Editor (or some other program that correctly types mathematical expressions).</p></li>
 <li><p>Carry out a likelihood ratio test to compare Model 2 and Model 3. Add the results from this test to the table you created in Question #8.</p></li>
 </ol>
@@ -242,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="adopting-a-model" class="level2">
 <h2 class="anchored" data-anchor-id="adopting-a-model">Adopting a Model</h2>
-<ol start="11" type="1">
+<ol start="9" type="1">
 <li><p>Based on the results of the two likelihood ratio tests, which model will you adopt? Explain.</p></li>
 <li><p>Create the density plot of the marginal distribution of the standardized residuals for your adopted model, as well as the scatterplot of the standardized residuals versus the fitted values. Place these plots side-by-side in your printed document and, for the purposes of captioning, etc. treat them as two subfigures within a single figure.</p></li>
 <li><p>Based on the plots you created in Question 12, evaluate and comment on the tenability of each of the model assumptions. <br></p></li>
@@ -250,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="presenting-the-results" class="level2">
 <h2 class="anchored" data-anchor-id="presenting-the-results">Presenting the Results</h2>
-<ol start="14" type="1">
+<ol start="12" type="1">
 <li><p>Mimic the format and structure of either of the first two tables in the <em>Presenting Results from Many Fitted Regression Models</em> section of the document <a href="https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html">Creating Tables to Present Statistical Results</a> to create a table to present the numerical information from the three models you fitted in this assignment. Make sure the table you create also has an appropriate caption. If the table is too wide, change the page orientation in your word processing program to “Landscape”, rather than changing the size of the font. (Note: Only this table should be presented in landscape orientation…not your entire assignment!)</p></li>
 <li><p>Create a publication quality plot that displays the fitted curves from Model 3. Display four separate lines to show the effect of Gross National Income. The four lines should be displayed using different linetypes or colors (or both) so that they can be easily differentiated in the plot.</p></li>
 </ol>

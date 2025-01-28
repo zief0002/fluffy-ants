@@ -4,8 +4,7 @@ format:
   html:
     code-copy: true
     code-fold: false
-    highlight-style: zenburn
-    df-print: paged
+    highlight-style: a11y-dark
     css: ["../assets/sticky-notes.css"]
 date: "today"
 bibliography: "../assets/epsy8252.bib"
@@ -20,7 +19,7 @@ source("../assets/notes-setup.R")
 
 # Preparation
 
-In this set of notes, you will learn one method of dealing with nonlinearity. Specifically, we will look at the inclusion of polynomial effects into a model. To do so, we will use the [mn-schools.csv](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/mn-schools.csv) dataset (see the [data codebook](http://zief0002.github.io/benevolent-anteater/codebooks/mn-schools.html)) to examine if (and how) academic "quality" of the student-body (measured by SAT score) is related to institutional graduation rate.
+In this set of notes, you will learn one method of dealing with nonlinearity. Specifically, we will look at the inclusion of polynomial effects into a model. To do so, we will use the [mn-schools.csv](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mn-schools.csv) dataset (see the [data codebook](http://zief0002.github.io/fluffy-ants/codebooks/mn-schools.html)) to examine if (and how) academic "quality" of the student-body (measured by SAT score) is related to institutional graduation rate.
 
 
 ```{r}
@@ -33,11 +32,13 @@ library(patchwork)
 library(tidyverse)
 
 # Read in data
-mn = read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/mn-schools.csv")
+mn = read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/mn-schools.csv")
 
 # View data
-head(mn)
+mn
 ```
+
+<br />
 
 
 # Examine Relationship between Graduation Rate and SAT Scores
@@ -47,14 +48,18 @@ As always, we begin the analysis by graphing the data. We will create a scatterp
 ```{r}
 #| label: fig-scatterplot
 #| fig-cap: "Six-year graduation rate plotted as a function of median SAT score. The loess smoother (red, solid line) is also displayed."
+#| fig-alt: "Six-year graduation rate plotted as a function of median SAT score. The loess smoother (red, solid line) is also displayed."
 #| out-width: "60%"
 # Scatterplot
 ggplot(data = mn, aes(x = sat, y = grad)) +
-  geom_point() +
+  geom_point(size = 4) +
   geom_smooth(method = "loess", se = FALSE, color = "#ff2d21") +
-  theme_light() +
   xlab("Estimated median SAT score (in hundreds)") +
-  ylab("Six-year graduation rate")
+  ylab("Six-year graduation rate") +
+  theme_light() +
+  theme(
+    text = element_text(size = 20)
+  )
 ```
 
 The loess smoother suggests that the relationship between SAT scores and graduation rate may be nonlinear. Nonlinearity implies that a the effect of SAT on graduation rates is not constant across the range of SAT scores; for colleges with lower values of SAT (say SAT $<1100$) the effect of SAT has a rather high, positive effect (steep slope), while for colleges with higher values of SAT ($\geq 1100$) the effect of SAT is positive and moderate (the slope is less steep). Another way of saying this is that for schools with lower SAT scores, a one-unit difference in SAT is associated with a larger change in graduation rates than the same one-unit change for schools with higher SAT values.
@@ -69,12 +74,16 @@ Sometimes, the nonlinear relationship is difficult to detect from the scatterplo
 ```{r}
 #| label: fig-residuals-linear
 #| fig-cap: "Standardized residuals versus the fitted values for a model regressing six-year graduation rates on median SAT scores. The line $Y=0$ (black) and the loess smoother (blue) are also displayed."
+#| fig-alt: "Standardized residuals versus the fitted values for a model regressing six-year graduation rates on median SAT scores. The line $Y=0$ (black) and the loess smoother (blue) are also displayed."
 #| out-width: "60%"
 # Fit linear model
 lm.1 = lm(grad ~ 1 + sat, data = mn)
 
 # Residual plot: Scatterplot
-residual_plots(lm.1, type = "s")
+residual_plots(lm.1, type = "s") +
+  theme(
+    text = element_text(size = 20)
+  )
 ```
 
 This plot suggests that the assumption of linearity may be violated; the average residual is not zero at each fitted value. For low fitted values it appears as though the average residual may be less than zero, for moderate fitted values it appears as though the average residual may be more than zero, and for high fitted values it appears as though the average residual may be less than zero.
@@ -102,7 +111,7 @@ mn = mn |>
   )
 
 # View data
-head(mn)
+mn
 ```
 
 After creating the quadratic term in the data, we fit the regression model that includes both the linear and quadratic effects as predictors in the model. We then compare the two models using a likelihood ratio test since the linear model is nested in the quadratic model.
@@ -119,13 +128,15 @@ Based on computing the likelihood ratio, the empirical support for the quadratic
 
 ```{r}
 # Model-level output
-glance(lm.2)
+glance(lm.2) |>
+  print(width = Inf)
 ```
 
 Model 2 explains 83.5% of the variation in graduation rates. The residual standard error estimate is $\hat\sigma_{\epsilon}=7.79$.
 
 
 <br />
+
 
 ## Are the Assumptions More Tenable for this Model?
 
@@ -135,15 +146,25 @@ More important than whether the *p*-value is small, is whether including the qua
 #| label: fig-residual-plots-quadratic
 #| fig-width: 8
 #| fig-height: 4
-#| out-width: "80%"
+#| out-width: "100%"
 #| fig-cap: "Residual plots for the quadratic model regressing six-year graduation rate on median SAT scores. LEFT: Density plot of the standardized residuals. The confidence envelope for a normal reference distribution (blue shaded area) is also displayed. RIGHT: Standardized residuals versus the fitted values. The line $Y=0$ (black) and confidence envelope (grey shaded area) for that line are shown, along with the loess smoother (blue) esimating the mean pattern of the residuals."
+#| fig-alt: "Residual plots for the quadratic model regressing six-year graduation rate on median SAT scores. LEFT: Density plot of the standardized residuals. The confidence envelope for a normal reference distribution (blue shaded area) is also displayed. RIGHT: Standardized residuals versus the fitted values. The line $Y=0$ (black) and confidence envelope (grey shaded area) for that line are shown, along with the loess smoother (blue) esimating the mean pattern of the residuals."
 # Residual plots
-residual_plots(lm.2)
+residual_plots(lm.2) +
+  theme(
+    text = element_text(size = 20)
+  )
 ```
 
-The plot of the standardized residuals versus the fitted values suggests that the residuals for the quadratic model are far better behaved; indicating much more consistency with the assumption that the average residual is zero at each fitted value than the linear model. This is the evidence that we would use to justify retaining the quadratic effect in the model. This plot also suggests that the homoskedasticity assumption is tenable. Finally, the empirical density of the residuals also seems consistent with the assumption of normality for this model. 
+The plot of the standardized residuals versus the fitted values suggests that the residuals for the quadratic model are far better behaved; indicating much more consistency with the assumption that the average residual is zero at each fitted value than the linear model. This is the evidence that we would use to justify retaining the quadratic effect in the model. This plot also suggests that the homoskedasticity assumption is tenable. Finally, the empirical density of the residuals also seems consistent with the assumption of normality for this model.
 
-**Reminder:** The assumption of independence can't be evaluated from the plots, but is vary important given we rely on it to be able to correctly compute the likelihood. From the design of the study, we haven't sampled the schools randomly, nor randomly assigned the schools to their levels of the predictor(s), so we can't infer independence from that. So the question becomes, does knowing the graduation rate of a school in the population give us information about the graduation rate for other schools in the population with the same median SAT score? If the answer is "no", then we can call the independence assumption tenable. If the answer is "yes", the independence assumption is violated and we should not use the `lm()` function or believe that results from that function are valid.
+:::protip
+**REMINDER** 
+
+The assumption of independence can't be evaluated from the plots, but is vary important given we rely on it to be able to correctly compute the likelihood. 
+:::
+
+From the design of the study, we have not sampled the schools randomly, nor randomly assigned the schools to their levels of the predictor(s), so we can't infer independence from the design. So the question becomes, does knowing the graduation rate of a school in the population give us information about the graduation rate for other schools in the population with the same median SAT score? If the answer is "no", then we can call the independence assumption tenable. If the answer is "yes", the independence assumption is violated and we should not use the `lm()` function or believe that results from that function are valid.
 
 <br />
 
@@ -154,7 +175,8 @@ How do we interpret the quadratic effect of SAT? First, we will write out the fi
 
 ```{r}
 # Coefficients
-coef(lm.2)
+tidy(lm.2) |>
+  select(-statistic, -p.value)
 ```
 
 The fitted equation is:
@@ -163,13 +185,15 @@ $$
 \widehat{\mathrm{Graduation~Rate}_i} = -366.34 + 62.72(\mathrm{SAT}_i) - 2.15(\mathrm{SAT}^2_i)
 $$
 
-Since the quadratic term is an interaction, we can interpret this term as we do any other interaction, namely that: 
+Since the quadratic term is an interaction, we can interpret this term as we do any other interaction, namely that:
 
-> The effect of median SAT score on six-year graduation rates *depends on* the magnitude of median SAT score. 
+> The effect of median SAT score on six-year graduation rates *depends on* the magnitude of median SAT score.
 
 To better understand the nature of this effect we will plot the fitted equation and use the plot to aid our interpretation.
 
 :::fyi
+**IMPORTANT**
+
 Note that the *t*- and *p*-values from the `tidy()` output should not be reported or even considered in the likelihood framework. Remember, they are based in the classical hypothesis testing framework. If you need coefficient-level *p*-values, you will need to fit the appropriate nested models to evaluate the individual effects.
 :::
 
@@ -184,6 +208,7 @@ To plot the fitted equation, we use the `geom_function()` layer to add the fitte
 #| label: fig-fitted-quadratic
 #| out-width: "60%"
 #| fig-cap: "Scatterplot of six-year graduation rate versus median SAT score. The fitted curve from the quadratic regression model (blue line) is also displayed."
+#| fig-alt: "Scatterplot of six-year graduation rate versus median SAT score. The fitted curve from the quadratic regression model (blue line) is also displayed."
 # Scatterplot
 ggplot(data = mn, aes(x = sat, y = grad)) +
 	geom_point(alpha = 0.3) +
@@ -191,9 +216,12 @@ ggplot(data = mn, aes(x = sat, y = grad)) +
     fun = function(x) {-366.34 + 62.72*x - 2.15 * x^2},
     color = "#0072b2"
     ) +
-	theme_light() +
   xlab("Estimated median SAT score (in hundreds)") +
-  ylab("Six-year graduation rate")
+  ylab("Six-year graduation rate") +
+	theme_light() +
+  theme(
+    text = element_text(size = 20)
+  ) 
 ```
 
 The fitted curve helps us interpret the nature of the relationship between median SAT scores and graduation rates. The effect of median SAT score on graduation rate depends on SAT score (definition of an interaction). For schools with low SAT scores, the effect of SAT score on graduation rate is positive and fairly high. For schools with high SAT scores, the effect of SAT score on graduation rate remains positive, but it has a smaller effect on graduation rates; the effect diminishes.
@@ -206,9 +234,11 @@ The fitted curve helps us interpret the nature of the relationship between media
 From algebra, you may remember that the coefficient in front of the quadratic term ($-2.2$) informs us of whether the quadratic is an upward-facing U-shape, or a downward-facing U-shape. Since our term is negative, the U-shape is downward-facing. This is consistent with what we saw in the plot. What the algebra fails to show is that, within the range of SAT scores in our data, we only see part of the entire downward U-shape.
 
 
-This coefficient also indicates whether the U-shape is skinny or wide. Although "skinny" and "wide" are only useful as relative comparisons. Algebraically, the comparison is typically to a quadratic coefficient of 1, which is generally not useful in our interpretation. The intercept and coefficient for the linear term help us locate the U-shape in the coordinate plane (moving it right, left, up, or down from the origin). You could work all of this out algebraically. 
+This coefficient also indicates whether the U-shape is skinny or wide. Although "skinny" and "wide" are only useful as relative comparisons. Algebraically, the comparison is typically to a quadratic coefficient of 1, which is generally not useful in our interpretation. The intercept and coefficient for the linear term help us locate the U-shape in the coordinate plane (moving it right, left, up, or down from the origin). You could work all of this out algebraically.
 
 :::fyi
+**FYI**
+
 You can see how different values of these coefficients affect the curve [on Wikipedia](https://en.wikipedia.org/wiki/Quadratic_equation#/media/File:Quadratic_equation_coefficients.png). Here is an [interactive graph](https://www.intmath.com/quadratic-equations/interactive-quadratic-function-graph.php) that lets you explore how changing the different coefficients changes the parabola.
 :::
 
@@ -249,7 +279,8 @@ lm.2 = lm(grad ~ 1 + sat + I(sat ^ 2), data = mn)
 glance(lm.2)
 
 # Coefficients
-coef(lm.2)
+tidy(lm.2) |>
+  select(-statistic, -p.value)
 ```
 
 <br />
@@ -273,7 +304,8 @@ We can also examine the model-level output from Model 3 to summarize the varianc
 
 ```{r}
 # Model-level output
-glance(lm.3)
+glance(lm.3) |>
+  print(width = Inf)
 ```
 
 
@@ -281,7 +313,8 @@ Model 3 explains 89.7% of the variation in graduation rates, an increase of 6.2 
 
 ```{r}
 # Coefficients
-coef(lm.3)
+tidy(lm.3) |>
+  select(-statistic, -p.value)
 ```
 
 Interpreting the coefficient-level output:
@@ -291,7 +324,7 @@ Interpreting the coefficient-level output:
 - The quadratic effect of SAT indicates that the effect of median SAT score on graduation rate varies by median SAT scores, after controlling for differences in sector.
 - Public institutions have a graduation rate that is 9.12 percentage points lower than private institutions, on average, controlling for differences in median SAT scores.
 
-
+We can also write out the fitted equations for private and public institutions.
 
 **Private Institutions**
 
@@ -311,28 +344,34 @@ $$
 \end{split}
 $$
 
-Note that the coefficients associated with the linear and quadratic effects of median SAT score are identical for both private and public institutions. This implies that the effect of SAT on graduation rates, despite being nonlinear, is the same for both sectors. The difference in intercepts reflects the sector effect on average graduation rates. To visualize these effects, we can plot each fitted curve by including each in a separate `geom_function()` layer.
+Note that the coefficients associated with the linear and quadratic effects of median SAT score are identical for both private and public institutions. This implies that the effect of SAT on graduation rates, despite being nonlinear, is the same for both sectors. The difference in intercepts reflects the sector effect on average graduation rates. To visualize these effects, we can plot each fitted curve by including each fitted equation in a separate `geom_function()` layer.
 
 ```{r}
 #| label: fig-fitted-quadratic-sector
 #| out-width: "60%"
 #| fig-cap: "Six-year graduation rate as a function of median SAT score for private (orange, solid line) and public (blue, dashed line) institutions."
+#| fig-alt: "Six-year graduation rate as a function of median SAT score for private (orange, solid line) and public (blue, dashed line) institutions."
 # Plot of the fitted model
 ggplot(data = mn, aes(x = sat, y = grad)) +
 	geom_point(alpha = 0) +
+  # Private institutions
 	geom_function(
 	  fun = function(x) {-384.16 + 67.04*x - 2.37 * x^2},
 	  color = "#2ec4b6",
 	  linetype = "dashed"
 	  ) +
+  # Public institutions
   geom_function(
     fun = function(x) {-393.29 + 67.04*x - 2.37 * x^2},
     color = "#ff9f1c",
     linetype = "solid"
     ) +
-	theme_light() +
   xlab("Estimated median SAT score (in hundreds)") +
-  ylab("Six-year graduation rate")
+  ylab("Six-year graduation rate") +
+	theme_light() +
+  theme(
+    text = element_text(size = 20)
+  )
 ```
 
 The curvature (linear and quadratic slopes) of the lines shows the linear and quadratic effect of median SAT scores on graduation rate. For both sectors, the effect of median SAT on graduation rates is positive (institutions with higher median SAT scores tend to have higher graduation rates. But, this effect diminishes for institutions with increasingly higher SAT scores. The main effect of sector is also visualized since private schools have higher graduation rates, on average, than public schools for all levels of median SAT score. This difference, regardless of median SAT score, is constantly that public schools have a lower graduation rate than private schools by 9.12 percentage points.
@@ -383,7 +422,8 @@ Again, we will obtain model- and coefficient-level output and use those to summa
 
 ```{r}
 # Model-level output
-glance(lm.4)
+glance(lm.4) |>
+  print(width = Inf)
 ```
 
 Model 4 explains 90.6% of the variation in graduation rates, an increase of 0.9 percentage points from Model 3. The residual standard error for Model 4, $\hat\sigma_{\epsilon}=5.64$, has also decreased from that for Model 3 indicating that this model has less error than Model 3.
@@ -392,7 +432,8 @@ The coefficient-level output is:
 
 ```{r}
 # Coefficients
-coef(lm.4)
+tidy(lm.4) |>
+  select(-statistic, -p.value)
 ```
 
 We can use this to obtain the fitted equation:
@@ -432,22 +473,28 @@ To visualize the effect of SAT, we can again plot each fitted curve by including
 #| label: fig-model-4
 #| out-width: "60%"
 #| fig-cap: "Six-year graduation rate as a function of median SAT score for private (orange, solid line) and public (blue, dashed line) institutions."
+#| fig-alt: "Six-year graduation rate as a function of median SAT score for private (orange, solid line) and public (blue, dashed line) institutions."
 # Plot of the fitted model
 ggplot(data = mn, aes(x = sat, y = grad)) +
 	geom_point(alpha = 0) +
-	geom_function(
-	  fun = function(x) {-378.73 + 67.54 * x - 2.54 * x^2},
-	  color = "#2ec4b6",
-	  linetype = "dashed"
-	  ) +
+  # Private institutions
   geom_function(
     fun = function(x) {-413.80 + 71.65 * x - 2.54 * x^2},
     color = "#ff9f1c",
     linetype = "solid"
     ) +
-	theme_light() +
+  # Public institutions
+	geom_function(
+	  fun = function(x) {-378.73 + 67.54 * x - 2.54 * x^2},
+	  color = "#2ec4b6",
+	  linetype = "dashed"
+	  ) +
   xlab("Estimated median SAT score (in hundreds)") +
-  ylab("Six-year graduation rate")
+  ylab("Six-year graduation rate") +
+	theme_light() +
+  theme(
+    text = element_text(size = 20)
+  ) 
 ```
 
 The curvature (linear and quadratic slopes) of the lines now looks different for the two sectors because of the interaction term. (Note that interactions with the linear effect of SAT or the quadratic effect of SAT contribute to a change in the curvature.) For both sectors, the effect of median SAT on graduation rates is positive (institutions with higher median SAT scores tend to have higher graduation rates. But, this effect diminishes for institutions with increasingly higher SAT scores. Private schools have higher graduation rates, on average, than public schools for all levels of median SAT score. Moreover, this difference in graduation rates is getting larger at higher levels of SAT (that is the interaction!).
@@ -567,7 +614,7 @@ htmlreg(
 
 <br />
 
-See @tbl-model-likelihood for fun results.
+<!-- See @tbl-model-likelihood for fun results. -->
 
 
 

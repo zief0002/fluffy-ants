@@ -220,17 +220,17 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Feb. 24</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo">
-  <!-- [{{< iconify game-icons:read size=30px >}}](readings/05-polynomial-effects.html) -->
+  [{{< iconify game-icons:read size=30px >}}](readings/09-polynomial-effects.html)
 </td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Polynomial Effects</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/05-polynomial-effects.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](notes/09-polynomial-effects.html)
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/05-polynomial-effects.qmd) -->
+   [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/09-polynomial-effects.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/05-polynomial-effects.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/09-polynomial-effects.R)
 </td>
 </tr>
 

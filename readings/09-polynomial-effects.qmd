@@ -7,9 +7,9 @@ date: "today"
 ---
 
 
-Prior to class:
+Refresh your knowledge about parabolas and quadratic functions:
 
-- Refresh your knowledge about parabolas and quadratic functions by going though the [Khan Academy Parabolas Intro](https://www.khanacademy.org/math/algebra-home/alg-quadratics).
+-  Go though the [Khan Academy Parabolas Intro Tutorial](https://www.khanacademy.org/math/algebra-home/alg-quadratics).
 
 <br />
 

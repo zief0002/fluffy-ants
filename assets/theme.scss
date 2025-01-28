@@ -4,11 +4,11 @@
 $font-weight-base: 400 !default;
 
 //Links
-$toc-color: #7a0019; /*c10088;  /*-- Set active link color for TOC sidebar (RIGHT) --*/
+$toc-color: #7a0019;  /*-- Set active link color for TOC sidebar (RIGHT) --*/
 
 
 // Top Navigation
-$navbar-bg: #5b0013; /*#0B3948;*/
+$navbar-bg: #5b0013;
 $navbar-fg: #fff;
 $navbar-hl: #fff;
 
@@ -21,7 +21,10 @@ $body-secondary: #000;
 
 /*-- scss:rules --*/
 
-// Headings
+/*********************************************
+ * HEADINGS
+ *********************************************/
+ 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
 }
@@ -35,6 +38,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 } */
 
+
+/*********************************************
+ * PARAGRAPH TEXT
+ *********************************************/
 
 p {
   font-family: 'Atkinson Hyperlegible', serif;
@@ -54,14 +61,21 @@ li > p {
   margin-bottom: 0;
 }
 
+/*********************************************
+ * LINKS
+ *********************************************/
+ 
 // Mouse over link
 a:hover {
-  color: #7a0019; /*c10088;*/
+  color: #7a0019; 
 }
 
 
 
-// Figure caption
+/*********************************************
+ * FIGURE CAPTIONS
+ *********************************************/
+ 
 .figure-caption {
   font-size: 12pt;
   font-style: italic;
@@ -83,3 +97,12 @@ figure figcaption{
   font-style: italic;
 }
 
+
+/*********************************************
+ * R CODE OUTPUT
+ *********************************************/
+
+pre code:not(.sourceCode) {
+  color: black;
+  background-color: #fdfbd4;
+}
