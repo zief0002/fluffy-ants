@@ -1,5 +1,5 @@
 ---
-title: "Polynomial Effects"
+title: "Information Criteria and Model Selection"
 format:
   html:
     css: ["../assets/sticky-notes.css"]

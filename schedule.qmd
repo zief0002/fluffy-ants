@@ -248,17 +248,17 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Mar. 03</td>
 <td align="center" style="vertical-align:middle;" headers="todo">
-  <!-- [{{< iconify game-icons:read size=30px >}}](readings/06-information-criteria-and-model-selection.html) -->
+  [{{< iconify game-icons:read size=30px >}}](readings/10-information-criteria-and-model-selection.html)
 </td>
 <td style="vertical-align:middle;" headers="topic">Information Criteria and Model Selection</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/06-information-criteria-and-model-selection.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](notes/10-information-criteria-and-model-selection.html)
 </td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/06-information-criteria-and-model-selection.qmd) -->
+   [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-information-criteria-and-model-selection.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/06-information-criteria-and-model-selection.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/10-information-criteria-and-model-selection.R)
 </td>
 </tr>
 

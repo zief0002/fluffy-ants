@@ -49,10 +49,10 @@ Students will complete six homework assignments. The homework assignments and du
 <td headers="assignment">Assignment \#3: *Evidence and Model Selection*</td>
 <td headers="date">Mar. 19</td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-  <!-- [{{< iconify simple-icons:quarto size=25px title="Assignment 3 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-03-evidence-and-model-selection.qmd) -->
+  [{{< iconify simple-icons:quarto size=25px title="Assignment 3 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-03-evidence-and-model-selection.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="html">
-  <!-- [{{< iconify tabler:file-type-html size=30px title="Assignment 3 HTML File" >}}](assignments/assignment-03-evidence-and-model-selection.html) -->
+  [{{< iconify tabler:file-type-html size=30px title="Assignment 3 HTML File" >}}](assignments/assignment-03-evidence-and-model-selection.html)
 </td>
 </tr>
 

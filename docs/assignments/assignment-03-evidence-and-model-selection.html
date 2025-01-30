@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-30">
+<meta name="dcterms.date" content="2025-01-30">
 
 <title>Assignment 03 – EPsy 8252</title>
 <style>
@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5d49d10100c2109f0e206fca45115040.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-54eeb88228ef81930ba912f8d31130c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -175,7 +175,6 @@ window.Quarto = {
   <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">Preparation</a></li>
   <li><a href="#model-selection-likelihood-framework-of-evidence" id="toc-model-selection-likelihood-framework-of-evidence" class="nav-link" data-scroll-target="#model-selection-likelihood-framework-of-evidence">Model Selection: Likelihood Framework of Evidence</a></li>
   <li><a href="#model-selection-information-criteria" id="toc-model-selection-information-criteria" class="nav-link" data-scroll-target="#model-selection-information-criteria">Model Selection: Information Criteria</a></li>
-  <li><a href="#what-to-submit" id="toc-what-to-submit" class="nav-link" data-scroll-target="#what-to-submit">What to Submit</a></li>
   </ul>
 </nav>
     </div>
@@ -196,7 +195,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 30, 2024</p>
+      <p class="date">January 30, 2025</p>
     </div>
   </div>
   
@@ -211,8 +210,8 @@ window.Quarto = {
 <p><br></p>
 <p>The goal of this assignment is to build your understanding of using information criteria for model selection. In this assignment, you will use the data from the file <em>wine.csv</em> to examine several different predictors of wine rating (a measure of the wine’s quality). The literature has suggested that price of wine is quite predictive of a wine’s quality.</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/zief0002/bespectacled-antelope/main/data/wine.csv">[CSV]</a></li>
-<li><a href="http://zief0002.github.io/bespectacled-antelope/codebooks/wine.html">[Data Codebook]</a></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/wine.csv">[CSV]</a></li>
+<li><a href="http://zief0002.github.io/fluffy-ants/codebooks/wine.html">[Data Codebook]</a></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -225,14 +224,17 @@ window.Quarto = {
 </div>
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>Submit either your QMD and HTML file or, if you are not using Quarto, a PDF file of your responses to the following questions. Please adhere to the following guidelines for further formatting your assignment:</p>
+<p>Create a project directory called “assignment-03”. Within this directory, create a document (this can be a QMD, or word-processed documents) to respond to each of the questions below.</p>
 <ul>
-<li>All graphics should be resized so that they do not take up more room than necessary and should have an appropriate caption.</li>
-<li>Any typed mathematics (equations, matrices, vectors, etc.) should be appropriately typeset within the document using Markdown’s equation typesetting.</li>
-<li>All syntax should be hidden (i.e., not displayed) unless specifically asked for.</li>
-<li>Any messages or warnings produced (e.g., from loading packages) should also be hidden.</li>
+<li>Your project directory should be well organized (e.g., the BIB and CSL files should be in the <code>assets</code> directory).</li>
+<li>Your project directory should have a README file that is descriptive of the project.</li>
+<li>If you use a QMD document, all code chunks should include a label <code>#| label:</code> and include comments. If you create a word-processed document, include a commented, organized script file in the <code>scripts</code> directory of your syntax for the assignment.</li>
 </ul>
-<p>This assignment is worth 15 points.</p>
+<p>You need to submit a zipped version of your entire <code>assignment-03</code> project directory.</p>
+<ul>
+<li>You will receive <strong>1 point</strong> for a well-organized project directory, including a README file.</li>
+<li>You will receive <strong>1 point</strong> for a QMD or R script file that includes clean, organized, and commented syntax.</li>
+</ul>
 <p><br></p>
 </section>
 <section id="preparation" class="level2">
@@ -245,9 +247,7 @@ window.Quarto = {
 <section id="model-selection-likelihood-framework-of-evidence" class="level2">
 <h2 class="anchored" data-anchor-id="model-selection-likelihood-framework-of-evidence">Model Selection: Likelihood Framework of Evidence</h2>
 <ol type="1">
-<li><p>Compute and report the likelihood for Model 0 given the residuals and set of model assumptions. Use <code>dnorm()</code> for this computation, and show your syntax for full credit.</p></li>
-<li><p>Create a table of the log-likelihoods for the nine candidate models. (Use the <code>logLik()</code> function to compute these values.)</p></li>
-<li><p>Compute and interpret the likelihood ratio for comparing the empirical support between Model 2 and Model 3.</p></li>
+<li><p>Compute and interpret the likelihood ratio for comparing the empirical support between Model 2 and Model 3. (In computing the likelihoods, use the <code>logLik()</code> function, not <code>dnorm()</code>.)</p></li>
 <li><p>Can we carry out a likelihood ratio test to evaluate whether the amount of empirical support when comparing Model 2 and Model 3 is more than we expect because of sampling error? If so, compute and report the results from the <span class="math inline">\(\chi^2\)</span>-test. If not, explain why not.</p></li>
 <li><p>Compute and interpret the likelihood ratio for comparing the empirical support between Model 2 and Model 5.</p></li>
 <li><p>Can we carry out a likelihood ratio test to evaluate whether the amount of empirical support when comparing Model 2 and Model 5 is more than we expect because of sampling error? If so, compute and report the results from the <span class="math inline">\(\chi^2\)</span>-test. If not, explain why not.</p></li>
@@ -256,7 +256,7 @@ window.Quarto = {
 </section>
 <section id="model-selection-information-criteria" class="level2">
 <h2 class="anchored" data-anchor-id="model-selection-information-criteria">Model Selection: Information Criteria</h2>
-<ol start="7" type="1">
+<ol start="5" type="1">
 <li>Create a table of model evidence that includes the following information for each of the nine candidate models. <strong>(2pts.)</strong></li>
 </ol>
 <ul>
@@ -268,7 +268,7 @@ window.Quarto = {
 <li>Model Probability (AICc Weight)</li>
 </ul>
 <p>Use this table of model evidence to answer Questions 8–14.</p>
-<ol start="8" type="1">
+<ol start="6" type="1">
 <li><p>Use the AICc values to select the working hypothesis with the most empirical evidence.</p></li>
 <li><p>Interpret the model probability (i.e., AICc weight) for the working hypothesis with the most empirical evidence.</p></li>
 <li><p>Compute and interpret the evidence ratio that compares the two working hypotheses with the most empirical evidence.</p></li>
@@ -278,10 +278,6 @@ window.Quarto = {
 <li><p>Based on your responses to the last two questions, which set of analyses (yours or Snipes and Taylor) has more model selection uncertainty? Explain.</p></li>
 </ol>
 <p><br></p>
-</section>
-<section id="what-to-submit" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-submit">What to Submit</h2>
-<p>You need to submit a zipped version of your entire <code>assignment-01</code> project directory. When the TA unzips this and opens your R project file they will render your QMD document. This should produce the HTML file that will be graded. (You can include your HTML file as an extra attachment if you want, but the QMD document will need to render. If it doesn’t render the TA will return it to you to try again.)</p>
 
 
 </section>
