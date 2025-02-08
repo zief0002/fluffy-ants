@@ -67,7 +67,7 @@ You need to submit a zipped version of your entire `assignment-02` project direc
 
 7.  Regress infant mortality rates on female education level. For this model, posit a quadratic effect of female education level on infant mortality rate, and also control for differences in Gross National Income (Model 3). (Use all four levels of GNI.) Write the *fitted equation* using Equation Editor (or some other program that correctly types mathematical expressions).
 
-8. Carry out a likelihood ratio test to compare Model 2 and Model 3. Add the results from this test to the table you created in Question \#8.
+8. Carry out a likelihood ratio test to compare Model 2 and Model 3. Add the results from this test to the table you created in Question \#6.
 
 <br />
 
@@ -78,7 +78,7 @@ You need to submit a zipped version of your entire `assignment-02` project direc
 
 10. Create the density plot of the marginal distribution of the standardized residuals for your adopted model, as well as the scatterplot of the standardized residuals versus the fitted values. Place these plots side-by-side in your printed document and, for the purposes of captioning, etc. treat them as two subfigures within a single figure.
 
-11. Based on the plots you created in Question 12, evaluate and comment on the tenability of each of the model assumptions. 
+11. Based on the plots you created in Question 10, evaluate and comment on the tenability of each of the model assumptions. 
 <br />
 
 

@@ -102,7 +102,7 @@ tab_01 = pew |>
 
 9. **(2pts.)** Write a sentence that includes two references in an inline citation. This should also generate the actual references when you knit your document. One of the two references should be the Fox textbook. The other should be a journal article. You can choose the topic of the sentence and how the two references are used in the citation. (Note the references do not actually have to pertain to what is written in the sentence. This is just an exercise in using the bibliography tools in Quarto.) Specify an appropriate CSL file so that the references and citations are in APA format. (If you want to use a citation style that is different from APA, say for a specific journal, use the appropriate CSL file, and indicate that on the assignment.) Both the BIB and CSL files should be included in your project's `assets` directory. 
 
-10. Write a sentence that references the figure you created in Question 1 by cross-referencing its label. 
+10. Write a sentence that references the figure you created in Question 7 by cross-referencing its label. 
 
 <br />
 

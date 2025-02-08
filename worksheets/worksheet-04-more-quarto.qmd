@@ -88,7 +88,7 @@ You will be adding to your `assignment-01.qmd` document. Each question will ask 
 
 21. In the "setup" code chunk, load the `{gt}` library. (If you haven't yet installed it, you will need to do that first.)
 
-22. In the "Question 8" section of your document, add a code chunk. In this chunk, write the syntax included in Question 2 from Assignment 1 to compute the summary statistics.
+22. In the "Question 8" section of your document, add a code chunk. In this chunk, write the syntax included in Question 8 from Assignment 1 to compute the summary statistics.
 
 23. Use the functions from the `{gt}` package to re-create Table 1 from Slide 34. Do this in steps, rendering after you add each line of `gt` syntax.
 

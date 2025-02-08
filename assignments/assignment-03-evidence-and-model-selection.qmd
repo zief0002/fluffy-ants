@@ -76,7 +76,7 @@ Fit the same nine candidate models that Snipes and Taylor fitted in their analys
   - $\Delta$ AICc
   - Model Probability (AICc Weight)
 
-Use this table of model evidence to answer Questions 8--14.
+Use this table of model evidence to answer Questions 6--12.
 
 6. Use the AICc values to select the working hypothesis with the most empirical evidence.
 
