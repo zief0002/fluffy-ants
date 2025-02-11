@@ -4,6 +4,10 @@ format:
   html:
     highlight-style: "a11y-dark"
     css: ["../assets/sticky-notes.css"]
+    code-tools:
+      source: true
+      toggle: true
+      caption: "Quarto Code"
 date: "today"
 ---
 

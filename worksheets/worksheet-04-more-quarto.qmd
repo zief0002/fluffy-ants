@@ -4,6 +4,10 @@ format:
   html:
     highlight-style: "a11y-dark"
     css: ["../assets/sticky-notes.css"]
+    code-tools:
+      source: true
+      toggle: true
+      caption: "Quarto Code"
 date: "today"
 ---
 
@@ -85,6 +89,8 @@ You will be adding to your `assignment-01.qmd` document. Each question will ask 
 
 
 # Add a Table 
+
+*You may want to read through [Creating Tables with gt](https://zief0002.github.io/adv-modeling/01-05-creating-tables.html) in the Advanced Modeling book.*
 
 21. In the "setup" code chunk, load the `{gt}` library. (If you haven't yet installed it, you will need to do that first.)
 

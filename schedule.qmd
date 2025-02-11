@@ -19,7 +19,7 @@ As part of the course, there are several articles, papers and technical reports 
 <th style="width:10%;text-align:center" id="todo">To-Do</th>
 <th style="width:40%;" id="topic">Topic</th>
 <th style="width:10%;text-align:center" id="notes">Notes</th>
-<th style="width:10%;text-align:center" id="qmd">QMD</th>
+<th style="width:10%;text-align:center" id="worksheet">Worksheet</th>
 <th style="width:10%;text-align:center" id="script">Script</th>
 </tr>
 </thead>
@@ -31,7 +31,7 @@ As part of the course, there are several articles, papers and technical reports 
 <!-- ---------------------------------- -->
 
 <tr>
-<td colspan="7" scope="colgroup" headers="blank todo topic notes qmd script"><b>UNIT 00: WELCOME AND REVIEW</b></td>
+<td colspan="7" scope="colgroup" headers="blank todo topic notes worksheet script"><b>UNIT 00: WELCOME AND REVIEW</b></td>
 </tr>
 
 <tr>
@@ -40,7 +40,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td headers="topic">Welcome to Epsy 8252</td>
 <td align="center" style="vertical-align:middle;" headers="notes"></td>
-<td align="center" style="vertical-align:middle;" headers="qmd"></td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
 
@@ -52,10 +52,11 @@ As part of the course, there are several articles, papers and technical reports 
 </td>
 <td style="vertical-align:middle;" headers="topic">Regression Review</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify fa6-solid:file-pen size=25px title="Worksheet">}}](worksheets/worksheet-01-regression-review.html)<br/><br />
   [{{< iconify fa6-solid:file-pdf size=25px title="Regression Review Slides">}}](files/01-regression-review.pdf)
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd"></td>
+<td align="center" style="vertical-align:middle;" headers="worksheet">
+  [{{< iconify fa6-solid:file-pen size=25px title="Worksheet">}}](worksheets/worksheet-01-regression-review.html)
+</td>
 <td align="center" style="vertical-align:middle;" headers="script">
   [{{< iconify file-icons:r size=30px title="Regression Review R Script File">}}](scripts/01-regression-review.R)
 </td>
@@ -67,7 +68,7 @@ As part of the course, there are several articles, papers and technical reports 
 <!-- ---------------------------------- -->
 
 <tr>
-<td colspan="7" scope="colgroup" headers="blank todo topic notes qmd script"><b>UNIT 01: TOOLS FOR REPRODUCIBILITY</b></td>
+<td colspan="7" scope="colgroup" headers="blank todo topic notes worksheet script"><b>UNIT 01: TOOLS FOR REPRODUCIBILITY</b></td>
 </tr>
 
 <tr>
@@ -78,11 +79,9 @@ As part of the course, there are several articles, papers and technical reports 
 </td>
 <td style="vertical-align:middle;" headers="topic">Project Organization</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify tabler:file-type-html size=30px title="Project Organization Notes">}}](notes/02-project-organization.html)
+  [{{< iconify tabler:file-type-html size=30px title="Project Organization Notes">}}](https://zief0002.github.io/adv-modeling/01-02-project-organization.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
-  [{{< iconify simple-icons:quarto size=25px title="Project Organization QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/02-project-organization.qmd)
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
 
@@ -94,12 +93,11 @@ As part of the course, there are several articles, papers and technical reports 
 </td>
 <td style="vertical-align:middle;" headers="topic">Introduction to Quarto</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify fa6-solid:file-pen size=25px title="Introduction to Quarto Worksheet" >}}](worksheets/worksheet-03-hello-world-quarto.html)<br/><br />
-  [{{< iconify tabler:file-type-html size=30px title="Introduction to Quarto Notes" >}}](notes/03-introduction-to-quarto.html)
+  <br/><br />
+  [{{< iconify tabler:file-type-html size=30px title="Introduction to Quarto Notes" >}}](https://zief0002.github.io/adv-modeling/01-03-introduction-to-quarto.html
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=25px title="Worksheet QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/worksheets/worksheet-03-hello-world-quarto.qmd)<br/><br />
-   [{{< iconify simple-icons:quarto size=25px  title="Introduction to Quarto QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/03-introduction-to-quarto.qmd)
+<td align="center" style="vertical-align:middle;" headers="worksheet">
+    [{{< iconify fa6-solid:file-pen size=25px title="Introduction to Quarto Worksheet" >}}](worksheets/worksheet-03-hello-world-quarto.html)
 </td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
@@ -113,14 +111,10 @@ As part of the course, there are several articles, papers and technical reports 
 </td>
 <td style="vertical-align:middle;" headers="topic">More Quarto</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify fa6-solid:file-pen size=25px title="Worksheet">}}](worksheets/worksheet-04-more-quarto.html)<br/><br />
-  [{{< iconify tabler:file-type-html size=30px title="More Quarto Notes">}}](notes/04-01-more-quarto.html)<br/><br />
-  [{{< iconify tabler:file-type-html size=30px title="Creating Tables Notes">}}](notes/04-02-creating-tables.html)
+  [{{< iconify tabler:file-type-html size=30px title="More Quarto Notes">}}](https://zief0002.github.io/adv-modeling/01-04-more-quarto.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=25px title="Worksheet QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/worksheets/worksheet-04-more-quarto.qmd)<br/><br />
-   [{{< iconify simple-icons:quarto size=25px title="More Quarto QMD File">}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-01-more-quarto.qmd)<br/><br />
-   [{{< iconify simple-icons:quarto size=25px title="Creating Tables QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-02-creating-tables.qmd)
+<td align="center" style="vertical-align:middle;" headers="worksheet">
+   [{{< iconify fa6-solid:file-pen size=25px title="Worksheet">}}](worksheets/worksheet-04-more-quarto.html)
 </td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
@@ -130,7 +124,7 @@ As part of the course, there are several articles, papers and technical reports 
 <!-- ------------------------------------- -->
 
 <tr>
-<td colspan="7" scope="colgroup" headers="blank todo topic notes qmd script"><b>UNIT 02: MODEL SELECTION AND EVIDENCE</b></td>
+<td colspan="7" scope="colgroup" headers="blank todo topic notes worksheet script"><b>UNIT 02: MODEL SELECTION AND EVIDENCE</b></td>
 </tr>
 
 <tr>
@@ -141,11 +135,9 @@ As part of the course, there are several articles, papers and technical reports 
 </td>
 <td style="vertical-align:middle;" headers="topic">Mathematical Foundations: Probability Density</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify tabler:file-type-html size=30px title="Mathematical Foundations: Probability Density Notes">}}](notes/05-mathematical-foundations-probability-density.html)
+  [{{< iconify tabler:file-type-html size=30px title="Mathematical Foundations: Probability Density Notes">}}](https://zief0002.github.io/adv-modeling/02-01-mathematical-foundations-probability-density.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=25px title="Mathematical Foundations: Probability Density QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/05-mathematical-foundations-probability-density.qmd)
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" headers="script">
   [{{< iconify file-icons:r size=30px title="Mathematical Foundations: Probability Density R Script File">}}](scripts/05-mathematical-foundations-probability-density.R)
 </td>
@@ -162,7 +154,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/06-mathematical-foundations-logarithms.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
+<td align="center" style="vertical-align:middle;" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/06-mathematical-foundations-logarithms.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
@@ -176,11 +168,9 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Likelihood: A Framework for Evidence</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  [{{< iconify tabler:file-type-html size=30px >}}](notes/04-likelihood-evidence.html)
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/02-03-likelihood-framework-for-evidence.html)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-likelihood-evidence.qmd)
-</td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
   [{{< iconify file-icons:r size=30px >}}](scripts/04-likelihood-evidence.R)
 </td>
@@ -198,11 +188,9 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Likelihood: A Framework for Estimation</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-   [{{< iconify tabler:file-type-html size=30px >}}](notes/04-optional-likelihood-estimation.html)
+   [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/02-04-likelihood-framework-for-estimation.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
-  [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/04-optional-likelihood-estimation.qmd)
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
 
@@ -212,7 +200,7 @@ As part of the course, there are several articles, papers and technical reports 
 <!-- ------------------------------------- -->
 
 <tr>
-<td colspan="7" scope="colgroup" headers="blank todo topic notes qmd script"><b>UNIT 03: DEALING WITH NONLINEARITY</b></td>
+<td colspan="7" scope="colgroup" headers="blank todo topic notes worksheet script"><b>UNIT 03: DEALING WITH NONLINEARITY</b></td>
 </tr>
 
 
@@ -224,11 +212,9 @@ As part of the course, there are several articles, papers and technical reports 
 </td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Polynomial Effects</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  [{{< iconify tabler:file-type-html size=30px >}}](notes/09-polynomial-effects.html)
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/03-01-polynomial-effects.html)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
-   [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/09-polynomial-effects.qmd)
-</td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
   [{{< iconify file-icons:r size=30px >}}](scripts/09-polynomial-effects.R)
 </td>
@@ -241,7 +227,7 @@ As part of the course, there are several articles, papers and technical reports 
 
 
 <tr>
-<td colspan="7" scope="colgroup" headers="blank todo topic notes qmd script"><b>UNIT 02 (REVISITED): MODEL SELECTION AND EVIDENCE</b></td>
+<td colspan="7" scope="colgroup" headers="blank todo topic notes worksheet script"><b>UNIT 02 (REVISITED): MODEL SELECTION AND EVIDENCE</b></td>
 </tr>
 
 <tr>
@@ -252,11 +238,9 @@ As part of the course, there are several articles, papers and technical reports 
 </td>
 <td style="vertical-align:middle;" headers="topic">Information Criteria and Model Selection</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  [{{< iconify tabler:file-type-html size=30px >}}](notes/10-information-criteria-and-model-selection.html)
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/03-02-information-criteria-and-model-selection.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
-   [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-information-criteria-and-model-selection.qmd)
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" headers="script">
   [{{< iconify file-icons:r size=30px >}}](scripts/10-information-criteria-and-model-selection.R)
 </td>
@@ -268,7 +252,7 @@ As part of the course, there are several articles, papers and technical reports 
 <!-- ------------------------------------- -->
 
 <tr>
-<td colspan="7" scope="colgroup" headers="blank todo topic notes qmd script"><b>UNIT 03 (REVISITED): DEALING WITH NONLINEARITY</b></td>
+<td colspan="7" scope="colgroup" headers="blank todo topic notes worksheet script"><b>UNIT 03 (REVISITED): DEALING WITH NONLINEARITY</b></td>
 </tr>
 
 <tr>
@@ -279,7 +263,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/07-logarithmic-transformations-outcome.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
+<td align="center" style="vertical-align:middle;" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
@@ -305,7 +289,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/07-logarithmic-transformations-outcome.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
@@ -327,7 +311,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
@@ -349,7 +333,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/09-rule-of-the-bulge.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
+<td align="center" style="vertical-align:middle;" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/09-rule-of-the-bulge.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
@@ -363,7 +347,7 @@ As part of the course, there are several articles, papers and technical reports 
 <!-- -------------------------------------- -->
 
 <tr>
-<td colspan="7" scope="colgroup" headers="blank todo topic notes qmd script"><b>UNIT 04: MODELING DICHOTOMOUS OUTCOMES</b></td>
+<td colspan="7" scope="colgroup" headers="blank todo topic notes worksheet script"><b>UNIT 04: MODELING DICHOTOMOUS OUTCOMES</b></td>
 </tr>
 
 
@@ -375,7 +359,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
+<td align="center" style="vertical-align:middle;" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
@@ -392,7 +376,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
+<td align="center" style="vertical-align:middle;" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
@@ -409,7 +393,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
@@ -427,7 +411,7 @@ As part of the course, there are several articles, papers and technical reports 
 <!-- ----------------------------------------------- -->
 
 <tr>
-<td colspan="7" scope="colgroup" headers="blank todo topic notes qmd script"><b>UNIT 05: LINEAR MIXED-EFFECTS REGRESSION MODELS</b></td>
+<td colspan="7" scope="colgroup" headers="blank todo topic notes worksheet script"><b>UNIT 05: LINEAR MIXED-EFFECTS REGRESSION MODELS</b></td>
 </tr>
 
 
@@ -439,7 +423,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
@@ -461,7 +445,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
@@ -483,7 +467,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="qmd">
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
@@ -504,7 +488,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
+<td align="center" style="vertical-align:middle;" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
@@ -521,7 +505,7 @@ As part of the course, there are several articles, papers and technical reports 
 <td align="center" style="vertical-align:middle;" headers="notes">
   <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
 </td>
-<td align="center" style="vertical-align:middle;" headers="qmd">
+<td align="center" style="vertical-align:middle;" headers="worksheet">
    <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
 </td>
 <td align="center" style="vertical-align:middle;" headers="script">
