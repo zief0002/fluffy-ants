@@ -7,7 +7,7 @@ Students will complete six homework assignments. The homework assignments and du
 
 <br />
 
-<!-- <span style="margin-left:5px; color:#5a067d;font-size:12px;">*[The due date for this assignment is flexible]*</span> -->
+<!-- <span style="margin-left:5px; color:#5b0013;font-size:12px;">*[The due date for this assignment is flexible]*</span> -->
 
 
 <table class="table">
@@ -34,7 +34,7 @@ Students will complete six homework assignments. The homework assignments and du
 
 
 <tr>
-<td headers="assignment">Assignment \#2: *Polynomial Effects*</td>
+<td headers="assignment">Assignment \#2: *Polynomial Effects*<br /><span style="margin-left:5px; color:#5b0013;font-size:12px;">*Updated 2025-02-11*</span></td>
 <td headers="date">Mar. 05</td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
   [{{< iconify simple-icons:quarto size=25px title="Assignment 2 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-02-polynomial-effects.qmd)
@@ -46,7 +46,7 @@ Students will complete six homework assignments. The homework assignments and du
 
 
 <tr>
-<td headers="assignment">Assignment \#3: *Evidence and Model Selection*</td>
+<td headers="assignment">Assignment \#3: *Evidence and Model Selection*<br /><span style="margin-left:5px; color:#5b0013;font-size:12px;">*Updated 2025-02-11*</span></td>
 <td headers="date">Mar. 19</td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
   [{{< iconify simple-icons:quarto size=25px title="Assignment 3 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-03-evidence-and-model-selection.qmd)
@@ -59,7 +59,7 @@ Students will complete six homework assignments. The homework assignments and du
 
 <tr>
 <td headers="assignment">Assignment \#4: *Logarithmic Transformations*</td>
-<td headers="date">Mar. 31 [Closed]</td>
+<td headers="date">Mar. 31</td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
   <!-- [{{< iconify simple-icons:quarto size=25px title="Assignment 4 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-04-logarithmic-transformations.qmd) -->
 </td>

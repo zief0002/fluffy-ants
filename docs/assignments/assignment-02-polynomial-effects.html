@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-31">
+<meta name="dcterms.date" content="2025-02-11">
 <meta name="description" content="The goal of this assignment is to give you experience fitting, interpreting, and evaluating models with polynomial effects. This assignment is worth 15 points.   Copyright EPSY 8252, 2024">
 
 <title>Assignment 02 – EPsy 8252</title>
@@ -149,6 +149,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#model-3-control-for-differences-in-gross-national-income-gni" id="toc-model-3-control-for-differences-in-gross-national-income-gni" class="nav-link" data-scroll-target="#model-3-control-for-differences-in-gross-national-income-gni">Model 3: Control for Differences in Gross National Income (GNI)</a></li>
   <li><a href="#adopting-a-model" id="toc-adopting-a-model" class="nav-link" data-scroll-target="#adopting-a-model">Adopting a Model</a></li>
   <li><a href="#presenting-the-results" id="toc-presenting-the-results" class="nav-link" data-scroll-target="#presenting-the-results">Presenting the Results</a></li>
+  <li><a href="#rubric-for-evaluating-student-syntax" id="toc-rubric-for-evaluating-student-syntax" class="nav-link" data-scroll-target="#rubric-for-evaluating-student-syntax">Rubric for Evaluating Student Syntax</a></li>
   </ul>
 </nav>
     </div>
@@ -174,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 31, 2025</p>
+      <p class="date">February 11, 2025</p>
     </div>
   </div>
   
@@ -202,16 +203,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>Create a project directory called “assignment-02”. Within this directory, create a document (this can be a QMD, or word-processed documents) to respond to each of the questions below.</p>
+<p><strong>Quarto Submissions</strong></p>
+<p>Create a project directory called “assignment-02”. Within this directory, create a QMD document (this can be a QMD, or word-processed documents) to respond to each of the questions below. All code chunks should include a label <code>#| label:</code> and include comments. Submit a zipped version of your entire <code>assignment-02</code> project directory.</p>
+<p><strong>Non-Quarto Submissions</strong></p>
+<p>Submit both the word-processed documents that respond to each of the questions below, as well as a commented, organized script file.</p>
+<p>For all submissions your syntax will be evaluated based on the rubric at the end of the assignment. This will count for *2pts.** of the assignment score and will be scored as follows:</p>
 <ul>
-<li>Your project directory should be well organized (e.g., the BIB and CSL files should be in the <code>assets</code> directory).</li>
-<li>Your project directory should have a README file that is descriptive of the project.</li>
-<li>If you use a QMD document, all code chunks should include a label <code>#| label:</code> and include comments. If you create a word-processed document, include a commented, organized script file in the <code>scripts</code> directory of your syntax for the assignment.</li>
-</ul>
-<p>You need to submit a zipped version of your entire <code>assignment-02</code> project directory.</p>
-<ul>
-<li>You will receive <strong>1 point</strong> for a well-organized project directory, including a README file.</li>
-<li>You will receive <strong>1 point</strong> for a QMD or R script file that includes clean, organized, and commented syntax.</li>
+<li>2pts: Most/All of the evaluation is “Always” AND you have no categories marked as “Rarely” or “Never”</li>
+<li>1.5pts: Most/All of the evaluation is “Most of the time” AND you have no categories marked as “Rarely” or “Never”</li>
+<li>1pt: Most/All of the evaluation is “Sometimes” OR you have one category marked as “Rarely” marks AND no “Never” marks</li>
+<li>0.5pts: Most/All of the evaluation is “Sometimes” or you have more than one categories marked as “Rarely” and no categories marked as “Never”</li>
+<li>0pts: You have one or more categories marked as “Never”</li>
 </ul>
 <p><br></p>
 </section>
@@ -255,6 +257,24 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Mimic the format and structure of either of the first two tables in the <em>Presenting Results from Many Fitted Regression Models</em> section of the document <a href="https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html">Creating Tables to Present Statistical Results</a> to create a table to present the numerical information from the three models you fitted in this assignment. Make sure the table you create also has an appropriate caption. If the table is too wide, change the page orientation in your word processing program to “Landscape”, rather than changing the size of the font. (Note: Only this table should be presented in landscape orientation…not your entire assignment!)</p></li>
 <li><p>Create a publication quality plot that displays the fitted curves from Model 3. Display four separate lines to show the effect of Gross National Income. The four lines should be displayed using different linetypes or colors (or both) so that they can be easily differentiated in the plot.</p></li>
 </ol>
+<p><br></p>
+</section>
+<section id="rubric-for-evaluating-student-syntax" class="level1">
+<h1>Rubric for Evaluating Student Syntax</h1>
+<p><strong>Documentation:</strong> Is the syntax well annotated to aid communication to other educational scientists and researchers? Each of these are scored “Always”, “Most of the time”, “Sometimes”, “Rarely”, “Never”</p>
+<ul>
+<li>Labels (in QMD) should be descriptive of the syntax in the chunk or more holistic comments should be included (in .R files) to explain chunks of syntax</li>
+<li>Comments are liberally included to explain smaller pieces of syntax (especially where non-common code is used).</li>
+<li>Object names accurately describe the intent of the object (e.g., <code>pew_data</code> rather than <code>d</code>)</li>
+<li>Plots should include a comment that provides the caption (or usage of <code>fig-cap:</code> in QMD)</li>
+</ul>
+<p><strong>Structure and Presentation:</strong> Is the syntax organized and structured to be “readable” and easy to follow for other educational scientists and researchers? Each of these are scored “Always”, “Most of the time”, “Sometimes”, “Rarely”, “Never”</p>
+<ul>
+<li>Consistent use of case (e.g., lower-case, camel-case) for all objects</li>
+<li>Consistent use of operators throughout the code (e.g., always using <code>&lt;-</code> or <code>=</code> for assignment)</li>
+<li>Spacing is included for readability (e.g., <code>lm.1 = lm(...)</code> rather than <code>lm.1=lm(...)</code>)</li>
+<li>Indentation and line breaks are included in long code (e.g., when using <code>|&gt;</code> or when a function has many arguments), especially in <code>{dplyr}</code> and <code>{ggplot}</code> syntax</li>
+</ul>
 
 
 </section>

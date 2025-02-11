@@ -25,16 +25,23 @@ knitr::include_graphics("figs/assign-02.png")
 
 ## Instructions
 
-Create a project directory called "assignment-02". Within this directory, create a document (this can be a QMD, or word-processed documents) to respond to each of the questions below. 
+**Quarto Submissions**
 
-- Your project directory should be well organized (e.g., the BIB and CSL files should be in the `assets` directory).
-- Your project directory should have a README file that is descriptive of the project.
-- If you use a QMD document, all code chunks should include a label `#| label:` and include comments. If you create a word-processed document, include a commented, organized script file in the `scripts` directory of your syntax for the assignment.
+Create a project directory called "assignment-02". Within this directory, create a QMD document (this can be a QMD, or word-processed documents) to respond to each of the questions below. All code chunks should include a label `#| label:` and include comments. Submit a zipped version of your entire `assignment-02` project directory.
 
-You need to submit a zipped version of your entire `assignment-02` project directory.
 
-- You will receive **1 point** for a well-organized project directory, including a README file.
-- You will receive **1 point** for a QMD or R script file that includes clean, organized, and commented syntax.
+**Non-Quarto Submissions**
+
+Submit both the word-processed documents that respond to each of the questions below, as well as a commented, organized script file.
+
+
+For all submissions your syntax will be evaluated based on the rubric at the end of the assignment. This will count for *2pts.** of the assignment score and will be scored as follows:
+
+- 2pts: Most/All of the evaluation  is "Always" AND you have no categories marked as "Rarely" or "Never"
+- 1.5pts: Most/All of the evaluation is "Most of the time" AND you have no categories marked as "Rarely" or "Never"
+- 1pt: Most/All of the evaluation is "Sometimes" OR you have one category marked as "Rarely" marks AND no "Never" marks
+- 0.5pts: Most/All of the evaluation is "Sometimes" or you have more than one categories marked as "Rarely" and no categories marked as "Never"
+- 0pts: You have one or more categories marked as "Never"
 
 <br />
 
@@ -87,5 +94,26 @@ You need to submit a zipped version of your entire `assignment-02` project direc
 12.  Mimic the format and structure of either of the first two tables in the *Presenting Results from Many Fitted Regression Models* section of the document [Creating Tables to Present Statistical Results](https://zief0002.github.io/musings/creating-tables-to-present-statistical-results.html) to create a table to present the numerical information from the three models you fitted in this assignment. Make sure the table you create also has an appropriate caption. If the table is too wide, change the page orientation in your word processing program to "Landscape", rather than changing the size of the font. (Note: Only this table should be presented in landscape orientation...not your entire assignment!)
 
 13. Create a publication quality plot that displays the fitted curves from Model 3. Display four separate lines to show the effect of Gross National Income. The four lines should be displayed using different linetypes or colors (or both) so that they can be easily differentiated in the plot.
+
+<br />
+
+
+# Rubric for Evaluating Student Syntax
+
+**Documentation:** Is the syntax well annotated to aid communication to other educational scientists and researchers? Each of these are scored "Always", "Most of the time", "Sometimes", "Rarely", "Never" 
+
+- Labels (in QMD) should be descriptive of the syntax in the chunk or more holistic comments should be included (in .R files) to explain chunks of syntax
+- Comments are liberally included to explain smaller pieces of syntax (especially where non-common code is used).
+- Object names accurately describe the intent of the object (e.g., `pew_data` rather than `d`)
+- Plots should include a comment that provides the caption (or usage of `fig-cap:` in QMD)
+
+
+**Structure and Presentation:** Is the syntax organized and structured to be "readable" and easy to follow for other educational scientists and researchers? Each of these are scored "Always", "Most of the time", "Sometimes", "Rarely", "Never"
+
+- Consistent use of case (e.g., lower-case, camel-case) for all objects
+- Consistent use of operators throughout the code (e.g., always using `<-` or `=` for assignment)
+- Spacing is included for readability (e.g., `lm.1 = lm(...)` rather than `lm.1=lm(...)`)
+- Indentation and line breaks are included in long code (e.g., when using `|>` or when a function has many arguments), especially in `{dplyr}` and `{ggplot}` syntax
+
 
 
