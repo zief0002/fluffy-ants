@@ -48,6 +48,9 @@ The course textbooks are available via the University of Minnesota library.
 - **Required:** Fox, J. (2021). [A mathematical primer for social statistics](https://primo.lib.umn.edu/permalink/01UMN_INST/ijl1rs/alma9979543421101701). Sage. 
 - **Optional:** Anderson, D. R. (2008). [Model based inference in the life sciences: A primer on evidence](https://primo.lib.umn.edu/permalink/f/1q7ssba/UMN_ALMA51566641220001701). Springer.
 
+The notes are in loose book form here:
+
+- <https://zief0002.github.io/adv-modeling/>
 
 Additionally, the textbook from EPsy 8251 may be a useful reference for refreshing your memories about the prerequisite computing and statistical content:
 
