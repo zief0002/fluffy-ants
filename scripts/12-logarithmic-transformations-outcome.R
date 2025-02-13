@@ -14,7 +14,7 @@ library(tidyverse)
 ### Import data
 ##################################################
 
-carbon = read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/carbon.csv")
+carbon = read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/carbon.csv")
 carbon
 
 
@@ -424,6 +424,7 @@ coef(lm.4)   # Coefficient-level output
 
 
 # Load library to include color in caption
+# You will need to install it
 library(ggtext)
 
 # Plot

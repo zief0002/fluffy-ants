@@ -261,15 +261,13 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Mar. 05</td>
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
-<td style="vertical-align:middle;" headers="topic">Log-Transforming the Outcome</td>
+<td style="vertical-align:middle;" headers="topic">Log-Transforming the Predictor</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/07-logarithmic-transformations-outcome.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/03-03-logarithmic-transformations-predictor.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/07-logarithmic-transformations-outcome.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/11-logarithmic-transformations-predictor.R)
 </td>
 </tr>
 
@@ -287,15 +285,13 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Mar. 17</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
-<td style="vertical-align:middle;" rowspan="2" headers="topic">Log-Transforming the Outcome</td>
+<td style="vertical-align:middle;" rowspan="2" headers="topic">Log-Transforming the Predictor</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/07-logarithmic-transformations-outcome.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/03-03-logarithmic-transformations-predictor.html)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/07-logarithmic-transformations-outcome.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/07-logarithmic-transformations-outcome.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/11-logarithmic-transformations-predictor.R)
 </td>
 </tr>
 
@@ -309,15 +305,13 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Mar. 24</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
-<td style="vertical-align:middle;" rowspan="2" headers="topic">Log-Transforming the Predictor</td>
+<td style="vertical-align:middle;" rowspan="2" headers="topic">Log-Transforming the Outcome</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/03-04-logarithmic-transformations-outcome.html)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/12-logarithmic-transformations-outcome.R)
 </td>
 </tr>
 
@@ -333,13 +327,11 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Rule of the Bulge</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/09-rule-of-the-bulge.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/03-05-rule-of-the-bulge.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/09-rule-of-the-bulge.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/09-rule-of-the-bulge.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/13-rule-of-the-bulge.R)
 </td>
 </tr>
 
@@ -423,13 +415,11 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">Introduction to Linear Mixed-Effects Regression Models</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/05-01-introduction-to-mixed-effects-models.html)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/17-introduction-to-mixed-effects-models.R)
 </td>
 </tr>
 
@@ -445,13 +435,11 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">LMER: Average Change Over Time</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/05-02-lmer-average-change-over-time.html)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/18-lmer-average-change-over-time.R)
 </td>
 </tr>
 
@@ -467,13 +455,11 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">LMER: Other Random-Effects and Covariates</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/05-03-lmer-other-random-effects-and-covariates.html)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/19-lmer-other-random-effects-and-covariates.R)
 </td>
 </tr>
 
@@ -488,14 +474,10 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">LMER: Alternative Representations &amp; Assumptions</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/05-04-lmer-alt-representations-and-assumptions.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
-</td>
-<td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/10-optional-linear-probability-model.R) -->
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
+<td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
 
 
