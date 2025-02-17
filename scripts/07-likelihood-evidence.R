@@ -15,13 +15,8 @@ library(tidyr)
 ##################################################
 
 # Import data
-usnwr = read_csv(file = "https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/usnwr-2024.csv")
+pew = read_csv(file = "https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/pew.csv")
 
-# View data
-usnwr
-
-usnwr_complete = usnwr |>
-  drop_na()
 
 
 
@@ -30,7 +25,7 @@ usnwr_complete = usnwr |>
 ##################################################
 
 # Fit Model 1
-lm.1 = lm(peer_rating ~ 1 + enroll + ft_students + ft_fac + nonres_tuition, data = usnwr_complete)
+lm.1 = lm(knowledge ~ 1 + news, data = pew)
 
 # Coefficient-level output
 tidy(lm.1)
@@ -70,20 +65,29 @@ prod(dnorm(x = c(30, 20, 24, 27), mean = 25, sd = 4))
 ### Back to regression example
 ##################################################
 
-# Compute likelihood for Model 1
-prod(dnorm(x = resid(lm.1), mean = 0, sd = 0.432))
+# Get RSE for use in likelihood
+glance(lm.1)
+
+# Compute likelihood for lm.1
+prod(dnorm(x = resid(lm.1), mean = 0, sd = 20.3))
+
+
+
+##################################################
+### Baseline model (intercept-only)
+##################################################
 
 # Fit Model 0
-lm.0 = lm(peer_rating ~ 1, data = usnwr_complete)
+lm.0 = lm(knowledge ~ 1, data = pew)
 
 # Get RSE for use in likelihood
 glance(lm.0)
 
-# Compute likelihood for lm.2
-prod(dnorm(x = resid(lm.0), mean = 0, sd = 0.491))
+# Compute likelihood for lm.0
+prod(dnorm(x = resid(lm.0), mean = 0, sd = 21.5))
 
 # Compute likelihood ratio
-1.680643e-20 / 5.452323e-26
+1.382925e-192 / 2.489266e-195
 
 
 
@@ -92,19 +96,32 @@ prod(dnorm(x = resid(lm.0), mean = 0, sd = 0.491))
 ##################################################
 
 # Log-likelihood for Model 0
-log(5.452323e-26)
+log(2.489266e-195)
 
 # Log-likelihood for Model 1
-log(1.680643e-20)
+log(1.382925e-192)
 
-# Difference in log-likelihoods
-log(1.680643e-20) - log(5.452323e-26)
 
-# Equivalent to ln(LR)
-log(1.680643e-20 / 5.452323e-26)
+# Compute log-likelihood for Model 0
+logLik(lm.0)
 
-# Exponentiate the difference in log-likelihoods to get LR
-exp(12.63865)
+# Compute likelihood for Model 0
+exp(logLik(lm.0)[1])
+
+# Compute log-likelihood for Model 1
+logLik(lm.1)
+
+exp(logLik(lm.1)[1])
+
+# 
+# # Difference in log-likelihoods
+# log(1.680643e-20) - log(5.452323e-26)
+# 
+# # Equivalent to ln(LR)
+# log(1.680643e-20 / 5.452323e-26)
+# 
+# # Exponentiate the difference in log-likelihoods to get LR
+# exp(12.63865)
 
 
 
@@ -140,13 +157,13 @@ exp( logLik(lm.1)[1] - logLik(lm.0)[1] )
 -2 * logLik(lm.1)[1]
 
 # Compute difference in deviances
-116.3347 - 90.89834
+896.2 - 883.5
 
-# Compute p-value for X^2 = 25.44
-1 - pchisq(q = 25.44, df = 4)
+# Compute p-value for X^2(1) = 12.66
+1 - pchisq(q = 12.66, df = 1)
 
 # Alternative method
-pchisq(q = 25.44, df = 4, lower.tail = FALSE)
+pchisq(q = 12.66, df = 1, lower.tail = FALSE)
 
 
 
@@ -163,65 +180,100 @@ lrtest(lm.0, lm.1, lm.2)
 
 
 ##################################################
-### Evaluating predictors in Block 2
+### Evaluating partial effect of news (after controlling fo education, male, and engagement)
 ##################################################
 
-# Fit Model 2
-lm.2 = lm(peer_rating ~ 1 + enroll + ft_students + ft_fac + nonres_tuition + 
-            sf_ratio + pct_doc + ug_gpa + gre + doc_acc, data = usnwr_complete)
+# Simple model
+lm.2 = lm(knowledge ~ 1 + education + male + engagement, data = pew)
 
-# Coefficient-level output
-glance(lm.2)
-
+# Complex model
+lm.3 = lm(knowledge ~ 1 + education + male + engagement + news, data = pew)
 
 # Compute the difference in deviances between Model 1 and Model 2
--2 * logLik(lm.1)[1] - (-2 * logLik(lm.2)[1])
+-2 * logLik(lm.2)[1] - (-2 * logLik(lm.3)[1])
+
 
 # Compute the difference in model complexity
-11 - 6
+6 - 5
+
+# Compute p-value for X^2(1) = 8.924345
+pchisq(q = 8.924345, df = 1, lower.tail = FALSE)
 
 
-# Compute p-value for X^2(5) = 45.0956
-pchisq(q = 45.0956, df = 5, lower.tail = FALSE)
-
-
-# LRT to compare Model 1 and Model 2
-lrtest(lm.1, lm.2)
-
-
-
-##################################################
-### Evaluating predictors in Block 3
-##################################################
-
-# Fit Model 3
-lm.3 = lm(peer_rating ~ 1 + enroll + ft_students + ft_fac + nonres_tuition + 
-            sf_ratio + pct_doc + ug_gpa + gre + doc_acc + 
-            tot_pubs + tot_res, data = usnwr_complete)
-
-# Coefficient-level output
-glance(lm.3)
-
-# LRT to compare Model 1 and Model 2
+# LRT to compare Model 2 and Model 3
 lrtest(lm.2, lm.3)
 
 
 
 ##################################################
-### Evaluate assumptions for Model 3
+### Evaluating interaction effect
+##################################################
+
+# Fit interaction model
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+
+# LRT to compare Model 3 and Model 4
+lrtest(lm.3, lm.4)
+
+
+##################################################
+### Evaluate assumptions for Model 4
 ##################################################
 
 # Create residual plots
-residual_plots(lm.3)
+residual_plots(lm.4)
 
-# Identify outlying institution
-augment(lm.3) |>
+
+
+##################################################
+### Evaluate individual predictors (effect of education)
+##################################################
+
+# Fit full model 4
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+
+# Fit model without education
+lm.4_education = lm(knowledge ~ 1 + male + engagement + news + news:education, data = pew)
+
+# Carry out LRT
+lrtest(lm.4_education, lm.4)
+
+
+# Effect of male
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_male = lm(knowledge ~ 1 + education + engagement + news + news:education, data = pew)
+lrtest(lm.4_male, lm.4) # Carry out LRT
+
+
+# Effect of engagement
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_engage = lm(knowledge ~ 1 + education + male + news + news:education, data = pew)
+lrtest(lm.4_engage, lm.4) # Carry out LRT
+
+
+# Effect of new exposure (main-effect)
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_news = lm(knowledge ~ 1 + education + male + engagement + news:education, data = pew)
+lrtest(lm.4_news, lm.4) # Carry out LRT
+
+
+# Effect of interaction
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_interaction = lm(knowledge ~ 1 + education + male + engagement + news, data = pew)
+lrtest(lm.4_interaction, lm.4) # Carry out LRT
+
+
+# Intercept
+lm.4 = lm(knowledge ~ 1 + education + male + engagement + news + news:education, data = pew)
+lm.4_intercept = lm(knowledge~ 0 + education + male + engagement + news + news:education, data = pew)
+lrtest(lm.4_intercept, lm.4) # Carry out LRT
+
+
+tidy(lm.4) |>
   mutate(
-    school = usnwr_complete$school
-  ) |>
-  filter(.std.resid > 3) |>
-  print(width = Inf)
-
+    statistic = c(11.38, 14.62, 12.80, 17.94, 7.45, 5.15),
+    p.value = c(0.0007417, 0.0001314, 0.0003466, 0.0000228, 0.006351, 0.02324)
+  ) 
 
 
 ##################################################
