@@ -10,7 +10,7 @@ date: "today"
 
 In this assignment, you will use the data from the file *fertility.csv* to explain variation in in infant mortality rates. 
 
-- [[CSV]](https://raw.githubusercontent.com/zief0002/fluffy-ants/main//fertility.csv)
+- [[CSV]](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/fertility.csv)
 - [[Data Codebook]](http://zief0002.github.io/fluffy-ants/codebooks/fertility.html)
 
 

@@ -44,6 +44,21 @@ dnorm(x = 60, mean = 50, sd = 10) *
 # Compute joint density: Shortcut
 prod(dnorm(x = c(60, 65, 67), mean = 50, sd = 10))
 
+# N(60, 10)
+prod(dnorm(x = c(60, 65, 67), mean = 60, sd = 10))
+
+#N(5, 2)
+L1 = prod(dnorm(x = c(3, 8, 17), mean = 5, sd = 2))
+
+#N(6, 6)
+L2 = prod(dnorm(x = c(3, 8, 17), mean = 6, sd = 3))
+
+L1
+L2
+
+prod(dnorm(x = c(3, 8, 17), mean = 10, sd = 4))
+
+
 
 
 ##################################################
@@ -78,13 +93,25 @@ prod(dnorm(x = resid(lm.1), mean = 0, sd = 20.3))
 ##################################################
 
 # Fit Model 0
-lm.0 = lm(knowledge ~ 1, data = pew)
+lm.0 = lm(knowledge ~ 1,                                     data = pew)
+lm.1 = lm(knowledge ~ 1 +        education,                  data = pew)
+lm.2 = lm(knowledge ~ 1 + male + education,                  data = pew)
+lm.3 = lm(knowledge ~ 1 + male,                              data = pew)
+lm.4 = lm(knowledge ~ 1 + male + education + male:education, data = pew)
+
+
+# lm.0 vs lm.1 --- evaluates the uncontrolled effect of education
+# lm.1 vs lm.2 --- evalues the partial effect of sex (male)
+# lm.2 vs lm.3 --- evalues the partial effect of education
+
 
 # Get RSE for use in likelihood
 glance(lm.0)
+glance(lm.1)
 
 # Compute likelihood for lm.0
 prod(dnorm(x = resid(lm.0), mean = 0, sd = 21.5))
+prod(dnorm(x = resid(lm.1), mean = 0, sd = 20.3))
 
 # Compute likelihood ratio
 1.382925e-192 / 2.489266e-195
