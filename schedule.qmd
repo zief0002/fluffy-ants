@@ -351,14 +351,10 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Linear Probability Model</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/04-01-linear-probability-model.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
-</td>
-<td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/10-optional-linear-probability-model.R) -->
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
+<td align="center" style="vertical-align:middle;" headers="script"></td>
 </tr>
 
 
@@ -368,13 +364,11 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" headers="todo"></td>
 <td style="vertical-align:middle;" headers="topic">Logistic Regression Model</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/10-optional-linear-probability-model.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](notes/https://zief0002.github.io/adv-modeling/04-02-logistic-regression.html)
 </td>
-<td align="center" style="vertical-align:middle;" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/10-optional-linear-probability-model.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/10-optional-linear-probability-model.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/15-logistic-regression.R)
 </td>
 </tr>
 
@@ -385,13 +379,11 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">More Logistic Regression</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
-  <!-- [{{< iconify tabler:file-type-html size=30px >}}](notes/08-logarithmic-transformations-predictor.html) -->
+  [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/04-03-more-logistic-regression.html)
 </td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet">
-   <!-- [{{< iconify simple-icons:quarto size=25px >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/notes/08-logarithmic-transformations-predictor.qmd) -->
-</td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="worksheet"></td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="script">
-  <!-- [{{< iconify file-icons:r size=30px >}}](scripts/08-logarithmic-transformations-predictor.R) -->
+  [{{< iconify file-icons:r size=30px >}}](scripts/16-more-logistic-regression.R)
 </td>
 </tr>
 
