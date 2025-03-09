@@ -2671,7 +2671,7 @@
     "href": "assignments/assignment-03-evidence-and-model-selection.html",
     "title": "Assignment 03",
     "section": "",
-    "text": "The goal of this assignment is to build your understanding of using information criteria for model selection. In this assignment, you will use the data from the file wine.csv to examine several different predictors of wine rating (a measure of the wine’s quality). The literature has suggested that price of wine is quite predictive of a wine’s quality."
+    "text": "In this assignment, you will use the data from the file wine.csv to examine several different predictors of wine rating (a measure of the wine’s quality). The literature has suggested that price of wine is quite predictive of a wine’s quality."
   },
   {
     "objectID": "assignments/assignment-03-evidence-and-model-selection.html#instructions",
@@ -2763,5 +2763,110 @@
     "title": "Mathematical Foundations: Probability Density",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nRemember, the mean and standard deviations in the population are called “parameters”.↩︎\nWhether this is actually t-distributed depends on whether the model assumptions are met.↩︎"
+  },
+  {
+    "objectID": "assignments/assignment-04-logarithmic-transformations.html",
+    "href": "assignments/assignment-04-logarithmic-transformations.html",
+    "title": "Assignment 04",
+    "section": "",
+    "text": "In this assignment, you will use the data from the file wine.csv to examine several different predictors of wine rating (a measure of the wine’s quality). The literature has suggested that price of wine is quite predictive of a wine’s quality."
+  },
+  {
+    "objectID": "assignments/assignment-04-logarithmic-transformations.html#instructions",
+    "href": "assignments/assignment-04-logarithmic-transformations.html#instructions",
+    "title": "Assignment 04",
+    "section": "Instructions",
+    "text": "Instructions\nQuarto Submissions\nCreate a project directory called “assignment-02”. Within this directory, create a QMD document (this can be a QMD, or word-processed documents) to respond to each of the questions below. All code chunks should include a label #| label: and include comments. Submit a zipped version of your entire assignment-02 project directory.\nNon-Quarto Submissions\nSubmit both the word-processed documents that respond to each of the questions below, as well as a commented, organized script file.\nFor all submissions your syntax will be evaluated based on the rubric at the end of the assignment. This will count for *2pts.** of the assignment score and will be scored as follows:\n\n2pts: Most/All of the evaluation is “Always” AND you have no categories marked as “Rarely” or “Never”\n1.5pts: Most/All of the evaluation is “Most of the time” AND you have no categories marked as “Rarely” or “Never”\n1pt: Most/All of the evaluation is “Sometimes” OR you have one category marked as “Rarely” marks AND no “Never” marks\n0.5pts: Most/All of the evaluation is “Sometimes” or you have more than one categories marked as “Rarely” and no categories marked as “Never”\n0pts: You have one or more categories marked as “Never”"
+  },
+  {
+    "objectID": "assignments/assignment-04-logarithmic-transformations.html#model-1-effect-of-wine-rating-on-price",
+    "href": "assignments/assignment-04-logarithmic-transformations.html#model-1-effect-of-wine-rating-on-price",
+    "title": "Assignment 04",
+    "section": "Model 1: Effect of Wine Rating on Price",
+    "text": "Model 1: Effect of Wine Rating on Price\n\nCreate and examine the scatterplot of the relationship between wine rating (predictor) and price. Include the loess smoother in this plot. Does this plot suggest any nonlinearity in the relationship between wine rating and price that we need to address?\nRegress the log-transformed price variable (using the natural logarithm) on wine rating (Model 1). Report and interpret the slope coefficient (using the log-metric) from the fitted model.\nReport and interpret the back-transformed slope coefficient from Model 1."
+  },
+  {
+    "objectID": "assignments/assignment-04-logarithmic-transformations.html#effect-of-wine-rating-and-region-on-log-transformed-price",
+    "href": "assignments/assignment-04-logarithmic-transformations.html#effect-of-wine-rating-and-region-on-log-transformed-price",
+    "title": "Assignment 04",
+    "section": "Effect of Wine Rating and Region on Log-Transformed Price",
+    "text": "Effect of Wine Rating and Region on Log-Transformed Price\nFit two additional models:\n\nA model that includes the effects of whether or not the wine is from California (i.e., california) to predict variation in the log-transformed price (Model 2).\nA model that includes the effects of wine rating and whether or not the wine is from California (i.e., california) to predict variation in the log-transformed price (Model 3).\n\n\nInterpret the effect associated with california predictor (using the log-metric) from Model 3.\nReport and interpret the back-transformed coefficient associated with california predictor from Model 3.\n\nFit a model that includes both the wine rating and california main effects, as well as, the interaction effect between those predictors to predict variation in the log-transformed price (Model 4).\n\nCreate a table to present the numerical information from the four models you fitted in this assignment along with the AICc values. (Mimic the Presenting Results from Many Fitted Regression Models section of the document Creating Tables to Present Statistical Results to create this table. Include the AICc value below the RMSE value in the table.) Make sure the table you create also has an appropriate caption. If the table is too wide, change the page orientation in your word processing program to “Landscape”, rather than changing the size of the font. (Note: Only this table should be presented in landscape orientation…not your entire assignment!) (2pts.)"
+  },
+  {
+    "objectID": "assignments/assignment-04-logarithmic-transformations.html#adopting-a-final-candidate-models",
+    "href": "assignments/assignment-04-logarithmic-transformations.html#adopting-a-final-candidate-models",
+    "title": "Assignment 04",
+    "section": "Adopting a “Final” Candidate Model(s)",
+    "text": "Adopting a “Final” Candidate Model(s)\n\nWrite the fitted equation for any adopted candidate models.\nCreate and report a set of residual plots that allow you to evaluate any adopted model’s assumptions. Are the assumptions for the model satisfied? Explain. (2pts.)"
+  },
+  {
+    "objectID": "assignments/assignment-04-logarithmic-transformations.html#presenting-the-results",
+    "href": "assignments/assignment-04-logarithmic-transformations.html#presenting-the-results",
+    "title": "Assignment 04",
+    "section": "Presenting the Results",
+    "text": "Presenting the Results\n\nCreate a publication quality plot that displays the fitted curve(s) from your adopted candidate model. If you show more than one curve, each line should be easily differentiated in the plot. (Note: Make sure that you back-transform any log-transformed variables when you create this plot.) (2pts.)\nUse the plot to help describe/interpret the effect of wine rating on price."
+  },
+  {
+    "objectID": "assignments/assignment-05-logistic-regression.html",
+    "href": "assignments/assignment-05-logistic-regression.html",
+    "title": "Assignment 05",
+    "section": "",
+    "text": "According to the data, a majority of Americans now support same sex marriage (Pew Research, 2022). There are several known factors that play a role in whether people support same sex marriage, including education level, age, religious beliefs, and political ideology. One hypothesis is that if people have a frienda who identifies as gay/lesbian, they are more likely to support same sex marriage.\nIn this assignment, you will use the data from the file same-sex-marriage.csv to examine this hypothesis. All model selection should be performed using information criteria. We will also take an exploratory approach to the data which means that as we are initially evaluating predictors and their functional forms, we will adopt functional forms based on the smallest information criteria and only consider model uncertainty (e.g., models with a \\(\\Delta\\)AICc &lt; 4) at the end of the analysis."
+  },
+  {
+    "objectID": "assignments/assignment-05-logistic-regression.html#instructions",
+    "href": "assignments/assignment-05-logistic-regression.html#instructions",
+    "title": "Assignment 05",
+    "section": "Instructions",
+    "text": "Instructions\nQuarto Submissions\nCreate a project directory called “assignment-02”. Within this directory, create a QMD document (this can be a QMD, or word-processed documents) to respond to each of the questions below. All code chunks should include a label #| label: and include comments. Submit a zipped version of your entire assignment-02 project directory.\nNon-Quarto Submissions\nSubmit both the word-processed documents that respond to each of the questions below, as well as a commented, organized script file.\nFor all submissions your syntax will be evaluated based on the rubric at the end of the assignment. This will count for *2pts.** of the assignment score and will be scored as follows:\n\n2pts: Most/All of the evaluation is “Always” AND you have no categories marked as “Rarely” or “Never”\n1.5pts: Most/All of the evaluation is “Most of the time” AND you have no categories marked as “Rarely” or “Never”\n1pt: Most/All of the evaluation is “Sometimes” OR you have one category marked as “Rarely” marks AND no “Never” marks\n0.5pts: Most/All of the evaluation is “Sometimes” or you have more than one categories marked as “Rarely” and no categories marked as “Never”\n0pts: You have one or more categories marked as “Never”"
+  },
+  {
+    "objectID": "assignments/assignment-05-logistic-regression.html#focal-predictor",
+    "href": "assignments/assignment-05-logistic-regression.html#focal-predictor",
+    "title": "Assignment 05",
+    "section": "Focal Predictor",
+    "text": "Focal Predictor\nYou will begin the analysis by examining the effect of the focal predictor, the number of gay/lesbian friends, on support of same-sex marriage. While the data for this predictor come from a Likert scale, which is ordinal in nature, it is common to treat ordinal variables as a continuous in the model. The only caution being when we interpret effects—when interpreting a slope, we generally say something like, “a one-unit difference in \\(X\\) is associated with a \\(\\hat\\beta_1\\)-unit difference in \\(Y\\)”. However, for ordinal (Likert) data a one-unit difference in \\(X\\) really indicates a shift from one category to the next highest category.\n\nBegin by computing the empirical proportion of people that support same-sex marriage for each of the levels of the friends attribute. Create a line plot that shows the relationship between proportion of support and number of gay/lesbian people known. (This plot will help us consider the appropriate functional form for the predictor.)\nFit two logistic models to the data using the number of gay/lesbian friends as the predictor to predict variation in support for same-sex marriage. In the first model, only include the linear effect of number of gay/lesbian friends. In the second model, include both a linear and quadratic effect of the number of gay/lesbian friends. Which model should be adopted (linear or quadratic)? Justify your response by providing any statistical evidence you used in reaching your decision.\nWrite the fitted equation for the model you adopted (Don’t forget to include all appropriate subscripts. Also define any terms in the model that are ambiguous.)\nUse the fitted equation for the adopted model to predict the (a) log-odds, (b) odds, and (c) probability of someone supporting same-sex marriage if that person has a lot of gay/lesbian friends."
+  },
+  {
+    "objectID": "assignments/assignment-06-lmer-analysis.html",
+    "href": "assignments/assignment-06-lmer-analysis.html",
+    "title": "Assignment 06",
+    "section": "",
+    "text": "In this assignment, you will use the data from the file nhl.csv to examine longitudinal variation in cost of attending an NHL game."
+  },
+  {
+    "objectID": "assignments/assignment-06-lmer-analysis.html#instructions",
+    "href": "assignments/assignment-06-lmer-analysis.html#instructions",
+    "title": "Assignment 06",
+    "section": "Instructions",
+    "text": "Instructions\nQuarto Submissions\nCreate a project directory called “assignment-02”. Within this directory, create a QMD document (this can be a QMD, or word-processed documents) to respond to each of the questions below. All code chunks should include a label #| label: and include comments. Submit a zipped version of your entire assignment-02 project directory.\nNon-Quarto Submissions\nSubmit both the word-processed documents that respond to each of the questions below, as well as a commented, organized script file.\nFor all submissions your syntax will be evaluated based on the rubric at the end of the assignment. This will count for *2pts.** of the assignment score and will be scored as follows:\n\n2pts: Most/All of the evaluation is “Always” AND you have no categories marked as “Rarely” or “Never”\n1.5pts: Most/All of the evaluation is “Most of the time” AND you have no categories marked as “Rarely” or “Never”\n1pt: Most/All of the evaluation is “Sometimes” OR you have one category marked as “Rarely” marks AND no “Never” marks\n0.5pts: Most/All of the evaluation is “Sometimes” or you have more than one categories marked as “Rarely” and no categories marked as “Never”\n0pts: You have one or more categories marked as “Never”"
+  },
+  {
+    "objectID": "assignments/assignment-06-lmer-analysis.html#preparation",
+    "href": "assignments/assignment-06-lmer-analysis.html#preparation",
+    "title": "Assignment 06",
+    "section": "Preparation",
+    "text": "Preparation\nAfter importing the data set, create a new variable called c_year that centers the year values at 2002. This variable will represent the number of years since 2002. For all analyses in this assignment, unless otherwise requested, use the c_year variable and not the year variable."
+  },
+  {
+    "objectID": "assignments/assignment-06-lmer-analysis.html#data-exploration",
+    "href": "assignments/assignment-06-lmer-analysis.html#data-exploration",
+    "title": "Assignment 06",
+    "section": "Data Exploration",
+    "text": "Data Exploration\n\nCreate and report a plot to display the cost of attending an NHL game (FCI) over time facetted on whether or not high school hockey is a tradition in the team’s location. This plot should include the average and team profiles for each facet. Make the teams’ profiles slightly transparent so that the mean profile is easily visible.\nDo the teams’ profiles indicate that a random-effect of linear growth should be included in the candidate models? Explain.\nBased on the plot created in Question #1, indicate whether models that include an effect of high school hockey tradition should be included in the candidate set of models. If this effect should be included, does the data suggest a main-effect or an interaction-effect with time? Explain."
+  },
+  {
+    "objectID": "assignments/assignment-06-lmer-analysis.html#fitting-and-evaluating-models",
+    "href": "assignments/assignment-06-lmer-analysis.html#fitting-and-evaluating-models",
+    "title": "Assignment 06",
+    "section": "Fitting and Evaluating Models",
+    "text": "Fitting and Evaluating Models\nFit the following five models:\n\nModel A: Unconditional random intercepts model\nModel B: Unconditional growth model (with only intercept random-effect)\nModel C: Unconditional growth model (with both intercept and linear growth random-effects)\nModel D: Conditional growth model with main-effect of high school hockey (with both intercept and linear growth random-effects)\nModel E: Conditional growth model with interaction-effect between high school hockey and time (with both intercept and linear growth random-effects)\n\nUse maximum likelihood estimation to fit all the models.\n\nCreate and report a table of regression results. In this table Include the following information for each of the five candidate models (3pts):\n\nEstimated fixed-effect coefficients and standard errors;\nEstimated variance components;\nModel-level deviance and AICc measures; and\nAny notes necessary to help the reader"
+  },
+  {
+    "objectID": "assignments/assignment-06-lmer-analysis.html#most-empirically-supported-model",
+    "href": "assignments/assignment-06-lmer-analysis.html#most-empirically-supported-model",
+    "title": "Assignment 06",
+    "section": "Most Empirically Supported Model",
+    "text": "Most Empirically Supported Model\nBased on the AICc values use the model with the most empirical evidence to answer the remaining questions.\n\nWrite the multilevel equations for the statistical model (not the fitted equations) for the model with the most empirical evidence. Don’t forget to include the assumptions!\nWrite the team-specific fitted equation for the Minnesota Wild based on the model that has the most empirical evidence.\nUse the results from the fitted model with the most empirical evidence to create a plot that displays the predicted average cost of attending an NHL game as a function of time for teams that have a tradition of high school and those that do not. (2pts)\nAdd a line to the plot you created in Question #7 (don’t re-create the plot) showing the predicted cost of attending a Minnesota Wild game.\nWrite a caption for your plot (3–4 sentences) that help a reader understand the effect of time and high school hockey tradition on cost of attending an NHL game and also how the cost of attending a Wild game compares to the average team over time. (2pts)"
   }
 ]

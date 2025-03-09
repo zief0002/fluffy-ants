@@ -5,7 +5,7 @@ description: "This goal of this assignment is to give you experience working wit
 format:
   html:
    css: "assets/styles.css"
-date: "`r format(Sys.Date(), '%B %d, %Y')`"
+date: today
 ---
 
 ---
@@ -14,27 +14,43 @@ According to the data, a majority of Americans now support same sex marriage ([P
 
 In this assignment, you will use the data from the file *same-sex-marriage.csv* to examine this hypothesis. All model selection should be performed using information criteria. We will also take an exploratory approach to the data which means that as we are initially evaluating predictors and their functional forms, we will adopt functional forms based on the smallest information criteria and only consider model uncertainty (e.g., models with a $\Delta$AICc < 4) at the end of the analysis.
 
-- [[CSV]](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/same-sex-marriage.csv)
-- [[Data Codebook]](http://zief0002.github.io/benevolent-anteater/codebooks/same-sex-marriage.html)
+- [[CSV]](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/same-sex-marriage.csv)
+- [[Data Codebook]](http://zief0002.github.io/fluffy-ants/codebooks/same-sex-marriage.html)
 
 
 ```{r}
 #| echo: false
 #| out-width: "50%"
 #| fig-align: "center"
+#| fig-alt: "Decorative image"
 knitr::include_graphics("figs/assign-05.png")
 ```
 
+<br />
+
+
 ## Instructions
 
-Submit either your QMD and HTML file of your responses to the following questions. (If you are not using Quarto, submit a PDF file.)  Please adhere to the following guidelines for further formatting your assignment:
+**Quarto Submissions**
 
-- All graphics should be resized so that they do not take up more room than necessary and should have an appropriate caption.
-- Any typed mathematics (equations, matrices, vectors, etc.) should be appropriately typeset within the document using Markdown's equation typesetting.
-- All syntax should be hidden (i.e., not displayed) unless specifically asked for.
-- Any messages or warnings produced (e.g., from loading packages) should also be hidden.
+Create a project directory called "assignment-02". Within this directory, create a QMD document (this can be a QMD, or word-processed documents) to respond to each of the questions below. All code chunks should include a label `#| label:` and include comments. Submit a zipped version of your entire `assignment-02` project directory.
+
+
+**Non-Quarto Submissions**
+
+Submit both the word-processed documents that respond to each of the questions below, as well as a commented, organized script file.
+
+
+For all submissions your syntax will be evaluated based on the rubric at the end of the assignment. This will count for *2pts.** of the assignment score and will be scored as follows:
+
+- 2pts: Most/All of the evaluation  is "Always" AND you have no categories marked as "Rarely" or "Never"
+- 1.5pts: Most/All of the evaluation is "Most of the time" AND you have no categories marked as "Rarely" or "Never"
+- 1pt: Most/All of the evaluation is "Sometimes" OR you have one category marked as "Rarely" marks AND no "Never" marks
+- 0.5pts: Most/All of the evaluation is "Sometimes" or you have more than one categories marked as "Rarely" and no categories marked as "Never"
+- 0pts: You have one or more categories marked as "Never"
 
 <br />
+
 
 
 ## Focal Predictor
@@ -46,7 +62,6 @@ You will begin the analysis by examining the effect of the focal predictor, the 
 
 2. Fit two logistic models to the data using the number of gay/lesbian friends as the predictor to predict variation in support for same-sex marriage. In the first model, only include the linear effect of number of gay/lesbian friends. In the second model, include both a linear and quadratic effect of the number of gay/lesbian friends. Which model should be adopted (linear or quadratic)? Justify your response by providing any statistical evidence you used in reaching your decision. 
 
-<!-- You can see an example of a table of logistic model results in: Raikes, H., Pan, B. A., Luze, G., Tamis-LeMonda, C. S., Brooks-Gunn, J., Constantine, J., Banks Tarullo, L., Raikes, H. A., \& Rodriguez, E. T. (2006). Mother–child bookreading in low-income families: Correlates and outcomes during the first three years of life. *Child Development, 77*(4), 924--953. doi: 10.1111/j.1467-8624.2006.00911.x -->
 
 3. Write the fitted equation for the model you adopted (Don't forget to include all appropriate subscripts. Also define any terms in the model that are ambiguous.)
 
@@ -73,7 +88,7 @@ Create a set of plots for each of the other continuous covariates (education lev
 
 Fit the logistic model that includes all the covariates included in the covariate model *and* the any effects of the focal predictor (adopted earlier) to predict variation in support of same-sex marriage. 
 
-8. Evaluate whether the number of gay/lesbian friends a person has is statistically important after controlling for the set of covariates. Also indicate whether there is still a quadratic effect of the focal predictor  after controlling for the set of covariates. Include any statistical evidence you use to come to these determinations. **(2pts.)**
+8. Evaluate whether the number of gay/lesbian friends a person has is statistically important after controlling for the set of covariates. Also indicate whether there is still a quadratic effect of the focal predictor  after controlling for the set of covariates. Include any statistical evidence you use to come to these determinations.
 
 
 <br />
@@ -86,10 +101,31 @@ Fit the logistic model that includes all the covariates included in the covariat
 
 10. Based on the AICc values from the models included in your table, comment on the degree of model selection uncertainty. Should we adopt one or more than one model? Explain.
 
-11. Create a plot that visually displays the results of your final adopted fitted model. Be sure to visually show the effects the focal predictor. Also show any pertinent covariates you think are necessary to include. (Think about how the inclusion of the covariates help readers better understand the effects of the focal predictors.) **(2pts.)**
+11. Create a plot that visually displays the results of your final adopted fitted model. Be sure to visually show the effects the focal predictor. Also show any pertinent covariates you think are necessary to include. (Think about how the inclusion of the covariates help readers better understand the effects of the focal predictors.) 
 
 12. Write a few sentences that provide evidence about the hypothesis presented in the beginning of the assignment. Use the models in your table of model results to help create this narrative.
 
+<br />
+
+
+# Rubric for Evaluating Student Syntax
+
+**Documentation:** Is the syntax well annotated to aid communication to other educational scientists and researchers? Each of these are scored "Always", "Most of the time", "Sometimes", "Rarely", "Never" 
+
+- Labels (in QMD) should be descriptive of the syntax in the chunk or more holistic comments should be included (in .R files) to explain chunks of syntax
+- Comments are liberally included to explain smaller pieces of syntax (especially where non-common code is used).
+- Object names accurately describe the intent of the object (e.g., `pew_data` rather than `d`)
+- Plots should include a comment that provides the caption (or usage of `fig-cap:` in QMD)
+
+
+**Structure and Presentation:** Is the syntax organized and structured to be "readable" and easy to follow for other educational scientists and researchers? Each of these are scored "Always", "Most of the time", "Sometimes", "Rarely", "Never"
+
+- Consistent use of case (e.g., lower-case, camel-case) for all objects
+- Consistent use of operators throughout the code (e.g., always using `<-` or `=` for assignment)
+- Spacing is included for readability (e.g., `lm.1 = lm(...)` rather than `lm.1=lm(...)`)
+- Indentation and line breaks are included in long code (e.g., when using `|>` or when a function has many arguments), especially in `{dplyr}` and `{ggplot}` syntax
+
+<br />
 
 
 

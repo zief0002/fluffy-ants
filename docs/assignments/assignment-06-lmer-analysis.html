@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-30">
+<meta name="dcterms.date" content="2025-03-09">
+<meta name="description" content="The goal of this assignment is to give you experience working with mixed-effects regression models to analyze longitudinal data. This assignment is worth 15 points.   Copyright EPSY 8252, 2024">
 
 <title>Assignment 06 – EPsy 8252</title>
 <style>
@@ -36,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5d49d10100c2109f0e206fca45115040.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-54eeb88228ef81930ba912f8d31130c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -147,6 +148,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data Exploration</a></li>
   <li><a href="#fitting-and-evaluating-models" id="toc-fitting-and-evaluating-models" class="nav-link" data-scroll-target="#fitting-and-evaluating-models">Fitting and Evaluating Models</a></li>
   <li><a href="#most-empirically-supported-model" id="toc-most-empirically-supported-model" class="nav-link" data-scroll-target="#most-empirically-supported-model">Most Empirically Supported Model</a></li>
+  <li><a href="#rubric-for-evaluating-student-syntax" id="toc-rubric-for-evaluating-student-syntax" class="nav-link" data-scroll-target="#rubric-for-evaluating-student-syntax">Rubric for Evaluating Student Syntax</a></li>
   </ul>
 </nav>
     </div>
@@ -159,6 +161,11 @@ ul.task-list li input[type="checkbox"] {
 <p class="subtitle lead">MIXED-EFFECT REGRESSION MODELS</p>
 </div>
 
+<div>
+  <div class="description">
+    The goal of this assignment is to give you experience working with mixed-effects regression models to analyze longitudinal data. This assignment is worth 15 points. <br><br> <em>Copyright EPSY 8252, 2024</em>
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -167,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 30, 2024</p>
+      <p class="date">March 9, 2025</p>
     </div>
   </div>
   
@@ -179,30 +186,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This goal of this assignment is to give you experience working with mixed-effects regression models to analyze longitudinal data. In this assignment, you will use the data from the file <em>nhl.csv</em> to examine longitudinal variation in cost of attending an NHL game.</p>
+<p>In this assignment, you will use the data from the file <em>nhl.csv</em> to examine longitudinal variation in cost of attending an NHL game.</p>
 <ul>
-<li><a href="https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/nhl.csv">[CSV]</a></li>
-<li><a href="http://zief0002.github.io/benevolent-anteater/codebooks/nhl.html">[Data Codebook]</a></li>
+<li><a href="https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/nhl.csv">[CSV]</a></li>
+<li><a href="http://zief0002.github.io/fluffy-ants/codebooks/nhl.html">[Data Codebook]</a></li>
 </ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figs/assign-06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="figs/assign-06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Decorative image"></p>
 </figure>
 </div>
 </div>
 </div>
+<p><br></p>
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>Submit either your QMD and HTML file or, if you are not using Quarto, a PDF file of your responses to the following questions. Please adhere to the following guidelines for further formatting your assignment:</p>
+<p><strong>Quarto Submissions</strong></p>
+<p>Create a project directory called “assignment-02”. Within this directory, create a QMD document (this can be a QMD, or word-processed documents) to respond to each of the questions below. All code chunks should include a label <code>#| label:</code> and include comments. Submit a zipped version of your entire <code>assignment-02</code> project directory.</p>
+<p><strong>Non-Quarto Submissions</strong></p>
+<p>Submit both the word-processed documents that respond to each of the questions below, as well as a commented, organized script file.</p>
+<p>For all submissions your syntax will be evaluated based on the rubric at the end of the assignment. This will count for *2pts.** of the assignment score and will be scored as follows:</p>
 <ul>
-<li>All graphics should be resized so that they do not take up more room than necessary and should have an appropriate caption.</li>
-<li>Any typed mathematics (equations, matrices, vectors, etc.) should be appropriately typeset within the document using Markdown’s equation typesetting.</li>
-<li>All syntax should be hidden (i.e., not displayed) unless specifically asked for.</li>
-<li>Any messages or warnings produced (e.g., from loading packages) should also be hidden.</li>
+<li>2pts: Most/All of the evaluation is “Always” AND you have no categories marked as “Rarely” or “Never”</li>
+<li>1.5pts: Most/All of the evaluation is “Most of the time” AND you have no categories marked as “Rarely” or “Never”</li>
+<li>1pt: Most/All of the evaluation is “Sometimes” OR you have one category marked as “Rarely” marks AND no “Never” marks</li>
+<li>0.5pts: Most/All of the evaluation is “Sometimes” or you have more than one categories marked as “Rarely” and no categories marked as “Never”</li>
+<li>0pts: You have one or more categories marked as “Never”</li>
 </ul>
-<p>This assignment is worth 15 points.</p>
 <p><br></p>
 </section>
 <section id="preparation" class="level2">
@@ -215,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li><p>Create and report a plot to display the cost of attending an NHL game (FCI) over time facetted on whether or not high school hockey is a tradition in the team’s location. This plot should include the average and team profiles for each facet. Make the teams’ profiles slightly transparent so that the mean profile is easily visible.</p></li>
 <li><p>Do the teams’ profiles indicate that a random-effect of linear growth should be included in the candidate models? Explain.</p></li>
-<li><p>Based on the plot created in Question #1, indicate whether models that include an effect of high school hockey tradition should be included in the candidate set of models. If this effect should be included, does the data suggest a main-effect or an interaction-effect with time? Explain. <strong>(2pts)</strong></p></li>
+<li><p>Based on the plot created in Question #1, indicate whether models that include an effect of high school hockey tradition should be included in the candidate set of models. If this effect should be included, does the data suggest a main-effect or an interaction-effect with time? Explain.</p></li>
 </ol>
 <p><br></p>
 </section>
@@ -231,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Use maximum likelihood estimation to fit all the models.</p>
 <ol start="4" type="1">
-<li>Create and report a table of regression results. In this table Include the following information for each of the five candidate models <strong>(5pts)</strong>:
+<li>Create and report a table of regression results. In this table Include the following information for each of the five candidate models <strong>(3pts)</strong>:
 <ul>
 <li>Estimated fixed-effect coefficients and standard errors;</li>
 <li>Estimated variance components;</li>
@@ -247,10 +259,29 @@ ul.task-list li input[type="checkbox"] {
 <ol start="5" type="1">
 <li><p>Write the multilevel equations for the statistical model (not the fitted equations) for the model with the most empirical evidence. Don’t forget to include the assumptions!</p></li>
 <li><p>Write the team-specific fitted equation for the Minnesota Wild based on the model that has the most empirical evidence.</p></li>
-<li><p>Use the results from the fitted model with the most empirical evidence to create a plot that displays the predicted average cost of attending an NHL game as a function of time for teams that have a tradition of high school and those that do not.</p></li>
+<li><p>Use the results from the fitted model with the most empirical evidence to create a plot that displays the predicted average cost of attending an NHL game as a function of time for teams that have a tradition of high school and those that do not. <strong>(2pts)</strong></p></li>
 <li><p>Add a line to the plot you created in Question #7 (don’t re-create the plot) showing the predicted cost of attending a Minnesota Wild game.</p></li>
 <li><p>Write a caption for your plot (3–4 sentences) that help a reader understand the effect of time and high school hockey tradition on cost of attending an NHL game and also how the cost of attending a Wild game compares to the average team over time. <strong>(2pts)</strong></p></li>
 </ol>
+<p><br></p>
+</section>
+<section id="rubric-for-evaluating-student-syntax" class="level1">
+<h1>Rubric for Evaluating Student Syntax</h1>
+<p><strong>Documentation:</strong> Is the syntax well annotated to aid communication to other educational scientists and researchers? Each of these are scored “Always”, “Most of the time”, “Sometimes”, “Rarely”, “Never”</p>
+<ul>
+<li>Labels (in QMD) should be descriptive of the syntax in the chunk or more holistic comments should be included (in .R files) to explain chunks of syntax</li>
+<li>Comments are liberally included to explain smaller pieces of syntax (especially where non-common code is used).</li>
+<li>Object names accurately describe the intent of the object (e.g., <code>pew_data</code> rather than <code>d</code>)</li>
+<li>Plots should include a comment that provides the caption (or usage of <code>fig-cap:</code> in QMD)</li>
+</ul>
+<p><strong>Structure and Presentation:</strong> Is the syntax organized and structured to be “readable” and easy to follow for other educational scientists and researchers? Each of these are scored “Always”, “Most of the time”, “Sometimes”, “Rarely”, “Never”</p>
+<ul>
+<li>Consistent use of case (e.g., lower-case, camel-case) for all objects</li>
+<li>Consistent use of operators throughout the code (e.g., always using <code>&lt;-</code> or <code>=</code> for assignment)</li>
+<li>Spacing is included for readability (e.g., <code>lm.1 = lm(...)</code> rather than <code>lm.1=lm(...)</code>)</li>
+<li>Indentation and line breaks are included in long code (e.g., when using <code>|&gt;</code> or when a function has many arguments), especially in <code>{dplyr}</code> and <code>{ggplot}</code> syntax</li>
+</ul>
+<p><br></p>
 
 
 </section>

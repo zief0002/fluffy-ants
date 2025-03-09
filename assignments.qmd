@@ -61,10 +61,10 @@ Students will complete six homework assignments. The homework assignments and du
 <td headers="assignment">Assignment \#4: *Logarithmic Transformations*</td>
 <td headers="date">Mar. 31</td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-  <!-- [{{< iconify simple-icons:quarto size=25px title="Assignment 4 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-04-logarithmic-transformations.qmd) -->
+  [{{< iconify simple-icons:quarto size=25px title="Assignment 4 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-04-logarithmic-transformations.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="html">
-  <!-- [{{< iconify tabler:file-type-html size=30px title="Assignment 4 HTML File" >}}](assignments/assignment-04-logarithmic-transformations.html) -->
+  [{{< iconify tabler:file-type-html size=30px title="Assignment 4 HTML File" >}}](assignments/assignment-04-logarithmic-transformations.html)
 </td>
 </tr>
 
@@ -73,10 +73,10 @@ Students will complete six homework assignments. The homework assignments and du
 <td headers="assignment">Assignment \#5: *Logistic Regression*</td>
 <td headers="date">Apr. 16</td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-  <!-- [{{< iconify simple-icons:quarto size=25px title="Assignment 5 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-05-logistic-regression.qmd) -->
+  [{{< iconify simple-icons:quarto size=25px title="Assignment 5 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-05-logistic-regression.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="html">
-  <!-- [{{< iconify tabler:file-type-html size=30px title="Assignment 5 HTML File" >}}](assignment-05-logistic-regression.html) -->
+  [{{< iconify tabler:file-type-html size=30px title="Assignment 5 HTML File" >}}](assignment-05-logistic-regression.html)
 </td>
 </tr>
 
@@ -85,10 +85,10 @@ Students will complete six homework assignments. The homework assignments and du
 <td headers="assignment">Assignment \#6: *Linear Mixed-Effects Regression*</td>
 <td headers="date">May. 05</td>
 <td align="center" style="vertical-align:middle;" headers="qmd">
-  <!-- [{{< iconify simple-icons:quarto size=25px title="Assignment 6 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-06-lmer-analysis.qmd) -->
+  [{{< iconify simple-icons:quarto size=25px title="Assignment 6 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-06-lmer-analysis.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="html">
-  <!-- [{{< iconify tabler:file-type-html size=30px title="Assignment 6 HTML File" >}}](assignments/assignment-06-lmer-analysis.html) -->
+  [{{< iconify tabler:file-type-html size=30px title="Assignment 6 HTML File" >}}](assignments/assignment-06-lmer-analysis.html)
 </td>
 
 </tr>
@@ -99,6 +99,7 @@ Students will complete six homework assignments. The homework assignments and du
 Submit each assignment as an HTML or PDF file via email to the TA. Also submit either your QMD file or your R script file. 
 
 <br />
+
 
 ## Working on the Assignments
 

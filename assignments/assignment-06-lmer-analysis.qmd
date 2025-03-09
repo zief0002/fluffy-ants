@@ -1,37 +1,49 @@
 ---
 title: "Assignment 06"
 subtitle: "MIXED-EFFECT REGRESSION MODELS"
+description: "The goal of this assignment is to give you experience working with mixed-effects regression models to analyze longitudinal data. This assignment is worth 15 points. <br /><br /> *Copyright EPSY 8252, 2024*"
 format:
   html:
    css: "assets/styles.css"
-date: "`r format(Sys.Date(), '%B %d, %Y')`"
+date: today
 ---
 
 
-This goal of this assignment is to give you experience working with mixed-effects regression models to analyze longitudinal data. In this assignment, you will use the data from the file *nhl.csv* to examine longitudinal variation in cost of attending an NHL game.
+In this assignment, you will use the data from the file *nhl.csv* to examine longitudinal variation in cost of attending an NHL game.
 
-- [[CSV]](https://raw.githubusercontent.com/zief0002/benevolent-anteater/main/data/nhl.csv)
-- [[Data Codebook]](http://zief0002.github.io/benevolent-anteater/codebooks/nhl.html)
+- [[CSV]](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/nhl.csv)
+- [[Data Codebook]](http://zief0002.github.io/fluffy-ants/codebooks/nhl.html)
 
 
 ```{r}
 #| echo: false
 #| out-width: "50%"
 #| fig-align: "center"
+#| fig-alt: "Decorative image"
 knitr::include_graphics("figs/assign-06.png")
 ```
 
+<br />
+
 ## Instructions
 
-Submit either your QMD and HTML file or, if you are not using Quarto, a PDF file of your responses to the following questions. Please adhere to the following guidelines for further formatting your assignment:
+**Quarto Submissions**
 
-- All graphics should be resized so that they do not take up more room than necessary and should have an appropriate caption.
-- Any typed mathematics (equations, matrices, vectors, etc.) should be appropriately typeset within the document using Markdown's equation typesetting.
-- All syntax should be hidden (i.e., not displayed) unless specifically asked for.
-- Any messages or warnings produced (e.g., from loading packages) should also be hidden.
+Create a project directory called "assignment-02". Within this directory, create a QMD document (this can be a QMD, or word-processed documents) to respond to each of the questions below. All code chunks should include a label `#| label:` and include comments. Submit a zipped version of your entire `assignment-02` project directory.
 
-This assignment is worth 15 points.
 
+**Non-Quarto Submissions**
+
+Submit both the word-processed documents that respond to each of the questions below, as well as a commented, organized script file.
+
+
+For all submissions your syntax will be evaluated based on the rubric at the end of the assignment. This will count for *2pts.** of the assignment score and will be scored as follows:
+
+- 2pts: Most/All of the evaluation  is "Always" AND you have no categories marked as "Rarely" or "Never"
+- 1.5pts: Most/All of the evaluation is "Most of the time" AND you have no categories marked as "Rarely" or "Never"
+- 1pt: Most/All of the evaluation is "Sometimes" OR you have one category marked as "Rarely" marks AND no "Never" marks
+- 0.5pts: Most/All of the evaluation is "Sometimes" or you have more than one categories marked as "Rarely" and no categories marked as "Never"
+- 0pts: You have one or more categories marked as "Never"
 
 <br />
 
@@ -50,7 +62,7 @@ After importing the data set, create a new variable called `c_year` that centers
 
 2. Do the teams' profiles indicate that a random-effect of linear growth should be included in the candidate models? Explain.
 
-3. Based on the plot created in Question #1, indicate whether models that include an effect of high school hockey tradition should be included in the candidate set of models. If this effect should be included, does the data suggest a main-effect or an interaction-effect with time? Explain. **(2pts)**
+3. Based on the plot created in Question #1, indicate whether models that include an effect of high school hockey tradition should be included in the candidate set of models. If this effect should be included, does the data suggest a main-effect or an interaction-effect with time? Explain. 
 
 <br />
 
@@ -67,7 +79,7 @@ Fit the following five models:
 
 Use maximum likelihood estimation to fit all the models.
 
-4. Create and report a table of regression results. In this table Include the following information for each of the five candidate models **(5pts)**:
+4. Create and report a table of regression results. In this table Include the following information for each of the five candidate models **(3pts)**:
     - Estimated fixed-effect coefficients and standard errors;
     - Estimated variance components;
     - Model-level deviance and AICc measures; and
@@ -85,10 +97,30 @@ Based on the AICc values use the model with the most empirical evidence to answe
 
 6. Write the team-specific fitted equation for the Minnesota Wild based on the model that has the most empirical evidence.
 
-7. Use the results from the fitted model with the most empirical evidence to create a plot that displays the predicted average cost of attending an NHL game as a function of time for teams that have a tradition of high school and those that do not.
+7. Use the results from the fitted model with the most empirical evidence to create a plot that displays the predicted average cost of attending an NHL game as a function of time for teams that have a tradition of high school and those that do not. **(2pts)**
 
 8. Add a line to the plot you created in Question \#7 (don't re-create the plot) showing the predicted cost of attending a Minnesota Wild game.
 
 9.  Write a caption for your plot (3--4 sentences) that help a reader understand the effect of time and high school hockey tradition on cost of attending an NHL game and also how the cost of attending a Wild game compares to the average team over time. **(2pts)**
 
+<br />
 
+
+# Rubric for Evaluating Student Syntax
+
+**Documentation:** Is the syntax well annotated to aid communication to other educational scientists and researchers? Each of these are scored "Always", "Most of the time", "Sometimes", "Rarely", "Never" 
+
+- Labels (in QMD) should be descriptive of the syntax in the chunk or more holistic comments should be included (in .R files) to explain chunks of syntax
+- Comments are liberally included to explain smaller pieces of syntax (especially where non-common code is used).
+- Object names accurately describe the intent of the object (e.g., `pew_data` rather than `d`)
+- Plots should include a comment that provides the caption (or usage of `fig-cap:` in QMD)
+
+
+**Structure and Presentation:** Is the syntax organized and structured to be "readable" and easy to follow for other educational scientists and researchers? Each of these are scored "Always", "Most of the time", "Sometimes", "Rarely", "Never"
+
+- Consistent use of case (e.g., lower-case, camel-case) for all objects
+- Consistent use of operators throughout the code (e.g., always using `<-` or `=` for assignment)
+- Spacing is included for readability (e.g., `lm.1 = lm(...)` rather than `lm.1=lm(...)`)
+- Indentation and line breaks are included in long code (e.g., when using `|>` or when a function has many arguments), especially in `{dplyr}` and `{ggplot}` syntax
+
+<br />

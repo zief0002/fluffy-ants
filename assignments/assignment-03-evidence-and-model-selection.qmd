@@ -1,15 +1,16 @@
 ---
 title: "Assignment 03"
 subtitle: "EVIDENCE AND MODEL SELECTION"
+description: "The goal of this assignment is to build your understanding of using information criteria for model selection. This assignment is worth 15 points. <br /><br /> *Copyright EPSY 8252, 2024*"
 format:
   html:
    css: "assets/styles.css"
-date: "`r format(Sys.Date(), '%B %d, %Y')`"
+date: today
 ---
 
 <br />
 
-The goal of this assignment is to build your understanding of using information criteria for model selection. In this assignment, you will use the data from the file *wine.csv* to examine several different predictors of wine rating (a measure of the wine's quality). The literature has suggested that price of wine is quite predictive of a wine's quality.
+In this assignment, you will use the data from the file *wine.csv* to examine several different predictors of wine rating (a measure of the wine's quality). The literature has suggested that price of wine is quite predictive of a wine's quality.
 
 - [[CSV]](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/data/wine.csv)
 - [[Data Codebook]](http://zief0002.github.io/fluffy-ants/codebooks/wine.html)
@@ -19,6 +20,7 @@ The goal of this assignment is to build your understanding of using information 
 #| echo: false
 #| out-width: "50%"
 #| fig-align: "center"
+#| fig-alt: "Decorative image"
 knitr::include_graphics("figs/assign-03.png")
 ```
 
