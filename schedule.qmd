@@ -324,7 +324,9 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Mar. 31</td>
-<td align="center" style="vertical-align:middle;" headers="todo"></td>
+<td align="center" style="vertical-align:middle;" headers="todo">
+  [{{< iconify game-icons:read size=30px >}}](readings/12-logarithmic-transformations.html)
+</td>
 <td style="vertical-align:middle;" headers="topic">Rule of the Bulge</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
   [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/03-05-rule-of-the-bulge.html)
@@ -361,7 +363,9 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Apr. 02</td>
-<td align="center" style="vertical-align:middle;" headers="todo"></td>
+<td align="center" style="vertical-align:middle;" headers="todo">
+  [{{< iconify game-icons:read size=30px >}}](readings/15-logistic-regression.html)
+</td>
 <td style="vertical-align:middle;" headers="topic">Logistic Regression Model</td>
 <td align="center" style="vertical-align:middle;" headers="notes">
   [{{< iconify tabler:file-type-html size=30px >}}](notes/https://zief0002.github.io/adv-modeling/04-02-logistic-regression.html)
@@ -424,7 +428,9 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Apr. 21</td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="todo">
+  [{{< iconify game-icons:read size=30px >}}](readings/18-lmer-average-change-over-time.html)
+</td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">LMER: Average Change Over Time</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
   [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/05-02-lmer-average-change-over-time.html)
@@ -444,7 +450,9 @@ You can see the underlying Quarto source code at <https://zief0002.github.io/adv
 <tr>
 <td align="center" style="vertical-align:middle;" headers="blank">&nbsp;</td>
 <td style="vertical-align:middle;" headers="date">Apr. 28</td>
-<td align="center" style="vertical-align:middle;" rowspan="2" headers="todo"></td>
+<td align="center" style="vertical-align:middle;" rowspan="2" headers="todo">
+  [{{< iconify game-icons:read size=30px >}}](readings/19-lmer-other-random-effects-and-covariates.html)
+</td>
 <td style="vertical-align:middle;" rowspan="2" headers="topic">LMER: Other Random-Effects and Covariates</td>
 <td align="center" style="vertical-align:middle;" rowspan="2" headers="notes">
   [{{< iconify tabler:file-type-html size=30px >}}](https://zief0002.github.io/adv-modeling/05-03-lmer-other-random-effects-and-covariates.html)

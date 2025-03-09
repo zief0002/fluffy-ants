@@ -1,9 +1,11 @@
 ---
-title: "📖 LMER: Average Change Over Time"
+title: "LMER: Average Change Over Time"
 format:
   html:
     css: ["../assets/sticky-notes.css"]
 date: "today"
+bibliography: "../assets/epsy8252.bib"
+csl: "../assets/apa.csl"
 ---
 
 
