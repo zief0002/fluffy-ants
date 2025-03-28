@@ -76,7 +76,7 @@ Students will complete six homework assignments. The homework assignments and du
   [{{< iconify simple-icons:quarto size=25px title="Assignment 5 QMD File" >}}](https://raw.githubusercontent.com/zief0002/fluffy-ants/main/assignments/assignment-05-logistic-regression.qmd)
 </td>
 <td align="center" style="vertical-align:middle;" headers="html">
-  [{{< iconify tabler:file-type-html size=30px title="Assignment 5 HTML File" >}}](assignment-05-logistic-regression.html)
+  [{{< iconify tabler:file-type-html size=30px title="Assignment 5 HTML File" >}}](assignments/assignment-05-logistic-regression.html)
 </td>
 </tr>
 
